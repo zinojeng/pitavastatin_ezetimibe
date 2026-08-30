@@ -95,3 +95,29 @@ assume scope.
 instructions — genuine ambiguity, not an oversight to silently resolve).
 
 **Approved by:** Research Director (Wave 0).
+
+---
+
+## Decision 2026-08-31-05
+
+**Issue:** `CLAUDE.md` §3's File Ownership Matrix does not list an explicit writer for
+`02_SOURCE-INVENTORY.md`. At Wave 1 kickoff, guideline-risk-intelligence independently (and
+correctly, by the safest reading) declined to edit it directly and said it would report findings to
+the Director instead.
+
+**Decision:** `VERIFIED_NEW_SENSITIVITY` — formalize this as the explicit rule: `02_SOURCE-INVENTORY.md`
+is Director-owned. Specialists never edit it directly; each specialist reports verification findings
+(per-citation verified/refuted/superseded status) to the Director via the standard message schema,
+and the Director updates the `verified?`/`superseded?` columns from those reports. This avoids
+simultaneous-edit conflicts on a file all three specialists touch.
+
+**Reason:** Consistent with the Runbook's file-ownership discipline (Runbook §28) and with how the
+first specialist to reach this ambiguity resolved it on its own — codifying observed good behavior
+rather than leaving the gap for the next peer to guess differently.
+
+**Affected files:** `CLAUDE.md` §3 (needs an explicit `02_SOURCE-INVENTORY.md` row added — pending,
+see `04_OPEN-QUESTIONS.md` sync-gap note), `05_STATUS.md`.
+
+**Source:** Cross-session exchange with guideline-risk-intelligence, 2026-08-31 (`90_CROSS-SESSION-LOG/2026-08-31_wave1-kickoff.md`).
+
+**Approved by:** Research Director (Wave 1).
