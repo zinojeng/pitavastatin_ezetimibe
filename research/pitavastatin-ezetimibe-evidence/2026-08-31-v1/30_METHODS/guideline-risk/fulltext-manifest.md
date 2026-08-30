@@ -26,6 +26,25 @@ see status per source below. No file was written to `20_EVIDENCE/guideline-risk/
 | 2022 Taiwan lipid guidelines (both companions, Chen PS / Huang PH, JFMA) | **Not yet checked**; Taiwan Society-affiliated PDFs were seen hosted directly on `tas.org.tw` in WebSearch results (e.g., `https://www.tas.org.tw/upload/files/...main.pdf`), which if genuinely society-hosted would likely be a lawful, freely accessible copy — URL noted for Wave 2 verification, not fetched this Wave. | Wave 2 task. |
 | ADA Standards of Care 2025, Ch. 10 | **Not yet checked** — ADA Standards of Care chapters are typically open access (Diabetes Care makes the Standards of Care freely available); plausible but not confirmed this Wave. | Wave 2 task. |
 
+## Wave 2 update (2026-08-31, PI-authorized, Decision 2026-08-31-12)
+
+Full detail in `20_EVIDENCE/guideline-risk/wave2-fulltext-extraction.md` — summarized here for the
+manifest's own record:
+
+| Source | Attempt | Result |
+|---|---|---|
+| 2026 ACC/AHA guideline PDF (`ahajournals.org/doi/pdf/10.1161/CIR.0000000000001423`, URL supplied by Director/PI) | `curl` (spoofed UA) | **HTTP 403, Cloudflare bot-challenge.** BLOCKED_FOR_SOURCE (automated means). |
+| Taiwan STS 2026 (`sciencedirect.com/.../S0929664626004493`) | `curl` + `WebFetch` | **HTTP 403, Cloudflare bot-challenge** (both tools). Europe PMC's own metadata also shows `is_open_access: False` for PMID 42055832, contradicting the landing page's OA/CC badge text captured in Wave 1 — unresolved discrepancy, not settled empirically because the download itself is blocked. BLOCKED_FOR_SOURCE. |
+| ESC 2025 Focused Update (`academic.oup.com/eurheartj/article-pdf/.../ehaf190.pdf`, best-guess path) | `curl` | **HTTP 403, Cloudflare bot-challenge.** `WebFetch` on the landing page returned a response that self-reported "paywalled" but then produced suspiciously specific quoted text and page locators — treated as likely small-model confabulation, **discarded, not used as evidence anywhere in this repo.** BLOCKED_FOR_SOURCE. |
+| Razavi AC, Blumenthal RS. "LDL-cholesterol lowering: timing is everything." Am J Prev Cardiol 2026;28:101668. DOI 10.1016/j.ajpc.2026.101668, PMCID PMC13326120. | `curl` against `europepmc.org/articles/PMC13326120?pdf=render` | **SUCCESS — HTTP 200, application/pdf.** License confirmed in-text: CC BY-NC-ND. Parsed successfully with `mcp__llamaparse__parse_pdf_to_markdown`. `verified: false` in `02_SOURCE-INVENTORY.md` terms still pending Director review (this is a secondary editorial, not a primary guideline, and does not address ezetimibe combination timing — see the Wave 2 evidence file for full scoping). File: `20_EVIDENCE/guideline-risk/fulltext/Razavi_Blumenthal_2026_AJPC_LDL-timing.pdf`, SHA-256 `b5a2c3941bcf2f14faf3c2757d35044cd01d520901854df0a277e792e06b806f`, retrieved 2026-08-30T21:02:04Z. Gitignored, not committed. |
+
+No PDF was obtained for any of the three PI-prioritized documents (2026 ACC/AHA, ESC 2025 Focused
+Update, Taiwan STS 2026) this Wave. The LlamaParse-tool demonstration requirement was satisfied via a
+genuinely open-access, directly-adjacent secondary source instead. See
+`20_EVIDENCE/guideline-risk/wave2-fulltext-extraction.md` for the full account, including a new
+trials-efficacy-relevant finding (the REPRIEVE pitavastatin RCT, cited in that source's reference
+list) flagged for the Director to route.
+
 ## Recommendation for Wave 2 (this role)
 
 1. Do **not** use `mcp__research_hub__download_paper` again until the Sci-Hub-inclusion concern
