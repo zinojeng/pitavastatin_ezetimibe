@@ -798,3 +798,48 @@ only — Wave 4 audit itself not started).
 **Source:** PI directive, 2026-08-31.
 
 **Approved by:** PI; implemented by Research Director.
+
+---
+
+## Decision 2026-08-31-28 — Post-Gate-2 checkpoint: citation #35 evidence verified, staleness in
+04_OPEN-QUESTIONS.md/05_STATUS.md corrected, branch-consolidation gap noted
+
+**Issue:** A narrow post-Gate-2 checkpoint reviewed guideline-risk-intelligence's two commits
+(`d5e5131`, `31ddebc`, on branch `worktree-pit-eze-guideline-risk-wave1`) completing citation #35
+(Huang PH et al. 2022 Taiwan primary-prevention guideline) — full text obtained lawfully from the
+Taiwan Society of Lipids and Atherosclerosis's own `tas.org.tw` mirror (no PMC deposit; same pattern
+as #30/#32), CC BY 4.0 confirmed verbatim in the parsed text, exact COR/LOE-graded recommendation
+text extracted (four risk-stratified primary-prevention LDL-C targets: <100/<115/<130/<160 mg/dL).
+
+Found on verification: (1) `02_SOURCE-INVENTORY.md` row #35 **already correctly** states "Full text
+obtained Wave 2" with matching detail (folded in by the Director's own Gate-2-declaration commit,
+`8543960`, from the specialist's report) — no correction needed there. (2) `04_OPEN-QUESTIONS.md`
+and `05_STATUS.md` (Wave 2 follow-up round section) had **not** been updated to match — both still
+described #35 as "not yet attempted"/"queued next," contradicting `02_SOURCE-INVENTORY.md` within
+the same branch. Genuine staleness, corrected this checkpoint. (3) The underlying specialist-owned
+evidence files this finding rests on (`20_EVIDENCE/guideline-risk/wave2-item6-extraction.md` §D,
+`30_METHODS/guideline-risk/fulltext-manifest.md`'s Huang entry) exist only on
+`worktree-pit-eze-guideline-risk-wave1` (commits `d5e5131`/`31ddebc`), which is **not** an ancestor
+of this integration branch (`worktree-wave0-init`) — that branch has continued past the Wave 1
+consolidation point (Decision 2026-08-31-12 item 4) without a further merge. The Director's
+`02_SOURCE-INVENTORY.md` claim is accurate (verified independently against the specialist's own
+commit content) but its supporting primary-extraction file is not yet present in this branch's own
+`20_EVIDENCE/`/`30_METHODS/` tree — a provenance-location gap, not a content error. No merge
+performed by this checkpoint (out of scope; flagged for the PI/Director's ordinary consolidation
+process).
+
+No secrets found in either commit (`git grep` clean). No PDF/parsed-markdown tracked (both files
+confirmed gitignored, untracked). No impact on the six existing `BLOCKED_FOR_SOURCE` items — #35 was
+never one of the six (it was Item 6's 5th target, already known "not yet attempted," now resolved).
+
+**Decision:** `VERIFIED_AND_REPLACE` — `04_OPEN-QUESTIONS.md`'s #35 bullet moved from Open to
+Resolved; `05_STATUS.md`'s stale "1/5 (#35) queued next" line corrected to "3/5 complete." No change
+to `02_SOURCE-INVENTORY.md` (already correct), the six `BLOCKED_FOR_SOURCE` items, Gate 2 status, or
+Wave 3 (not opened — out of scope for this checkpoint).
+
+**Affected files:** `04_OPEN-QUESTIONS.md`, `05_STATUS.md`, `90_CROSS-SESSION-LOG/
+2026-08-31_post-gate2-checkpoint-row35.md` (new).
+
+**Source:** PI-directed narrow post-Gate-2 checkpoint, 2026-08-31.
+
+**Approved by:** Research Director.
