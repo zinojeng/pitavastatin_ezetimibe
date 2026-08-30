@@ -130,14 +130,23 @@ a PI decision — logged `NEEDS_PI`, respected, not re-raised. Two items now wai
 guideline-risk's reply: T-005's access-status contradiction, and whether a PII-format citation
 duplicates row #35.
 
+## Update — all specialist-facing Wave 1 loose ends closed
+
+guideline-risk resolved both follow-ups (row #35 was never a duplicate; T-005's "open access" claim
+was a landing-page badge read, self-corrected — commended). trials-efficacy verified T-012/TE-010
+(Katzmann 2022) and flagged a genuine cohort-size inconsistency within `Tonvasca_2026.md` itself
+(Decision 2026-08-31-11, `SOURCE_CONFLICT`, no *n* citable pending Wave 2 full-text). No specialist
+has an outstanding question from the Director as of this update.
+
 ## Pending (Wave 1 exit / Gate 1 criteria)
 
-- guideline-risk's answers on T-005 access status and the possible #35 duplicate.
-- trials-efficacy's verification of T-012 (Katzmann JL 2022).
 - safety-pharmacology's own verification of T-013 (Corsini A 2011, self-queued).
 - PI decision on whether to relax the "no commit" instruction for safety-pharmacology's role.
 - The multi-worktree consolidation (four branches, three different commit/push states) — still the
   single biggest blocker to calling this repo's `main` authoritative and current.
+- Wave 2 full-text priorities now include: Katzmann 2022 (cohort-size resolution), Chou MT 2022 AE/
+  CK/liver tables, every guideline document's numeric-threshold confirmation, T-005's actual
+  article body, T-013 (Corsini A) verification.
 - PI decision on the Sydhom framing gap (Decision 2026-08-31-06) and the research_hub/Sci-Hub tool
   policy (Decision 2026-08-31-08).
 - PI decision on `50_MANUSCRIPT/` ownership (Decision 2026-08-31-04) — not a Wave 1 blocker.
