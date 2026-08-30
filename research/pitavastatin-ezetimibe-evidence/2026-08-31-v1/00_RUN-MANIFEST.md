@@ -55,6 +55,11 @@ See `CLAUDE.md` §3 (File Ownership Matrix) — authoritative; not duplicated he
 **Gate 0** — Wave 0 (Orientation) complete as of this manifest's creation. Status to be set to
 `READY_FOR_NEXT_WAVE` in `05_STATUS.md` once this Wave 0 validation checklist passes.
 
+**Superseded, 2026-08-31**: Gate 1 passed (PI authorization, Decision 2026-08-31-12); Gate 2
+declared `READY_WITH_PENDING_ITEMS` (PI directive, Decision 2026-08-31-27). `05_STATUS.md` is the
+authoritative current-gate pointer going forward — this section is left as the historical Wave 0
+record per the additive-versioning principle (`CLAUDE.md` §15, Golden Rule 9), not edited in place.
+
 ## Known blockers as of Wave 0 (MCP connectivity)
 
 The following MCP servers listed in CLAUDE.md §10 as allowed sources **failed to connect** or were

@@ -13,16 +13,49 @@ that resolved them.
 
 ## Open
 
+### Wave 2 Challenge Round findings (Gate 2, 2026-08-31 — see `30_METHODS/shared/wave2-challenge-round.md` and Decision 2026-08-31-27)
+
+- [NEEDS_SOURCE] Taiwan STS 2026's specific "ezetimibe as first add-on for high/very-high risk,
+  early combination for extremely-high risk" claim (`CLAUDE.md` §5 item 2 — a headline framing
+  concept for this entire project) has never been content-verified against primary text (T-005
+  remains `BLOCKED_FOR_SOURCE`). Currently traces only to `pitavastatin topic.md`'s own paraphrase.
+  Highest-priority unresolved framing claim identified in the Challenge Round.
+- [NEEDS_ANALYST, standing drafting caution for Wave 3] REPRIEVE (T-015) and REAL-CAD (T-016) are
+  genuine pitavastatin **monotherapy** hard-outcome positive trials; the highest-likelihood overclaim
+  risk in this project's evidence base is a future sentence that reads as if pitavastatin's
+  monotherapy CV-outcome evidence extended to the pitavastatin/ezetimibe **FDC** specifically, which
+  remains the unestablished Level 3 gap.
+- [NEEDS_SOURCE, safety-relevant] **FDC-specific (pitavastatin+ezetimibe combined) CKD dosing** —
+  no source in this project addresses the combination product's own CKD dosing; only pitavastatin
+  monotherapy CKD dosing is resolved (T-018). Highest-stakes safety gap identified in the Challenge
+  Round — any future clinical-facing output must not imply FDC-CKD-dosing equivalence to monotherapy
+  without saying so explicitly as an extrapolation.
+- [NEEDS_ANALYST] Singh 2024 (T-003) pools RCT and observational studies for its pitavastatin NODM
+  risk ratios — the same methodological pattern that produced the Sydhom 2024 RCT-vs-observational
+  framing issue the PI already had to resolve (Decision 2026-08-31-06). Not yet known whether
+  Singh's pooled RR holds consistently across study types; unresolved parallel risk, not yet a
+  confirmed problem.
+- [NEEDS_ANALYST] The FDC-adherence-improves-outcomes narrative (T-012/Katzmann, T-025/Samnaliev,
+  T-022/Wei) rests entirely on retrospective/observational designs subject to healthy-adherer bias —
+  no randomized FDC-vs-separate-pills comparison exists in this project's inventory. Any future
+  synthesis presenting this as causal rather than associational should say so explicitly.
+- [NEEDS_ANALYST] T-017 (Li H, Li J 2026, elderly NODM cohort, n=126, abstract-only) reports a
+  striking effect size (0% vs. 10.29%) that should not be featured prominently before full-text
+  verification, given the small sample and abstract-only sourcing.
+
 ### Still open after all three Wave 2 reports (+ follow-up rounds)
 
-- [NEEDS_PI] **Taiwan STS 2026 (T-005), Taiwan Lp(a) 2026 (T-006), base 2019 ESC/EAS (#34), 2026
+- [NEEDS_PI / BLOCKED_FOR_SOURCE — status confirmed by PI, 2026-08-31, do not assume resolvable]
+  **Taiwan STS 2026 (T-005), Taiwan Lp(a) 2026 (T-006), base 2019 ESC/EAS (#34), 2026
   ACC/AHA guideline (#28), ESC 2025 Focused Update (T-007), and citation #33 (Chou MT 2022)'s own
-  AE/CK/liver tables all confirmed `BLOCKED_FOR_SOURCE`** — now via the **precise NCBI elink
+  AE/CK/liver tables all confirmed `BLOCKED_FOR_SOURCE`** — via the **precise NCBI elink
   `linkname=pubmed_pmc` method** (empty linkset for all 7 checked PMIDs, a genuinely negative
   result, not an OA-flag inference; Decision 2026-08-31-13 reinforcement), independently
   corroborated for #33 by trials-efficacy's own retry (Decision 2026-08-31-25). This is a more
-  rigorous negative than the original Cloudflare-block finding. **Question for the PI still stands:
-  can any of these be supplied directly (manual download or institutional access)?** Partial
+  rigorous negative than the original Cloudflare-block finding. **The PI has directed that this
+  stay recorded as `NEEDS_PI`/`BLOCKED_FOR_SOURCE` explicitly — do not assume the PI will or can
+  supply these directly, and no specialist should re-attempt acquisition without new instruction.**
+  Partial
   mitigation for the ESC 2025 combination-wording task exists via T-021 (a secondary review that
   paraphrases it, with its own "old 2018 guideline" caveat) — but the primary documents' own exact
   wording remains unconfirmed. The Gate-2 LlamaParse requirement itself is already satisfied (both

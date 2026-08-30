@@ -9,7 +9,21 @@ begins, this file is a skeleton only — do not populate findings prematurely.
 ## Status
 
 Not yet started. Audit begins only after Gate 3 (Director internal-consistency check) passes —
-see `05_STATUS.md` for current Wave/Gate.
+see `05_STATUS.md` for current Wave/Gate. **This section is a status pointer, updated by the
+Director on the PI's explicit instruction (2026-08-31) — it records where the project stands, not
+an audit finding; the Final QA Checklist below remains untouched/unchecked and reserved for the
+independent auditor in Wave 4.**
+
+**Progress note, 2026-08-31**: Gate 1 passed and Gate 2 declared `READY_WITH_PENDING_ITEMS`
+(Decisions 2026-08-31-12, -27). Wave 3 (synthesis) has explicitly **not** been opened. A Director-run
+Wave 2 Challenge Round (`30_METHODS/shared/wave2-challenge-round.md`) surfaced four priority risk
+areas the eventual Wave 4 auditor should weight heavily when this file's checklist is actually
+executed: (1) Taiwan STS 2026's "ezetimibe as first add-on" framing is unverified against primary
+text; (2) REPRIEVE/REAL-CAD-to-FDC conflation is the project's highest-likelihood overclaim risk;
+(3) FDC-specific CKD dosing is an open safety gap; (4) Singh 2024's RCT-vs-observational pooling is
+an unresolved parallel to the PI-decided Sydhom framing. These are flagged here for the auditor's
+attention, not resolved — resolving them is Wave 3/PI work, not something this Director or this file
+can close out.
 
 ## Final QA Checklist (to be executed in Wave 4, per Runbook §35 and CLAUDE.md §14.4)
 
