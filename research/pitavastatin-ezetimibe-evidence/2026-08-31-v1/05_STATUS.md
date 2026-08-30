@@ -12,10 +12,13 @@ Last updated: 2026-08-31 (Wave 2 dispatch, Research Director)
 **Gate 1: PASSED (PI authorization, 2026-08-31, Decision 2026-08-31-12).**
 
 **Gate 2 exit criteria (PI-specified, 2026-08-31):** mark `READY_WITH_PENDING_ITEMS` if paywalled
-sources remain unresolved, **provided** the two required lawful LlamaParse demonstrations succeed —
-at least one PDF parsed by trials-efficacy (Tsujita 2023) and at least one PDF parsed by
-guideline-risk (an ACC/AHA or ESC 2025 document). Not yet evaluated — Wave 2 has just been
-dispatched this session; see the dispatch messages in `90_CROSS-SESSION-LOG/`.
+sources remain unresolved, **provided** the two required lawful LlamaParse demonstrations succeed.
+**Both now confirmed satisfied**: trials-efficacy parsed Tsujita 2023 (the actual assigned target);
+guideline-risk parsed a substitute open-access source (T-014) after its three assigned targets were
+all Cloudflare-blocked. Several sources remain paywalled/blocked (Taiwan STS 2026, ACC/AHA 2026, ESC
+2025, Chou 2022, Katzmann 2022) — per the PI's own criteria, this is consistent with
+`READY_WITH_PENDING_ITEMS`, not a Gate 2 failure. Formal Gate 2 call still pending
+safety-pharmacology's report.
 
 ## Wave
 
@@ -99,7 +102,60 @@ trials-efficacy rather than claimed. Now proceeding to numeric-threshold work on
 guideline documents while a PI-level question (can the 3 blocked PDFs be supplied directly?) is
 outstanding — see `04_OPEN-QUESTIONS.md`.
 
-trials-efficacy and safety-pharmacology have not yet reported their Wave 2 results.
+**trials-efficacy-intelligence** reported second — a strong report. **Both Gate-2 LlamaParse
+demonstrations are now confirmed satisfied**: guideline-risk's (on a substitute source) and
+trials-efficacy's (on the actual assigned target, Tsujita 2023 — 717,939-byte PDF via J-STAGE after
+PMC's anti-bot challenge blocked automated access; 114,893 characters parsed, no truncation). Ako
+2024 also successfully obtained/parsed via a derived J-STAGE URL. Full-text extraction yielded two
+important nuances now locked into governance: (1) the "add ezetimibe or double the statin?"
+head-to-head comparison the topic file's own framing highlights was **not formally tested** in
+Tsujita 2023 — only descriptive point estimates exist (Decision 2026-08-31-16); (2) Ako 2024's
+"single ADR" abstract framing understates its full AE picture (59.6% overall AE rate; only 1 event
+adjudicated as drug-related) — both figures must be cited together going forward (Decision
+2026-08-31-17). Chou 2022 and Katzmann 2022 both confirmed `BLOCKED_FOR_SOURCE` after Wave-2-repaired
+connectivity (no OA location, direct HTTP checks failed) — no workaround attempted. T-015/REPRIEVE
+fully verified (N=7,769, MACE HR 0.65, stopped early for efficacy) — Decision 2026-08-31-18. A new
+candidate source, REAL-CAD (T-016), was found secondhand and trials-efficacy was authorized to
+pursue its own verification (Decision 2026-08-31-19).
+
+**safety-pharmacology-intelligence** reported third and last — also strong. T-012/Katzmann obtained
+lawfully via a direct Europe PMC PMCID lookup (PMC8873069, CC BY 4.0) after trials-efficacy had
+reported it blocked via a different method — corrected, not a contradiction (Decision
+2026-08-31-20); the resulting method tip was relayed to the other two specialists for their own
+blocked sources. T-003/Singh 2024 confirmed `BLOCKED_FOR_SOURCE` (Europe PMC: no OA, no PMCID). T-010
+DDI matrix re-verified directly against DailyMed with refinements (clarithromycin confirmed absent
+from the label, fenofibrate's correct section location, new fibrate/niacin/colchicine content).
+T-013 verified. Two valuable new finds: T-017 (elderly NODM cohort, abstract-only) and **T-018
+(Tramontano 2025 CKD-dosing review, cross-verified against the FDA label — resolves most of the
+Wave 1 CKD-dosing gap)**. BCRP mechanism partially converged (T-019/T-020) but the pitavastatin-
+specific quantitative fold-change number remains open. Remaining gaps: FDC-specific CKD dosing (no
+source addresses the combination product), BCRP fold-change number, Chou 2022's safety tables.
+
+## Wave 2 follow-up round (same session, after all three initial reports)
+
+- **Katzmann cohort-*n* fully resolved**: safety-pharmacology pulled both table locations from its
+  obtained full text; Director independently confirmed against `Tonvasca_2026.md`'s own text.
+  Decision 2026-08-31-11 closed as `NO_CHANGE` (both n pairs correct, different subsets) — no longer
+  `SOURCE_CONFLICT`.
+- **guideline-risk**: reinforced all 7 blocked-source findings via a rigorous NCBI elink negative
+  check (empty PMC linkset, not an OA-flag inference); obtained/content-verified 2023 TSC CCS (#30)
+  and ADA 2025 (#32) full text, catching a genuine cross-guideline LDL-C threshold difference; found
+  a partial ESC-2025-wording substitute (T-021, with an important "old 2018 guideline" caveat
+  preserved). Item 6 now 2/5 complete, 2/5 confirmed blocked, 1/5 (#35) queued next.
+- **trials-efficacy**: independently re-confirmed Chou 2022 (#33) blocked, converging with
+  guideline-risk's result via a different method; found two new candidate sources (T-023, a Taiwan
+  real-world FDC cohort; **T-024, possibly the first pitavastatin+ezetimibe-FDC-specific
+  meta-analysis, flagged highest-priority for Wave 3**).
+- New sources this round: T-021, T-022, T-023, T-024 (13 total new sources found across Wave 2:
+  T-014 through T-024).
+
+## All three specialists' Wave 2 reports now processed
+
+Every specialist-facing loose end from Wave 2 is closed except: (a) the outstanding PI question on
+supplying the 3 (now effectively 4, including Chou 2022) blocked PDFs directly, (b)
+safety-pharmacology's follow-up task to pull the Katzmann cohort-*n* from its own already-obtained
+full text (should resolve Decision 2026-08-31-11), (c) guideline-risk's and trials-efficacy's
+Europe-PMC-PMCID retry on their remaining blocked sources (in progress, not yet reported back).
 
 ## Wave 2 dispatch summary (as originally sent)
 

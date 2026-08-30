@@ -242,6 +242,52 @@ item added).
 change. Added to Wave 2 trials-efficacy dispatch as a named acquisition target (see Wave 2 dispatch
 log, `90_CROSS-SESSION-LOG/`).
 
+**Wave 2 update, 2026-08-31**: trials-efficacy confirmed `BLOCKED_FOR_SOURCE` — no OA location via
+Unpaywall; a direct HTTP check on the Crossref-supplied Springer `pdf_url` returned an HTML
+access-restriction page, not a PDF. No workaround attempted. Remains unresolved; genuine
+institutional/manual access would be required.
+
+**RESOLVED, 2026-08-31 (superseding `SOURCE_CONFLICT` above with `NO_CHANGE`):** safety-pharmacology
+obtained the primary source lawfully (see Decision 2026-08-31-20) and located both *n* pairs
+directly in the paper's own tables — **neither is an error; they measure two different subsets of
+the same study**:
+- **n=6,429 (FDC) / n=533 (SPC)** = the paper's Table 1, "baseline characteristics for patients
+  treated by general practitioners in 2018" — a GP-only, single-year prescription-count snapshot
+  (out of that table's GP total N=136,494). The paper's Table 2 gives the parallel
+  cardiologist-only figures (FDC n=682, SPC n=51) — neither of `Tonvasca_2026.md`'s two printed
+  pairs matches this one, so it is not a third candidate.
+- **n=1,639 (FDC) / n=796 (SPC)** = the paper's Graphic Abstract / Figure 6 — the pooled
+  (GP+cardiologist) subgroup with paired pre/post LDL-C measurements available, i.e. the exact
+  sample the paper's headline LDL-C result is built on (FDC −28.4%/−40.0 mg/dL vs. SPC
+  −19.4%/−27.5 mg/dL, p<0.0001).
+
+**Director's own direct read of `Tonvasca_2026.md`** (lines 2311–2345) confirms which pairing the
+slide actually uses where: the slide's header/setup line ("Statin + ezetimibe FDC (n=6,429) vs...
+separate pills (n=533)") introduces the comparison generally using the GP-2018 prescription-count
+figure, while the **results table itself explicitly re-labels its own rows** "Statin + ezetimibe
+FDC (**n=1,639**)" / "...separate pills (**n=796**)" directly alongside the −28.4%/−19.4% and
+31.5%/21.0% figures. So the slide is not internally contradictory in the sense originally described
+(it does not print the same claim twice with conflicting numbers) — it uses two different,
+individually-correct cohort definitions for two different purposes (general framing vs. the specific
+result table) without explaining the distinction to the reader. The earlier "internally
+inconsistent... reversed ordering" characterization is withdrawn as an overstatement; the more
+accurate description is "two correct but easily conflated sample definitions in the same source
+figure."
+
+**Final decision: `NO_CHANGE`** — no source value is wrong or needs replacing. **The LDL-C
+reduction and attainment figures (−28.4%/31.5% vs. −19.4%/21.0%) are unambiguously and correctly
+attributable to n=1,639 (FDC) / n=796 (separate pills)**, per both the primary source's own table
+labeling and `Tonvasca_2026.md`'s own results-table row labels. The n=6,429/533 figure describes a
+broader, separate GP-2018 prescription-prevalence statistic and should not be cited alongside the
+LDL-C percentages as if it were their sample size.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-012 row, fully resolved).
+
+**Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31 (full-text table
+locations); Research Director's own direct read of `Tonvasca_2026.md` lines 2311–2345.
+
+**Approved by:** Research Director (Wave 2).
+
 ---
 
 ## Decision 2026-08-31-12 — PI Wave 2 Authorization (consolidated record)
@@ -318,6 +364,130 @@ combination-therapy wording" task item remains unfulfilled pending the blocked d
 
 **Approved by:** Research Director (Wave 2).
 
+**Reinforced, 2026-08-31**: guideline-risk re-ran the precise NCBI elink (`linkname=pubmed_pmc`)
+check it had already used before the original report — the rigorous method that finds only "this
+article has its own PMC copy" links, not the broader "cited-by" list — as a single batched,
+explicit confirmation across all 6 remaining guideline PMIDs (2026 ACC/AHA ×2 references, ESC 2025
+Focused Update ×2, Taiwan STS 2026, Taiwan Lp(a) 2026/T-006) plus, as a courtesy check,
+citation #33 (Chou MT 2022, PMID 36030106, trials-efficacy's domain). **All 7 returned an empty
+linkset** — a genuinely negative result via the precise method, not an inference from a broader OA
+flag. `BLOCKED_FOR_SOURCE` stands with high confidence for all 7 (T-006 and #34/the base 2019
+ESC/EAS guideline confirmed no PMC deposit either, same check). trials-efficacy independently
+re-confirmed the same negative result for #33 via its own retry shortly after (see the Wave 2
+trials-efficacy follow-up log), gaining a fuller Europe PMC abstract in the process — convergent,
+not redundant, confirmation.
+
+---
+
+## Decision 2026-08-31-23
+
+**Issue:** Using the same precise elink method proactively, guideline-risk found genuine PMC
+deposits for 2 of the remaining Search-Protocol-item-6 guideline targets and obtained/parsed full
+text: the 2023 TSC CCS guideline (Ueng KC et al., citation #30, PMC9829849) and the ADA 2025
+Standards of Care Ch.10 (citation #32, PMC11635050). It also found and parsed a genuinely
+open-access secondary review (Katzmann & Laufs, Curr Atheroscler Rep 2026, PMC12945982) that closely
+paraphrases and cites the still-blocked ESC 2025 Focused Update's own upfront-combination-therapy
+recommendation, substantively advancing the "extract combination-therapy wording" task even without
+the primary ESC 2025 document itself.
+
+**Decision:** `VERIFIED_NEW_SENSITIVITY` for #30/#32 (content-verified, not just citation-verified,
+against primary text). Logged as new source **T-021** for the Katzmann & Laufs 2026 review, with
+an important caveat preserved rather than smoothed over: that review's own "no upfront combination
+in US guidelines" comparison cites the **old 2018 AHA/ACC guideline**, not the 2026 update — this
+must not be used as if it described the current (2026) US guideline's actual position, which
+remains unconfirmed pending the still-blocked primary document (#28).
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (#30, #32 rows updated; new T-021 row).
+
+**Source:** guideline-risk-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-24
+
+**Issue:** While independently verifying Decision 2026-08-31-11's resolution by reading
+`Tonvasca_2026.md` lines 2280–2349 directly, the Director found a citation not previously catalogued
+in `02_SOURCE-INVENTORY.md`: Wei Q, et al. Front Pharmacol. 2023;14:1156081 (a 61-study
+meta-analysis on FDC-vs-free-equivalent-combination adherence), used in the slide immediately
+preceding the Katzmann 2022 slide.
+
+**Decision:** Logged as new source **T-022**, assigned to safety-pharmacology-intelligence for
+verification (adherence-outcome domain, consistent with the existing T-009 cluster assignment).
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (new T-022 row).
+
+**Source:** Research Director's own direct read of `Tonvasca_2026.md`.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-25
+
+**Issue:** trials-efficacy retried citation #33 (Chou MT 2022) per the Europe-PMC-PMCID method tip:
+Europe PMC indexes its metadata (PMID 36030106) but shows an empty PMCID and `is_open_access:
+False` — genuinely not PMC-deposited, converging with guideline-risk's independent elink check
+(Decision 2026-08-31-13 reinforcement). `BLOCKED_FOR_SOURCE` stands, now doubly confirmed by two
+independent methods. Europe PMC's abstract copy was fuller than Crossref's, yielding one new detail:
+a stated *trend* toward greater LDL-C lowering in elderly (≥65y) vs. younger patients, with no
+CI/p-value given — correctly flagged as a trend only, not a confirmed subgroup finding. While
+checking, trials-efficacy also found two new, previously-uncatalogued sources: **TE-013** (Lu YW,
+Fang CC, Cheng YT, "Real-World Safety and Efficacy of a Pitavastatin-Ezetimibe Combination Therapy
+in Taiwanese Patients after PCI," Acta Cardiol Sin. 2026;42(3), DOI
+10.6515/ACS.202605_42(3).20251013A — Taiwan real-world retrospective cohort, N=120, post-PCI,
+pitavastatin 4mg+ezetimibe 10mg, 12-month LDL-C reduction 32.54%, HbA1c/TyG-index changes in the
+diabetic subgroup; its "zero AEs recorded" claim flagged as plausible retrospective
+under-ascertainment, not to be weighted the same as an RCT's AE reporting) and **TE-014** (Abbas MS
+et al., "Combination pitavastatin-ezetimibe therapy for hypercholesterolemia and mixed
+dyslipidemia: a systematic review and meta-analysis," Future Cardiol. 2026;22(6):607-619, DOI
+10.1080/14796678.2026.2676249, PROSPERO CRD420251233057 — possibly the **first formal meta-analysis
+specific to the pitavastatin+ezetimibe FDC question**, eligibility criteria closely matching
+TE-001/TE-002; abstract's Results section has no numeric effect sizes yet, LOW confidence on actual
+findings). Both new sources have Europe PMC PMCID entries (PMC13202365, PMC13288897) but report
+`is_open_access: False`; trials-efficacy correctly did not attempt download without checking in
+first.
+
+**Decision:** Logged as new sources **T-023** (Lu YW et al. 2026) and **T-024** (Abbas MS et al.
+2026). T-024 is flagged as the **highest-priority Wave 3 full-text target** — if it genuinely pools
+TE-001/TE-002-type FDC trials, it would meaningfully strengthen the Level 1 evidence base described
+in `pitavastatin topic.md` §6, but nothing about it can be cited yet since the abstract has no
+numbers. Full-text pursuit for T-023/T-024 held for Wave 3 pending Director/PI direction on whether
+Wave 2 continues or a formal Wave 3 is opened.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (new T-023, T-024 rows; #33 row reinforced).
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-26
+
+**Issue:** safety-pharmacology verified T-022 (Wei Q et al. 2023, Front Pharmacol — 61-study
+FDC-vs-free-equivalent adherence meta-analysis, general/cross-disease) and found a new, more
+directly on-topic source while searching for it: Samnaliev M et al. 2025 (Front Cardiovasc Med,
+THIN-database retrospective cohort, N=15,643, **rosuvastatin/ezetimibe FDC vs. free-combination
+specifically** — persistence HR 0.54, adherence OR 3.00, ~10% greater LDL-C reduction in
+persistent/adherent patients).
+
+**Decision:** T-022 confirmed `VERIFIED`, tagged `INDIRECT EVIDENCE` (cross-disease-general).
+Samnaliev logged as new source **T-025**, also tagged `INDIRECT EVIDENCE` — same
+different-statin caveat class as RACING (rosuvastatin, not pitavastatin) — but flagged as more
+directly relevant to this project's FDC-adherence narrative than T-022 since it is statin+ezetimibe-
+specific. Also: the Director discovered it had never actually forwarded full citation strings for
+the T-009 adherence cluster to safety-pharmacology (only author/year fragments in an earlier
+message) — resent in full; corrected, no content was lost since `02_SOURCE-INVENTORY.md` always had
+the complete strings.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-022, new T-025 rows).
+
+**Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
 ---
 
 ## Decision 2026-08-31-14
@@ -364,6 +534,178 @@ future synthesis.
 **Affected files:** `02_SOURCE-INVENTORY.md` (new T-015 row).
 
 **Source:** guideline-risk-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-16
+
+**Issue:** trials-efficacy obtained and LlamaParse-parsed the full text of T-004a (Tsujita K et al.
+2023) — one of the two Gate-2 LlamaParse demonstrations, and on the actual assigned target this
+time (PMC's proof-of-work anti-bot challenge blocked the two PMC IDs supplied; trials-efficacy did
+not attempt to solve it and instead used the lawful J-STAGE PDF links, correctly). Full text
+resolved the exact statistical structure: comparisons are pairwise MMRM, not pooled. The
+K-924-HD-vs-K-924-LD comparison (dose-response *within* the FDC) was formally tested and
+significant (−6.4%, 95% CI −9.6 to −3.2, p≤0.001). Critically, the comparison
+`pitavastatin topic.md`'s own framing highlights as a headline clinical question — "add ezetimibe
+or double the statin?" (K-924 LD, i.e. pitavastatin 2mg+ezetimibe10, vs. pitavastatin 4mg alone) —
+was **not formally tested** in this trial; only a descriptive point-estimate difference exists
+(−51.4% vs. −45.2%), with no reported p-value/CI for that specific pairwise comparison.
+
+**Decision:** `VERIFIED_NEW_SENSITIVITY` — the trial answers the FDC-dose-response question directly
+but does **not** answer the specific "add-on vs. dose-escalation" question as a formally tested
+head-to-head comparison. **Any `40_SYNTHESIS/` or manuscript output using this trial for the
+"add ezetimibe or double the statin?" framing must present the −51.4% vs. −45.2% figures as a
+descriptive/point-estimate difference only — never as a statistically significant result —** and
+should note the K-924-HD-vs-LD within-FDC comparison separately as the trial's actual formally
+tested finding.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-004a row).
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31 (its own
+`10_DATA/trials-efficacy/wave2-fulltext-extraction.md`).
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-17
+
+**Issue:** trials-efficacy's full-text read of T-004b (Ako J et al. 2024, the 52-week open-label
+extension) found that the abstract's "a single adverse drug reaction" framing, taken alone, would
+understate the study's actual safety picture: overall AE incidence was 59.6% (65/109 patients),
+with 12 serious AEs (11.0%) — but only 1 event across the whole study was adjudicated as a
+drug-related ADR (a CK elevation), and none of the serious AEs were adjudicated as drug-related.
+
+**Decision:** `VERIFIED_NEW_SENSITIVITY` — the underlying "well-tolerated" conclusion still holds
+once the AE-vs-ADR (adjudicated-causality) distinction is understood, but **any output citing this
+study's safety data must carry both figures (overall AE incidence AND the ADR-adjudication result),
+never the ADR figure alone presented as if it were the full AE picture.** This is a methodological
+distinction worth generalizing: "adverse event" and "adjudicated adverse drug reaction" are not
+interchangeable, and a source's own abstract may lead with the narrower, more favorable framing.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-004b row).
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-18
+
+**Issue:** trials-efficacy fully verified T-015 (REPRIEVE trial, Grinspoon SK et al., NEJM
+2023;389(8):687-699) against PubMed/Crossref — matches exactly. Key result: N=7,769, pitavastatin
+4mg vs. placebo in HIV-positive patients, trial stopped early for efficacy, primary MACE HR 0.65
+(95% CI 0.48–0.90, P=0.002). trials-efficacy also flagged (without resolving) a cross-domain nuance:
+REPRIEVE's diabetes signal (5.3% pitavastatin vs. 4.0% placebo, an absolute-risk, placebo-controlled
+comparison) uses a different comparator/framing than safety-pharmacology's Singh 2024 (T-003) NODM
+meta-analysis (relative risk vs. other statins) — not contradictory, but not directly comparable
+either.
+
+**Decision:** `VERIFIED_AND_REPLACE` (T-015's "found, not verified" status superseded by full
+verification). REPRIEVE stands as a fourth, independent reference point in the evidence base —
+pitavastatin **monotherapy**, HIV population, vs. placebo — distinct from HIJ-PROPER,
+RACING, and the Katzmann/Tsujita/Ako FDC-dose-comparison trials. The diabetes-signal
+cross-domain nuance is logged for safety-pharmacology's awareness but not adjudicated by the
+Director — that synthesis judgment belongs to whichever role eventually writes the NODM section of
+`40_SYNTHESIS/`.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-015 row).
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-19
+
+**Issue:** trials-efficacy found a secondhand citation to the REAL-CAD trial (pitavastatin 4mg vs.
+1mg, Japanese CAD patients, HR 0.81, 95% CI 0.69–0.95) inside T-004a's (Tsujita 2023) discussion
+section — not yet independently verified, logged as its own Q8, and asked whether to pursue it
+itself or have it routed elsewhere.
+
+**Decision:** Logged as new source **T-016**. **Director authorizes trials-efficacy to pursue
+verification itself** — this is squarely a dose-comparison/hard-outcome trial within its own
+domain, and it was found while already deep in directly relevant full text, so re-routing it would
+just add a round-trip with no benefit.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (new T-016 row).
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-20
+
+**Issue:** trials-efficacy reported T-012 (Katzmann JL et al. 2022) as `BLOCKED_FOR_SOURCE` (no OA
+via Unpaywall; a direct HTTP check on the Springer `pdf_url` returned an access-restriction page).
+Shortly after, safety-pharmacology — working independently, on the same citation, same PMID
+32949286 — reported it obtained the full text lawfully via **Europe PMC directly**, finding PMCID
+PMC8873069, CC BY 4.0, genuinely open access, and successfully LlamaParse-parsed it.
+
+**Decision:** `VERIFIED_AND_REPLACE` — T-012's status updated from `BLOCKED_FOR_SOURCE` to full text
+obtained. Not a contradiction between the two peers: different lookup methods (Unpaywall +
+publisher direct link vs. Europe PMC's own PMCID index) gave different results for the same paper.
+**Methodological lesson generalized to guideline-risk and trials-efficacy for their own still-blocked
+sources** (Taiwan STS 2026, 2026 ACC/AHA, ESC 2025 Focused Update, Chou MT 2022): try a direct Europe
+PMC PMCID lookup specifically before concluding `BLOCKED_FOR_SOURCE`, since it succeeded here where
+other routes failed. The cohort-size numeric-integrity flag from Decision 2026-08-31-11 can likely
+now be resolved from this full text — assigned to whichever role reads it first to report back.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-012 row).
+
+**Source:** trials-efficacy-intelligence and safety-pharmacology-intelligence cross-session reports,
+2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-21
+
+**Issue:** safety-pharmacology re-verified the T-010 DDI matrix (LIVALO/DailyMed label) directly
+against DailyMed in Wave 2 (not a secondary transcription): cyclosporine/erythromycin/rifampin/
+gemfibrozil figures all exact-matched the Wave 1 report (no drift). Two refinements: clarithromycin
+upgraded from "not found as fetched" to `CONFIRMED_ABSENT_FROM_LABEL` (checked the full label text,
+not just Section 7); fenofibrate's figures precisely located in Section 12.3 Table 3, not Section 7
+as the Wave 1 report implied. New content captured: fibrate-class (general), niacin, and colchicine
+caution language.
+
+**Decision:** `VERIFIED_AND_REPLACE` for the location/completeness refinements; `NO_CHANGE` for the
+five previously-reported figures (re-confirmed, not altered).
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-010 row).
+
+**Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-22
+
+**Issue:** safety-pharmacology obtained and cross-verified Tramontano D et al. 2025 (Drugs,
+PMC12098426, CC BY-NC 4.0, T-018) against the FDA label directly, resolving most of the CKD-dosing
+gap flagged in Wave 1: pitavastatin 1mg starting/2mg max dose in eGFR 15–59 or hemodialysis, no
+adjustment needed for eGFR ≥60, and — per this review's own comparison table — pitavastatin has the
+lowest CKD dose ceiling of all 7 statins tabulated. Also found (abstract-only, not open access):
+Li H, Li J et al. 2026 (T-017), an elderly-specific pitavastatin-vs-atorvastatin NODM cohort
+(n=126, 0% vs. 10.29%) partially filling the Wave 1 elderly-population glycemic-outcomes gap.
+
+**Decision:** `VERIFIED_NEW_SENSITIVITY` — T-018's CKD-dosing figures accepted as cross-verified
+against the primary regulatory source (the FDA label), not merely a secondary review's own claim.
+T-017 accepted at MODERATE confidence (abstract-level only). **Remaining open gap, explicitly not
+addressed by any source found so far: FDC-specific (pitavastatin+ezetimibe combined) CKD dosing** —
+carried forward in `04_OPEN-QUESTIONS.md`.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (new T-017, T-018 rows).
+
+**Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31.
 
 **Approved by:** Research Director (Wave 2).
 
