@@ -34,10 +34,22 @@ pitavastatin as compared to atorvastatin and rosuvastatin: a systematic review a
   observational 且未逐一取得各納入研究之原始數據，暫標 INDIRECT EVIDENCE，待與各納入 RCT
   對照後可考慮升級）。
 - 驗證方式：PubMed 標題/摘要層級核對，**未取得全文逐字核對** — `CONFIDENCE: MODERATE`。
+- **Wave 2 更新**：經 Europe PMC 查證 `is_open_access: false`，無 PMCID —— **全文合法取得管道
+  已確認為 BLOCKED_FOR_SOURCE**（非未嘗試，而是查證後確認無開放取用管道），已取得之完整結構化
+  摘要（Background/Methods/Results/Conclusion 皆完整，含 PROSPERO 註冊碼）已足供本專案目前需求，
+  數字與先前一致，`CONFIDENCE` 維持 MODERATE（摘要層級，非全文逐字）。
 - **與 `pitavastatin topic.md` 的對應**：此篇與 topic notes 所述「2024 systematic review/
   meta-analysis 納入 RCT 與 observational studies，顯示 pitavastatin 相較 atorvastatin/
   rosuvastatin 的 new-onset diabetes risk 較低」完全吻合，建議 Director 將本篇登錄為 T-003 的
   正式來源（`02_SOURCE-INVENTORY.md` 由 Director 更新，本角色僅回報）。
+
+### 1.1b 比較基準提醒（trials-efficacy 提供，2026-08-31）：REPRIEVE 試驗與 Singh 2024 不可直接合併
+
+trials-efficacy-intelligence 驗證的 REPRIEVE 試驗（pitavastatin 4mg vs placebo, HIV 族群, MACE
+HR 0.65）之糖尿病訊號為 5.3%（pitavastatin）vs 4.0%（placebo）—— 這是 **placebo 對照之絕對風險
+比較**，與 Singh 2024（T-003）之 **其他 statin 相對風險比較**（RR 0.86 vs atorvastatin, RR 0.77
+vs rosuvastatin）為不同問題/不同比較基準，**非互相矛盾，但不可直接合併為單一數字**。撰寫
+glycemic-outcomes synthesis 時務必分別標示比較對象（placebo vs 其他 statin），不得混用。
 
 ### 1.2 重要區辨：Sydhom P et al. 2024 並非同一篇（LEGACY_VERIFICATION，見 §5 全文）
 
@@ -66,6 +78,26 @@ meta-analysis，NODM 只是其中一個 observational-only 次要結果（HR 0.8
 | Chapman MJ et al. (CAPITAIN/PREVAIL-US) 2014, Curr Med Res Opin (PMID 24328357) | RCT (CAPITAIN n=12) + PREVAIL-US 驗證子集 (n=9) | 代謝症候群 | DIRECT EVIDENCE — **高劑量 pitavastatin 4mg** 資料 | HbA1c/insulin/HOMA-IR/QUICKI 無顯著變化；FPG 微升 +4% (p<0.05) |
 | Lee J et al. 2022, J Clin Med (PMID 36431233) | RCT, open-label, 24wk，韓國 | T2DM, n=93 | DIRECT EVIDENCE | pitavastatin 2mg vs 飲食/運動；HOMA-IR 差異未達顯著 (p=0.59 / p=0.36) |
 | Devi G et al. 2025, Cureus (PMID 40964577) | RCT, open-label, 12wk，印度 | T2DM+dyslipidemia on metformin+glimepiride | DIRECT EVIDENCE | pitavastatin 4mg vs atorvastatin 20mg；FBG 改善 22.7±11.6% vs 15.4±6.4% (p=0.004)；HbA1c 未達顯著 (p=0.09) |
+
+### 1.3b Elderly 次族群新證據（Wave 2, NEW_SOURCE_DISCOVERY）— 部分填補先前 elderly 缺口
+
+**Li H, Li J.** "Association of Pitavastatin Versus Atorvastatin Therapy With Glycaemic Control and
+New-Onset Diabetes in Older Adults With Atherosclerotic Cardiovascular Disease." *Br J Hosp Med.*
+2026 Jul;87(7). PMID 42528438. DOI 10.31083/bjhm56151.
+
+- 設計：回溯性世代研究，Public Health Clinical Center Affiliated to Shandong University（中國），
+  2022年1月–2023年12月，隨訪 12 個月。
+- 族群：ASCVD 老年病人 ≥60 歲，n=126（pitavastatin 4mg/day, n=58 vs atorvastatin 20mg/day, n=68）。
+- 結果（逐字）：HDL-C 1.41±0.30 vs 1.26±0.28 mmol/L (p=0.005)；FPG 5.85±0.70 vs 6.19±0.85 mmol/L
+  (p=0.018)；HbA1c 6.10±0.42% vs 6.33±0.51% (p=0.009)；**NODM 0% (pitavastatin) vs 10.29%
+  (atorvastatin)**；多變量邏輯回歸 OR=0.212 (p=0.018)（pitavastatin 為保護因子）。
+- **Evidence Hierarchy: OBSERVATIONAL EVIDENCE**（回溯性世代研究，非 RCT）。
+- **Full-text 狀態**：經 Europe PMC 查證 `is_open_access: false`，無 PMCID —— **BLOCKED_FOR_SOURCE**
+  （全文無法透過合法免費管道取得），僅取得完整結構化摘要（Crossref + Europe PMC 皆提供，內容一致）。
+- **重要限制**：此為單一中心、非隨機、樣本數小（n=126）之回溯性研究，且劑量非對等
+  （pitavastatin 4mg 為其最高劑量，atorvastatin 20mg 為中等劑量，非對等劑效比較）——引用時需
+  明確揭露此設計限制，不可作為「pitavastatin 於老年族群優於 atorvastatin」之高強度證據，僅為
+  部分填補本項目原先標註的 elderly-subgroup 資料缺口的**支持性**觀察證據。
 
 **Dose-response 缺口（Search Protocol item 5 的血糖面向）**：查無 pitavastatin 1mg vs 2mg vs 4mg
 「同一試驗內」head-to-head glycemic RCT；現有 dose-response 推論須跨試驗拼接（Nakagomi=1mg，
@@ -294,6 +326,26 @@ DIRECT EVIDENCE」完全一致，撰寫時應維持此區隔。
   observational-pooled 之硬指標/NODM 數字為 OBSERVATIONAL EVIDENCE；因非 pitavastatin 專一
   （納入 rosuvastatin 等其他 statin），對 pitavastatin/ezetimibe 專一聲明而言屬 **INDIRECT
   EVIDENCE**（與 CLAUDE.md §7 對 RACING 的既定處理原則相同 — 需在 40_SYNTHESIS 中比照辦理）。
+
+## 5b. T-013 驗證（Wave 2）：Corsini A 2011 — VERIFIED_MATCH
+
+**Corsini A, Ceska R.** "Drug–drug interactions with statins: will pitavastatin overcome the
+statins' Achilles' heel?" *Curr Med Res Opin.* 2011;27(8):1551-1562. DOI 10.1185/03007995.
+2011.589433. 經 Crossref 確認作者/期刊/年份/卷期頁碼與 `Tonvasca_2026.md` line 2792 引用完全相符
+（該處引用格式省略作者，經核對確為此篇）。**Evidence Hierarchy: EXPERT INTERPRETATION**
+（narrative review，非原始數據）。全文本身本輪未取得（付費牆，未嘗試 `download_paper` 因該工具
+已被禁用），僅完成書目層級驗證，`CONFIDENCE: HIGH`（書目資訊）。
+
+## 5c. T-012 全文取得（Wave 2）：Katzmann JL et al. 2022 — 開放取用，已合法下載並解析
+
+經 Europe PMC 查證，`02_SOURCE-INVENTORY.md`/CLAUDE.md 中原引用的 Katzmann JL et al. 2022
+（DOI 10.1007/s00392-020-01740-8，*Clin Res Cardiol* 111(3):243-252）實際 PMID 為 **32949286**、
+PMCID **PMC8873069**，`is_open_access: true`，**CC BY 4.0** 授權。已透過 PMC 開放連結合法下載全文
+PDF（21 頁）並以 LlamaParse 成功解析為 Markdown。完整 provenance（URL、下載時間、SHA-256、授權）
+見 `30_METHODS/safety-pharmacology/fulltext-manifest.md`。**此篇屬 trials-efficacy 領域
+（T-012，已由 Director 轉交），本角色僅完成合法取得與解析，內容延伸分析留給該角色**；順帶確認
+原文本身指出其資料集**沒有 medication adherence 數據**（作者自陳為研究限制），故該篇不能作為
+adherence 的直接定量證據來源，僅為 FDC 相對 SPC 之 LDL-C 療效證據。
 
 ## 6. Tonvasca_2026.md 內部一致性問題（回報 Director，非本角色可修正）
 
