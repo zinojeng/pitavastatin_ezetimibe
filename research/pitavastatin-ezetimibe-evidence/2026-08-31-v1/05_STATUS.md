@@ -84,7 +84,24 @@ for historical hardcoded `llamaparse` credentials reported to exist outside this
   in its own worktree but *is* already visible to the Director via the Codex-process consolidation
   into `main`, so this is not blocking Wave 2 — flagged only in case the PI wants it addressed.
 
-## Wave 2 dispatch summary (this update)
+## Wave 2 progress
+
+**guideline-risk-intelligence** reported first: `BLOCKED_FOR_SOURCE` on all 3 assigned priority
+documents (Taiwan STS 2026, 2026 ACC/AHA, ESC 2025 Focused Update — all Cloudflare bot-challenged,
+corroborated via Europe PMC metadata; no workaround attempted, correctly). **1 of the 2 required
+Gate-2 LlamaParse demonstrations succeeded**, but on a substitute open-access source (T-014, a
+Blumenthal-coauthored editorial) rather than an assigned target — it doesn't cover ezetimibe, so the
+"combination-therapy wording" task item remains unfulfilled. Also: **caught and discarded a
+tool-confabulation incident** (a `WebFetch` call fabricated quantitative content while also
+reporting the source as paywalled) — commended, led to a new general caution in `CLAUDE.md` §9.
+Found a new source (T-015, REPRIEVE trial) while reading T-014's references, correctly routed to
+trials-efficacy rather than claimed. Now proceeding to numeric-threshold work on already-accessible
+guideline documents while a PI-level question (can the 3 blocked PDFs be supplied directly?) is
+outstanding — see `04_OPEN-QUESTIONS.md`.
+
+trials-efficacy and safety-pharmacology have not yet reported their Wave 2 results.
+
+## Wave 2 dispatch summary (as originally sent)
 
 | Specialist | Assigned Wave 2 targets |
 |---|---|

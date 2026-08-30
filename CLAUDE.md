@@ -251,6 +251,19 @@ CIs, decimals, units, or "obvious typos." If a number looks wrong: record
 `SOURCE_VALUE = <as printed>`, `FLAG = POSSIBLE_ERROR`, `ACTION = NEEDS_ANALYST` or `NEEDS_PI` — do
 not silently fix it (Runbook §18, Golden Rule 8).
 
+**Tool-confabulation caution (added Wave 2, 2026-08-31, after an incident caught by
+guideline-risk-intelligence):** a `WebFetch`-class tool, when pointed at a paywalled article landing
+page, can return text that *states* the article is paywalled/inaccessible and then goes on to
+confidently quote specific quantitative content and a page/section locator anyway — this is the
+underlying summarization model confabulating plausible-sounding content, not a genuine extraction,
+and it looks exactly like a real citation until checked. Treat any full-text-derived number, quote,
+or locator with elevated suspicion when: (a) the same response also asserts the source was blocked/
+paywalled, (b) no independently-verifiable retrieval artifact exists for it (no saved PDF, no
+LlamaParse output, no SHA-256), or (c) it cannot be re-derived on a second, independent attempt.
+When in doubt, discard rather than record — an omitted fact is recoverable; a fabricated one that
+enters `20_EVIDENCE/` or `40_SYNTHESIS/` may not be caught again. This is the same discipline as the
+Numeric Integrity Rule above, extended to tool-summarized content, not just source-printed numbers.
+
 ---
 
 ## 10. MCP source policy
