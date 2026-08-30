@@ -90,6 +90,19 @@ resolved items, move them to a "Resolved" section at the bottom with a pointer t
   transparency only; trials-efficacy will not call this tool again and will use `search_unpaywall`
   or institutional/PI-provided access for Wave 2 full-text acquisition instead.
 
+- [RESOLVED] Search Protocol item 3 / T-003 (pitavastatin NODM systematic review, previously "not
+  yet located," generically referenced in `pitavastatin topic.md`) — identified as Singh H et al.
+  2024 (PMID 39587804) by safety-pharmacology. See Decision 2026-08-31-10 — explicitly distinct
+  from, and must never be conflated with, citation #26 (Sydhom P et al. 2024).
+
+- [RESOLVED] Citation #23's topic/relevance description was wrong in the Wave 0 catalog ("statin
+  discontinuation outcomes"); corrected to "2019 Taiwan statin-intolerance consensus (STS
+  precursor)" per safety-pharmacology's 2026-08-31 report. See `02_SOURCE-INVENTORY.md` row #23
+  (original wording struck through, not silently deleted).
+
+- [RESOLVED] All 16 of safety-pharmacology's assigned legacy citations (#3–16, 23, 26-joint)
+  verified with zero mismatches (2026-08-31).
+
 - [RESOLVED] trials-efficacy-intelligence's worktree (`worktree-trials-efficacy-wave1`) now has a
   local commit (`62db3f3`, on top of a pre-existing environment checkpoint commit `dc6ee2f`
   authored "Dr Tseng") — durably saved on disk even though not yet merged to `main`. Same
@@ -103,6 +116,37 @@ resolved items, move them to a "Resolved" section at the bottom with a pointer t
   2026-08-31-03) — reachable in at least two Wave 1 specialist sessions; appears session-specific
   rather than a fixed environment fact. `openevidence` remains down everywhere reported so far. See
   the still-open connectivity item above for the current framing.
+
+- [NEEDS_ANALYST] T-005's access-status discrepancy: guideline-risk reported the Taiwan STS 2026
+  consensus (DOI 10.1016/j.jfma.2026.04.111) as open-access/CC-licensed; safety-pharmacology
+  independently found the same DOI but describes it as abstract-level-only/paywalled. Both peers
+  verified the same source and disagree on accessibility — needs reconciliation before Wave 2
+  full-text work assumes either. See `02_SOURCE-INVENTORY.md` T-005 row.
+
+- [NEEDS_ANALYST] Two internal-consistency flags **within `Tonvasca_2026.md` itself** (not this
+  project's error to fix, since the file is read-only — informational only): a superscript/reference
+  mismatch at line 2796, and citation #33 (Chou MT 2022) printed in two different citation-string
+  formats at different points in the deck. Relevant only if/when the PI revises the original slide
+  source.
+
+- [NEEDS_SOURCE] Citation routing fragments (T-011) from `Tonvasca_2026.md`'s closing summary slide:
+  author-surname fragments "Mach F," "Huang PH," "Chen PS," "ADA," "Masana L" (likely duplicates of
+  already-catalogued #25/#29/#32/#34/#35 — needs guideline-risk confirmation, not new rows without
+  it) and "Katzmann JL," "Corsini A" (no prior match, likely genuinely new — routed to
+  trials-efficacy for identification). Full citations not yet in the Director's hands; the detail
+  safety-pharmacology recorded lives in its own unmerged worktree, unreachable by the Director.
+
+- [NEEDS_SOURCE] Citation #33's (Chou MT 2022, Phase III FDC trial) own AE/CK/liver-enzyme detail
+  tables remain unverified — paywalled, per safety-pharmacology. Do not cite specific AE/CK/liver
+  numbers from this paper until full text is obtained (Wave 2). K-924/Japan trials (T-004a/T-004b)
+  provide a same-drug-combination but different-population substitute, explicitly tagged `INDIRECT
+  EVIDENCE` for Taiwan-population claims — see `02_SOURCE-INVENTORY.md` T-004b row.
+
+- [NEEDS_SOURCE, Wave 2] safety-pharmacology's own unresolved-questions.md (unreachable in its
+  unmerged worktree) reportedly also flags: CKD/elderly FDC safety subgroup data, BCRP-mediated DDI
+  numbers, and clarithromycin-specific DDI data as still missing. Carried forward here since the
+  Director cannot read the source file directly; ask safety-pharmacology to restate detail when its
+  worktree is consolidated or on request.
 
 ## Still unverified (carried forward, unchanged)
 
