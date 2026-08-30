@@ -121,15 +121,23 @@ significantly — consolidating four separate worktrees (Director's, guideline-r
 efficacy's, safety-pharmacology's) into one coherent `main`. See escalation below and the report
 delivered to the PI this turn.
 
+## Update — Wave 1 substantive work essentially complete for all three specialists
+
+T-003, T-010 full detail received and entered. T-011 fully resolved (6 duplicates, 2 genuinely new:
+T-012 → trials-efficacy, T-013 → safety-pharmacology's own queue). safety-pharmacology declined the
+Director's local-commit suggestion, correctly citing its own task instructions and framing this as
+a PI decision — logged `NEEDS_PI`, respected, not re-raised. Two items now waiting on
+guideline-risk's reply: T-005's access-status contradiction, and whether a PII-format citation
+duplicates row #35.
+
 ## Pending (Wave 1 exit / Gate 1 criteria)
 
-- T-005's access-status discrepancy (guideline-risk: open-access; safety-pharmacology: paywalled) —
-  needs reconciliation.
-- T-011 routing fragments — full citations and duplicate-vs-new determination, from
-  safety-pharmacology and guideline-risk respectively.
-- T-003, T-010 exact citation/figure detail from safety-pharmacology (currently only has summary
-  figures from its message).
-- safety-pharmacology to at least locally commit its worktree (requested; not yet confirmed done).
+- guideline-risk's answers on T-005 access status and the possible #35 duplicate.
+- trials-efficacy's verification of T-012 (Katzmann JL 2022).
+- safety-pharmacology's own verification of T-013 (Corsini A 2011, self-queued).
+- PI decision on whether to relax the "no commit" instruction for safety-pharmacology's role.
+- The multi-worktree consolidation (four branches, three different commit/push states) — still the
+  single biggest blocker to calling this repo's `main` authoritative and current.
 - PI decision on the Sydhom framing gap (Decision 2026-08-31-06) and the research_hub/Sci-Hub tool
   policy (Decision 2026-08-31-08).
 - PI decision on `50_MANUSCRIPT/` ownership (Decision 2026-08-31-04) — not a Wave 1 blocker.
