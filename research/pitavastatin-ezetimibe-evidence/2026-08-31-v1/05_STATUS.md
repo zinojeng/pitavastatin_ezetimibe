@@ -75,14 +75,18 @@ All cross-session exchanges logged verbatim in `90_CROSS-SESSION-LOG/`.
 
 This Director session is a background job isolated in a git worktree (`.claude/worktrees/wave0-init`,
 branch `worktree-wave0-init`, commit history through Wave 1 kickoff). `main` already contains Wave 0
-content (apparently merged there outside this session). This session's own `git push` to `origin` has
-been **blocked twice** by the environment's permission classifier. By contrast,
-`pit-eze-guideline-risk`'s equivalent branch pushed to `origin` successfully, and
-`pit-eze-trials-efficacy` has not committed at all (also citing a git-operations restriction in its
-own task instructions). **There are now at least three unmerged pieces of work in play**
-(`worktree-wave0-init`, `origin/worktree-pit-eze-guideline-risk-wave1`, and whatever sits uncommitted
-in `worktree-trials-efficacy-wave1`) with no single session currently able to consolidate them into
-`main`. This needs a PI-level decision — see the report delivered to the user this turn.
+content (apparently merged there outside this session). This session's own `git push` to `origin`
+initially failed twice then succeeded on a third attempt (transient, not a hard block).
+`pit-eze-guideline-risk`'s branch also pushed to `origin` successfully.
+`pit-eze-trials-efficacy` made local commits only (no push, per its own task instructions).
+`pit-eze-safety-pharmacology` has not committed at all as of this update. **There are now four
+separate pieces of work in play** — `origin/worktree-wave0-init` (Director, pushed),
+`origin/worktree-pit-eze-guideline-risk-wave1` (pushed), `worktree-trials-efficacy-wave1` (committed
+locally only), and `worktree-safety-pharm-wave1` (uncommitted) — with no single session able to
+consolidate all four into `main`. Three of the four sessions have independently reported hitting
+this same worktree-isolation problem, unprompted. This looks like a structural property of how this
+multi-agent run was set up, not a one-off glitch — worth the PI's attention as a process issue for
+future runs, not just this one. See the report delivered to the user this turn.
 
 ## Update — citation follow-ups closed (both peers)
 
@@ -96,10 +100,36 @@ Director's "9 vs 3" bookkeeping question. All entered into `02_SOURCE-INVENTORY.
 citations need independent verification (owner: safety-pharmacology), T-006's duplicated "Wang CY"
 author entry needs a primary-source check before verbatim use.
 
+## Update — all three specialists have now reported Wave 1 complete
+
+- **safety-pharmacology-intelligence** — `READY_WITH_PENDING_ITEMS`. All 16 assigned legacy
+  citations verified (zero mismatches). Completed the deferred read of `Tonvasca_2026.md`'s
+  remainder, found more citations (routed as T-011, several likely duplicates of already-catalogued
+  ones — needs guideline-risk confirmation) and 2 informational flags on the legacy source's own
+  internal inconsistencies. Identified Singh H et al. 2024 as the real T-003 source (Decision
+  2026-08-31-10 — must never be conflated with Sydhom 2024/citation #26). Found the FDA/DailyMed
+  Livalo label DDI matrix (T-010). Flagged citation #33's own AE/CK/liver tables as unverified/
+  paywalled, substituted K-924 (Japan) data tagged `INDIRECT EVIDENCE` for population/product
+  reasons. Corrected citation #23's mislabeled topic description. Independently corroborated T-005
+  but with an access-status discrepancy vs. guideline-risk's report (flagged, unresolved). **Also
+  hit the worktree-isolation-blocks-shared-checkout problem** — output lives uncommitted in
+  `.claude/worktrees/safety-pharm-wave1/`, not yet in git at all.
+
+**All three domain specialists have now reported Wave 1 substantially complete.** Remaining before
+Gate 1 can be formally called: the citation-routing/access-status loose ends below, and — more
+significantly — consolidating four separate worktrees (Director's, guideline-risk's, trials-
+efficacy's, safety-pharmacology's) into one coherent `main`. See escalation below and the report
+delivered to the PI this turn.
+
 ## Pending (Wave 1 exit / Gate 1 criteria)
 
-- safety-pharmacology-intelligence's completion report (including T-009 verification once it picks
-  that up).
+- T-005's access-status discrepancy (guideline-risk: open-access; safety-pharmacology: paywalled) —
+  needs reconciliation.
+- T-011 routing fragments — full citations and duplicate-vs-new determination, from
+  safety-pharmacology and guideline-risk respectively.
+- T-003, T-010 exact citation/figure detail from safety-pharmacology (currently only has summary
+  figures from its message).
+- safety-pharmacology to at least locally commit its worktree (requested; not yet confirmed done).
 - PI decision on the Sydhom framing gap (Decision 2026-08-31-06) and the research_hub/Sci-Hub tool
   policy (Decision 2026-08-31-08).
 - PI decision on `50_MANUSCRIPT/` ownership (Decision 2026-08-31-04) — not a Wave 1 blocker.

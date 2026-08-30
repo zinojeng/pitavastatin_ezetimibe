@@ -181,6 +181,31 @@ report; Director has not independently re-verified)."
 
 ---
 
+## Decision 2026-08-31-10
+
+**Issue:** safety-pharmacology-intelligence identified Singh H, et al. 2024 (PMID 39587804) as the
+actual source behind `pitavastatin topic.md`'s generic reference to "a 2024 systematic review/
+meta-analysis" on pitavastatin's new-onset-diabetes (NODM) risk vs. atorvastatin/rosuvastatin (RR
+0.86 vs. atorvastatin, RR 0.77 vs. rosuvastatin, per its report). This is a **different 2024
+publication** from citation #26 (Sydhom P, et al., BMC Cardiovasc Disord. 2024;24(1):660), which
+covers a different comparison (low/moderate-statin+ezetimibe vs. high-intensity statin monotherapy,
+not pitavastatin-specific NODM).
+
+**Decision:** `VERIFIED_AND_REPLACE` — T-003 in `02_SOURCE-INVENTORY.md` updated from "not yet
+located" to located, citing Singh H et al. 2024 specifically. Explicit rule going forward: **Singh
+2024 and Sydhom 2024 must never be conflated** in any `20_EVIDENCE/`, `40_SYNTHESIS/`, or manuscript
+output — they answer different Search Protocol items (item 3 glycemic outcomes vs. item 9/Level 2
+combination-strategy evidence respectively) and citing one for the other's claim would be a
+citation-misattribution error.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-003 row).
+
+**Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 1).
+
+---
+
 ## Decision 2026-08-31-08
 
 **Issue:** guideline-risk-intelligence reports that calling `mcp__research_hub__download_paper`
