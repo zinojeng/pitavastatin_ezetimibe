@@ -83,7 +83,7 @@ content directly (Runbook §34, Golden Rule 10).
 
 | Role | Reads | Writes |
 |---|---|---|
-| Research Director | everything | `00_RUN-MANIFEST.md`, `01_RESEARCH-CHARTER.md`, `03_DECISION-LOG.md`, `04_OPEN-QUESTIONS.md`, `05_STATUS.md`, `40_SYNTHESIS/`, `30_METHODS/shared/` |
+| Research Director | everything | `00_RUN-MANIFEST.md`, `01_RESEARCH-CHARTER.md`, `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md`, `04_OPEN-QUESTIONS.md`, `05_STATUS.md`, `40_SYNTHESIS/`, `30_METHODS/shared/` |
 | guideline-risk-intelligence | verified sources, other specialists' accepted outputs | `10_DATA/guideline-risk/`, `20_EVIDENCE/guideline-risk/`, `30_METHODS/guideline-risk/` |
 | trials-efficacy-intelligence | verified sources, other specialists' accepted outputs | `10_DATA/trials-efficacy/`, `20_EVIDENCE/trials-efficacy/`, `30_METHODS/trials-efficacy/` |
 | safety-pharmacology-intelligence | verified sources, other specialists' accepted outputs | `10_DATA/safety-pharmacology/`, `20_EVIDENCE/safety-pharmacology/`, `30_METHODS/safety-pharmacology/` |
@@ -93,7 +93,9 @@ content directly (Runbook §34, Golden Rule 10).
 `50_MANUSCRIPT/` has no owning persistent role yet — see `04_OPEN-QUESTIONS.md`. No role may write
 outside its own owned paths. Do not edit another role's `10_DATA/`/`20_EVIDENCE/`/`30_METHODS/`
 subfolder; if you need something changed there, send a cross-session message to that role's owner
-instead of editing it directly.
+instead of editing it directly. Specialists never edit `02_SOURCE-INVENTORY.md` directly — report
+per-citation verification findings to the Director via the message schema (§6) and the Director
+updates it (Decision 2026-08-31-05).
 
 ---
 

@@ -82,3 +82,15 @@ be called here.
    proceed on the fallback source set and record the gap — see `04_OPEN-QUESTIONS.md`).
 2. `50_MANUSCRIPT/` ownership undecided — no dedicated manuscript/presentation-intelligence
    persistent role has been created for this run (see `04_OPEN-QUESTIONS.md`).
+
+## Wave 1 update (2026-08-31, reported by safety-pharmacology-intelligence, not yet independently
+re-tested by the Director — logged additively, Wave 0 record above left unchanged per Golden Rule 8)
+
+safety-pharmacology-intelligence reports `research_hub` and `llamaparse` ARE reachable in its own
+session (via ToolSearch), contrary to the Director's Wave 0 ENOENT failures for the same two
+servers. This is plausibly per-session/per-process MCP state rather than a fixed environment fact
+(e.g., a missing binary/venv on the Director's process specifically). `openevidence` remains down
+(CONNECTION_CLOSED) in both sessions. Treat the Wave 0 `research_hub`/`llamaparse` failure note above
+as **session-specific, not project-wide**, until the Director re-tests directly — do not assume
+either server is unavailable to your own session without checking. `openevidence` should still be
+treated as currently unavailable everywhere until a session reports otherwise.
