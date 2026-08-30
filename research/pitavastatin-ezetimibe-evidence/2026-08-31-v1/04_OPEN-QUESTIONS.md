@@ -60,10 +60,6 @@ that resolved them.
   paraphrases it, with its own "old 2018 guideline" caveat) — but the primary documents' own exact
   wording remains unconfirmed. The Gate-2 LlamaParse requirement itself is already satisfied (both
   required demonstrations succeeded), so this is a content gap, not a Gate 2 blocker.
-- [NEEDS_SOURCE, dispatched to guideline-risk, next small task] #35 (2022 Taiwan primary-prevention
-  companion guideline) — not yet attempted in Wave 2 (budget ran out); same publisher family
-  (JFMA/tas.org.tw) as guideline-risk's two Wave 2 successes (#30, #32), reasonable chance of a
-  similar PMC path.
 - [NEEDS_ANALYST] T-009's four adherence citations (Lin YW 2024, Su M 2025, van Driel ML 2016,
   Religioni U 2025) — full citations re-sent to safety-pharmacology (Decision 2026-08-31-26) after
   it flagged never receiving them in full; still not independently verified by anyone. Assigned to
@@ -158,11 +154,19 @@ that resolved them.
 - [RESOLVED, partial] BCRP mechanism — T-019/T-020 corroborate an OATP1B1-predominant mechanism;
   the pitavastatin-specific quantitative fold-change number remains an open gap (see Open items
   above).
-- [RESOLVED — SUCCESS] Item 6 (numeric-threshold confirmation) 2/5 complete: 2023 TSC CCS (#30) and
-  ADA 2025 (#32) full text obtained and content-verified by guideline-risk, including a genuine
-  threshold difference caught (TSC's <50 mg/dL extreme-risk vs. ACC/AHA's <55 mg/dL very-high-risk
-  — do not conflate). T-021 (Katzmann & Laufs 2026 review) obtained as a partial substitute for the
-  still-blocked ESC 2025 primary document. See Decision 2026-08-31-23.
+- [RESOLVED — SUCCESS] Item 6 (numeric-threshold confirmation), final: **3/5 complete**: 2023 TSC CCS
+  (#30) and ADA 2025 (#32) full text obtained and content-verified by guideline-risk, including a
+  genuine threshold difference caught (TSC's <50 mg/dL extreme-risk vs. ACC/AHA's <55 mg/dL
+  very-high-risk — do not conflate). T-021 (Katzmann & Laufs 2026 review) obtained as a partial
+  substitute for the still-blocked ESC 2025 primary document. See Decision 2026-08-31-23. **#35
+  (Huang PH et al. 2022 Taiwan primary-prevention guideline) subsequently completed** — obtained
+  lawfully via the Taiwan Society's own tas.org.tw mirror (no PMC deposit; same pattern that worked
+  for #30/#32), CC BY 4.0 confirmed verbatim in the parsed text, four risk-stratified
+  primary-prevention LDL-C targets extracted (<100/<115/<130/<160 mg/dL) with COR/LOE grading —
+  already reflected in `02_SOURCE-INVENTORY.md` row #35. Verified at a post-Gate-2 checkpoint,
+  2026-08-31 — see `90_CROSS-SESSION-LOG/2026-08-31_post-gate2-checkpoint-row35.md` and Decision
+  2026-08-31-28. **2/5 remain blocked** (T-006 Taiwan Lp(a) 2026, #34 the 2019 ESC/EAS base guideline
+  — neither has a PMC copy, no equivalent mirror exists for #34). No target left unattempted.
 - [RESOLVED — CONFIRMED BLOCKED] Taiwan STS 2026 (T-005), 2026 ACC/AHA (#28), ESC 2025 Focused
   Update (T-007) — all confirmed `BLOCKED_FOR_SOURCE` by guideline-risk (Cloudflare bot-challenge,
   corroborated via Europe PMC metadata). See the still-open PI question above about direct PDF

@@ -146,7 +146,14 @@ source addresses the combination product), BCRP fold-change number, Chou 2022's 
   check (empty PMC linkset, not an OA-flag inference); obtained/content-verified 2023 TSC CCS (#30)
   and ADA 2025 (#32) full text, catching a genuine cross-guideline LDL-C threshold difference; found
   a partial ESC-2025-wording substitute (T-021, with an important "old 2018 guideline" caveat
-  preserved). Item 6 now 2/5 complete, 2/5 confirmed blocked, 1/5 (#35) queued next.
+  preserved). Item 6 was 2/5 complete, 2/5 confirmed blocked, 1/5 (#35) queued next at the time of
+  this round. **Post-Gate-2 update (2026-08-31, Director checkpoint — see
+  `90_CROSS-SESSION-LOG/2026-08-31_post-gate2-checkpoint-row35.md`): #35 (Huang PH et al. 2022 Taiwan
+  primary-prevention guideline) subsequently obtained** via the same tas.org.tw mirror pattern that
+  worked for #30/#32, lawfully (CC BY 4.0, confirmed verbatim in parsed text), full COR/LOE-graded
+  recommendation text extracted. **Item 6 final: 3/5 complete, 2/5 confirmed blocked (T-006, #34) —
+  no target left unattempted.** Already reflected in `02_SOURCE-INVENTORY.md` row #35; this line was
+  stale until the post-Gate-2 checkpoint corrected it.
 - **trials-efficacy**: independently re-confirmed Chou 2022 (#33) blocked, converging with
   guideline-risk's result via a different method; found two new candidate sources (T-023, a Taiwan
   real-world FDC cohort; **T-024, possibly the first pitavastatin+ezetimibe-FDC-specific
