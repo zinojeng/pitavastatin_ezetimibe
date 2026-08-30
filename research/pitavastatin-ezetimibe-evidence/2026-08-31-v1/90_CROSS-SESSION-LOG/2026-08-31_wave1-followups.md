@@ -47,7 +47,20 @@ not located and received no TE-id). No inconsistency, just under-explained origi
 → `02_SOURCE-INVENTORY.md` T-004a/T-004b updated with full citations; `04_OPEN-QUESTIONS.md`
 updated (research_hub disclosure and worktree-commit items marked resolved/no-action-needed).
 
+## trials-efficacy-intelligence — closing acknowledgment (IN)
+
+Added Q6 to its unresolved-questions.md: T-004a's abstract confirms the 4-arm design unambiguously
+(N=293; pitavastatin 2mg/4mg/K-924 LD/K-924 HD) — no contradiction with the Director's earlier
+title-framing observation — but the exact statistical comparison structure across arms (pooled vs.
+pairwise) needs full-text before `40_SYNTHESIS/` cites dose-pair significance. Added the 9-vs-3
+coverage breakdown to `search-log.md`. Committed locally (`fc9af43`, no push). Standing by.
+
+## Director reply (OUT)
+
+Acknowledged; no further action needed from trials-efficacy until Wave 2 dispatch or worktree
+consolidation.
+
 ## Note
 
-No formal Director reply sent yet to trials-efficacy's latest message as of this log entry — see
-the user-facing report for this turn for what's still outstanding.
+Both guideline-risk-intelligence and trials-efficacy-intelligence are now fully caught up and
+standing by. Only safety-pharmacology-intelligence's Wave 1 completion report is still outstanding.
