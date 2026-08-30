@@ -206,6 +206,35 @@ citation-misattribution error.
 
 ---
 
+## Decision 2026-08-31-11
+
+**Issue:** trials-efficacy-intelligence reports that `Tonvasca_2026.md`'s slide covering the
+Katzmann JL et al. 2022 (T-012/TE-010) FDC-vs-separate-pills comparison prints **two different,
+internally inconsistent cohort sizes** for the same comparison: the slide header states
+"n=6,429 FDC / n=533 separate pills," while the results table immediately below states
+"n=1,639 FDC / n=796 separate pills" — the relative ordering is even reversed between the two
+(6,429 > 533 vs. 1,639 < 796). The primary publication's own abstract gives only the overall study
+N (311,242, across all non-statin LLT types), not this specific subgroup's *n*, so trials-efficacy
+could not resolve which pair (or neither) is correct without the paper's own tables.
+
+**Decision:** `SOURCE_CONFLICT` — neither value is silently chosen or "corrected." Both are preserved
+exactly as printed, per the Numeric Integrity Rule (`CLAUDE.md` §9). **No *n* from this specific
+comparison may be cited in `20_EVIDENCE/`, `40_SYNTHESIS/`, or any manuscript output until Wave 2
+full-text acquisition of Katzmann 2022 resolves it.** The four already-verified percentage/p-value
+figures (28.4% vs. 19.4% LDL-C reduction, p<0.0001; 31.5% vs. 21.0% attainment) are unaffected and
+may be cited, since they were independently confirmed against the primary abstract and do not
+depend on which cohort-size pair is correct.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-012 row), `04_OPEN-QUESTIONS.md` (Wave 2 priority
+item added).
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31 (its own
+`20_EVIDENCE/trials-efficacy/unresolved-questions.md`, Q7).
+
+**Approved by:** Research Director (Wave 1).
+
+---
+
 ## Decision 2026-08-31-08
 
 **Issue:** guideline-risk-intelligence reports that calling `mcp__research_hub__download_paper`

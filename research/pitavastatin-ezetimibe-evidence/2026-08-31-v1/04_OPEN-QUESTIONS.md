@@ -114,6 +114,21 @@ resolved items, move them to a "Resolved" section at the bottom with a pointer t
   exact figures received from safety-pharmacology, 2026-08-31 — entered into
   `02_SOURCE-INVENTORY.md`.
 
+- [RESOLVED, Director's own earlier flag withdrawn] Row #35 / the PII-format Huang PH citation —
+  guideline-risk confirmed (2026-08-31) `Tonvasca_2026.md` prints this citation exactly **once**
+  (pre-print PII form), which it had already resolved to the full Crossref record now in row #35.
+  **Not** a Chou-MT-style dual-citation-format issue as the Director had speculated — that framing
+  is withdrawn. See `02_SOURCE-INVENTORY.md` row #35.
+
+- [RESOLVED, with honest caveat rather than a clean answer] T-005's apparent access-status
+  contradiction between guideline-risk and safety-pharmacology — guideline-risk re-examined its own
+  earlier "open access, CC-licensed" claim (2026-08-31) and corrected it: that was a landing-page
+  badge read via `tavily_extract`, not a confirmed full-text retrieval. Both specialists likely hit
+  the same abstract-level wall and described it differently, rather than genuinely disagreeing.
+  Commendable self-correction — flagged, not defended. Updated note in `02_SOURCE-INVENTORY.md`
+  T-005: "landing page displays Open Access/CC badges; full-text body not yet successfully
+  retrieved by any role." Wave 2 should confirm with a direct fetch against the actual article body.
+
 - [RESOLVED] trials-efficacy-intelligence's worktree (`worktree-trials-efficacy-wave1`) now has a
   local commit (`62db3f3`, on top of a pre-existing environment checkpoint commit `dc6ee2f`
   authored "Dr Tseng") — durably saved on disk even though not yet merged to `main`. Same
@@ -127,12 +142,6 @@ resolved items, move them to a "Resolved" section at the bottom with a pointer t
   2026-08-31-03) — reachable in at least two Wave 1 specialist sessions; appears session-specific
   rather than a fixed environment fact. `openevidence` remains down everywhere reported so far. See
   the still-open connectivity item above for the current framing.
-
-- [NEEDS_ANALYST] T-005's access-status discrepancy: guideline-risk reported the Taiwan STS 2026
-  consensus (DOI 10.1016/j.jfma.2026.04.111) as open-access/CC-licensed; safety-pharmacology
-  independently found the same DOI but describes it as abstract-level-only/paywalled. Both peers
-  verified the same source and disagree on accessibility — needs reconciliation before Wave 2
-  full-text work assumes either. See `02_SOURCE-INVENTORY.md` T-005 row.
 
 - [NEEDS_ANALYST] Two internal-consistency flags **within `Tonvasca_2026.md` itself** (not this
   project's error to fix, since the file is read-only — informational only): a superscript/reference
@@ -149,15 +158,6 @@ resolved items, move them to a "Resolved" section at the bottom with a pointer t
   needs to come from the PI directly to that session.** Its files remain safe in
   `.claude/worktrees/safety-pharm-wave1/` regardless (a worktree persists whether or not it has been
   committed to).
-
-- [NEEDS_ANALYST] Row #35 (Huang PH et al., 2022 Taiwan primary-prevention guideline, final
-  citation `J Formos Med Assoc. 2022;121(12):2393-2407`) may be the same underlying paper as a
-  citation appearing elsewhere in `Tonvasca_2026.md` in pre-print PII form
-  (`J Formos Med Assoc. 2022;S0929-6646(22)00215-7`) — flagged by cross-referencing
-  safety-pharmacology's T-011 report against the existing #35 row. If confirmed, this is another
-  instance of the legacy source citing the same paper in two different formats (same class of issue
-  already flagged for citation #33/Chou MT 2022) — not a new source, just another internal
-  consistency flag in the read-only legacy file.
 
 - [NEEDS_SOURCE] T-013 (Corsini A, et al. Curr Med Res Opin. 2011;27(8):1551-1562) — used in
   `Tonvasca_2026.md` to support the CYP3A4-independence framing for statin DDI risk.
@@ -183,6 +183,12 @@ resolved items, move them to a "Resolved" section at the bottom with a pointer t
   numbers, and clarithromycin-specific DDI data as still missing. Carried forward here since the
   Director cannot read the source file directly; ask safety-pharmacology to restate detail when its
   worktree is consolidated or on request.
+
+- [NEEDS_SOURCE, Wave 2 priority] Katzmann JL et al. 2022 (T-012/TE-010) full-text acquisition —
+  needed to resolve the internally-inconsistent cohort-size figures flagged in Decision
+  2026-08-31-11 (`n=6,429/533` vs. `n=1,639/796` for the same comparison in `Tonvasca_2026.md`).
+  trials-efficacy reports Crossref shows a Springer PDF URL, likely open access. No *n* from this
+  study may be cited until resolved.
 
 ## Still unverified (carried forward, unchanged)
 
