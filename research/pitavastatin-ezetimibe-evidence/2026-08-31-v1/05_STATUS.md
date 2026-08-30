@@ -5,104 +5,118 @@ Last updated: 2026-08-31 (Wave 1, Research Director)
 
 ## Current Gate
 
-**READY_FOR_NEXT_WAVE** (Gate 0 passed; Wave 1 now in progress — Gate 1 not yet reached)
+**READY_FOR_NEXT_WAVE** (Gate 0 passed; Wave 1 in progress — Gate 1 not yet reached)
 
 ## Wave
 
-1 — Source / Evidence Verification (in progress)
+1 — Source / Evidence Verification (in progress; 2 of 3 specialists report complete/near-complete)
 
 ## Completed — Wave 0
 
 - Repository initialized: `CLAUDE.md`, `README.md`, `.gitignore`, `docs/CROSS-SESSION-RESEARCH-RUNBOOK.md`.
-- Run directory created: `00_RUN-MANIFEST.md`, `01_RESEARCH-CHARTER.md`, `02_SOURCE-INVENTORY.md`,
-  `03_DECISION-LOG.md`, `04_OPEN-QUESTIONS.md`, `05_STATUS.md` (this file), and all mandated
-  subdirectories (`10_DATA/`, `20_EVIDENCE/`, `30_METHODS/`, `40_SYNTHESIS/`, `50_MANUSCRIPT/`,
-  `90_CROSS-SESSION-LOG/`) with per-role ownership placeholders and `99_FINAL-QA.md` skeleton.
-- Persistent roles defined and tailored to this clinical evidence review (Research Director,
-  guideline-risk-intelligence, trials-efficacy-intelligence, safety-pharmacology-intelligence,
-  independent-auditor) with full prompt templates in `CLAUDE.md` §14.
-- File ownership matrix, Wave/Gate rules, cross-session message schema, Evidence Hierarchy taxonomy,
-  Decision Taxonomy, MCP source policy (with explicit Sci-Hub prohibition), full-text/licensing
-  rule, and secrets rule all written into `CLAUDE.md`.
-- Prioritized Search Protocol (10 items) derived from `pitavastatin topic.md` and written into
-  `CLAUDE.md` §5, each pre-assigned to an owning specialist.
-- Preliminary source catalog of `Tonvasca_2026.md`'s ~33 embedded citations, assigned by domain to
-  the owning Wave 1 specialist, in `02_SOURCE-INVENTORY.md`.
-- Legacy input files (`pitavastatin topic.md`, `Claude_Code_Cross-Session_Research_完整建議與經驗_Runbook.md`,
-  `Tonvasca_2026.md`) preserved unmodified at repo root; checksummed in `00_RUN-MANIFEST.md`.
+- Run directory created with all mandated files/subdirectories (see `00_RUN-MANIFEST.md`).
+- Persistent roles, file ownership matrix, Wave/Gate rules, message schema, Evidence Hierarchy and
+  Decision Taxonomies, MCP source policy, licensing/secrets rules, and prompt templates written into
+  `CLAUDE.md`.
+- Prioritized Search Protocol (10 items) written into `CLAUDE.md` §5.
+- Preliminary source catalog of `Tonvasca_2026.md`'s ~33 embedded citations in `02_SOURCE-INVENTORY.md`.
+- Legacy input files preserved unmodified at repo root; checksummed in `00_RUN-MANIFEST.md`.
 
-## In progress — Wave 1 (as of this update)
+## Wave 1 progress
 
-All three domain specialists are online and confirmed reachable via `ListAgents`
-(`pit-eze-guideline-risk`, `pit-eze-safety-pharmacology`, `pit-eze-trials-efficacy`, all status
-`busy`), and this session is confirmed addressable as `pit-eze-research-director`.
+All three domain specialists online and confirmed reachable (`pit-eze-guideline-risk`,
+`pit-eze-safety-pharmacology`, `pit-eze-trials-efficacy`); this session confirmed addressable as
+`pit-eze-research-director`.
 
-- **guideline-risk-intelligence** — sent `CROSS_SESSION_TEST`, confirmed orientation reading
-  complete, scope confirmed against `CLAUDE.md` §2.2/§5 and `02_SOURCE-INVENTORY.md` citations
-  #1,2,17,18,24,27,28,29,30,31,32; also reading the previously-unread `Tonvasca_2026.md` remainder
-  (lines 1795–2811). Director acknowledged and approved scope. Awaiting completion report with
-  `OUTPUT_PATHS`.
-- **safety-pharmacology-intelligence** — sent `CROSS_SESSION_TEST`, reports Wave 1 work already
-  underway on a task assignment received directly (not yet reconciled with Director). Director
-  acknowledged, confirmed the domain/citation mapping it expects (#3–16, 23, 26-joint) per
-  `CLAUDE.md` §2.4/§5, and asked it to confirm its actual assignment in its next report so the two
-  can be reconciled — **not yet confirmed**, tracked as a follow-up.
-- **trials-efficacy-intelligence** — shows `busy` in `ListAgents` (per safety-pharmacology's report
-  and Director's own check) but has not yet sent the Director a `CROSS_SESSION_TEST` or status
-  report directly. Per Runbook §32, the Director is waiting for it to report rather than
-  interrupting or duplicating its assumed-in-progress work. **No confirmed scope from this peer
-  yet.**
+- **guideline-risk-intelligence** — `READY_FOR_INTEGRATION`. All 11 assigned legacy citations
+  verified (1 DOI transcription error found and logged, Decision 2026-08-31-09). Read the full
+  previously-unread `Tonvasca_2026.md` remainder; found 2 new guideline citations (#34/#35) and a
+  4-citation adherence-epidemiology cluster (T-009, reassigned to safety-pharmacology). All three
+  previously-unlocated guideline Search Protocol targets (Taiwan STS 2026/T-005, Taiwan Lp(a)
+  2026/T-006, ESC 2025 Focused Update/T-007) now located and citation-verified. Flagged and
+  correctly handled a Sci-Hub compliance concern on `mcp__research_hub__download_paper` (Decision
+  2026-08-31-08 — interim project-wide restriction on that tool). Committed and **pushed to origin**
+  (`worktree-pit-eze-guideline-risk-wave1`) — not yet merged to `main`. Awaiting: full formatted
+  citations for #34/#35/T-005/T-006/T-007/T-009, and clarification of whether a second
+  tool-compliance concern (beyond the Sci-Hub one, already resolved) was meant to be flagged.
+- **trials-efficacy-intelligence** — `READY_WITH_PENDING_ITEMS`. Wave 1 verification complete for
+  Search Protocol items 5–9. Legacy HIJ-PROPER (T-001)/RACING (T-002) figures confirmed to match
+  primary publications exactly. Found two new sources (Tsujita 2023/T-004a, Ako 2024/T-004b) closing
+  the previously-unlocated 2mg-vs-4mg dose-comparison gap (Decision 2026-08-31-07). Flagged a source
+  conflict: Sydhom et al. 2024's (citation #26) clinical-outcome benefit is observational-pooled-only
+  per its own abstract, not RCT-pooled as `Tonvasca_2026.md`'s framing risks implying — routed
+  `NEEDS_PI` (Decision 2026-08-31-06). Three legacy citations (#20 CEPHEUS/Chiang 2016, #21
+  DYSIS-II/Gitt 2017, #25 Masana 2020) could not be located — flagged, not dropped. Output sits
+  **uncommitted** in its own isolated worktree (`worktree-trials-efficacy-wave1`) — asked to at
+  least locally commit. Awaiting: full citations for Tsujita 2023/Ako 2024; clarification on its
+  "9 verified" count vs. the 3 not-located legacy citations (bookkeeping question, not a blocker).
+- **safety-pharmacology-intelligence** — `READY_WITH_PENDING_ITEMS`. Confirmed scope (legacy
+  citations #3–16, 23, 26-joint; new-source discovery for items 3–5 approved as a Wave 1/2 blend
+  since it doesn't build on any unverified legacy claim). Deprioritized Lp(a)/item 10, correctly.
+  Reported `research_hub`/`llamaparse` reachable in its own session (logged additively in
+  `00_RUN-MANIFEST.md` without overwriting the Wave 0 record). Three sub-agent searches were in
+  progress as of its last report; notified of the new research_hub restriction (Decision
+  2026-08-31-08) and its new T-009 assignment. No completion report yet.
 
-Both received messages and both Director replies are logged verbatim in `90_CROSS-SESSION-LOG/`.
+All cross-session exchanges logged verbatim in `90_CROSS-SESSION-LOG/`.
 
-## Known process gap flagged during Wave 1 (for `03_DECISION-LOG.md` / `CLAUDE.md` follow-up)
+## Decisions logged this Wave (see `03_DECISION-LOG.md` for full text)
 
-`CLAUDE.md` §3's File Ownership Matrix does not list an explicit writer for
-`02_SOURCE-INVENTORY.md`. guideline-risk-intelligence correctly treated it as Director-owned/shared
-and said it will not edit it directly, reporting verification findings back to the Director instead.
-This is the safe default and is now the explicit rule (see Decision 2026-08-31-05) — the Director
-updates `02_SOURCE-INVENTORY.md`'s `verified?`/`superseded?` columns based on each specialist's
-reported findings, rather than specialists editing it directly, to avoid simultaneous-edit conflicts
-on a file three peers all touch.
+- 2026-08-31-05: `02_SOURCE-INVENTORY.md` is Director-owned; specialists report findings instead of
+  editing it directly. `CLAUDE.md` §3 patched.
+- 2026-08-31-06: Sydhom et al. 2024 RCT-vs-observational framing gap — `NEEDS_PI`.
+- 2026-08-31-07: Tsujita 2023 / Ako 2024 close Search Protocol item 5 (T-004) — `VERIFIED_AND_REPLACE`
+  (located-status only).
+- 2026-08-31-08: **Sci-Hub compliance** — `mcp__research_hub__download_paper` restricted
+  project-wide pending PI's final call. `CLAUDE.md` §10 patched. Flagged to PI directly.
+- 2026-08-31-09: Citation #27 DOI transcription error — `VERIFIED_AND_REPLACE` (DOI field only).
 
-## Sync-state caveat (operational, not a research blocker)
+## Sync-state caveat (operational, not a research blocker) — escalated to PI
 
-This Director session is running as a background job isolated in a git worktree
-(`.claude/worktrees/wave0-init`, branch `worktree-wave0-init`). The shared checkout the three
-specialist peers actually read from (`main`, at commit `3d63075`) already contains all Wave 0
-content — apparently merged there outside this session, since this session's own attempt to `git
-push` its branch to `origin` was blocked by the environment's permission classifier. **Any further
-edit this session makes (including this Wave 1 status update) lands only on the isolated
-`worktree-wave0-init` branch and will not be visible to the peer sessions reading `main` until it is
-merged there again.** Flagged to the PI; see the Wave 1 report delivered to the user.
+This Director session is a background job isolated in a git worktree (`.claude/worktrees/wave0-init`,
+branch `worktree-wave0-init`, commit history through Wave 1 kickoff). `main` already contains Wave 0
+content (apparently merged there outside this session). This session's own `git push` to `origin` has
+been **blocked twice** by the environment's permission classifier. By contrast,
+`pit-eze-guideline-risk`'s equivalent branch pushed to `origin` successfully, and
+`pit-eze-trials-efficacy` has not committed at all (also citing a git-operations restriction in its
+own task instructions). **There are now at least three unmerged pieces of work in play**
+(`worktree-wave0-init`, `origin/worktree-pit-eze-guideline-risk-wave1`, and whatever sits uncommitted
+in `worktree-trials-efficacy-wave1`) with no single session currently able to consolidate them into
+`main`. This needs a PI-level decision — see the report delivered to the user this turn.
+
+## Update — citation follow-ups closed (both peers)
+
+guideline-risk-intelligence supplied full formatted citations for #34, #35, T-005 (Taiwan STS
+2026), T-006 (Taiwan Lp(a) 2026), T-007 (ESC 2025 Focused Update), and T-009 (adherence cluster,
+explicitly flagged copied-not-verified). trials-efficacy-intelligence supplied full Crossref-sourced
+citations for T-004a (Tsujita 2023)/T-004b (Ako 2024), disclosed one no-op pre-restriction
+research_hub call (no policy issue), confirmed a local commit in its own worktree, and resolved the
+Director's "9 vs 3" bookkeeping question. All entered into `02_SOURCE-INVENTORY.md`; see
+`90_CROSS-SESSION-LOG/2026-08-31_wave1-followups.md`. Two new `NEEDS_ANALYST` items opened: T-009
+citations need independent verification (owner: safety-pharmacology), T-006's duplicated "Wang CY"
+author entry needs a primary-source check before verbatim use.
 
 ## Pending (Wave 1 exit / Gate 1 criteria)
 
-- Re-confirm `research_hub` / `llamaparse` / `openevidence` MCP connectivity (all three failed to
-  connect during Wave 0; see `00_RUN-MANIFEST.md` and Decision 2026-08-31-03) — not yet re-checked
-  by any peer as of this update.
-- guideline-risk-intelligence, safety-pharmacology-intelligence, and trials-efficacy-intelligence
-  each complete their Wave 1 verification pass and report back with `OUTPUT_PATHS`.
-- safety-pharmacology-intelligence's exact task assignment reconciled with the Director's expected
-  scope (see above).
-- trials-efficacy-intelligence's scope/status confirmed directly with the Director.
-- Director updates `02_SOURCE-INVENTORY.md` (`verified?`/`superseded?` columns) from each peer's
-  reported findings once received.
-- PI decision still needed on whether to create a manuscript/presentation-intelligence role for
-  `50_MANUSCRIPT/` (Decision 2026-08-31-04) — not a Wave 1 blocker, but should be resolved before
-  Wave 3.
-- Worktree/main sync gap above resolved (this branch merged into `main` again) so Director-side
-  Wave 1 updates are actually visible to peers.
+- safety-pharmacology-intelligence's completion report (including T-009 verification once it picks
+  that up).
+- PI decision on the Sydhom framing gap (Decision 2026-08-31-06) and the research_hub/Sci-Hub tool
+  policy (Decision 2026-08-31-08).
+- PI decision on `50_MANUSCRIPT/` ownership (Decision 2026-08-31-04) — not a Wave 1 blocker.
+- Consolidation of the three unmerged worktrees into `main` (see Sync-state caveat above).
+- Re-confirm `openevidence` connectivity (still down everywhere reported); `research_hub`/
+  `llamaparse` connectivity appears session-specific, not a fixed fact — no single re-test needed,
+  each session should check its own.
 
 ## Blocked
 
-None at the repository-structure level. MCP-connectivity items remain open questions
-(`04_OPEN-QUESTIONS.md`). The worktree/main sync gap above is an operational blocker on the
-Director's own write visibility, not on the specialists' in-progress work.
+None at the repository-content level — all three specialists are actively producing verified,
+well-provenanced findings. The **sync/consolidation gap** above is an operational blocker on making
+Director-side and specialist-side Wave 1 output durable and visible across sessions; it does not
+block the specialists' own in-progress work, which continues in their respective worktrees.
 
 ## Next action
 
-Director awaits: (a) safety-pharmacology-intelligence's scope confirmation, (b)
-trials-efficacy-intelligence's first report, (c) all three specialists' Wave 1 completion reports.
-PI: resolve the worktree/main sync gap (merge `worktree-wave0-init` into `main` again, or move this
-Director session out of worktree isolation) so ongoing Director updates reach the shared checkout.
+Director awaits safety-pharmacology's completion report and the two specialists' outstanding
+citation strings. PI: resolve the multi-worktree consolidation gap (merge the three branches into
+`main`, or grant push permission to the blocked sessions) and make the two `NEEDS_PI` calls above.

@@ -260,10 +260,26 @@ obtained full text only).
 
 **Explicitly prohibited:** Sci-Hub or any other unauthorized-access source, for any purpose, under
 any framing. The `scihub` MCP tool is present in this environment's tool list but **must not be
-invoked** by any role in this project. Do not use `download_scihub` in `paper-search` either. If a
+invoked** by any role in this project. Do not use `download_scihub` in `paper-search`, and do not
+set `use_scihub`/any similar opt-in flag on `paper-search`'s `download_with_fallback` either. If a
 needed full text is not lawfully obtainable (no institutional/OA access, Unpaywall has no OA
 location, publisher blocks it), record it as `BLOCKED_FOR_SOURCE` in `04_OPEN-QUESTIONS.md` — do
 not route around the block.
+
+**Interim restriction, added 2026-08-31 (Wave 1, Decision 2026-08-31-08):**
+`mcp__research_hub__download_paper` must **not** be called by any role in this project until further
+notice. guideline-risk-intelligence discovered that this tool's own internal multi-source search
+includes Sci-Hub with no exposed parameter to disable it (confirmed via the tool's own response text
+listing "ArXiv, CrossRef, SSRN, Sci-Hub, and others" as sources it searches) — unlike
+`download_with_fallback`, it offers no `use_scihub`-style opt-out to decline that source. Even though
+no Sci-Hub-sourced content has entered this repo (the one call made returned nothing), invoking a
+tool that queries Sci-Hub as part of its own internal fan-out is treated as falling under the "for
+any purpose, under any framing" prohibition above. `research_hub`'s plain metadata/discovery tools
+(e.g. `search_papers`) remain permitted — the restriction is on the *download* tool specifically.
+Full text must instead come from `paper-search`'s per-database download tools, direct
+publisher/PMC/Unpaywall OA links, or `llamaparse` on a file already lawfully obtained. If this
+leaves a source unobtainable, record it `BLOCKED_FOR_SOURCE` rather than falling back to the
+restricted tool.
 
 **Connectivity note as of Wave 0 (2026-08-31):** `research_hub`, `llamaparse`, and `openevidence`
 failed to connect in this session (binary/venv not found, or connection closed — see
