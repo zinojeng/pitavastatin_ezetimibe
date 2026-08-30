@@ -44,3 +44,15 @@ Wave 2.
 Output paths: `10_DATA/guideline-risk/citation-verification-table.md`,
 `20_EVIDENCE/guideline-risk/evidence-map.md`, `20_EVIDENCE/guideline-risk/unresolved-questions.md`,
 `30_METHODS/guideline-risk/search-log.md`, `30_METHODS/guideline-risk/fulltext-manifest.md`.
+
+## Follow-up note (2026-08-31): fulltext-manifest.md audited for Huang 2022 (#35) entry
+
+Ran a narrow verification pass on the Huang PH et al. 2022 Taiwan primary-prevention guideline
+full-text artifacts referenced in `wave2-item6-extraction.md` §D (commit `d5e5131`), which had never
+been given its own manifest entry. Confirmed independently, this session: DOI/PMID resolve and match
+via Europe PMC REST API; SHA-256 of both the PDF and parsed markdown recomputed and match the values
+recorded at extraction time; the CC BY 4.0 license statement is present verbatim, twice, in the
+parsed text itself (not merely asserted); both files remain gitignored and untracked (`git
+check-ignore -v`, `git ls-files`); LlamaParse output is clean and well-formed (740 lines, no
+corruption). Added a full structured entry to `30_METHODS/guideline-risk/fulltext-manifest.md`
+recording all of the above. No shared/other-role files touched.

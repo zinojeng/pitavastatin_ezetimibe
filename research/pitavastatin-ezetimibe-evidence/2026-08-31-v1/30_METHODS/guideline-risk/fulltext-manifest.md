@@ -45,6 +45,23 @@ genuinely open-access, directly-adjacent secondary source instead. See
 trials-efficacy-relevant finding (the REPRIEVE pitavastatin RCT, cited in that source's reference
 list) flagged for the Director to route.
 
+## Wave 2 item 6 update (2026-08-31) — Huang PH et al., "2022 Taiwan lipid guidelines for primary
+prevention" (#35)
+
+| Field | Value |
+|---|---|
+| Citation | Huang PH, Lu YW, Tsai YL, Wu YW, Li HY, Chang HY, Wu CH, Yang CY, Tarng DC, Huang CC, Ho LT, Lin CF, Chien SC, Wu YJ, Yeh HI, Pan WH, Li YH, on behalf of the expert committee for the Taiwan Lipid Guidelines for Primary Prevention. "2022 Taiwan lipid guidelines for primary prevention." *J Formos Med Assoc* 2022 (in-press/uncorrected-proof version at time of this PDF; final print pagination 121(12):2393-2407 not reflected in this copy). |
+| DOI | `10.1016/j.jfma.2022.05.010` — independently re-confirmed this session via Europe PMC REST API (`search?query=DOI:10.1016/j.jfma.2022.05.010`), which returned PMID 35715290, matching title, journal (*J Formos Med Assoc*), pub year 2022. |
+| PMID | `35715290` (no PMC deposit; `elink` confirmed empty in Wave 2). |
+| Source URL (lawful, society-hosted) | `https://www.tas.org.tw/upload/files/1-s2_0-S0929664622002157-main%20(1).pdf` — Taiwan Society of Lipids and Atherosclerosis's own direct-hosted mirror, a different host from `sciencedirect.com` and not behind the Cloudflare bot-wall that blocks the publisher's own site directly. `HTTP 200`, `content-type: application/pdf`, no challenge headers observed. |
+| Retrieved | `2026-08-30T21:19:35Z` (UTC). |
+| License (verified against parsed full text, not assumed) | **CC BY 4.0.** Exact statement, appearing twice in the parsed text (byline footer and abstract footer): *"0929-6646/Copyright © 2022, Formosan Medical Association. Published by Elsevier Taiwan LLC. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/)."* |
+| Local files (gitignored, untracked — confirmed via `git check-ignore -v` and `git ls-files`, matched against `.gitignore:16` `**/20_EVIDENCE/**/fulltext/`) | `20_EVIDENCE/guideline-risk/fulltext/Huang_2022_Taiwan-primary-prevention-guideline.pdf` (800,604 bytes) and `...Huang_2022_Taiwan-primary-prevention-guideline.parsed.md` (89,459 bytes). |
+| SHA-256 (PDF) | `e18cf414bf3ea20e3d8a4467baf38300fde31fd3bedc3c095f5947b392567efc` — recomputed this session via `shasum -a 256` and matches the value recorded at extraction time (`20_EVIDENCE/guideline-risk/wave2-item6-extraction.md` §D). |
+| SHA-256 (parsed markdown) | `b7de41285d71dc0b7618d3059c389b87bdfaa89b1ebc8f142488b0a1d44cd583` — recomputed this session and matches. |
+| Parsing status | **Successful.** `mcp__llamaparse__parse_pdf_to_markdown` produced a clean, well-formed 740-line markdown file — correct headers, author/affiliation list, table of contents, and running section structure preserved; no visible OCR corruption or truncation; the CC BY license line is intact and legible in two places. |
+| `redistribution_ok` implication | CC BY 4.0 permits redistribution with attribution, but per `CLAUDE.md` §11 committing the PDF/parsed markdown to this repo still requires the Director to record `verified: true` / `license: CC BY 4.0` / `redistribution_ok: true` in `02_SOURCE-INVENTORY.md` (Director-owned file) before any such commit — not done by this role. Full text remains local-only, gitignored, and untracked in this repo as of this check. |
+
 ## Recommendation for Wave 2 (this role)
 
 1. Do **not** use `mcp__research_hub__download_paper` again until the Sci-Hub-inclusion concern
