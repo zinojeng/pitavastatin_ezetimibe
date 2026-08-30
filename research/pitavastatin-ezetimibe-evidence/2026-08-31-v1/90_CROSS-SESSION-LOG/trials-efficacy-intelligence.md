@@ -1,0 +1,153 @@
+# Cross-session log — trials-efficacy-intelligence
+
+Append-only. Newest entry at bottom (chronological), per CLAUDE.md §6.
+
+---
+
+```text
+[PROJECT]        pitavastatin-ezetimibe-evidence
+[RUN]             2026-08-31-v1
+[FROM]            trials-efficacy-intelligence
+[TO]              Research Director
+[TYPE]            CROSS_SESSION_TEST
+[FINDING]         ListAgents confirms reachable sockets for pit-eze-research-director (idle),
+                  pit-eze-guideline-risk (busy), pit-eze-safety-pharmacology (busy). No prior
+                  90_CROSS-SESSION-LOG entries found -- this session is first to log. MCP
+                  connectivity re-checked per CLAUDE.md §10: research_hub now CONNECTED
+                  (was down at Wave 0); llamaparse CONNECTED (tool available, not yet invoked);
+                  openevidence still CONNECTION_CLOSED (unchanged from Wave 0). paper-search,
+                  tavily, google-scholar all available.
+[IMPACT]          Proceeding into Wave 1 Source/Evidence Verification for trials-efficacy owned
+                  domain (CLAUDE.md §2.3, §5 items 5-9) using the confirmed-available lawful
+                  source set.
+[OUTPUT_PATHS]    30_METHODS/trials-efficacy/search-log.md
+[CONFIDENCE]      HIGH
+[STATUS]          READY_FOR_NEXT_WAVE
+```
+
+---
+
+```text
+[PROJECT]        pitavastatin-ezetimibe-evidence
+[RUN]             2026-08-31-v1
+[FROM]            trials-efficacy-intelligence
+[TO]              Research Director
+[TYPE]            EVIDENCE_UPDATE
+[QUESTION]        (none blocking)
+[FINDING]         Wave 1 Source/Evidence Verification complete for trials-efficacy owned domain.
+                  9 citations extracted and verified (TE-001..TE-009), covering all of Search
+                  Protocol items 6, 7, 8, 9 and most of item 5. Two NEW sources not previously
+                  catalogued in 02_SOURCE-INVENTORY.md were found and directly answer item 5
+                  ("pitavastatin 2 mg vs 4 mg", previously listed as T-004/not-yet-located):
+                  Tsujita K et al. J Atheroscler Thromb 2023 (Japan, 4-arm K-924 RCT: pitavastatin
+                  2mg/4mg/2mg+eze10/4mg+eze10, 12-wk LDL-C %change -39.5/-45.2/-51.4/-57.8) and
+                  its 52-week open-label extension (Ako J et al. J Atheroscler Thromb 2024).
+                  All numeric figures already quoted in pitavastatin topic.md and Tonvasca_2026.md
+                  for HIJ-PROPER (32.8% vs 36.9%, HR 0.89, 95% CI 0.76-1.04, P=0.152; sitosterol
+                  subgroup HR 0.71, 95% CI 0.56-0.91) and RACING (overall 9.1% vs 9.9%; DM
+                  subgroup 10.0% vs 11.3%, HR 0.89, 95% CI 0.64-1.22, P=0.460; LDL<70 79.9% vs
+                  66.8%; intolerance 5.2% vs 8.7%) were independently confirmed via PubMed against
+                  the primary publications and match EXACTLY -- no correction needed to these
+                  legacy figures. One SOURCE_CONFLICT candidate flagged: Tonvasca_2026.md cites
+                  Sydhom et al. 2024 (BMC Cardiovasc Disord) for "combination therapy benefit
+                  surpasses high-intensity statin" without the RCT-vs-observational qualifier the
+                  source paper's own abstract insists on (RCT-pooled analysis found NO significant
+                  clinical-endpoint difference; only observational-pooled analysis showed benefit).
+                  Three pre-existing citations (CEPHEUS/Chiang J Atheroscler Thromb 2016, DYSIS-II/
+                  Gitt Atherosclerosis 2017, Masana Curr Cardiol Rep 2020) could NOT be located as
+                  exact matches after multiple search attempts -- flagged, not silently corrected.
+[IMPACT]          Level 1/2/3 evidence-hierarchy framework in pitavastatin topic.md §6 is CONFIRMED
+                  unchanged after independent verification: Level 1 (LDL efficacy) strong and now
+                  better-supported with a new dose-comparison source; Level 2 (RACING) strong but
+                  remains indirect (rosuvastatin, not pitavastatin); Level 3 (HIJ-PROPER) remains
+                  the weakest link, no newer pitavastatin/ezetimibe-specific hard-outcome trial
+                  found in Wave 1. The Sydhom SOURCE_CONFLICT, if left uncorrected, risks
+                  overstating Level 2 evidence as RCT-grade when it is observational-grade for the
+                  specific clinical-outcome claim as worded in Tonvasca_2026.md.
+[ACTION]          Requesting Research Director: (1) log the Sydhom RCT-vs-observational framing
+                  gap in 03_DECISION-LOG.md and route to PI if a manuscript/slide-language decision
+                  is needed; (2) note the 2 new sources (Tsujita 2023, Ako 2024) for addition to
+                  02_SOURCE-INVENTORY.md's RCTs table (Director-owned file, not edited by this
+                  role); (3) be aware Wave 2 full-text acquisition is still pending for several
+                  sources (see fulltext-manifest.md) before AE/CK/liver-enzyme dose-comparison
+                  detail for Search Protocol item 5 can be considered complete.
+[OUTPUT_PATHS]    30_METHODS/trials-efficacy/search-log.md
+                  10_DATA/trials-efficacy/extraction-table.csv
+                  10_DATA/trials-efficacy/fulltext-manifest.md
+                  20_EVIDENCE/trials-efficacy/evidence-map.md
+                  20_EVIDENCE/trials-efficacy/unresolved-questions.md
+[CONFIDENCE]      HIGH (numeric verification against primary-publication PubMed abstracts);
+                  MODERATE (population-scope detail for TE-001 and full dose-arm safety detail for
+                  TE-002/003, both pending full-text access -- see unresolved-questions.md)
+[STATUS]          READY_WITH_PENDING_ITEMS
+```
+
+---
+
+```text
+[PROJECT]        pitavastatin-ezetimibe-evidence
+[RUN]             2026-08-31-v1
+[FROM]            trials-efficacy-intelligence
+[TO]              Research Director
+[TYPE]            STATUS_REPORT
+[FINDING]         (Consolidated log of the follow-up exchange after the EVIDENCE_UPDATE above,
+                  sent via SendMessage but not yet appended here.) Provided full formatted
+                  citations for Tsujita 2023 / Ako 2024 (added to search-log.md). Acknowledged
+                  Decision 2026-08-31-08 (no more calls to mcp__research_hub__download_paper) and
+                  disclosed one pre-restriction call for TE-001's DOI that returned nothing.
+                  Clarified the 9-vs-3 citation-count bookkeeping (4 verified-legacy + 5
+                  topic-notes-trials/new-finds = 9 TE-ids; 3 not-located legacy citations counted
+                  separately, non-overlapping) -- now also recorded in search-log.md. Logged Q6 in
+                  unresolved-questions.md per Director's observation: TE-002's journal title reads
+                  "vs. Pitavastatin" (2-arm phrasing) while its abstract confirms an unambiguous
+                  4-arm design (N=293) -- no actual contradiction, but exact statistical
+                  comparison structure across arms needs full-text confirmation before
+                  40_SYNTHESIS/ cites dose-pair significance. Ran local `git commit` only (no
+                  push) twice in my own worktree per Director's recommendation (commits 62db3f3,
+                  fc9af43 on branch worktree-trials-efficacy-wave1) -- discovered the original 6
+                  output files were already present in an earlier automatic checkpoint commit
+                  (dc6ee2f, authored "Dr Tseng") that this role did not itself run.
+[IMPACT]          No open items from this exchange remain outstanding on this role's side.
+[ACTION]          None pending.
+[OUTPUT_PATHS]    30_METHODS/trials-efficacy/search-log.md
+                  10_DATA/trials-efficacy/extraction-table.csv
+                  20_EVIDENCE/trials-efficacy/unresolved-questions.md
+                  10_DATA/trials-efficacy/fulltext-manifest.md
+[CONFIDENCE]      HIGH
+[STATUS]          READY_FOR_NEXT_WAVE
+```
+
+---
+
+```text
+[PROJECT]        pitavastatin-ezetimibe-evidence
+[RUN]             2026-08-31-v1
+[FROM]            trials-efficacy-intelligence
+[TO]              Research Director
+[TYPE]            EVIDENCE_UPDATE
+[FINDING]         Verified T-012 (Katzmann JL et al. Clin Res Cardiol 2022;111(3):243-252,
+                  DOI 10.1007/s00392-020-01740-8, PMID 32949286) per Director's assignment
+                  (source originally surfaced by safety-pharmacology). Journal/DOI/numbers
+                  (-28.4%/-19.4%/31.5%/21.0%) match Tonvasca_2026.md exactly -- VERIFIED.
+                  Disclosure: this citation was already read by this role during Wave 1
+                  (Tonvasca_2026.md lines 2296-2345, 2803) but was NOT separately catalogued at
+                  the time -- an oversight, now corrected as TE-010. Found a NUMERIC INTEGRITY
+                  issue while verifying: the same Tonvasca_2026.md slide states two different,
+                  internally inconsistent sample sizes for the same FDC-vs-separate-pills
+                  comparison (header: n=6,429/533; results table: n=1,639/796, with the relative
+                  size even reversed). PubMed abstract only gives the overall study N=311,242, not
+                  the ezetimibe-subgroup n, so neither pair can be confirmed or rejected without
+                  full text.
+[IMPACT]          Per Numeric Integrity Rule, both n-pairs preserved as-printed and flagged
+                  POSSIBLE_ERROR/NEEDS_ANALYST, not resolved by guessing. 40_SYNTHESIS/ should not
+                  cite either n from Tonvasca_2026.md for this study until Wave 2 full-text access
+                  resolves it.
+[ACTION]          Requesting: full-text acquisition of Katzmann 2022 be added to Wave 2 priority
+                  list (Crossref indicates a Springer pdf_url, possibly open access).
+[OUTPUT_PATHS]    10_DATA/trials-efficacy/extraction-table.csv (TE-010)
+                  20_EVIDENCE/trials-efficacy/evidence-map.md
+                  20_EVIDENCE/trials-efficacy/unresolved-questions.md (Q7)
+[CONFIDENCE]      HIGH (citation identity and the 4 key numbers); the n-mismatch itself is a
+                  confirmed discrepancy in the legacy source, not an uncertainty in my verification
+[STATUS]          READY_FOR_NEXT_WAVE
+```
