@@ -52,6 +52,27 @@ Wave 1「先驗證既有引用」的範圍）：
 用語是否修正）、或其他分類，並記錄於 `03_DECISION-LOG.md`（本角色無寫入權限，僅在此提出並於
 cross-session summary 中一併回報）。
 
+## Q7 [NEEDS_ANALYST] Katzmann et al. 2022（T-012, TE-010）— Tonvasca_2026.md 同一張投影片內兩組不同的樣本數自相矛盾
+
+Director 於 2026-08-31 轉來 safety-pharmacology 找到的 Katzmann JL et al. Clin Res Cardiol
+2022;111(3):243-252（T-012）交由本角色驗證。經 PubMed／Crossref 核對，期刊/卷期頁碼/DOI 與
+`Tonvasca_2026.md` 引用字串完全相符（VERIFIED），且投影片表格中的 −28.4% / −19.4% / 31.5% /
+21.0% 四個關鍵數字與原始論文 abstract 完全吻合。
+
+**但**在核對過程中發現：`Tonvasca_2026.md`（約 line 2313–2340）同一張投影片內，**標題**寫
+「Statin + ezetimibe FDC (n=6,429) vs Statin + ezetimibe separate pills (n=533)」，緊接著的
+**結果表格**卻寫「Statin + ezetimibe FDC (n=1,639)」與「Statin + Ezetimibe (As separate pills,
+n=796)」— 兩組樣本數彼此不一致，且大小關係甚至相反（6,429>533，但 1,639<796）。PubMed abstract
+僅提供全研究 N=311,242（涵蓋所有 LLT 種類的病人，非僅 ezetimibe-FDC-vs-separate-pills 次族群），
+無法從 abstract 層級判斷何者正確、甚至兩者皆非。
+
+**依 Numeric Integrity Rule（CLAUDE.md §9），本角色未做任何猜測性選擇或修正**，兩組數字皆已
+如實保留於 `extraction-table.csv`（TE-010 notes 欄），標記 `FLAG = POSSIBLE_ERROR`，
+`ACTION = NEEDS_ANALYST`。**需要**：Wave 2 取得論文全文（Springer 期刊，Crossref 回傳
+pdf_url 顯示可能為 open access）以核對原始表格的正確樣本數，並確認 `Tonvasca_2026.md` 這張投影片
+本身是否需要更正（若確認後者為誤植，依 CLAUDE.md §1 legacy file 不可編輯的規定，仍不可直接修改
+`Tonvasca_2026.md`，僅能在 `40_SYNTHESIS/`／未來簡報中使用經全文核實的正確數字並註明來源差異）。
+
 ## Q6 [NEEDS_SOURCE] TE-002（Tsujita 2023）標題「vs. Pitavastatin」與 abstract 描述之 4-arm 設計，表面用詞落差待全文確認
 
 Director 於 2026-08-31 review 時指出：TE-002 的期刊標題為「Efficacy and Safety of

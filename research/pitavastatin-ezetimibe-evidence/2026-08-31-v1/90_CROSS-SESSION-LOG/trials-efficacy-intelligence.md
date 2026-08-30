@@ -81,3 +81,73 @@ Append-only. Newest entry at bottom (chronological), per CLAUDE.md §6.
                   TE-002/003, both pending full-text access -- see unresolved-questions.md)
 [STATUS]          READY_WITH_PENDING_ITEMS
 ```
+
+---
+
+```text
+[PROJECT]        pitavastatin-ezetimibe-evidence
+[RUN]             2026-08-31-v1
+[FROM]            trials-efficacy-intelligence
+[TO]              Research Director
+[TYPE]            STATUS_REPORT
+[FINDING]         (Consolidated log of the follow-up exchange after the EVIDENCE_UPDATE above,
+                  sent via SendMessage but not yet appended here.) Provided full formatted
+                  citations for Tsujita 2023 / Ako 2024 (added to search-log.md). Acknowledged
+                  Decision 2026-08-31-08 (no more calls to mcp__research_hub__download_paper) and
+                  disclosed one pre-restriction call for TE-001's DOI that returned nothing.
+                  Clarified the 9-vs-3 citation-count bookkeeping (4 verified-legacy + 5
+                  topic-notes-trials/new-finds = 9 TE-ids; 3 not-located legacy citations counted
+                  separately, non-overlapping) -- now also recorded in search-log.md. Logged Q6 in
+                  unresolved-questions.md per Director's observation: TE-002's journal title reads
+                  "vs. Pitavastatin" (2-arm phrasing) while its abstract confirms an unambiguous
+                  4-arm design (N=293) -- no actual contradiction, but exact statistical
+                  comparison structure across arms needs full-text confirmation before
+                  40_SYNTHESIS/ cites dose-pair significance. Ran local `git commit` only (no
+                  push) twice in my own worktree per Director's recommendation (commits 62db3f3,
+                  fc9af43 on branch worktree-trials-efficacy-wave1) -- discovered the original 6
+                  output files were already present in an earlier automatic checkpoint commit
+                  (dc6ee2f, authored "Dr Tseng") that this role did not itself run.
+[IMPACT]          No open items from this exchange remain outstanding on this role's side.
+[ACTION]          None pending.
+[OUTPUT_PATHS]    30_METHODS/trials-efficacy/search-log.md
+                  10_DATA/trials-efficacy/extraction-table.csv
+                  20_EVIDENCE/trials-efficacy/unresolved-questions.md
+                  10_DATA/trials-efficacy/fulltext-manifest.md
+[CONFIDENCE]      HIGH
+[STATUS]          READY_FOR_NEXT_WAVE
+```
+
+---
+
+```text
+[PROJECT]        pitavastatin-ezetimibe-evidence
+[RUN]             2026-08-31-v1
+[FROM]            trials-efficacy-intelligence
+[TO]              Research Director
+[TYPE]            EVIDENCE_UPDATE
+[FINDING]         Verified T-012 (Katzmann JL et al. Clin Res Cardiol 2022;111(3):243-252,
+                  DOI 10.1007/s00392-020-01740-8, PMID 32949286) per Director's assignment
+                  (source originally surfaced by safety-pharmacology). Journal/DOI/numbers
+                  (-28.4%/-19.4%/31.5%/21.0%) match Tonvasca_2026.md exactly -- VERIFIED.
+                  Disclosure: this citation was already read by this role during Wave 1
+                  (Tonvasca_2026.md lines 2296-2345, 2803) but was NOT separately catalogued at
+                  the time -- an oversight, now corrected as TE-010. Found a NUMERIC INTEGRITY
+                  issue while verifying: the same Tonvasca_2026.md slide states two different,
+                  internally inconsistent sample sizes for the same FDC-vs-separate-pills
+                  comparison (header: n=6,429/533; results table: n=1,639/796, with the relative
+                  size even reversed). PubMed abstract only gives the overall study N=311,242, not
+                  the ezetimibe-subgroup n, so neither pair can be confirmed or rejected without
+                  full text.
+[IMPACT]          Per Numeric Integrity Rule, both n-pairs preserved as-printed and flagged
+                  POSSIBLE_ERROR/NEEDS_ANALYST, not resolved by guessing. 40_SYNTHESIS/ should not
+                  cite either n from Tonvasca_2026.md for this study until Wave 2 full-text access
+                  resolves it.
+[ACTION]          Requesting: full-text acquisition of Katzmann 2022 be added to Wave 2 priority
+                  list (Crossref indicates a Springer pdf_url, possibly open access).
+[OUTPUT_PATHS]    10_DATA/trials-efficacy/extraction-table.csv (TE-010)
+                  20_EVIDENCE/trials-efficacy/evidence-map.md
+                  20_EVIDENCE/trials-efficacy/unresolved-questions.md (Q7)
+[CONFIDENCE]      HIGH (citation identity and the 4 key numbers); the n-mismatch itself is a
+                  confirmed discrepancy in the legacy source, not an uncertainty in my verification
+[STATUS]          READY_FOR_NEXT_WAVE
+```

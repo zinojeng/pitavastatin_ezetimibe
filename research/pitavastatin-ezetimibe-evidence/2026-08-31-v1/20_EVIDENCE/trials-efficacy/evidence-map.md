@@ -149,6 +149,28 @@ Role: trials-efficacy-intelligence · Wave: 1
 | Level 2 — Combination-strategy CV outcome evidence（非 pitavastatin 專屬） | TE-005（RACING 主文）、TE-006（RACING DM 次族群）、TE-007（Sydhom meta-analysis，**發現與投影片框架的潛在落差**） | RACING 兩篇 VERIFIED，數字與 topic notes 完全吻合；Sydhom 之 RCT vs observational 限定詞落差已標記 SOURCE_CONFLICT 候選 |
 | Level 3 — Pitavastatin/ezetimibe 專屬 hard-outcome evidence | TE-004（HIJ-PROPER 主文） | VERIFIED，數字與 topic notes 完全吻合；**仍是本專案證據鏈中最弱的一環，如 `pitavastatin topic.md` 原先所預期，Wave 1 未發現任何更新的試驗已補上這個缺口** |
 
+---
+
+## 補充：FDC 劑型本身（非 pitavastatin 專屬）的 adherence/efficacy 佐證
+
+### TE-010 — Katzmann JL et al. Clin Res Cardiol 2022（德國真實世界 EMR 分析，T-012，Director 指派於 2026-08-31）
+
+- Evidence Hierarchy：**OBSERVATIONAL EVIDENCE**（retrospective real-world EMR 分析，非
+  RCT；且非 pitavastatin 專屬 — statin 種類未明確限定為 pitavastatin，應理解為泛統計所有
+  statin+ezetimibe 用藥模式）。
+- 支持「FDC 優於分開服用兩顆藥」的 adherence/efficacy 敘事（呼應 `pitavastatin topic.md`
+  對 FDC 簡化用藥的核心賣點）：加用 ezetimibe 於 statin 之上，FDC 劑型使 LDL-C 額外下降 28.4%
+  （40.0±39.1 mg/dL），優於分開服用兩顆藥的 19.4%（27.5±33.8 mg/dL），p<0.0001；LDL-C<70
+  mg/dL 達標率 FDC 31.5% vs 分開服用 21.0%。**此四個數字已與 PubMed abstract 原文逐字核對一致**。
+- **⚠ 待 Wave 2 全文覆核的樣本數矛盾**：`Tonvasca_2026.md` 同一張投影片標題與結果表格分別列出
+  兩組不同、且大小關係相反的樣本數（n=6,429/533 於標題 vs n=1,639/796 於表格）。已依 Numeric
+  Integrity Rule 如實保留、標記 `POSSIBLE_ERROR`，見 `unresolved-questions.md` Q7 與
+  `10_DATA/trials-efficacy/extraction-table.csv` TE-010 notes 欄。**在此矛盾透過全文解決之前，
+  `40_SYNTHESIS/` 或未來簡報若要引用此篇的樣本數，應避免直接沿用 `Tonvasca_2026.md` 投影片上的
+  任一組 n，或需並列兩組數字並註明來源不一致。**
+
+---
+
 **Wave 1 結論**：`01_RESEARCH-CHARTER.md`「Major uncertainty」中列出的疑慮——「是否存在
 HIJ-PROPER 之外的 pitavastatin/ezetimibe 專屬 hard-outcome 證據」——經 Wave 1 檢索，**未發現**
 任何新的、更新的、pitavastatin/ezetimibe 專屬的 hard-outcome RCT。三層證據框架的說服力分布（
