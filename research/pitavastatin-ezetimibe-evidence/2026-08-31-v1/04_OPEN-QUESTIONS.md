@@ -13,57 +13,52 @@ that resolved them.
 
 ## Open
 
-### Wave 2 full-text acquisition targets (dispatched — see `90_CROSS-SESSION-LOG/` Wave 2 dispatch)
+### Still open after all three Wave 2 reports (+ follow-up rounds)
 
-- [NEEDS_SOURCE, dispatched to trials-efficacy] Tsujita K et al. 2023 (T-004a) full text —
-  PMC10627746 or J-STAGE advance-publication PDF; and Ako J et al. 2024 (T-004b, 52-wk extension)
-  full text — PMC10918028. Extract exact arm structure, LDL-C, AE, CK, AST, ALT, HbA1c, and
-  pairwise-vs-pooled significance. Use LlamaParse on at least Tsujita 2023.
-- [NEEDS_SOURCE, dispatched to trials-efficacy] Citation #33 (Chou MT 2022, Phase III FDC trial)
-  own AE/CK/liver-enzyme detail tables — still paywalled as of Wave 1; do not cite specific AE/CK/
-  liver numbers from this paper until full text is obtained.
-- [NEEDS_SOURCE, dispatched to trials-efficacy] Katzmann JL et al. 2022 (T-012/TE-010) full text —
-  needed specifically to resolve the internally-inconsistent cohort-size figures in
-  `Tonvasca_2026.md` (`n=6,429/533` vs. `n=1,639/796` for the same comparison — Decision
-  2026-08-31-11). **PI-confirmed (2026-08-31): this stays unresolved and no *n* from this study may
-  be cited until full text is obtained.** The 4 already-verified percentage/p-value figures (28.4%
-  vs. 19.4% LDL-C reduction; 31.5% vs. 21.0% attainment) remain citable.
-- [NEEDS_PI] **Taiwan STS 2026 (T-005), 2026 ACC/AHA guideline (#28), and ESC 2025 Focused Update
-  (T-007) are all `BLOCKED_FOR_SOURCE` by automated means** (Decision 2026-08-31-13) — all three
-  return HTTP 403 Cloudflare bot-challenges, corroborated via Europe PMC metadata
-  (`is_open_access:False`, no PMCID for any of the three). guideline-risk correctly did not attempt
-  any bot-detection workaround. **Question for the PI: can any of these three PDFs be supplied
-  directly (manual download or authenticated/institutional access)?** If so, guideline-risk can
-  parse immediately with LlamaParse. Without one of these three, the "extract statin+ezetimibe
-  combination-therapy wording" Wave 2 task item cannot be completed — the Gate-2 LlamaParse
-  requirement was satisfied on a substitute source (T-014) that doesn't discuss ezetimibe.
-- [NEEDS_SOURCE, dispatched to guideline-risk, now the active priority per Director 2026-08-31 —
-  the three items above are blocked pending PI] Numeric-threshold/wording confirmation still pending
-  for every other guideline document identified in Wave 1 (Taiwan Lp(a) 2026/T-006, 2023 TSC CCS,
-  base 2019 ESC/EAS/#34, both 2022 Taiwan lipid-guideline companions/#29/#35, ADA 2025/#32) — Wave 1
-  confirmed document *identity* only.
-
-- [NEEDS_SOURCE, dispatched to trials-efficacy] T-015 (REPRIEVE trial, Grinspoon SK et al. NEJM
-  2023;389:687-699) — new pitavastatin cardiovascular-outcome RCT found by guideline-risk (routed,
-  not independently verified). See Decision 2026-08-31-15. Pitavastatin monotherapy, HIV
-  population — do not conflate with HIJ-PROPER or RACING.
+- [NEEDS_PI] **Taiwan STS 2026 (T-005), Taiwan Lp(a) 2026 (T-006), base 2019 ESC/EAS (#34), 2026
+  ACC/AHA guideline (#28), ESC 2025 Focused Update (T-007), and citation #33 (Chou MT 2022)'s own
+  AE/CK/liver tables all confirmed `BLOCKED_FOR_SOURCE`** — now via the **precise NCBI elink
+  `linkname=pubmed_pmc` method** (empty linkset for all 7 checked PMIDs, a genuinely negative
+  result, not an OA-flag inference; Decision 2026-08-31-13 reinforcement), independently
+  corroborated for #33 by trials-efficacy's own retry (Decision 2026-08-31-25). This is a more
+  rigorous negative than the original Cloudflare-block finding. **Question for the PI still stands:
+  can any of these be supplied directly (manual download or institutional access)?** Partial
+  mitigation for the ESC 2025 combination-wording task exists via T-021 (a secondary review that
+  paraphrases it, with its own "old 2018 guideline" caveat) — but the primary documents' own exact
+  wording remains unconfirmed. The Gate-2 LlamaParse requirement itself is already satisfied (both
+  required demonstrations succeeded), so this is a content gap, not a Gate 2 blocker.
+- [NEEDS_SOURCE, dispatched to guideline-risk, next small task] #35 (2022 Taiwan primary-prevention
+  companion guideline) — not yet attempted in Wave 2 (budget ran out); same publisher family
+  (JFMA/tas.org.tw) as guideline-risk's two Wave 2 successes (#30, #32), reasonable chance of a
+  similar PMC path.
+- [NEEDS_ANALYST] T-009's four adherence citations (Lin YW 2024, Su M 2025, van Driel ML 2016,
+  Religioni U 2025) — full citations re-sent to safety-pharmacology (Decision 2026-08-31-26) after
+  it flagged never receiving them in full; still not independently verified by anyone. Assigned to
+  safety-pharmacology.
+- [NEEDS_ANALYST] T-025 (Samnaliev M et al. 2025) — found by safety-pharmacology, citation identity
+  confirmed but abstract-level only, not independently cross-checked further.
+- [NEEDS_SOURCE, Wave 3 candidate] T-023 (Lu YW et al. 2026, Taiwan real-world post-PCI cohort) and
+  **T-024 (Abbas MS et al. 2026, possibly the first pitavastatin+ezetimibe-FDC-specific
+  meta-analysis — flagged highest priority)** — both found by trials-efficacy, citation identity
+  confirmed, full text not yet obtained (`is_open_access:False` per Europe PMC for both). Held for
+  Wave 3 per Decision 2026-08-31-25, not pursued further in Wave 2.
+- [NEEDS_SOURCE, dispatched to guideline-risk, active priority] Numeric-threshold/wording
+  confirmation still pending for every other guideline document identified in Wave 1 (Taiwan Lp(a)
+  2026/T-006, 2023 TSC CCS, base 2019 ESC/EAS/#34, both 2022 Taiwan lipid-guideline companions/
+  #29/#35, ADA 2025/#32) — Wave 1 confirmed document *identity* only.
 - [NEEDS_SOURCE, dispatched to guideline-risk] **111 年健康促進統計年報** (Taiwan Health Promotion
   Administration statistical annual report, ROC 111 = 2022, T-008) — not indexed in PubMed/
   Crossref/paper-search; requires a direct fetch from the 國民健康署 website. Not part of the PI's
   named Wave 2 priorities but still open from Wave 1.
-- [NEEDS_SOURCE, dispatched to safety-pharmacology] Singh H et al. 2024 (T-003, DOI
-  10.1080/17512433.2024.2433603) and Katzmann JL et al. 2022 (T-012) — seek lawful full text; if
-  blocked, record `BLOCKED_FOR_SOURCE`. Validate the DDI matrix (T-010) against the official
-  DailyMed/FDA source directly (not a secondary transcription). Parse a lawful safety-domain PDF
-  with LlamaParse if one is obtained. **Never use `mcp__research_hub__download_paper`** (permanent
-  restriction, Decision 2026-08-31-08/12).
-- [NEEDS_SOURCE] Clarithromycin-specific DDI data for pitavastatin — not found in the LIVALO label's
-  Section 7 as fetched in Wave 1 (a gap in that source's coverage, not evidence of "no
-  interaction"). Part of the safety-pharmacology Wave 2 DDI validation above.
-- [NEEDS_SOURCE, Wave 2] safety-pharmacology's own Wave 1 `unresolved-questions.md` (now readable —
-  see `20_EVIDENCE/safety-pharmacology/unresolved-questions.md` after the Wave 1→main consolidation)
-  additionally flags CKD/elderly FDC safety subgroup data and BCRP-mediated DDI numbers as missing —
-  carried forward as Wave 2 targets for that role.
+- [NEEDS_SOURCE] **FDC-specific (pitavastatin+ezetimibe combined) CKD dosing** — no source found so
+  far addresses the combination product directly; only pitavastatin-monotherapy CKD dosing is
+  resolved (T-018, Decision 2026-08-31-22).
+- [NEEDS_SOURCE] Pitavastatin-specific BCRP-inhibitor fold-change number — T-019/T-020 corroborate
+  an OATP1B1-predominant transporter mechanism generally but neither supplies a pitavastatin-specific
+  quantitative BCRP figure. Gap remains open.
+- [NEEDS_ANALYST] T-017 (Li H, Li J et al. 2026, elderly pitavastatin-vs-atorvastatin NODM cohort)
+  is abstract-only, not open access — MODERATE confidence, not independently cross-checked beyond
+  the abstract. Treat accordingly if cited.
 
 ### Other open items (not part of the PI's named Wave 2 dispatch, no urgency)
 
@@ -82,14 +77,63 @@ that resolved them.
   guideline-risk, contains a duplicated "Wang CY" entry. Preserved as-received per the Numeric
   Integrity Rule (not silently deduplicated) — flag if this citation is used verbatim in any
   downstream output.
-- [NEEDS_SOURCE] T-013 (Corsini A, et al. Curr Med Res Opin. 2011;27(8):1551-1562) — safety-
-  pharmacology self-queued this for its own verification; not separately named in the PI's Wave 2
-  dispatch but falls within its DDI-validation scope.
 - [NEEDS_SOURCE] `openevidence` MCP server remains unreachable across every session that has
   reported on it so far. Not part of the PI's Wave 2 authorization (which covers `research_hub`/
   `llamaparse` repair only) — treat as still down until a session reports otherwise.
 
 ## Resolved
+
+### Wave 2 full-text acquisition results (2026-08-31)
+
+- [RESOLVED — SUCCESS] Tsujita 2023 (T-004a) and Ako 2024 (T-004b) full text obtained and
+  LlamaParse-parsed by trials-efficacy (PMC anti-bot-blocked, J-STAGE used instead — lawful).
+  Exact arm structure, LDL-C, AE/CK/AST/ALT tables extracted. Two important nuances locked in:
+  the "add ezetimibe or double the statin" comparison was not formally tested (Decision
+  2026-08-31-16); Ako 2024's AE picture is broader than its abstract's "single ADR" framing
+  suggests (Decision 2026-08-31-17). This also satisfies one of the two Gate-2 LlamaParse
+  requirements (on the actual assigned target).
+- [RESOLVED — SUCCESS] Gate-2 LlamaParse requirement for guideline-risk satisfied on a substitute
+  source (T-014) after its three assigned targets were blocked — see below.
+- [RESOLVED — CONFIRMED BLOCKED, no further automated action possible] Citation #33 (Chou MT 2022)
+  AE/CK/liver-enzyme tables — confirmed `BLOCKED_FOR_SOURCE` by trials-efficacy in Wave 2 (no OA
+  location via Unpaywall). Genuine institutional/manual access, or a Europe-PMC-PMCID-specific
+  retry (see below), would be needed.
+- [RESOLVED — SUCCESS, correcting an earlier BLOCKED status, AND the underlying numeric-integrity
+  flag fully closed] T-012 (Katzmann 2022) — trials-efficacy first reported this
+  `BLOCKED_FOR_SOURCE` via Unpaywall/publisher link; safety-pharmacology independently obtained it
+  lawfully via a direct Europe PMC PMCID lookup (PMC8873069, CC BY 4.0) and LlamaParse-parsed it
+  (Decision 2026-08-31-20 — the resulting methodological lesson relayed to the other two
+  specialists). **From that full text, safety-pharmacology then resolved the Decision
+  2026-08-31-11 cohort-size question, confirmed by the Director's own direct read of
+  `Tonvasca_2026.md`: both printed n pairs are correct, describing different subsets (n=6,429/533
+  = a GP-2018 prescription-count snapshot; n=1,639/796 = the pooled paired-measurement subgroup
+  the LDL-C results are actually drawn from). Final decision: `NO_CHANGE`, not `SOURCE_CONFLICT` —
+  cite n=1,639/796 alongside the LDL-C/attainment figures.** See Decision 2026-08-31-11's final
+  update for full detail.
+- [RESOLVED — SUCCESS] T-016 (REAL-CAD trial) fully verified by trials-efficacy — Taguchi I et al.,
+  Circulation 2018;137(19):1997-2009, N=13,054, HR 0.81 (95% CI 0.69–0.95). Q8 closed.
+- [RESOLVED — SUCCESS] T-015 (REPRIEVE) fully verified by trials-efficacy — see Decision
+  2026-08-31-18.
+- [RESOLVED] T-013 (Corsini A 2011) bibliographically verified by safety-pharmacology via Crossref.
+- [RESOLVED] Clarithromycin DDI gap — upgraded from "not found as fetched" to
+  `CONFIRMED_ABSENT_FROM_LABEL` after safety-pharmacology checked the full DailyMed label text
+  directly (Decision 2026-08-31-21).
+- [RESOLVED — new sources found] T-017 (Li H, Li J et al. 2026, elderly NODM cohort, abstract-only)
+  and T-018 (Tramontano D et al. 2025, CKD-dosing review, cross-verified against the FDA label —
+  resolves most of the Wave 1 CKD gap) — see Decision 2026-08-31-22. FDC-specific CKD dosing
+  remains an open gap (see Open items above).
+- [RESOLVED, partial] BCRP mechanism — T-019/T-020 corroborate an OATP1B1-predominant mechanism;
+  the pitavastatin-specific quantitative fold-change number remains an open gap (see Open items
+  above).
+- [RESOLVED — SUCCESS] Item 6 (numeric-threshold confirmation) 2/5 complete: 2023 TSC CCS (#30) and
+  ADA 2025 (#32) full text obtained and content-verified by guideline-risk, including a genuine
+  threshold difference caught (TSC's <50 mg/dL extreme-risk vs. ACC/AHA's <55 mg/dL very-high-risk
+  — do not conflate). T-021 (Katzmann & Laufs 2026 review) obtained as a partial substitute for the
+  still-blocked ESC 2025 primary document. See Decision 2026-08-31-23.
+- [RESOLVED — CONFIRMED BLOCKED] Taiwan STS 2026 (T-005), 2026 ACC/AHA (#28), ESC 2025 Focused
+  Update (T-007) — all confirmed `BLOCKED_FOR_SOURCE` by guideline-risk (Cloudflare bot-challenge,
+  corroborated via Europe PMC metadata). See the still-open PI question above about direct PDF
+  supply — that question covers these three plus, by extension, Chou 2022/Katzmann 2022 above.
 
 ### PI Wave 2 authorization, 2026-08-31 (Decision 2026-08-31-12 — see that entry for full detail)
 
