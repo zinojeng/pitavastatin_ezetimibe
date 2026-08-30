@@ -1,169 +1,108 @@
 # 05_STATUS — pitavastatin-ezetimibe-evidence / 2026-08-31-v1
 
 PROJECT_ID: `pitavastatin-ezetimibe-evidence` · RUN_ID: `2026-08-31-v1`
-Last updated: 2026-08-31 (Wave 1, Research Director)
+Last updated: 2026-08-31 (Wave 2 dispatch, Research Director)
+
+> **Housekeeping note:** this file had accumulated many superseded "Update —" sections from rapid
+> Wave 1 processing. Condensed here into a single current narrative; no information dropped — see
+> git history for the previous, more granular version if a specific timestamp/sequence is needed.
 
 ## Current Gate
 
-**READY_FOR_NEXT_WAVE** (Gate 0 passed; Wave 1 in progress — Gate 1 not yet reached)
+**Gate 1: PASSED (PI authorization, 2026-08-31, Decision 2026-08-31-12).**
+
+**Gate 2 exit criteria (PI-specified, 2026-08-31):** mark `READY_WITH_PENDING_ITEMS` if paywalled
+sources remain unresolved, **provided** the two required lawful LlamaParse demonstrations succeed —
+at least one PDF parsed by trials-efficacy (Tsujita 2023) and at least one PDF parsed by
+guideline-risk (an ACC/AHA or ESC 2025 document). Not yet evaluated — Wave 2 has just been
+dispatched this session; see the dispatch messages in `90_CROSS-SESSION-LOG/`.
 
 ## Wave
 
-1 — Source / Evidence Verification (in progress; 2 of 3 specialists report complete/near-complete)
+2 — Focused lawful full-text acquisition (just dispatched to all three persistent specialists)
 
-## Completed — Wave 0
+## Wave 0 — complete
 
-- Repository initialized: `CLAUDE.md`, `README.md`, `.gitignore`, `docs/CROSS-SESSION-RESEARCH-RUNBOOK.md`.
-- Run directory created with all mandated files/subdirectories (see `00_RUN-MANIFEST.md`).
-- Persistent roles, file ownership matrix, Wave/Gate rules, message schema, Evidence Hierarchy and
-  Decision Taxonomies, MCP source policy, licensing/secrets rules, and prompt templates written into
-  `CLAUDE.md`.
-- Prioritized Search Protocol (10 items) written into `CLAUDE.md` §5.
-- Preliminary source catalog of `Tonvasca_2026.md`'s ~33 embedded citations in `02_SOURCE-INVENTORY.md`.
-- Legacy input files preserved unmodified at repo root; checksummed in `00_RUN-MANIFEST.md`.
+Repository initialized (`CLAUDE.md`, `README.md`, `.gitignore`, `docs/`, full run directory
+structure, persistent-role definitions, Search Protocol, MCP source policy). See `00_RUN-MANIFEST.md`
+and `01_RESEARCH-CHARTER.md`.
 
-## Wave 1 progress
+## Wave 1 — complete, all loose ends closed
 
-All three domain specialists online and confirmed reachable (`pit-eze-guideline-risk`,
-`pit-eze-safety-pharmacology`, `pit-eze-trials-efficacy`); this session confirmed addressable as
-`pit-eze-research-director`.
+All three domain specialists (`pit-eze-guideline-risk`, `pit-eze-trials-efficacy`,
+`pit-eze-safety-pharmacology`) completed Source/Evidence Verification against their assigned legacy
+citations, read the previously-unread `Tonvasca_2026.md` remainder, and found/verified several new
+sources. Highlights (full detail in `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md`, and
+`90_CROSS-SESSION-LOG/`):
 
-- **guideline-risk-intelligence** — `READY_FOR_INTEGRATION`. All 11 assigned legacy citations
-  verified (1 DOI transcription error found and logged, Decision 2026-08-31-09). Read the full
-  previously-unread `Tonvasca_2026.md` remainder; found 2 new guideline citations (#34/#35) and a
-  4-citation adherence-epidemiology cluster (T-009, reassigned to safety-pharmacology). All three
-  previously-unlocated guideline Search Protocol targets (Taiwan STS 2026/T-005, Taiwan Lp(a)
-  2026/T-006, ESC 2025 Focused Update/T-007) now located and citation-verified. Flagged and
-  correctly handled a Sci-Hub compliance concern on `mcp__research_hub__download_paper` (Decision
-  2026-08-31-08 — interim project-wide restriction on that tool). Committed and **pushed to origin**
-  (`worktree-pit-eze-guideline-risk-wave1`) — not yet merged to `main`. Awaiting: full formatted
-  citations for #34/#35/T-005/T-006/T-007/T-009, and clarification of whether a second
-  tool-compliance concern (beyond the Sci-Hub one, already resolved) was meant to be flagged.
-- **trials-efficacy-intelligence** — `READY_WITH_PENDING_ITEMS`. Wave 1 verification complete for
-  Search Protocol items 5–9. Legacy HIJ-PROPER (T-001)/RACING (T-002) figures confirmed to match
-  primary publications exactly. Found two new sources (Tsujita 2023/T-004a, Ako 2024/T-004b) closing
-  the previously-unlocated 2mg-vs-4mg dose-comparison gap (Decision 2026-08-31-07). Flagged a source
-  conflict: Sydhom et al. 2024's (citation #26) clinical-outcome benefit is observational-pooled-only
-  per its own abstract, not RCT-pooled as `Tonvasca_2026.md`'s framing risks implying — routed
-  `NEEDS_PI` (Decision 2026-08-31-06). Three legacy citations (#20 CEPHEUS/Chiang 2016, #21
-  DYSIS-II/Gitt 2017, #25 Masana 2020) could not be located — flagged, not dropped. Output sits
-  **uncommitted** in its own isolated worktree (`worktree-trials-efficacy-wave1`) — asked to at
-  least locally commit. Awaiting: full citations for Tsujita 2023/Ako 2024; clarification on its
-  "9 verified" count vs. the 3 not-located legacy citations (bookkeeping question, not a blocker).
-- **safety-pharmacology-intelligence** — `READY_WITH_PENDING_ITEMS`. Confirmed scope (legacy
-  citations #3–16, 23, 26-joint; new-source discovery for items 3–5 approved as a Wave 1/2 blend
-  since it doesn't build on any unverified legacy claim). Deprioritized Lp(a)/item 10, correctly.
-  Reported `research_hub`/`llamaparse` reachable in its own session (logged additively in
-  `00_RUN-MANIFEST.md` without overwriting the Wave 0 record). Three sub-agent searches were in
-  progress as of its last report; notified of the new research_hub restriction (Decision
-  2026-08-31-08) and its new T-009 assignment. No completion report yet.
+- All ~35+ legacy citations across the three domains verified or explicitly flagged not-locatable
+  (never silently dropped or guessed).
+- New sources found and verified: Singh H et al. 2024 (T-003, pitavastatin NODM meta-analysis —
+  explicitly distinct from Sydhom 2024), Tsujita 2023 + Ako 2024 (T-004a/T-004b, closing the 2mg-
+  vs-4mg dose-comparison gap), Taiwan STS 2026 / Taiwan Lp(a) 2026 / ESC 2025 Focused Update
+  (T-005/T-006/T-007), the LIVALO/DailyMed DDI label (T-010), Katzmann JL et al. 2022 (T-012).
+- A Sci-Hub compliance concern was caught and correctly handled by guideline-risk (no contamination)
+  — led to Decision 2026-08-31-08.
+- A genuine legacy-source inconsistency was caught by trials-efficacy: `Tonvasca_2026.md` itself
+  prints two contradictory cohort sizes for the Katzmann 2022 comparison — Decision 2026-08-31-11,
+  unresolved pending full text (PI-confirmed this stays open, see below).
+- Two self-corrections by guideline-risk (withdrawing an over-stated "open access" claim; confirming
+  a citation the Director had flagged as a possible duplicate was in fact correctly resolved)
+  demonstrated good epistemic discipline — commended, not just accepted.
+- Five items were escalated to the PI at Wave 1 close: the Sydhom framing, the research_hub/Sci-Hub
+  tool policy, `50_MANUSCRIPT/` ownership, the multi-worktree consolidation gap, and the Katzmann
+  cohort-size discrepancy.
 
-All cross-session exchanges logged verbatim in `90_CROSS-SESSION-LOG/`.
+## PI Wave 2 authorization, 2026-08-31 (Decision 2026-08-31-12 — full text there)
 
-## Decisions logged this Wave (see `03_DECISION-LOG.md` for full text)
+The PI reviewed and decided all five escalated items:
 
-- 2026-08-31-05: `02_SOURCE-INVENTORY.md` is Director-owned; specialists report findings instead of
-  editing it directly. `CLAUDE.md` §3 patched.
-- 2026-08-31-06: Sydhom et al. 2024 RCT-vs-observational framing gap — `NEEDS_PI`.
-- 2026-08-31-07: Tsujita 2023 / Ako 2024 close Search Protocol item 5 (T-004) — `VERIFIED_AND_REPLACE`
-  (located-status only).
-- 2026-08-31-08: **Sci-Hub compliance** — `mcp__research_hub__download_paper` restricted
-  project-wide pending PI's final call. `CLAUDE.md` §10 patched. Flagged to PI directly.
-- 2026-08-31-09: Citation #27 DOI transcription error — `VERIFIED_AND_REPLACE` (DOI field only).
+1. **Sydhom framing** — state observational-pooled benefit only; RCT-pooled clinical endpoints not
+   statistically significant. Applied to `02_SOURCE-INVENTORY.md` #26.
+2. **research_hub policy** — `mcp__research_hub__download_paper` **permanently** prohibited
+   (was interim). `CLAUDE.md` §10 updated.
+3. **`50_MANUSCRIPT/` ownership** — Research Director owns coordination until Gate 2.
+4. **Multi-worktree consolidation** — PI confirms all four Wave 1 branches + Director's Gate 1
+   commits reviewed, secret-scanned, and consolidated into local `main` by the supervising Codex
+   process. This session verified that independently and merged `main` into its own working branch
+   for direct file visibility (not a branch-consolidation act — this session will not merge branches
+   into `main` itself).
+5. **Katzmann cohort discrepancy** — confirmed still unresolved until full text; added to Wave 2
+   trials-efficacy dispatch.
 
-## Sync-state caveat (operational, not a research blocker) — escalated to PI
+Also directed and completed this session: `.metadata_cache/` added to `.gitignore`; session registry
+created (`90_CROSS-SESSION-LOG/SESSION-REGISTRY.md`); `research_hub`/`llamaparse` MCP repair and
+`llamaparse`'s live dummy-PDF smoke test recorded (`00_RUN-MANIFEST.md`); a security TODO recorded
+for historical hardcoded `llamaparse` credentials reported to exist outside this repo (`CLAUDE.md`
+§12 — no credential value recorded anywhere); Wave 2 dispatched to all three specialists via real
+`SendMessage` (see `90_CROSS-SESSION-LOG/`).
 
-This Director session is a background job isolated in a git worktree (`.claude/worktrees/wave0-init`,
-branch `worktree-wave0-init`, commit history through Wave 1 kickoff). `main` already contains Wave 0
-content (apparently merged there outside this session). This session's own `git push` to `origin`
-initially failed twice then succeeded on a third attempt (transient, not a hard block).
-`pit-eze-guideline-risk`'s branch also pushed to `origin` successfully.
-`pit-eze-trials-efficacy` made local commits only (no push, per its own task instructions).
-`pit-eze-safety-pharmacology` has not committed at all as of this update. **There are now four
-separate pieces of work in play** — `origin/worktree-wave0-init` (Director, pushed),
-`origin/worktree-pit-eze-guideline-risk-wave1` (pushed), `worktree-trials-efficacy-wave1` (committed
-locally only), and `worktree-safety-pharm-wave1` (uncommitted) — with no single session able to
-consolidate all four into `main`. Three of the four sessions have independently reported hitting
-this same worktree-isolation problem, unprompted. This looks like a structural property of how this
-multi-agent run was set up, not a one-off glitch — worth the PI's attention as a process issue for
-future runs, not just this one. See the report delivered to the user this turn.
+## Not addressed by the PI — still open
 
-## Update — citation follow-ups closed (both peers)
+- **safety-pharmacology's commit permission**: its own task instructions say "do not commit/push";
+  the PI's Wave 2 authorization did not explicitly relax this. Its Wave 1 output remains uncommitted
+  in its own worktree but *is* already visible to the Director via the Codex-process consolidation
+  into `main`, so this is not blocking Wave 2 — flagged only in case the PI wants it addressed.
 
-guideline-risk-intelligence supplied full formatted citations for #34, #35, T-005 (Taiwan STS
-2026), T-006 (Taiwan Lp(a) 2026), T-007 (ESC 2025 Focused Update), and T-009 (adherence cluster,
-explicitly flagged copied-not-verified). trials-efficacy-intelligence supplied full Crossref-sourced
-citations for T-004a (Tsujita 2023)/T-004b (Ako 2024), disclosed one no-op pre-restriction
-research_hub call (no policy issue), confirmed a local commit in its own worktree, and resolved the
-Director's "9 vs 3" bookkeeping question. All entered into `02_SOURCE-INVENTORY.md`; see
-`90_CROSS-SESSION-LOG/2026-08-31_wave1-followups.md`. Two new `NEEDS_ANALYST` items opened: T-009
-citations need independent verification (owner: safety-pharmacology), T-006's duplicated "Wang CY"
-author entry needs a primary-source check before verbatim use.
+## Wave 2 dispatch summary (this update)
 
-## Update — all three specialists have now reported Wave 1 complete
+| Specialist | Assigned Wave 2 targets |
+|---|---|
+| trials-efficacy | Tsujita 2023 (PMC10627746 or J-STAGE PDF) + Ako 2024 (PMC10918028) full text, LlamaParse on ≥1; exact arm/LDL-C/AE/CK/AST/ALT/HbA1c/significance extraction. Chou MT 2022 AE/CK/liver tables. Katzmann 2022 full text (cohort-size resolution). |
+| guideline-risk | Taiwan STS 2026 publisher-authorized fetch attempt (else `BLOCKED_FOR_SOURCE`). Official 2026 ACC/AHA PDF + official ESC 2025 content, LlamaParse on ≥1; exact combination-therapy wording extraction. |
+| safety-pharmacology | Singh 2024 + Katzmann 2022 lawful full text (else `BLOCKED_FOR_SOURCE`). DDI validation against official DailyMed/FDA directly. Parse a lawful safety PDF if obtained. Never use `research_hub` download tool. |
 
-- **safety-pharmacology-intelligence** — `READY_WITH_PENDING_ITEMS`. All 16 assigned legacy
-  citations verified (zero mismatches). Completed the deferred read of `Tonvasca_2026.md`'s
-  remainder, found more citations (routed as T-011, several likely duplicates of already-catalogued
-  ones — needs guideline-risk confirmation) and 2 informational flags on the legacy source's own
-  internal inconsistencies. Identified Singh H et al. 2024 as the real T-003 source (Decision
-  2026-08-31-10 — must never be conflated with Sydhom 2024/citation #26). Found the FDA/DailyMed
-  Livalo label DDI matrix (T-010). Flagged citation #33's own AE/CK/liver tables as unverified/
-  paywalled, substituted K-924 (Japan) data tagged `INDIRECT EVIDENCE` for population/product
-  reasons. Corrected citation #23's mislabeled topic description. Independently corroborated T-005
-  but with an access-status discrepancy vs. guideline-risk's report (flagged, unresolved). **Also
-  hit the worktree-isolation-blocks-shared-checkout problem** — output lives uncommitted in
-  `.claude/worktrees/safety-pharm-wave1/`, not yet in git at all.
-
-**All three domain specialists have now reported Wave 1 substantially complete.** Remaining before
-Gate 1 can be formally called: the citation-routing/access-status loose ends below, and — more
-significantly — consolidating four separate worktrees (Director's, guideline-risk's, trials-
-efficacy's, safety-pharmacology's) into one coherent `main`. See escalation below and the report
-delivered to the PI this turn.
-
-## Update — Wave 1 substantive work essentially complete for all three specialists
-
-T-003, T-010 full detail received and entered. T-011 fully resolved (6 duplicates, 2 genuinely new:
-T-012 → trials-efficacy, T-013 → safety-pharmacology's own queue). safety-pharmacology declined the
-Director's local-commit suggestion, correctly citing its own task instructions and framing this as
-a PI decision — logged `NEEDS_PI`, respected, not re-raised. Two items now waiting on
-guideline-risk's reply: T-005's access-status contradiction, and whether a PII-format citation
-duplicates row #35.
-
-## Update — all specialist-facing Wave 1 loose ends closed
-
-guideline-risk resolved both follow-ups (row #35 was never a duplicate; T-005's "open access" claim
-was a landing-page badge read, self-corrected — commended). trials-efficacy verified T-012/TE-010
-(Katzmann 2022) and flagged a genuine cohort-size inconsistency within `Tonvasca_2026.md` itself
-(Decision 2026-08-31-11, `SOURCE_CONFLICT`, no *n* citable pending Wave 2 full-text). No specialist
-has an outstanding question from the Director as of this update.
-
-## Pending (Wave 1 exit / Gate 1 criteria)
-
-- safety-pharmacology's own verification of T-013 (Corsini A 2011, self-queued).
-- PI decision on whether to relax the "no commit" instruction for safety-pharmacology's role.
-- The multi-worktree consolidation (four branches, three different commit/push states) — still the
-  single biggest blocker to calling this repo's `main` authoritative and current.
-- Wave 2 full-text priorities now include: Katzmann 2022 (cohort-size resolution), Chou MT 2022 AE/
-  CK/liver tables, every guideline document's numeric-threshold confirmation, T-005's actual
-  article body, T-013 (Corsini A) verification.
-- PI decision on the Sydhom framing gap (Decision 2026-08-31-06) and the research_hub/Sci-Hub tool
-  policy (Decision 2026-08-31-08).
-- PI decision on `50_MANUSCRIPT/` ownership (Decision 2026-08-31-04) — not a Wave 1 blocker.
-- Consolidation of the three unmerged worktrees into `main` (see Sync-state caveat above).
-- Re-confirm `openevidence` connectivity (still down everywhere reported); `research_hub`/
-  `llamaparse` connectivity appears session-specific, not a fixed fact — no single re-test needed,
-  each session should check its own.
+**Common requirement for every PDF any specialist touches**: record license/source URL, retrieval
+timestamp, SHA-256, parse status, and page/table/section locators. PDFs stay gitignored, never
+committed.
 
 ## Blocked
 
-None at the repository-content level — all three specialists are actively producing verified,
-well-provenanced findings. The **sync/consolidation gap** above is an operational blocker on making
-Director-side and specialist-side Wave 1 output durable and visible across sessions; it does not
-block the specialists' own in-progress work, which continues in their respective worktrees.
+None at the repository-structure or governance level. Wave 2 literature acquisition may surface
+individual `BLOCKED_FOR_SOURCE` items (paywalled sources) — expected and acceptable per Gate 2's
+exit criteria above, not a project-level blocker.
 
 ## Next action
 
-Director awaits safety-pharmacology's completion report and the two specialists' outstanding
-citation strings. PI: resolve the multi-worktree consolidation gap (merge the three branches into
-`main`, or grant push permission to the blocked sessions) and make the two `NEEDS_PI` calls above.
+Director awaits Wave 2 completion reports from all three specialists, including confirmation of the
+two required LlamaParse demonstrations, before evaluating Gate 2.
