@@ -86,3 +86,39 @@ metadata（PMID 36030106），但 `is_open_access: False` 且 `pmcid` 欄位為*
    表格，才能完整回答 Search Protocol item 5 的安全性比較部分）
 3. TE-009（PLoS ONE, open access, 低優先 — 目前 abstract 已足夠）
 4. TE-001（Elsevier, 付費牆 — 若 PI/機構有訂閱管道，建議走機構授權而非 MCP 自動下載）
+
+## Post-Gate-2 持久化修復（2026-08-31，Director 指派的窄範圍任務）
+
+**背景**：Wave 2 取得的 TE-002（Tsujita 2023）與 TE-003（Ako 2024）PDF／LlamaParse 解析結果原先
+存於暫時性的 `$CLAUDE_JOB_DIR/tmp/pdfs/`（見上方「LlamaParse 使用狀況」一節），該目錄已不存在，
+兩份檔案遺失。本次任務範圍**僅限**重新取得並持久化存放此二檔案，**不開啟 Wave 3**、不變更任何
+共用檔案（00–05、02/03、99）或其他角色的 10_DATA/20_EVIDENCE/30_METHODS。
+
+**新的持久化、角色自有、gitignored 路徑**：`20_EVIDENCE/trials-efficacy/fulltext/`
+（已由現有 `.gitignore` 第 16 行規則 `**/20_EVIDENCE/**/fulltext/` 涵蓋，經 `git check-ignore -v`
+逐檔驗證確認全部被忽略，不會被追蹤）。
+
+| citation_id | 檔案 | 來源 URL（與原 manifest 逐字相同，未變更） | HTTP 狀態 | 檔案大小 | SHA-256 | 與原記錄比對 |
+|---|---|---|---|---|---|---|
+| TE-002（Tsujita 2023） | `TE-002_Tsujita2023.pdf` | `https://www.jstage.jst.go.jp/article/jat/advpub/0/advpub_64006/_pdf` | `200` (`Content-Disposition: inline; filename="advpub_64006.pdf"`) | 717,939 bytes（PDF v1.3，10 頁，經 `file` 指令確認） | `afe6befc78a9084f95580e513568615618153abd45ddb20ff76ca5e9f4022c26` | **完全相同**於原 manifest 記錄之雜湊值 — 確認重新下載內容與 Wave 2 當時取得版本位元組級一致，未被 publisher 更版 |
+| TE-003（Ako 2024） | `TE-003_Ako2024.pdf` | `https://www.jstage.jst.go.jp/article/jat/advpub/0/advpub_64272/_pdf` | `200` (`Content-Disposition: inline; filename="advpub_64272.pdf"`) | 321,262 bytes（PDF v1.6, zip deflate） | `1e103ff00040a986f88820ef2b96924bcac4a9ae4bad4bc313fad4d6f21ac960` | **完全相同**於原 manifest 記錄之雜湊值 — 內容一致，未見更版 |
+
+取得時間（本次重新下載，本機 UTC）：2026-08-30T22:35:01Z（TE-002）／2026-08-30T22:35:02Z（TE-003）。
+
+**LlamaParse 重新解析結果**：
+
+| citation_id | 解析輸出檔 | 解析狀態 | 備註 |
+|---|---|---|---|
+| TE-002 | `TE-002_Tsujita2023.md`（與 PDF 同目錄） | **成功** — 114,243 bytes / 939 行，逐段檢視首尾（標題/作者/機構起始，Advance Publication 版權聲明結尾）與縮寫表皆完整，`grep -in "truncat\|error\|failed to parse"` 僅命中「standard error」「within-subject errors」等合法醫學統計用詞，非解析錯誤標記 | 字元數（114,243 bytes）與 Wave 2 原記錄（114,893 字元）數值相近但非逐位元相同——屬正常現象：LlamaParse 每次呼叫可能因版面辨識微小差異產生略有不同的 markdown 輸出（PDF 位元組本身經 SHA-256 確認完全一致），內容範圍（10 頁全文、Table 1–3、Fig. 2–3 註腳、Discussion）經檢視仍完整 |
+| TE-003 | `TE-003_Ako2024.md`（與 PDF 同目錄） | **成功** — 106,855 bytes / 814 行，首尾（標題/期刊頁首，Table 資料含 Accepted/Published 版權聲明結尾）完整，同上 grep 檢查未見真正錯誤標記 | 同上，字元數與 Wave 2 原記錄（107,117 字元）相近但非逐位元相同，內容完整性已人工檢視確認 |
+
+**授權/access 備註**（與原記錄一致，未變更）：J Atheroscler Thromb 為 J-STAGE 開放取用期刊平台
+（`jstage.jst.go.jp`），HTTP 200 直接取得、無需登入或付費牆繞過；**未查證**此 Advance
+Publication 版本的確切 CC 授權條款（與 Wave 2 原記錄相同的既有限制，本次未新增查證）。依
+CLAUDE.md §11，PDF 本體與 LlamaParse 解析 markdown 僅供本角色萃取比對用，**未提交進 repo**（已
+以 `git check-ignore -v` 逐檔驗證 6 個檔案— 2 PDF + 2 MD + 2 個下載 header log — 全數被
+`.gitignore` 第 16 行規則忽略）。
+
+**結論**：TE-002／TE-003 全文與解析結果已恢復至持久化、角色自有、gitignored 路徑，內容與 Wave 2
+原始取得版本（PDF 位元組層級）一致，可供後續 Wave（Wave 3 或之後）萃取使用。本次任務未變更任何
+已提交的 Wave 1/Wave 2 資料結論，`wave2-fulltext-extraction.md` 中既有萃取內容無需修改。
