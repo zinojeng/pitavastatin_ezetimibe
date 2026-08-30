@@ -26,6 +26,18 @@ redistribution license 已被明確查證並記錄（`verified: true`, `license:
 下載到本機。`llamaparse` MCP 連線本身已確認可用（見 `30_METHODS/trials-efficacy/search-log.md`），
 非阻塞因素。
 
+## 專案層級新限制（Decision 2026-08-31-08，2026-08-31 追加）
+
+Research Director 已裁示：**`mcp__research_hub__download_paper` 不得由任何角色呼叫**（其內部
+metasearch 含 Sci-Hub 且無 opt-out 參數，牴觸 CLAUDE.md §10 的 Sci-Hub 全面禁令）；
+`research_hub` 的 metadata-only 工具（如 `search_papers`）仍可使用。
+
+**揭露**：本 Wave 1 過程中，在此限制發布**之前**，本角色曾呼叫 `mcp__research_hub__download_paper`
+一次（TE-001／Chou 2022 的 DOI，見上表）。該次呼叫**失敗**（回傳「13 個資料庫均未收錄」錯誤，未取得
+任何檔案內容，亦未見任何 Sci-Hub 連結或內容被回傳）。因限制發布前無法得知此工具的內部 Sci-Hub
+fallback 行為，特此如實記錄，供 Director／PI 判斷是否需要進一步追查。**Wave 2 起本角色不會再呼叫
+此工具**，全文取得將改用 `mcp__paper-search__search_unpaywall` 或直接請 PI 透過機構訂閱管道取得。
+
 ## Wave 2 全文取得建議優先序（供 Research Director / 本角色自行後續處理參考）
 
 1. TE-007（Sydhom, open access, 高優先 — 需釐清 pooled study 清單以解決 SOURCE_CONFLICT 疑慮）

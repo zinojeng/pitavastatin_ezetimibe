@@ -63,6 +63,19 @@ Scope 依 CLAUDE.md §5（Prioritized Search Protocol）第 5、6、7、8、9 �
 | 13 | Chou 2022 全文取得嘗試 | `mcp__research_hub__download_paper`（DOI）| 下載失敗（13 個資料庫均未收錄可下載全文；Elsevier 全文付費牆）；未嘗試 Sci-Hub | — |
 | 14 | `Tonvasca_2026.md` 未讀完剩餘段落（04_OPEN-QUESTIONS 待辦） | `Read` 工具直接讀取 line 1680–2811（本 Wave 0 未讀完的剩餘 36%） | 補齊 Phase III FDC trial 之 AE 表格（見 extraction-table）與 DDI/ADR 段落（歸 safety-pharmacology）；未發現額外未登記之 trials-efficacy 引用 | — |
 
+## 新發現來源之完整格式化引用（Director 要求，2026-08-31 追加）
+
+- Tsujita K, Yokote K, Ako J, Tanigawa R, Tajima S, Suganami H. Efficacy and Safety of
+  Pitavastatin/Ezetimibe Fixed-Dose Combination vs. Pitavastatin: Phase III, Double-Blind,
+  Randomized Controlled Trial. *J Atheroscler Thromb*. 2023;30(11):1580-1600.
+  DOI: 10.5551/jat.64006. PMID: 36908150. ClinicalTrials.gov: NCT04289649.
+- Ako J, Yokote K, Tsujita K, Tanigawa R, Kamei R, Suganami H. Long-term Efficacy and Safety of
+  K-924 Pitavastatin/Ezetimibe Fixed-dose Combination in Patients with Hypercholesterolemia: A
+  Phase III, Multi-center, Open-label Trial. *J Atheroscler Thromb*. 2024;31(3):288-305.
+  DOI: 10.5551/jat.64272. PMID: 37722882.
+
+（vol/issue/page 皆以 Crossref `get_crossref_paper_by_doi` 直接取得，非轉錄自二手來源。）
+
 ## 未執行 / 刻意跳過的檢索
 
 - 未使用 `scihub` MCP 工具或 `paper-search` 的 `download_scihub`（CLAUDE.md §10 明文禁止，無例外）。
