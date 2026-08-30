@@ -20,11 +20,31 @@ redistribution license 已被明確查證並記錄（`verified: true`, `license:
 | TE-008 | Boekholdt SM et al. JACC 2014 | 10.1016/j.jacc.2014.02.615 | 未嘗試下載 | — | Elsevier 期刊，付費牆；abstract 已足夠 |
 | TE-009 | Yeh YT et al. PLoS ONE 2017 (T-SPARCLE) | 10.1371/journal.pone.0186861 | 未嘗試下載 | — | **PLoS ONE 為 open access**；Wave 2 可直接取得全文，目前未見必要性（abstract 數字已足夠） |
 
+## Wave 2 全文取得結果（2026-08-31，PI 授權 Decision 2026-08-31-12）
+
+| citation_id | 全文取得狀態 | 來源 URL | 取得時間 (UTC) | SHA-256 | 授權/license | LlamaParse 狀態 |
+|---|---|---|---|---|---|---|
+| TE-002（Tsujita 2023） | **成功** | `https://www.jstage.jst.go.jp/article/jat/advpub/0/advpub_64006/_pdf`（期刊官方 J-STAGE 平台，開放取用） | 2026-08-30T20:58:06Z（本機 UTC） | `afe6befc78a9084f95580e513568615618153abd45ddb20ff76ca5e9f4022c26` | J Atheroscler Thromb 為 J-STAGE 開放取用期刊；未查證確切 CC 授權條款（Advance Publication 版本），本檔案僅供本角色萃取比對用，**未提交進 repo**（依 CLAUDE.md §11，PDF 本體一律留在本機 gitignored 路徑，不 commit） | **成功**（114,893 字元 markdown，10 頁全部解析）— 此為 Gate 2 要求的 LlamaParse 示範之一，**已確認成功** |
+| TE-003（Ako 2024） | **成功** | `https://www.jstage.jst.go.jp/article/jat/advpub/0/advpub_64272/_pdf`（同上平台；URL pattern 由 TE-002 之 DOI-slug 規則推導後驗證成功） | 2026-08-30T20:58（本機 UTC，與 TE-002 同批次） | `1e103ff00040a986f88820ef2b96924bcac4a9ae4bad4bc313fad4d6f21ac960` | 同上 | **成功**（107,117 字元 markdown，全文解析） |
+| TE-001（Chou 2022, item 4 覆核） | **仍失敗（重試後維持 BLOCKED_FOR_SOURCE）** | Elsevier ScienceDirect（Clinical Therapeutics） | 2026-08-30（重試時間） | 不適用 | Unpaywall 查無 OA 版本（`search_unpaywall` 回傳空結果）；未嘗試 `mcp__research_hub__download_paper`（Decision 2026-08-31-08 永久禁用），未嘗試 Sci-Hub | 不適用（無檔案可解析） |
+| T-012（Katzmann 2022） | **仍失敗（BLOCKED_FOR_SOURCE）** | `https://link.springer.com/content/pdf/10.1007/s00392-020-01740-8.pdf`（Crossref 提供的 pdf_url） | 2026-08-30（嘗試時間） | 不適用 | Unpaywall 查無 OA 版本；直接以 `curl -I` 檢測該 Springer pdf_url，回傳 `content-type: text/html`、`content-length: 3038`（明顯為付費牆/存取拒絕頁面，非真實 PDF）— 未進一步嘗試登入/繞過，依 CLAUDE.md §10「不得繞過」原則停止 | 不適用（無檔案可解析） |
+
+**BLOCKED_FOR_SOURCE 正式紀錄**：TE-001（Chou 2022 全文，用於取得逐劑量/逐組 AE/CK/肝功能細項
+表格）與 T-012（Katzmann 2022 全文，用於解決 `unresolved-questions.md` Q7 的樣本數矛盾）
+兩者在 Wave 2 皆已重新嘗試（`research_hub`/`llamaparse` 連線已修復後），透過 Unpaywall 查詢與
+直接 HTTP 檢測確認**無合法可取得的開放版本**。依 CLAUDE.md §10，正式記錄為 `BLOCKED_FOR_SOURCE`
+——不繞過、不使用 Sci-Hub、不重試 `research_hub` 的 download 工具。若 PI／機構有訂閱管道，需透過
+機構授權管道另行取得，非本角色可解決的技術問題。
+
 ## LlamaParse 使用狀況
 
-本次 Wave 1 **未呼叫** `mcp__llamaparse__parse_pdf_to_markdown`，因為上表中沒有任何 PDF 被成功
-下載到本機。`llamaparse` MCP 連線本身已確認可用（見 `30_METHODS/trials-efficacy/search-log.md`），
-非阻塞因素。
+Wave 1 **未呼叫** `mcp__llamaparse__parse_pdf_to_markdown`（當時無成功下載的本機 PDF 可供解析）。
+**Wave 2 更新**：已成功呼叫兩次，對 TE-002（Tsujita 2023）與 TE-003（Ako 2024）的 J-STAGE 官方
+PDF 全文執行解析，皆完整成功（見上表）。TE-002 為 Director 指定的 Gate 2 LlamaParse 示範案例，
+**已確認成功**：輸出 114,893 字元、10 頁全文皆解析出表格與內文（含 Table 1–3、Fig. 2–3 註腳、
+Discussion 全段），未見截斷或亂碼。原始 PDF 檔案本體與 LlamaParse 解析出的完整 markdown 皆存於
+本機 `$CLAUDE_JOB_DIR/tmp/pdfs/`（gitignored，不提交 repo）；`10_DATA/trials-efficacy/
+wave2-fulltext-extraction.md` 為本角色從解析結果中萃取、可提交 repo 的結構化摘要與逐字引用。
 
 ## 專案層級新限制（Decision 2026-08-31-08，2026-08-31 追加）
 

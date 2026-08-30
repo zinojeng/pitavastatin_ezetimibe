@@ -87,6 +87,35 @@ Scope 依 CLAUDE.md §5（Prioritized Search Protocol）第 5、6、7、8、9 �
 
 （vol/issue/page 皆以 Crossref `get_crossref_paper_by_doi` 直接取得，非轉錄自二手來源。）
 
+## Wave 2 全文取得與解析紀錄（2026-08-31，PI 授權 Decision 2026-08-31-12）
+
+依 Director／PI 指派，重新確認 `research_hub`／`llamaparse` 連線（皆已修復，`llamaparse` 通過
+dummy-PDF smoke test）後執行：
+
+1. **TE-002（Tsujita 2023）**：以 Director 提供的 J-STAGE URL 直接下載官方 PDF（`curl`，非
+   research_hub／scihub），取得 10 頁真實 PDF（717,939 bytes），SHA-256 見
+   `fulltext-manifest.md`。以 `mcp__llamaparse__parse_pdf_to_markdown` 解析成功（114,893 字元）
+   — **此為 Director 指定的 Gate 2 LlamaParse 示範案例之一，已確認成功**。萃取結果見
+   `10_DATA/trials-efficacy/wave2-fulltext-extraction.md`。
+2. **TE-003（Ako 2024）**：Director 僅提供 PMC ID（PMC10918028）；本角色由 TE-002 的 J-STAGE
+   URL pattern（`article/jat/advpub/0/advpub_<DOI後綴>/_pdf`）推導出對應 URL 並驗證下載成功
+   （321,262 bytes 真實 PDF）。以 LlamaParse 解析成功（107,117 字元）。
+3. **PMC 直接下載嘗試（先於上述 J-STAGE 方案）**：依 Director 提供的 PMC ID
+   （PMC10627746／PMC10918028）嘗試直接 `curl` PMC PDF 端點，兩者皆被 PMC 的
+   proof-of-work（POW）反機器人機制攔截（回傳 JS challenge 頁面，非真實 PDF）。**未嘗試破解此
+   POW challenge**（此非合法來源存取限制，而是反爬蟲機制，破解會落入 detection-evasion 範疇，
+   本角色主動避免），改用 Director 提供的 J-STAGE 官方連結，成功取得相同內容的官方版本。
+4. **TE-001（Chou 2022）全文重試**：`mcp__paper-search__search_unpaywall` 查無 OA 版本。未嘗試
+   `mcp__research_hub__download_paper`（Decision 2026-08-31-08 永久禁用）。判定
+   `BLOCKED_FOR_SOURCE`。
+5. **T-012（Katzmann 2022）全文取得**：`search_unpaywall` 查無 OA 版本；以 `curl -I` 檢測
+   Crossref 提供的 Springer pdf_url，回傳 `content-type: text/html`（3038 bytes，非真實 PDF，
+   判定為存取限制頁）。未嘗試登入/繞過。判定 `BLOCKED_FOR_SOURCE`。
+6. **T-015（REPRIEVE trial, Grinspoon SK et al. NEJM 2023）**：`mcp__paper-search__search_pubmed`
+   + `get_crossref_paper_by_doi`（DOI 10.1056/NEJMoa2304146）—— 找到並確認：期刊/卷期頁碼/DOI/
+   PMID 皆與 Director 提供的引用字串完全相符（VERIFIED）。詳見
+   `20_EVIDENCE/trials-efficacy/evidence-map.md` 新增章節（TE-011）。
+
 ## 未執行 / 刻意跳過的檢索
 
 - 未使用 `scihub` MCP 工具或 `paper-search` 的 `download_scihub`（CLAUDE.md §10 明文禁止，無例外）。
