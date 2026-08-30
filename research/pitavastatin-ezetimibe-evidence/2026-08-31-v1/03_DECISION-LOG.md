@@ -121,3 +121,116 @@ see `04_OPEN-QUESTIONS.md` sync-gap note), `05_STATUS.md`.
 **Source:** Cross-session exchange with guideline-risk-intelligence, 2026-08-31 (`90_CROSS-SESSION-LOG/2026-08-31_wave1-kickoff.md`).
 
 **Approved by:** Research Director (Wave 1).
+
+---
+
+## Decision 2026-08-31-06
+
+**Issue:** trials-efficacy-intelligence reports (2026-08-31, Wave 1) that `Tonvasca_2026.md`'s
+citation #26 (Sydhom P, et al. BMC Cardiovasc Disord. 2024;24(1):660.) is quoted/used to support
+"low/moderate-intensity statin + ezetimibe" clinical-outcome benefit **surpassing** high-intensity
+statin monotherapy without qualifier — but per trials-efficacy's read of the primary publication's
+own abstract, that benefit was shown only in the **observational-study-pooled** analysis; the
+**RCT-pooled** analysis within the same meta-analysis found **no significant** difference in clinical
+endpoints between the two strategies. `Tonvasca_2026.md`'s own slide text (lines ~1006–1037, "RCTs
+demonstrate superior lipid lowering and fewer adverse effects... while observational data indicate
+better clinical outcomes") does appear to preserve this RCT/observational split for AEs/NODM, but the
+MACE/CV-death/all-cause-death/stroke HRs on the preceding slide are not clearly labeled
+observational-only in the table trials-efficacy reviewed — this is exactly the kind of Evidence
+Hierarchy conflation (`OBSERVATIONAL EVIDENCE` cited as if `DIRECT EVIDENCE`/RCT-grade) that
+`CLAUDE.md` §7 exists to catch.
+
+**Decision:** `NEEDS_PI` — do not silently reword `Tonvasca_2026.md` (it is a read-only legacy input,
+`CLAUDE.md` §1) or `40_SYNTHESIS/` content yet. Route to the PI: any future synthesis or slide
+language drawing on the Sydhom et al. 2024 clinical-outcome figures (MACE 0.76, CV death 0.80,
+all-cause death 0.84, non-fatal stroke 0.81) must explicitly qualify them as observational-pooled,
+not RCT-pooled, evidence — pending PI confirmation of trials-efficacy's read of the primary source's
+abstract (Director has not independently re-verified the primary source directly).
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (citation #26 row — verified?/notes updated),
+`04_OPEN-QUESTIONS.md`. Not `Tonvasca_2026.md` (read-only) or `40_SYNTHESIS/` (Wave 3, not started).
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31
+(`90_CROSS-SESSION-LOG/trials-efficacy-intelligence.md`, referenced — full detail currently in that
+peer's unmerged worktree; this entry records the Director-facing summary only).
+
+**Approved by:** Research Director (Wave 1).
+
+---
+
+## Decision 2026-08-31-07
+
+**Issue:** trials-efficacy-intelligence located two new sources during Wave 1 that directly answer
+Search Protocol item 5 (`CLAUDE.md` §5, "2 mg vs 4 mg, and add-ezetimibe vs dose escalation"),
+previously logged as "not yet located" (source T-004 in `02_SOURCE-INVENTORY.md`): Tsujita K, et al.
+J Atheroscler Thromb. 2023 (4-arm Japanese RCT: pitavastatin 2 mg / 4 mg / 2 mg+ezetimibe 10 mg /
+4 mg+ezetimibe 10 mg; 12-week LDL-C % change reported as −39.5 / −45.2 / −51.4 / −57.8 respectively,
+per trials-efficacy's report) and its 52-week open-label extension, Ako J, et al. 2024.
+
+**Decision:** `VERIFIED_AND_REPLACE` (for the "not yet located" status of T-004 only — the underlying
+numeric figures themselves are newly added, not replacing any prior verified value). Add both as new
+rows in `02_SOURCE-INVENTORY.md`, update T-004's status from "not yet located" to "located,
+trials-efficacy-verified against PubMed-indexed primary publication (HIGH confidence per peer
+report; Director has not independently re-verified)."
+
+**Affected files:** `02_SOURCE-INVENTORY.md`.
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 1).
+
+---
+
+## Decision 2026-08-31-08
+
+**Issue:** guideline-risk-intelligence reports that calling `mcp__research_hub__download_paper`
+(for the Taiwan STS 2026 consensus, DOI 10.1016/j.jfma.2026.04.111, itself confirmed open-access/
+CC-licensed) produced a tool response stating it searches "ArXiv, CrossRef, SSRN, Sci-Hub, and
+others" — with no parameter exposed to exclude Sci-Hub from that internal search. The call returned
+no PDF/content, so nothing Sci-Hub-sourced entered the repo, but the tool itself queries a prohibited
+source as part of its normal operation with no opt-out.
+
+**Decision:** `NEEDS_PI` for final policy, but Director is imposing an **interim precautionary
+restriction effective immediately** (tightening, not loosening, an existing safety rule — within
+Director authority per Runbook §5 without needing to pause for PI sign-off, though PI visibility is
+still warranted given the subject): `mcp__research_hub__download_paper` must not be called by any
+role in this project until the PI decides otherwise. `research_hub`'s metadata-only tools (e.g.
+`search_papers`) remain permitted. `CLAUDE.md` §10 updated accordingly. Reported to the PI directly
+in this turn's response, per the harness's Sci-Hub/unauthorized-access sensitivity guidance.
+
+**Reason:** `CLAUDE.md` §10 (itself instantiating the PI's explicit instruction) prohibits Sci-Hub
+"for any purpose, under any framing" — a tool whose own internal search fan-out includes Sci-Hub
+with no disable option falls inside that framing even when the specific call obtained no content.
+guideline-risk-intelligence's handling was correct: it did not use the (empty) result, did not
+retry via a different route, and escalated instead of deciding unilaterally — commended, not
+corrected.
+
+**Affected files:** `CLAUDE.md` §10.
+
+**Source:** guideline-risk-intelligence cross-session report, 2026-08-31
+(`20_EVIDENCE/guideline-risk/unresolved-questions.md`, item 2 — read via `git show` against the
+peer's pushed-but-unmerged branch `origin/worktree-pit-eze-guideline-risk-wave1`).
+
+**Approved by:** Research Director (Wave 1), flagged to PI.
+
+---
+
+## Decision 2026-08-31-09
+
+**Issue:** guideline-risk-intelligence reports citation #27 (2025 Taiwan lipid clinical pathway
+consensus, 李貽恒、石崇良, 內科學誌 2024;35:426-430) as printed in `Tonvasca_2026.md` has a DOI
+transcription discrepancy: printed as `10.6314/JIMT.202412_35(6).04.04` (doubled `.04` suffix);
+independently located correct DOI is `10.6314/JIMT.202412_35(6).04` (single suffix). Title/authors/
+journal/volume/issue/pages otherwise match.
+
+**Decision:** `VERIFIED_AND_REPLACE` — for the DOI field only. The citation's identity is confirmed
+correct; only the DOI string as printed in the legacy slide source contains a transcription error.
+Use the corrected DOI (`10.6314/JIMT.202412_35(6).04`) in any `20_EVIDENCE/`/`40_SYNTHESIS/` output
+going forward; `Tonvasca_2026.md` itself is not edited (read-only legacy input, `CLAUDE.md` §1) —
+this correction lives in `02_SOURCE-INVENTORY.md` and this log entry, not in the source file.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (citation #27 row).
+
+**Source:** guideline-risk-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 1).
