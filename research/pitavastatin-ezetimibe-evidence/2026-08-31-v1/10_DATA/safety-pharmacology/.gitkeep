@@ -1,0 +1,4 @@
+Owner: safety-pharmacology-intelligence
+Purpose: numeric extraction tables for glycemic outcomes (NODM/HbA1c/insulin sensitivity), DDI
+tables (CYP3A4/transporter/cyclosporine/macrolide/rifampin/fibrate interactions), and AE/CK/liver
+enzyme tables from dose-comparison and FDC safety data. Populated starting Wave 1.

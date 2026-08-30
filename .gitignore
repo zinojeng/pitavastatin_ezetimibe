@@ -1,0 +1,43 @@
+# ============================================================
+# pitavastatin-ezetimibe-evidence — Cross-session Research repo
+# ============================================================
+# Rule: full-text PDFs and any parsed/OCR'd full text (LlamaParse
+# output, scraped article bodies, etc.) are LOCAL-ONLY working
+# material. They must never be committed unless a specific file's
+# redistribution license has been verified and recorded in
+# 02_SOURCE-INVENTORY.md (verified: true, license: <name>).
+#
+# Only commit: metadata, extraction tables, citation lists, and
+# synthesis/markdown written by the research roles.
+
+# --- Full-text / raw literature (local-only by default) ---
+**/10_DATA/fulltext/
+**/10_DATA/raw-pdf/
+**/20_EVIDENCE/**/fulltext/
+**/*.pdf
+**/*.PDF
+**/llamaparse-output/
+**/*.parsed.md
+**/*_parsed.md
+
+# --- Secrets / credentials (must NEVER be tracked) ---
+.env
+.env.*
+*.key
+*.pem
+**/secrets/
+**/*apikey*
+**/*api_key*
+**/*credentials*.json
+mcp-config.local.json
+
+# --- OS / editor noise ---
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+.claude/worktrees/
+
+# --- Explicit local scratch space ---
+/scratch/
+/tmp/

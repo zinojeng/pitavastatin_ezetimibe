@@ -1,0 +1,4 @@
+Owner: guideline-risk-intelligence
+Purpose: numeric extraction tables (risk-stratification thresholds, LDL-C goals by risk tier,
+PREVENT-ASCVD inputs, Taiwan STS criteria, guideline recommendation classes/levels of evidence).
+Populated starting Wave 1. Do not write interpretation here — see 20_EVIDENCE and 40_SYNTHESIS.

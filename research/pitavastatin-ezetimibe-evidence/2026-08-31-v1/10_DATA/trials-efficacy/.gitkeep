@@ -1,0 +1,5 @@
+Owner: trials-efficacy-intelligence
+Purpose: exact numeric extraction tables from RCTs/meta-analyses (Phase III pitavastatin/ezetimibe
+FDC trial, RACING, HIJ-PROPER, dose-comparison trials, absorption-phenotype substudies). Every
+numeric token must be copied exactly from source with citation; no silent correction (see CLAUDE.md
+§ Numeric Integrity Rule). Populated starting Wave 1.

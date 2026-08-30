@@ -1,0 +1,5 @@
+Owner: shared, append-only. Any persistent role may append a dated log entry summarizing a
+cross-session message it sent or received (control-plane traffic), using the message schema in
+CLAUDE.md. Research Director maintains the running index. Full research content belongs in
+10_DATA/20_EVIDENCE/30_METHODS/40_SYNTHESIS, not here — this folder is a control-plane record,
+not a knowledge-plane one.
