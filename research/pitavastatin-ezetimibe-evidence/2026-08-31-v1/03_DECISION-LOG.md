@@ -292,6 +292,83 @@ all five and authorized Wave 2.
 
 ---
 
+## Decision 2026-08-31-13
+
+**Issue:** guideline-risk-intelligence's Wave 2 attempts to fetch all three assigned priority PDFs
+(2026 ACC/AHA at the PI-supplied `ahajournals.org` URL, Taiwan STS 2026 at ScienceDirect, ESC 2025
+Focused Update at `academic.oup.com`) all returned HTTP 403 with a **Cloudflare bot-challenge
+signature** (`cf-mitigated: challenge`) via both `curl` and `WebFetch` — a bot-detection wall, not a
+conventional subscription login wall. Independently corroborated via Europe PMC's own indexed
+metadata: all three PMIDs show `is_open_access:False` with no PMCID.
+
+**Decision:** `BLOCKED_FOR_SOURCE` for all three, by automated means. guideline-risk did **not**
+escalate to any workaround (e.g., programmatically solving the Cloudflare challenge) — correctly
+identified that as crossing from lawful acquisition into detection-evasion territory, out of scope
+for any role in this project (`CLAUDE.md` §10's spirit extends here even though Cloudflare, not
+Sci-Hub, is the specific wall). Genuine institutional or manual access is the only lawful path
+forward for these three documents; recorded as a standing ask to the PI (see `04_OPEN-QUESTIONS.md`).
+guideline-risk satisfied the Wave 2 Gate-2 LlamaParse requirement instead using a substitute,
+genuinely open-access source (T-014) — see that row in `02_SOURCE-INVENTORY.md` for the caveat that
+this substitute does not cover ezetimibe/combination-therapy content, so the "extract
+combination-therapy wording" task item remains unfulfilled pending the blocked documents.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-005, T-007, #28 rows), `04_OPEN-QUESTIONS.md`.
+
+**Source:** guideline-risk-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
+## Decision 2026-08-31-14
+
+**Issue:** During the same Wave 2 attempt, a `WebFetch` call against the ESC 2025 Focused Update's
+Oxford Academic landing page returned a response that explicitly stated the article was paywalled,
+then went on to confidently quote specific quantitative content and a page/section locator anyway —
+consistent with the underlying summarization model confabulating plausible content rather than
+performing genuine extraction.
+
+**Decision:** guideline-risk-intelligence **discarded the fabricated content entirely** — it was
+never recorded in any output file, never cited, and is not part of this repo's evidence base. This
+Director records the incident (not the fabricated content itself) for institutional memory and adds
+a general caution for all roles going forward — see `CLAUDE.md` §9 ("Tool-confabulation caution").
+This is exactly the discipline the project's Numeric Integrity Rule and Evidence Hierarchy exist to
+enforce, extended from source-printed numbers to tool-summarized content.
+
+**Affected files:** `CLAUDE.md` §9, `02_SOURCE-INVENTORY.md` (T-007 row, informational note).
+
+**Source:** guideline-risk-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2). Commended, not corrected — this is exactly the
+adversarial self-scrutiny the project needs more of (Runbook §30).
+
+---
+
+## Decision 2026-08-31-15
+
+**Issue:** guideline-risk-intelligence, while reading T-014's (Razavi/Blumenthal 2026 editorial)
+reference list, found a citation for the REPRIEVE trial (Grinspoon SK, Fitch KV, Zanni MV, et al.,
+"Pitavastatin to Prevent Cardiovascular Disease in HIV Infection," N Engl J Med. 2023;389:687-699)
+— a pitavastatin cardiovascular-**outcome** RCT not currently in `02_SOURCE-INVENTORY.md`.
+guideline-risk explicitly flagged this as outside its own domain and not independently verified
+beyond what's printed in the reference list, and routed it to the Director rather than claiming it.
+
+**Decision:** `VERIFIED_AND_REPLACE` is not applicable (this is a genuinely new source, not a
+correction) — logged as **new source T-015**, assigned to trials-efficacy-intelligence for
+verification and evidence-hierarchy placement. Important distinction to hold going forward:
+REPRIEVE is pitavastatin **monotherapy** in an **HIV population**, evidentially distinct from both
+HIJ-PROPER (pitavastatin+ezetimibe combination, general dyslipidemia population) and RACING
+(rosuvastatin+ezetimibe combination) — none of the three should be conflated with each other in any
+future synthesis.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (new T-015 row).
+
+**Source:** guideline-risk-intelligence cross-session report, 2026-08-31.
+
+**Approved by:** Research Director (Wave 2).
+
+---
+
 ## Decision 2026-08-31-08
 
 **Issue:** guideline-risk-intelligence reports that calling `mcp__research_hub__download_paper`

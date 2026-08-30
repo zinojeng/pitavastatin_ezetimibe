@@ -28,19 +28,25 @@ that resolved them.
   2026-08-31-11). **PI-confirmed (2026-08-31): this stays unresolved and no *n* from this study may
   be cited until full text is obtained.** The 4 already-verified percentage/p-value figures (28.4%
   vs. 19.4% LDL-C reduction; 31.5% vs. 21.0% attainment) remain citable.
-- [NEEDS_SOURCE, dispatched to guideline-risk] Taiwan STS 2026 consensus (T-005, DOI
-  10.1016/j.jfma.2026.04.111) — attempt a publisher-authorized full-text fetch; if blocked, record
-  `BLOCKED_FOR_SOURCE` rather than treating the landing-page OA/CC badges as confirmed access (see
-  the T-005 access-status item under Resolved below for why this is still open at the full-text
-  level even though the citation itself is verified).
-- [NEEDS_SOURCE, dispatched to guideline-risk] Official 2026 ACC/AHA guideline PDF
-  (`ahajournals.org/doi/pdf/10.1161/CIR.0000000000001423`) and official ESC 2025 Focused Update
-  content — obtain and extract exact combination-therapy wording. Use LlamaParse on at least one
-  lawful PDF from this batch.
-- [NEEDS_SOURCE, dispatched to guideline-risk] Numeric-threshold/wording confirmation still pending
+- [NEEDS_PI] **Taiwan STS 2026 (T-005), 2026 ACC/AHA guideline (#28), and ESC 2025 Focused Update
+  (T-007) are all `BLOCKED_FOR_SOURCE` by automated means** (Decision 2026-08-31-13) — all three
+  return HTTP 403 Cloudflare bot-challenges, corroborated via Europe PMC metadata
+  (`is_open_access:False`, no PMCID for any of the three). guideline-risk correctly did not attempt
+  any bot-detection workaround. **Question for the PI: can any of these three PDFs be supplied
+  directly (manual download or authenticated/institutional access)?** If so, guideline-risk can
+  parse immediately with LlamaParse. Without one of these three, the "extract statin+ezetimibe
+  combination-therapy wording" Wave 2 task item cannot be completed — the Gate-2 LlamaParse
+  requirement was satisfied on a substitute source (T-014) that doesn't discuss ezetimibe.
+- [NEEDS_SOURCE, dispatched to guideline-risk, now the active priority per Director 2026-08-31 —
+  the three items above are blocked pending PI] Numeric-threshold/wording confirmation still pending
   for every other guideline document identified in Wave 1 (Taiwan Lp(a) 2026/T-006, 2023 TSC CCS,
   base 2019 ESC/EAS/#34, both 2022 Taiwan lipid-guideline companions/#29/#35, ADA 2025/#32) — Wave 1
   confirmed document *identity* only.
+
+- [NEEDS_SOURCE, dispatched to trials-efficacy] T-015 (REPRIEVE trial, Grinspoon SK et al. NEJM
+  2023;389:687-699) — new pitavastatin cardiovascular-outcome RCT found by guideline-risk (routed,
+  not independently verified). See Decision 2026-08-31-15. Pitavastatin monotherapy, HIV
+  population — do not conflate with HIJ-PROPER or RACING.
 - [NEEDS_SOURCE, dispatched to guideline-risk] **111 年健康促進統計年報** (Taiwan Health Promotion
   Administration statistical annual report, ROC 111 = 2022, T-008) — not indexed in PubMed/
   Crossref/paper-search; requires a direct fetch from the 國民健康署 website. Not part of the PI's
