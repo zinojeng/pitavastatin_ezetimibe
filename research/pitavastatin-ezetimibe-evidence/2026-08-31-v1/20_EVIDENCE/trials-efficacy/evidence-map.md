@@ -196,6 +196,29 @@ Role: trials-efficacy-intelligence · Wave: 1
   有明顯落差，**不建議直接等同於「pitavastatin/ezetimibe FDC 對台灣一般族群的 hard-outcome
   證據」**——引用時應清楚註明族群限制，作為第四個獨立參考點而非 Level 3 證據的替代或加強。
 
+### TE-012 — Taguchi I et al. Circulation 2018;137(19):1997-2009（REAL-CAD trial，T-016，本角色於 2026-08-31 主動驗證，Director Decision 2026-08-31-19 授權）
+
+- Evidence Hierarchy：**DIRECT EVIDENCE**，同樣是 pitavastatin **單方**（非 FDC）的 hard-outcome
+  RCT，但問題與 TE-011（REPRIEVE）不同——這是**pitavastatin 劑量強度**（4mg vs 1mg）本身的
+  比較，收案為**日本穩定型 CAD 二級預防**族群（非 HIV 初級預防）。
+- N=13,054 隨機分派 1:1（高劑量 4mg n=6526／低劑量 1mg n=6528），中位追蹤 3.9 年。收案前先經
+  pitavastatin 1mg run-in period 確認 LDL-C<120 mg/dL。
+- Baseline LDL-C（run-in 後）：高劑量組 87.7 mg/dL vs 低劑量組 88.1 mg/dL；追蹤期間高劑量組
+  LDL-C 平均低 14.7 mg/dL（p<0.001）。
+- **Primary endpoint**（CV 死亡、非致死性 MI、非致死性缺血性中風、需急診住院的不穩定心絞痛）：
+  266(4.3%) vs 334(5.4%)；**HR 0.81, 95% CI 0.69–0.95, P=0.01** — 達統計顯著。
+- Secondary composite endpoint（primary + 臨床指示之冠脈血運重建）：489(7.9%) vs 600(9.7%)；
+  HR 0.83, 95% CI 0.73–0.93, P=0.002。
+- **此為 Q8 的完整解決**：TE-002（Tsujita 2023）全文中曾二手引用此試驗數字（HR 0.81, 95% CI
+  0.69–0.95）作為其「選擇 2mg/4mg 為 FDC 劑量」的立論依據之一，本角色現已獨立驗證原始發表，
+  數字**完全吻合**，TE-002 的這項立論依據站得住腳。
+- **與 TE-011（REPRIEVE）合併觀察**：兩篇獨立、大型、正向的 pitavastatin 單方 hard-outcome
+  RCT（REAL-CAD 二級預防 CAD 族群、REPRIEVE 初級預防 HIV 族群）共同構成「pitavastatin 這個分子
+  本身具備 hard-outcome RCT 證據基礎」的有力背景，可作為 `40_SYNTHESIS/` 中與
+  `pitavastatin topic.md` §6 Level 1/2/3（FDC 專屬）框架**並列但不混淆**的第四類參考點。
+  兩者皆非 FDC/ezetimibe 併用證據，**不可**用來替代或加強 Level 3（HIJ-PROPER）的 FDC-hard-outcome
+  證據缺口，僅能佐證「pitavastatin 本身劑量與強度具有心血管結果證據」這個相鄰但獨立的論點。
+
 ---
 
 ## 補充：FDC 劑型本身（非 pitavastatin 專屬）的 adherence/efficacy 佐證

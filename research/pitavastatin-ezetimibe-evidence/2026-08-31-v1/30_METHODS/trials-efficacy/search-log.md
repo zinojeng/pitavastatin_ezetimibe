@@ -115,6 +115,13 @@ dummy-PDF smoke test）後執行：
    + `get_crossref_paper_by_doi`（DOI 10.1056/NEJMoa2304146）—— 找到並確認：期刊/卷期頁碼/DOI/
    PMID 皆與 Director 提供的引用字串完全相符（VERIFIED）。詳見
    `20_EVIDENCE/trials-efficacy/evidence-map.md` 新增章節（TE-011）。
+7. **T-016（REAL-CAD trial，Q8，Director Decision 2026-08-31-19 授權本角色自行驗證）**：
+   `mcp__paper-search__search_pubmed`「REAL-CAD randomized evaluation aggressive lipid-lowering
+   pitavastatin coronary artery disease Japan」先找到設計論文與多篇 substudy，再以更精確關鍵字
+   「Taguchi high-dose versus low-dose pitavastatin coronary artery disease randomized trial
+   Circulation 2018」定位主要結果論文（PMID 29735587）；`get_crossref_paper_by_doi`（DOI
+   10.1161/CIRCULATIONAHA.117.032615）確認期刊/卷期頁碼。數字與 TE-002 全文中的二手引用完全
+   吻合（VERIFIED）。詳見 `evidence-map.md`（TE-012）。
 
 ## 未執行 / 刻意跳過的檢索
 

@@ -49,7 +49,7 @@ Wave 1「先驗證既有引用」的範圍）：
 用語是否修正）、或其他分類，並記錄於 `03_DECISION-LOG.md`（本角色無寫入權限，僅在此提出並於
 cross-session summary 中一併回報）。
 
-## Q8 [NEEDS_SOURCE] REAL-CAD 試驗（pitavastatin 4mg vs 1mg hard-outcome RCT）— 新識別候選來源
+## Q8 [RESOLVED — 2026-08-31 同日] REAL-CAD 試驗（pitavastatin 4mg vs 1mg hard-outcome RCT）— 新識別候選來源
 
 於 Wave 2 全文覆核 TE-002（Tsujita 2023）時，於其 Introduction／Discussion 段落發現該文獻引用
 REAL-CAD 試驗：「compared with 1 mg/day, 4 mg/day of pitavastatin led to a 19% relative risk
@@ -62,9 +62,12 @@ in the REAL-CAD trial conducted in Japanese patients with CAD」。本角色**�
 （與 Level 1-3 框架討論的「FDC vs monotherapy」問題不同維度，屬於「pitavastatin 4mg vs 1mg 是否
 本身已有 hard-outcome 證據」這一相鄰但不同的問題）。
 
-**需要**：Wave 2/3 獨立搜尋並驗證 REAL-CAD 試驗原始發表（PubMed/Crossref），確認引用字串與數字，
-評估是否納入 `20_EVIDENCE/trials-efficacy/evidence-map.md`。在獨立驗證前，此為二手轉引，
-不可視為已驗證來源。
+**已解決（Director Decision 2026-08-31-19 授權本角色自行驗證）**：獨立找到並驗證原始發表——
+Taguchi I, Iimuro S, Iwata H, et al. "High-Dose Versus Low-Dose Pitavastatin in Japanese Patients
+With Stable Coronary Artery Disease (REAL-CAD): A Randomized Superiority Trial." Circulation.
+2018;137(19):1997-2009. DOI: 10.1161/CIRCULATIONAHA.117.032615. PMID: 29735587。數字（HR 0.81,
+95% CI 0.69–0.95, P=0.01；N=13,054）與 Tsujita 2023 全文中的二手引用完全吻合。已納入
+`extraction-table.csv`（TE-012）與 `evidence-map.md`。
 
 ## Q7 [NEEDS_ANALYST] Katzmann et al. 2022（T-012, TE-010）— Tonvasca_2026.md 同一張投影片內兩組不同的樣本數自相矛盾
 
