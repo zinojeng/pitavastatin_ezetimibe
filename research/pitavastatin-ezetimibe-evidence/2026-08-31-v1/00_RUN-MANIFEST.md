@@ -94,3 +94,34 @@ servers. This is plausibly per-session/per-process MCP state rather than a fixed
 as **session-specific, not project-wide**, until the Director re-tests directly — do not assume
 either server is unavailable to your own session without checking. `openevidence` should still be
 treated as currently unavailable everywhere until a session reports otherwise.
+
+## Wave 2 update (2026-08-31, PI-reported)
+
+The PI confirms `research_hub` and `llamaparse` MCP servers have been **repaired** (the Wave 0
+ENOENT failures — missing `research_hub` Rust binary, missing `llamaparse` Python venv — are
+resolved), and `llamaparse` has **passed a live dummy-PDF smoke test**. Both are authorized for Wave
+2 lawful full-text acquisition, subject to the permanent restriction on
+`mcp__research_hub__download_paper` (Decision 2026-08-31-08/12, `CLAUDE.md` §10). This Director
+session has not independently re-tested either tool itself (its own Wave 2 role is orchestration, not
+literature search); each dispatched specialist should confirm its own session's connectivity before
+relying on either tool, consistent with the "per-session state" caution above. `openevidence`'s
+status is unchanged (last known: down) and is not part of this update.
+
+**Security TODO (PI-directed, 2026-08-31):** historical hardcoded `llamaparse` credentials are
+reported to exist outside this repository and should be rotated or removed by whoever administers
+that environment. No credential value is or should ever be recorded in this repo — see `CLAUDE.md`
+§12.
+
+## Consolidation status (2026-08-31, PI-directed)
+
+Per the PI: all four Wave 1 branches (`worktree-wave0-init`, `worktree-pit-eze-guideline-risk-wave1`,
+`worktree-trials-efficacy-wave1`, `worktree-safety-pharm-wave1`) plus the Director's Gate 1 commits
+have been reviewed, secret-scanned, committed, and consolidated into local `main` by the supervising
+Codex process. Director confirmed via `git log` that local `main` does contain all four branches'
+Wave 1 work, and merged `main` into its own working branch (`worktree-wave0-init`) to pick up the
+three specialists' actual output files for direct visibility — a same-branch catch-up, not an act of
+branch consolidation, per the PI's "do not merge branches yourself" instruction (that instruction
+governs consolidating *other* branches into `main`, which this session has not done and will not
+do). `origin/main` was observed to still show only the Wave 0 commit as of this entry — the local
+consolidation has evidently not yet been pushed to `origin` by the Codex process; not this session's
+concern to resolve.

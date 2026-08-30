@@ -41,3 +41,9 @@ Thumbs.db
 # --- Explicit local scratch space ---
 /scratch/
 /tmp/
+
+# --- MCP tool local cache (added Wave 2, PI directive 2026-08-31) ---
+# Local content-addressable cache written by MCP tooling (e.g. paper-search /
+# llamaparse blob cache). Never durable research output — local-only, never committed.
+.metadata_cache/
+**/.metadata_cache/

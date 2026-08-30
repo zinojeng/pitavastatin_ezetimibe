@@ -140,12 +140,17 @@ observational-only in the table trials-efficacy reviewed — this is exactly the
 Hierarchy conflation (`OBSERVATIONAL EVIDENCE` cited as if `DIRECT EVIDENCE`/RCT-grade) that
 `CLAUDE.md` §7 exists to catch.
 
-**Decision:** `NEEDS_PI` — do not silently reword `Tonvasca_2026.md` (it is a read-only legacy input,
-`CLAUDE.md` §1) or `40_SYNTHESIS/` content yet. Route to the PI: any future synthesis or slide
-language drawing on the Sydhom et al. 2024 clinical-outcome figures (MACE 0.76, CV death 0.80,
-all-cause death 0.84, non-fatal stroke 0.81) must explicitly qualify them as observational-pooled,
-not RCT-pooled, evidence — pending PI confirmation of trials-efficacy's read of the primary source's
-abstract (Director has not independently re-verified the primary source directly).
+**Decision:** `NEEDS_PI` → **PI DECIDED, 2026-08-31**: do not reword `Tonvasca_2026.md` itself (it
+remains a read-only legacy input, `CLAUDE.md` §1). For all `20_EVIDENCE/`, `40_SYNTHESIS/`, and any
+future manuscript/slide output, the PI's required framing for Sydhom et al. 2024's clinical-outcome
+figures (MACE HR 0.76, CV death HR 0.80, all-cause death HR 0.84, non-fatal stroke HR 0.81) is:
+
+> State the observational-pooled benefit only; the RCT-pooled clinical endpoints were **not**
+> statistically significant.
+
+This must be the standing framing anywhere this citation's clinical-outcome claim is used — never
+present the pooled HRs as if they were RCT-grade evidence. `VERIFIED_AND_REPLACE` applied: this PI
+framing supersedes the earlier `NEEDS_PI` hold.
 
 **Affected files:** `02_SOURCE-INVENTORY.md` (citation #26 row — verified?/notes updated),
 `04_OPEN-QUESTIONS.md`. Not `Tonvasca_2026.md` (read-only) or `40_SYNTHESIS/` (Wave 3, not started).
@@ -232,6 +237,58 @@ item added).
 `20_EVIDENCE/trials-efficacy/unresolved-questions.md`, Q7).
 
 **Approved by:** Research Director (Wave 1).
+
+**PI confirmation, 2026-08-31**: remains unresolved until Katzmann 2022 full text is obtained — no
+change. Added to Wave 2 trials-efficacy dispatch as a named acquisition target (see Wave 2 dispatch
+log, `90_CROSS-SESSION-LOG/`).
+
+---
+
+## Decision 2026-08-31-12 — PI Wave 2 Authorization (consolidated record)
+
+**Issue:** Five items had been escalated to the PI across Wave 1 (Decisions 06, 08, 04; the
+multi-worktree consolidation gap; and the Katzmann *n*-mismatch from Decision 11). The PI reviewed
+all five and authorized Wave 2.
+
+**Decisions, verbatim intent preserved:**
+
+1. **Sydhom framing** (Decision 06) — state observational-pooled benefit only; RCT-pooled clinical
+   endpoints were not statistically significant. Applied to citation #26 in
+   `02_SOURCE-INVENTORY.md`.
+2. **research_hub policy** (Decision 08) — keep metadata/search tools only; **permanently** prohibit
+   `mcp__research_hub__download_paper` (no Sci-Hub opt-out). `CLAUDE.md` §10 updated from "interim"
+   to permanent.
+3. **`50_MANUSCRIPT/` ownership** (Decision 04) — Research Director owns coordination until Gate 2.
+   `CLAUDE.md` §3 updated.
+4. **Multi-worktree consolidation** — PI confirms all four Wave 1 branches plus the Director's Gate
+   1 commits were reviewed, secret-scanned, committed, and consolidated into local `main` by the
+   supervising Codex process. **This session must not merge branches itself** going forward. Director
+   independently verified local `main` does contain all four branches' Wave 1 work (confirmed via
+   `git log`) and merged `main` into its own working branch to pick up the specialists' output files
+   — this is a same-branch catch-up, not a branch-consolidation act, and does not touch `main`.
+   `origin/main` was found to still show only the Wave 0 commit as of this entry (not yet pushed by
+   the Codex process) — noted for transparency, not treated as a discrepancy for this session to
+   resolve; pushing `main` is likewise reserved to the PI/Codex process.
+5. **Katzmann cohort-size discrepancy** (Decision 11) — remains unresolved until full text; carried
+   into Wave 2 dispatch below.
+
+**Also authorized/directed by the PI, 2026-08-31:**
+- Add `.metadata_cache/` to `.gitignore` (done).
+- Create a session registry (`90_CROSS-SESSION-LOG/SESSION-REGISTRY.md`, done).
+- Record that `research_hub` and `llamaparse` MCP servers were repaired and `llamaparse` passed a
+  live dummy-PDF smoke test (`CLAUDE.md` §10 updated; `00_RUN-MANIFEST.md` connectivity section to
+  be updated).
+- Add a security TODO (not a credential value) that historical hardcoded `llamaparse` credentials
+  exist outside this repository and should be rotated/removed (`CLAUDE.md` §12, done).
+- Dispatch Wave 2 focused full-text acquisition to the three existing persistent specialists via
+  real `SendMessage` (see Wave 2 dispatch, `90_CROSS-SESSION-LOG/`).
+
+**Affected files:** `CLAUDE.md` (§3, §10, §12), `02_SOURCE-INVENTORY.md` (#26), `.gitignore`,
+`00_RUN-MANIFEST.md`, `05_STATUS.md`, `90_CROSS-SESSION-LOG/SESSION-REGISTRY.md`.
+
+**Source:** PI directive, 2026-08-31.
+
+**Approved by:** PI; implemented by Research Director (Wave 2 dispatch).
 
 ---
 

@@ -3,197 +3,143 @@
 PROJECT_ID: `pitavastatin-ezetimibe-evidence` · RUN_ID: `2026-08-31-v1`
 
 Categories: `NEEDS_SOURCE` | `NEEDS_ANALYST` | `NEEDS_METHODS` | `NEEDS_PI`. Additive — do not delete
-resolved items, move them to a "Resolved" section at the bottom with a pointer to the
-`03_DECISION-LOG.md` entry that resolved them.
+resolved items, move them to the Resolved section with a pointer to the `03_DECISION-LOG.md` entry
+that resolved them.
+
+> **Housekeeping note (Wave 2 dispatch, 2026-08-31):** this file had accumulated several genuinely-
+> open items filed under the wrong heading during rapid Wave 1 processing. Reorganized here into
+> correct Open/Resolved sections — no content deleted, only re-filed. See git history for the prior
+> (messier) version if needed.
 
 ## Open
 
-- [NEEDS_PI] Should a dedicated **manuscript/presentation-intelligence** persistent role be created
-  for this run, to eventually turn `40_SYNTHESIS/` content into slide/manuscript material in
-  `50_MANUSCRIPT/`? Left unowned at Wave 0 (Decision 2026-08-31-04). See `CLAUDE.md` §3 and
-  `03_DECISION-LOG.md` (2026-08-31-04).
+### Wave 2 full-text acquisition targets (dispatched — see `90_CROSS-SESSION-LOG/` Wave 2 dispatch)
 
-- [NEEDS_PI] **Sci-Hub compliance flag on `mcp__research_hub__download_paper`.** This tool's own
-  internal multi-source search includes Sci-Hub with no exposed opt-out (confirmed via the tool's
-  own response text). No Sci-Hub content has entered the repo — the one call made returned nothing —
-  but Director has imposed an interim project-wide restriction on this specific tool pending PI's
-  final call on whether `research_hub` (whose metadata-only tools remain permitted) should be
-  avoided altogether for this project. See Decision 2026-08-31-08, `CLAUDE.md` §10.
+- [NEEDS_SOURCE, dispatched to trials-efficacy] Tsujita K et al. 2023 (T-004a) full text —
+  PMC10627746 or J-STAGE advance-publication PDF; and Ako J et al. 2024 (T-004b, 52-wk extension)
+  full text — PMC10918028. Extract exact arm structure, LDL-C, AE, CK, AST, ALT, HbA1c, and
+  pairwise-vs-pooled significance. Use LlamaParse on at least Tsujita 2023.
+- [NEEDS_SOURCE, dispatched to trials-efficacy] Citation #33 (Chou MT 2022, Phase III FDC trial)
+  own AE/CK/liver-enzyme detail tables — still paywalled as of Wave 1; do not cite specific AE/CK/
+  liver numbers from this paper until full text is obtained.
+- [NEEDS_SOURCE, dispatched to trials-efficacy] Katzmann JL et al. 2022 (T-012/TE-010) full text —
+  needed specifically to resolve the internally-inconsistent cohort-size figures in
+  `Tonvasca_2026.md` (`n=6,429/533` vs. `n=1,639/796` for the same comparison — Decision
+  2026-08-31-11). **PI-confirmed (2026-08-31): this stays unresolved and no *n* from this study may
+  be cited until full text is obtained.** The 4 already-verified percentage/p-value figures (28.4%
+  vs. 19.4% LDL-C reduction; 31.5% vs. 21.0% attainment) remain citable.
+- [NEEDS_SOURCE, dispatched to guideline-risk] Taiwan STS 2026 consensus (T-005, DOI
+  10.1016/j.jfma.2026.04.111) — attempt a publisher-authorized full-text fetch; if blocked, record
+  `BLOCKED_FOR_SOURCE` rather than treating the landing-page OA/CC badges as confirmed access (see
+  the T-005 access-status item under Resolved below for why this is still open at the full-text
+  level even though the citation itself is verified).
+- [NEEDS_SOURCE, dispatched to guideline-risk] Official 2026 ACC/AHA guideline PDF
+  (`ahajournals.org/doi/pdf/10.1161/CIR.0000000000001423`) and official ESC 2025 Focused Update
+  content — obtain and extract exact combination-therapy wording. Use LlamaParse on at least one
+  lawful PDF from this batch.
+- [NEEDS_SOURCE, dispatched to guideline-risk] Numeric-threshold/wording confirmation still pending
+  for every other guideline document identified in Wave 1 (Taiwan Lp(a) 2026/T-006, 2023 TSC CCS,
+  base 2019 ESC/EAS/#34, both 2022 Taiwan lipid-guideline companions/#29/#35, ADA 2025/#32) — Wave 1
+  confirmed document *identity* only.
+- [NEEDS_SOURCE, dispatched to guideline-risk] **111 年健康促進統計年報** (Taiwan Health Promotion
+  Administration statistical annual report, ROC 111 = 2022, T-008) — not indexed in PubMed/
+  Crossref/paper-search; requires a direct fetch from the 國民健康署 website. Not part of the PI's
+  named Wave 2 priorities but still open from Wave 1.
+- [NEEDS_SOURCE, dispatched to safety-pharmacology] Singh H et al. 2024 (T-003, DOI
+  10.1080/17512433.2024.2433603) and Katzmann JL et al. 2022 (T-012) — seek lawful full text; if
+  blocked, record `BLOCKED_FOR_SOURCE`. Validate the DDI matrix (T-010) against the official
+  DailyMed/FDA source directly (not a secondary transcription). Parse a lawful safety-domain PDF
+  with LlamaParse if one is obtained. **Never use `mcp__research_hub__download_paper`** (permanent
+  restriction, Decision 2026-08-31-08/12).
+- [NEEDS_SOURCE] Clarithromycin-specific DDI data for pitavastatin — not found in the LIVALO label's
+  Section 7 as fetched in Wave 1 (a gap in that source's coverage, not evidence of "no
+  interaction"). Part of the safety-pharmacology Wave 2 DDI validation above.
+- [NEEDS_SOURCE, Wave 2] safety-pharmacology's own Wave 1 `unresolved-questions.md` (now readable —
+  see `20_EVIDENCE/safety-pharmacology/unresolved-questions.md` after the Wave 1→main consolidation)
+  additionally flags CKD/elderly FDC safety subgroup data and BCRP-mediated DDI numbers as missing —
+  carried forward as Wave 2 targets for that role.
 
-- [NEEDS_SOURCE] `openevidence` MCP server remains unreachable across all sessions that have
-  reported on it so far (Wave 0 Director session, Wave 1 safety-pharmacology session both saw
-  CONNECTION_CLOSED). `research_hub` and `llamaparse` connectivity is apparently session-specific —
-  down for the Director's Wave 0 session, reachable for at least two Wave 1 specialist sessions — so
-  treat per-session reachability as needing its own check rather than assuming project-wide status
-  either way (see `00_RUN-MANIFEST.md` Wave 1 update).
+### Other open items (not part of the PI's named Wave 2 dispatch, no urgency)
 
-- [NEEDS_SOURCE] Full-text acquisition and numeric-threshold extraction still pending (Wave 2) for
-  every guideline document guideline-risk-intelligence *identified and citation-verified* in Wave 1
-  (2026 ACC/AHA, 2025 ESC/EAS Focused Update, Taiwan STS 2026, Taiwan Lp(a) 2026, 2023 TSC CCS, the
-  base 2019 ESC/EAS guideline, both 2022 Taiwan lipid-guideline companions, ADA 2025 Ch.10) — Wave 1
-  confirmed document *identity* only; the specific numeric thresholds/wording `pitavastatin topic.md`
-  attributes to these documents are not yet independently re-confirmed against primary-source text.
-  Also pending: dose-arm-level AE/CK/liver-enzyme/CKD/elderly safety detail for the newly found
-  Tsujita 2023 / Ako 2024 dose-comparison RCTs (T-004a/T-004b) — full-text needed, not yet acquired.
-
-- [NEEDS_SOURCE] **111 年健康促進統計年報** (Taiwan Health Promotion Administration statistical
-  annual report, ROC 111 = 2022), cited in `Tonvasca_2026.md`'s closing slide for Taiwan elderly
-  HTN/hyperglycemia/hyperlipidemia prevalence (T-008). Not indexed in PubMed/Crossref/paper-search;
-  requires a direct fetch from the 國民健康署 website. Flagged as Wave 2, not attempted under Wave 1
-  time pressure per guideline-risk's report.
-
-- [NEEDS_ANALYST] T-009's four adherence-epidemiology citations were copied by guideline-risk exactly
-  as printed in `Tonvasca_2026.md`'s footnotes but explicitly **not** independently PMID/DOI-resolved
-  or cross-checked. safety-pharmacology-intelligence (new owner, per below) should verify them in its
-  own Wave 1/2 pass rather than treating guideline-risk's transcription as confirmed.
-
+- [NEEDS_ANALYST] Two internal-consistency flags **within `Tonvasca_2026.md` itself** (informational
+  only — the file is read-only, not this project's error to fix): a superscript/reference mismatch
+  at line 2796, and citation #33 (Chou MT 2022) printed in two different citation-string formats at
+  different points in the deck. Relevant only if/when the PI revises the original slide source.
+- [NEEDS_PI] safety-pharmacology-intelligence's own task instructions say "do not run
+  git commit/push"; the Director recommended a local commit for durability and safety-pharmacology
+  correctly declined absent a direct PI instruction. **Not addressed in the PI's Wave 2
+  authorization** — still open if the PI wants that session's Wave 1 output committed directly by
+  that session (it otherwise remains safe, uncommitted, in `.claude/worktrees/safety-pharm-wave1/`,
+  and its content is already visible to the Director via the Codex-process consolidation into
+  `main`).
 - [NEEDS_ANALYST] T-006's author list (Taiwan Lp(a) 2026 consensus/review), as reported by
   guideline-risk, contains a duplicated "Wang CY" entry. Preserved as-received per the Numeric
   Integrity Rule (not silently deduplicated) — flag if this citation is used verbatim in any
-  downstream output; someone should confirm against the primary source whether this is a genuine
-  duplicate-author transcription or two distinct co-authors sharing a transliterated name.
+  downstream output.
+- [NEEDS_SOURCE] T-013 (Corsini A, et al. Curr Med Res Opin. 2011;27(8):1551-1562) — safety-
+  pharmacology self-queued this for its own verification; not separately named in the PI's Wave 2
+  dispatch but falls within its DDI-validation scope.
+- [NEEDS_SOURCE] `openevidence` MCP server remains unreachable across every session that has
+  reported on it so far. Not part of the PI's Wave 2 authorization (which covers `research_hub`/
+  `llamaparse` repair only) — treat as still down until a session reports otherwise.
 
 ## Resolved
 
-- [RESOLVED] Citation #27's DOI transcription discrepancy (printed `10.6314/JIMT.202412_35(6).04.04`
-  vs correct `10.6314/JIMT.202412_35(6).04`) — see Decision 2026-08-31-09, `02_SOURCE-INVENTORY.md`
-  row #27.
+### PI Wave 2 authorization, 2026-08-31 (Decision 2026-08-31-12 — see that entry for full detail)
 
-- [RESOLVED] HIJ-PROPER (T-001) and RACING (T-002) primary publications located; all numeric figures
-  previously quoted from `pitavastatin topic.md`/`Tonvasca_2026.md` independently confirmed to match
-  the primary publications exactly (trials-efficacy-intelligence report, 2026-08-31; Director has not
-  yet independently re-verified — see `02_SOURCE-INVENTORY.md`).
+- [RESOLVED] Sydhom framing (Decision 2026-08-31-06) — PI-decided: state observational-pooled
+  benefit only, RCT-pooled clinical endpoints not statistically significant. Applied to
+  `02_SOURCE-INVENTORY.md` citation #26.
+- [RESOLVED] `research_hub` download-tool restriction (Decision 2026-08-31-08) — made **permanent**
+  by the PI (was interim). `CLAUDE.md` §10 updated.
+- [RESOLVED] `50_MANUSCRIPT/` ownership (Decision 2026-08-31-04) — Research Director owns
+  coordination until Gate 2. `CLAUDE.md` §3 updated.
+- [RESOLVED] Multi-worktree consolidation — PI confirms all four branches + Director's Gate 1
+  commits reviewed, secret-scanned, and consolidated into local `main` by the supervising Codex
+  process; Director independently verified this via `git log` and merged `main` into its own
+  working branch for direct file visibility (not a branch-consolidation act). This session will not
+  merge branches into `main` itself going forward.
+- [RESOLVED] `research_hub`/`llamaparse` MCP repair confirmed by PI, `llamaparse` passed a live
+  dummy-PDF smoke test — see `00_RUN-MANIFEST.md` Wave 2 update.
+- [RESOLVED] `.metadata_cache/` added to `.gitignore`.
+- [RESOLVED] Session registry created — `90_CROSS-SESSION-LOG/SESSION-REGISTRY.md`.
+- [RESOLVED] Security TODO recorded (historical hardcoded `llamaparse` credentials exist outside
+  this repo, should be rotated/removed) — `CLAUDE.md` §12. No credential value recorded anywhere.
 
-- [RESOLVED] Search Protocol item 5 / T-004 (2 mg vs 4 mg dose comparison) — previously "not yet
-  located," now answered by a direct 4-arm Japanese RCT (Tsujita K et al. 2023, T-004a) plus its
-  52-week extension (Ako J et al. 2024, T-004b). See Decision 2026-08-31-07. (Dose-arm-level AE/CK/
-  liver-enzyme detail still pending — see Open items above.)
+### Wave 1 items resolved before PI authorization
 
-- [RESOLVED] Search Protocol items 1/2/10's previously-unlocated guideline targets (Taiwan STS 2026,
-  Taiwan Lp(a) 2026, ESC 2025 Focused Update — T-005/T-006/T-007) are now located and
-  citation-verified by guideline-risk-intelligence (2026-08-31). Exact citation strings still owed
-  (see Open items above); full-text numeric extraction is Wave 2.
-
-- [RESOLVED] Domain ownership for the four adherence-epidemiology citations found in the previously
-  unread `Tonvasca_2026.md` remainder (T-009) — Director assigns to safety-pharmacology-intelligence
-  (see `02_SOURCE-INVENTORY.md` T-009 row).
-
-- [RESOLVED] Full formatted citations for #34, #35, T-005, T-006, T-007 (guideline-risk) and
-  T-004a/T-004b (trials-efficacy, Crossref-sourced) received and entered into
-  `02_SOURCE-INVENTORY.md`. T-009's citations also received but remain unverified (see above).
-
-- [RESOLVED, no action needed] trials-efficacy-intelligence disclosed a single pre-restriction call
-  to `mcp__research_hub__download_paper` (for citation #33/Chou 2022's DOI), made *before* Decision
-  2026-08-31-08 existed. The call failed outright ("not found in any of 13 academic databases"), no
-  file/content of any kind was returned, and no Sci-Hub link or content appeared in the response —
-  no contamination, no policy violation (the restriction did not yet exist). Logged here for
-  transparency only; trials-efficacy will not call this tool again and will use `search_unpaywall`
-  or institutional/PI-provided access for Wave 2 full-text acquisition instead.
-
-- [RESOLVED] Search Protocol item 3 / T-003 (pitavastatin NODM systematic review, previously "not
-  yet located," generically referenced in `pitavastatin topic.md`) — identified as Singh H et al.
-  2024 (PMID 39587804) by safety-pharmacology. See Decision 2026-08-31-10 — explicitly distinct
-  from, and must never be conflated with, citation #26 (Sydhom P et al. 2024).
-
-- [RESOLVED] Citation #23's topic/relevance description was wrong in the Wave 0 catalog ("statin
-  discontinuation outcomes"); corrected to "2019 Taiwan statin-intolerance consensus (STS
-  precursor)" per safety-pharmacology's 2026-08-31 report. See `02_SOURCE-INVENTORY.md` row #23
-  (original wording struck through, not silently deleted).
-
-- [RESOLVED] All 16 of safety-pharmacology's assigned legacy citations (#3–16, 23, 26-joint)
-  verified with zero mismatches (2026-08-31).
-
-- [RESOLVED] T-011 routing fragments fully resolved: 6 of the 8 fragments were duplicates of
-  already-catalogued citations (2 more than safety-pharmacology's own check initially found — the
-  Director caught that "Mach F... Eur Heart J 2020" = row #34 exactly, and "Huang PH... in-press
-  PII" is likely the same paper as row #35 in a different citation format); 2 were genuinely new
-  (T-012 Katzmann JL → trials-efficacy, T-013 Corsini A → safety-pharmacology's own queue). See
-  `02_SOURCE-INVENTORY.md` T-011/T-012/T-013 rows.
-
-- [RESOLVED] T-003 (Singh H et al. 2024) and T-010 (LIVALO/DailyMed DDI label) full citations and
-  exact figures received from safety-pharmacology, 2026-08-31 — entered into
-  `02_SOURCE-INVENTORY.md`.
-
-- [RESOLVED, Director's own earlier flag withdrawn] Row #35 / the PII-format Huang PH citation —
-  guideline-risk confirmed (2026-08-31) `Tonvasca_2026.md` prints this citation exactly **once**
-  (pre-print PII form), which it had already resolved to the full Crossref record now in row #35.
-  **Not** a Chou-MT-style dual-citation-format issue as the Director had speculated — that framing
-  is withdrawn. See `02_SOURCE-INVENTORY.md` row #35.
-
-- [RESOLVED, with honest caveat rather than a clean answer] T-005's apparent access-status
-  contradiction between guideline-risk and safety-pharmacology — guideline-risk re-examined its own
-  earlier "open access, CC-licensed" claim (2026-08-31) and corrected it: that was a landing-page
-  badge read via `tavily_extract`, not a confirmed full-text retrieval. Both specialists likely hit
-  the same abstract-level wall and described it differently, rather than genuinely disagreeing.
-  Commendable self-correction — flagged, not defended. Updated note in `02_SOURCE-INVENTORY.md`
-  T-005: "landing page displays Open Access/CC badges; full-text body not yet successfully
-  retrieved by any role." Wave 2 should confirm with a direct fetch against the actual article body.
-
-- [RESOLVED] trials-efficacy-intelligence's worktree (`worktree-trials-efficacy-wave1`) now has a
-  local commit (`62db3f3`, on top of a pre-existing environment checkpoint commit `dc6ee2f`
-  authored "Dr Tseng") — durably saved on disk even though not yet merged to `main`. Same
-  consolidation gap as the other two worktrees; see Sync-state caveat in `05_STATUS.md`.
-
-- [RESOLVED, superseded] `Tonvasca_2026.md` lines 1795–2811 unread remainder (Decision 2026-08-31-02)
-  — read in full by guideline-risk-intelligence during Wave 1 (2026-08-31); new citations found are
-  logged in `02_SOURCE-INVENTORY.md` (#34, #35, T-009) and above.
-
-- [PARTIALLY RESOLVED] `research_hub`/`llamaparse` Wave 0 connectivity failures (Decision
-  2026-08-31-03) — reachable in at least two Wave 1 specialist sessions; appears session-specific
-  rather than a fixed environment fact. `openevidence` remains down everywhere reported so far. See
-  the still-open connectivity item above for the current framing.
-
-- [NEEDS_ANALYST] Two internal-consistency flags **within `Tonvasca_2026.md` itself** (not this
-  project's error to fix, since the file is read-only — informational only): a superscript/reference
-  mismatch at line 2796, and citation #33 (Chou MT 2022) printed in two different citation-string
-  formats at different points in the deck. Relevant only if/when the PI revises the original slide
-  source.
-
-- [NEEDS_PI] safety-pharmacology-intelligence declined the Director's recommendation to make a local
-  `git commit` in its own worktree (no push), citing an explicit instruction in its own task
-  assignment ("do not run git commit/push") that it does not consider a peer recommendation
-  sufficient basis to override — correctly reasoning that relaxing that instruction is a PI-level
-  call, not a Director-level one. Director agrees this is the right boundary for the peer to hold.
-  **If the PI wants safety-pharmacology's Wave 1 output committed for durability, that instruction
-  needs to come from the PI directly to that session.** Its files remain safe in
-  `.claude/worktrees/safety-pharm-wave1/` regardless (a worktree persists whether or not it has been
-  committed to).
-
-- [NEEDS_SOURCE] T-013 (Corsini A, et al. Curr Med Res Opin. 2011;27(8):1551-1562) — used in
-  `Tonvasca_2026.md` to support the CYP3A4-independence framing for statin DDI risk.
-  safety-pharmacology self-identified this as within its own domain but outside its originally
-  assigned 16 citations; added to its own verification queue. No Director action needed.
-
-- [NEEDS_SOURCE] T-012 (Katzmann JL, et al. Clin Res Cardiol. 2022;111(3):243-252 — FDC vs.
-  separate-pill adherence/efficacy) — genuinely new source found by safety-pharmacology while
-  routing T-011, assigned to trials-efficacy-intelligence for independent verification.
-
-- [NEEDS_SOURCE] Clarithromycin-specific DDI data for pitavastatin could not be found in the LIVALO
-  label's Section 7 as fetched (T-010) — a gap in that source's coverage, not evidence of "no
-  interaction." Still an open Wave 2 acquisition target if this specific interaction is needed.
-
-- [NEEDS_SOURCE] Citation #33's (Chou MT 2022, Phase III FDC trial) own AE/CK/liver-enzyme detail
-  tables remain unverified — paywalled, per safety-pharmacology. Do not cite specific AE/CK/liver
-  numbers from this paper until full text is obtained (Wave 2). K-924/Japan trials (T-004a/T-004b)
-  provide a same-drug-combination but different-population substitute, explicitly tagged `INDIRECT
-  EVIDENCE` for Taiwan-population claims — see `02_SOURCE-INVENTORY.md` T-004b row.
-
-- [NEEDS_SOURCE, Wave 2] safety-pharmacology's own unresolved-questions.md (unreachable in its
-  unmerged worktree) reportedly also flags: CKD/elderly FDC safety subgroup data, BCRP-mediated DDI
-  numbers, and clarithromycin-specific DDI data as still missing. Carried forward here since the
-  Director cannot read the source file directly; ask safety-pharmacology to restate detail when its
-  worktree is consolidated or on request.
-
-- [NEEDS_SOURCE, Wave 2 priority] Katzmann JL et al. 2022 (T-012/TE-010) full-text acquisition —
-  needed to resolve the internally-inconsistent cohort-size figures flagged in Decision
-  2026-08-31-11 (`n=6,429/533` vs. `n=1,639/796` for the same comparison in `Tonvasca_2026.md`).
-  trials-efficacy reports Crossref shows a Springer PDF URL, likely open access. No *n* from this
-  study may be cited until resolved.
-
-## Still unverified (carried forward, unchanged)
-
-Every numeric figure not explicitly marked "Verified" in `02_SOURCE-INVENTORY.md` remains an
-unverified legacy figure and may not be cited in `20_EVIDENCE/` or `40_SYNTHESIS/` as confirmed —
-this includes citations #20 (Chiang/CEPHEUS), #21 (Gitt/DYSIS-II), and #25 (Masana), which
-trials-efficacy-intelligence reports it could **not** locate as exact matches after multiple search
-attempts (flagged, not silently corrected or dropped — see `02_SOURCE-INVENTORY.md`).
+- [RESOLVED] T-012 (Katzmann JL et al. 2022) citation identity and 4 key figures verified by
+  trials-efficacy — see Decision 2026-08-31-11. (The cohort-*n* sub-issue specifically remains open
+  — see Wave 2 dispatch targets above.)
+- [RESOLVED] Citation #27's DOI transcription discrepancy — Decision 2026-08-31-09.
+- [RESOLVED] HIJ-PROPER (T-001) and RACING (T-002) primary publications located; legacy figures
+  confirmed to match exactly (trials-efficacy, 2026-08-31; Director has not independently
+  re-verified).
+- [RESOLVED] T-004/T-004a/T-004b (2 mg vs 4 mg dose comparison) — located via Tsujita 2023 + Ako
+  2024 — Decision 2026-08-31-07. (Dose-arm-level AE/CK/liver-enzyme detail still a Wave 2 target,
+  see above.)
+- [RESOLVED] T-005/T-006/T-007 (Taiwan STS 2026, Taiwan Lp(a) 2026, ESC 2025 Focused Update) located
+  and citation-verified by guideline-risk; full citation strings received. (Full-text numeric
+  extraction is the Wave 2 target above.)
+- [RESOLVED] T-009 domain ownership assigned to safety-pharmacology-intelligence.
+- [RESOLVED, no action needed] trials-efficacy's single pre-restriction `download_paper` call (for
+  citation #33) — no content returned, no Sci-Hub contamination, no policy violation (predates
+  Decision 2026-08-31-08).
+- [RESOLVED] T-003 (Singh H et al. 2024) identified and distinguished from citation #26 (Sydhom) —
+  Decision 2026-08-31-10.
+- [RESOLVED] Citation #23's topic/relevance description corrected (was "statin discontinuation
+  outcomes," actually the 2019 Taiwan statin-intolerance consensus/STS precursor).
+- [RESOLVED] All 16 of safety-pharmacology's assigned legacy citations verified, zero mismatches.
+- [RESOLVED] T-011 routing fragments fully resolved (6 duplicates, 2 genuinely new: T-012, T-013).
+- [RESOLVED] T-010 (LIVALO/DailyMed DDI label) full figures received.
+- [RESOLVED, Director's own earlier flag withdrawn] Row #35 was never a dual-citation-format issue.
+- [RESOLVED, with honest caveat] T-005's citation-verification access-status description corrected
+  by guideline-risk via self-correction (landing-page badges, not a confirmed full-text retrieval).
+  **Full-text access itself remains an open Wave 2 target** (see above) — only the earlier
+  *contradiction between two peers' reports* is resolved, not the underlying access question.
+- [RESOLVED] trials-efficacy's worktree has a local commit (durable on disk pending consolidation,
+  since superseded by the Codex-process consolidation into `main`).
+- [RESOLVED, superseded] `Tonvasca_2026.md`'s previously-unread remainder (lines 1795–2811) — read
+  in full by guideline-risk during Wave 1.
+- [RESOLVED] `research_hub`/`llamaparse` Wave 0 connectivity failures — superseded by the Wave 2 PI
+  repair confirmation above; no longer "partially resolved," now fully resolved.

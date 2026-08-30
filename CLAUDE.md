@@ -83,19 +83,22 @@ content directly (Runbook §34, Golden Rule 10).
 
 | Role | Reads | Writes |
 |---|---|---|
-| Research Director | everything | `00_RUN-MANIFEST.md`, `01_RESEARCH-CHARTER.md`, `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md`, `04_OPEN-QUESTIONS.md`, `05_STATUS.md`, `40_SYNTHESIS/`, `30_METHODS/shared/` |
+| Research Director | everything | `00_RUN-MANIFEST.md`, `01_RESEARCH-CHARTER.md`, `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md`, `04_OPEN-QUESTIONS.md`, `05_STATUS.md`, `40_SYNTHESIS/`, `30_METHODS/shared/`, `50_MANUSCRIPT/` (coordination only, until Gate 2 — Decision 2026-08-31-04) |
 | guideline-risk-intelligence | verified sources, other specialists' accepted outputs | `10_DATA/guideline-risk/`, `20_EVIDENCE/guideline-risk/`, `30_METHODS/guideline-risk/` |
 | trials-efficacy-intelligence | verified sources, other specialists' accepted outputs | `10_DATA/trials-efficacy/`, `20_EVIDENCE/trials-efficacy/`, `30_METHODS/trials-efficacy/` |
 | safety-pharmacology-intelligence | verified sources, other specialists' accepted outputs | `10_DATA/safety-pharmacology/`, `20_EVIDENCE/safety-pharmacology/`, `30_METHODS/safety-pharmacology/` |
 | independent-auditor | everything | `99_FINAL-QA.md` only |
 | any role | — | may append to `90_CROSS-SESSION-LOG/` (control-plane messages only) |
 
-`50_MANUSCRIPT/` has no owning persistent role yet — see `04_OPEN-QUESTIONS.md`. No role may write
-outside its own owned paths. Do not edit another role's `10_DATA/`/`20_EVIDENCE/`/`30_METHODS/`
-subfolder; if you need something changed there, send a cross-session message to that role's owner
-instead of editing it directly. Specialists never edit `02_SOURCE-INVENTORY.md` directly — report
-per-citation verification findings to the Director via the message schema (§6) and the Director
-updates it (Decision 2026-08-31-05).
+**`50_MANUSCRIPT/` ownership resolved by PI, 2026-08-31 (Decision 2026-08-31-04, superseding the
+Wave 0 "unowned" placeholder):** the Research Director owns `50_MANUSCRIPT/` coordination
+**until Gate 2** — no dedicated manuscript/presentation-intelligence persistent role is being
+created for this run. Whether that changes past Gate 2 is not yet decided; re-raise with the PI
+if manuscript/slide drafting work is needed then. No role may write outside its own owned paths.
+Do not edit another role's `10_DATA/`/`20_EVIDENCE/`/`30_METHODS/` subfolder; if you need something
+changed there, send a cross-session message to that role's owner instead of editing it directly.
+Specialists never edit `02_SOURCE-INVENTORY.md` directly — report per-citation verification findings
+to the Director via the message schema (§6) and the Director updates it (Decision 2026-08-31-05).
 
 ---
 
@@ -266,20 +269,26 @@ needed full text is not lawfully obtainable (no institutional/OA access, Unpaywa
 location, publisher blocks it), record it as `BLOCKED_FOR_SOURCE` in `04_OPEN-QUESTIONS.md` — do
 not route around the block.
 
-**Interim restriction, added 2026-08-31 (Wave 1, Decision 2026-08-31-08):**
-`mcp__research_hub__download_paper` must **not** be called by any role in this project until further
-notice. guideline-risk-intelligence discovered that this tool's own internal multi-source search
+**PERMANENT restriction (Wave 1, Decision 2026-08-31-08; confirmed and made permanent by PI,
+2026-08-31):** `mcp__research_hub__download_paper` must **never** be called by any role in this
+project. guideline-risk-intelligence discovered that this tool's own internal multi-source search
 includes Sci-Hub with no exposed parameter to disable it (confirmed via the tool's own response text
 listing "ArXiv, CrossRef, SSRN, Sci-Hub, and others" as sources it searches) — unlike
 `download_with_fallback`, it offers no `use_scihub`-style opt-out to decline that source. Even though
 no Sci-Hub-sourced content has entered this repo (the one call made returned nothing), invoking a
 tool that queries Sci-Hub as part of its own internal fan-out is treated as falling under the "for
 any purpose, under any framing" prohibition above. `research_hub`'s plain metadata/discovery tools
-(e.g. `search_papers`) remain permitted — the restriction is on the *download* tool specifically.
+(e.g. `search_papers`) remain permitted — the restriction is on the *download* tool specifically, and
+is no longer "interim" — the PI has confirmed it stands permanently for the life of this project.
 Full text must instead come from `paper-search`'s per-database download tools, direct
 publisher/PMC/Unpaywall OA links, or `llamaparse` on a file already lawfully obtained. If this
 leaves a source unobtainable, record it `BLOCKED_FOR_SOURCE` rather than falling back to the
 restricted tool.
+
+**MCP connectivity update (Wave 2, PI-reported, 2026-08-31):** `research_hub` and `llamaparse` MCP
+servers, previously failing to connect at Wave 0 (ENOENT — binary/venv missing), have been repaired.
+`llamaparse` has passed a live dummy-PDF smoke test. Both are confirmed usable for Wave 2 lawful
+full-text acquisition, subject to the permanent `research_hub` download-tool restriction above.
 
 **Connectivity note as of Wave 0 (2026-08-31):** `research_hub`, `llamaparse`, and `openevidence`
 failed to connect in this session (binary/venv not found, or connection closed — see
@@ -306,6 +315,15 @@ repo — not in `CLAUDE.md`, not in a research note, not in a code snippet, not 
 MCP server credentials live in the harness's own config, never in this repo. `.gitignore` blocks
 common patterns as a backstop, not as the primary control — do not rely on it; just never write a
 secret into a file in this repo, tracked or not.
+
+**Security TODO (opened Wave 2, 2026-08-31, PI-directed):** historical hardcoded `llamaparse`
+credentials are reported to exist **outside this repository** (in the local `llamaparse-mcp`
+environment/config, not in any tracked file here). They should be rotated or removed by whoever
+administers that environment. This is recorded here as a standing TODO for the PI/environment owner
+— **no credential value, path fragment, or other identifying secret material is or should ever be
+copied into this repo, any research output, or any cross-session message.** Any role that
+incidentally observes such a credential (e.g., in a tool error message) must not quote, log, or
+relay it — describe the *fact* that a credential was exposed, never the credential itself.
 
 ---
 
