@@ -764,3 +764,37 @@ this correction lives in `02_SOURCE-INVENTORY.md` and this log entry, not in the
 **Source:** guideline-risk-intelligence cross-session report, 2026-08-31.
 
 **Approved by:** Research Director (Wave 1).
+
+---
+
+## Decision 2026-08-31-27 — Gate 2 declared READY_WITH_PENDING_ITEMS
+
+**Issue:** All three specialists' Wave 2 assignments are complete. Six sources remain
+`BLOCKED_FOR_SOURCE` (Taiwan STS 2026/T-005, Taiwan Lp(a) 2026/T-006, base 2019 ESC/EAS/#34, 2026
+ACC/AHA/#28, ESC 2025 Focused Update/T-007, citation #33/Chou MT 2022's safety tables). Both
+Gate-2-required LlamaParse demonstrations succeeded (guideline-risk on a substitute source, T-014;
+trials-efficacy on the actual assigned target, T-004a/Tsujita 2023).
+
+**Decision:** Per the PI's existing Gate 2 exit criteria (Decision 2026-08-31-12): `READY_WITH_
+PENDING_ITEMS` is declared now. **Explicit, PI-directed framing**: the PI has instructed that no
+assumption be made that these six sources can be supplied — they remain recorded as `NEEDS_PI`/
+`BLOCKED_FOR_SOURCE` in `04_OPEN-QUESTIONS.md`, not treated as pending resolution. **No Wave 3 is
+opened** — T-024 (Abbas 2026, flagged as the highest-priority Wave 3 candidate) and all other
+not-yet-obtained new-source full texts (T-003, T-012's cohort-n is resolved but T-003/Singh 2024
+itself remains blocked, T-023, T-025's fuller text, etc.) are held, not pursued further, pending
+separate PI authorization to reopen. A Wave 2 Challenge Round was conducted by the Director across
+all four Runbook §30 angles (guideline/trials/safety/methods) — see
+`30_METHODS/shared/wave2-challenge-round.md` — surfacing four priority findings to carry into any
+future Wave 3: (1) Taiwan STS 2026's "ezetimibe as first add-on" framing remains unverified against
+primary text; (2) REPRIEVE/REAL-CAD-to-FDC conflation is the highest-likelihood overclaim risk;
+(3) FDC-specific CKD dosing is the highest-stakes safety gap; (4) Singh 2024's RCT-vs-observational
+pooling is an unresolved parallel risk to the already-PI-decided Sydhom framing. None of these block
+Gate 2 under the PI's own stated criteria.
+
+**Affected files:** `05_STATUS.md` (Gate formally set), `04_OPEN-QUESTIONS.md` (challenge-round
+findings added), `30_METHODS/shared/wave2-challenge-round.md` (new), `99_FINAL-QA.md` (status note
+only — Wave 4 audit itself not started).
+
+**Source:** PI directive, 2026-08-31.
+
+**Approved by:** PI; implemented by Research Director.

@@ -1,28 +1,33 @@
 # 05_STATUS — pitavastatin-ezetimibe-evidence / 2026-08-31-v1
 
 PROJECT_ID: `pitavastatin-ezetimibe-evidence` · RUN_ID: `2026-08-31-v1`
-Last updated: 2026-08-31 (Wave 2 dispatch, Research Director)
+Last updated: 2026-08-31 (Gate 2 declared, Research Director)
 
 > **Housekeeping note:** this file had accumulated many superseded "Update —" sections from rapid
-> Wave 1 processing. Condensed here into a single current narrative; no information dropped — see
+> Wave 1/2 processing. Condensed here into a single current narrative; no information dropped — see
 > git history for the previous, more granular version if a specific timestamp/sequence is needed.
 
 ## Current Gate
 
-**Gate 1: PASSED (PI authorization, 2026-08-31, Decision 2026-08-31-12).**
+**Gate 1: PASSED** (PI authorization, 2026-08-31, Decision 2026-08-31-12).
 
-**Gate 2 exit criteria (PI-specified, 2026-08-31):** mark `READY_WITH_PENDING_ITEMS` if paywalled
-sources remain unresolved, **provided** the two required lawful LlamaParse demonstrations succeed.
-**Both now confirmed satisfied**: trials-efficacy parsed Tsujita 2023 (the actual assigned target);
-guideline-risk parsed a substitute open-access source (T-014) after its three assigned targets were
-all Cloudflare-blocked. Several sources remain paywalled/blocked (Taiwan STS 2026, ACC/AHA 2026, ESC
-2025, Chou 2022, Katzmann 2022) — per the PI's own criteria, this is consistent with
-`READY_WITH_PENDING_ITEMS`, not a Gate 2 failure. Formal Gate 2 call still pending
-safety-pharmacology's report.
+**Gate 2: DECLARED `READY_WITH_PENDING_ITEMS`, 2026-08-31 (Decision 2026-08-31-27, PI-directed).**
+Both PI-required LlamaParse demonstrations succeeded (trials-efficacy on the actual assigned
+target, Tsujita 2023/T-004a; guideline-risk on a substitute, T-014, after its three assigned targets
+were Cloudflare-blocked). Six sources remain `BLOCKED_FOR_SOURCE` (Taiwan STS 2026/T-005, Taiwan
+Lp(a) 2026/T-006, base 2019 ESC/EAS/#34, 2026 ACC/AHA/#28, ESC 2025 Focused Update/T-007, citation
+#33/Chou MT 2022's safety tables) — per the PI's own exit criteria this is consistent with
+`READY_WITH_PENDING_ITEMS`, not a failure. **Per explicit PI instruction: these six stay recorded
+as `NEEDS_PI`/`BLOCKED_FOR_SOURCE` — no assumption is made that the PI can or will supply them, and
+no further acquisition attempts are authorized without new instruction.** A Wave 2 Challenge Round
+was run by the Director across all four Runbook §30 angles — see
+`30_METHODS/shared/wave2-challenge-round.md` and `04_OPEN-QUESTIONS.md` for the four priority
+findings carried forward. **No Wave 3 is opened at this time**, per explicit PI instruction — T-024
+and other not-yet-obtained new-source full texts stay held.
 
 ## Wave
 
-2 — Focused lawful full-text acquisition (just dispatched to all three persistent specialists)
+2 — Focused lawful full-text acquisition (**complete**; Gate 2 declared above)
 
 ## Wave 0 — complete
 
@@ -171,11 +176,25 @@ committed.
 
 ## Blocked
 
-None at the repository-structure or governance level. Wave 2 literature acquisition may surface
-individual `BLOCKED_FOR_SOURCE` items (paywalled sources) — expected and acceptable per Gate 2's
-exit criteria above, not a project-level blocker.
+Six sources `BLOCKED_FOR_SOURCE` at the content level (Taiwan STS 2026/T-005, Taiwan Lp(a) 2026/
+T-006, base 2019 ESC/EAS/#34, 2026 ACC/AHA/#28, ESC 2025 Focused Update/T-007, citation #33's safety
+tables) — explicitly accepted as consistent with Gate 2's `READY_WITH_PENDING_ITEMS` state per the
+PI's own criteria, not treated as pending PI resolution (see Current Gate above). No
+repository-structure or governance-level blocker.
+
+## Wave 2 close-out summary (2026-08-31)
+
+All three specialists' Wave 2 assignments complete. 25 sources now tracked (T-001–T-025) beyond the
+original ~35 legacy citations, with the great majority verified or explicitly flagged
+not-locatable/blocked (never silently guessed). A Wave 2 Challenge Round was run — see
+`30_METHODS/shared/wave2-challenge-round.md` — surfacing 4 priority findings for Wave 3 (Taiwan STS
+2026 framing unverified; REPRIEVE/REAL-CAD-to-FDC conflation risk; FDC-specific CKD dosing gap;
+Singh 2024's RCT-vs-observational pooling as an unresolved parallel to the Sydhom framing). Full
+detail: `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md` (27 decisions logged), `04_OPEN-QUESTIONS.md`,
+`90_CROSS-SESSION-LOG/`.
 
 ## Next action
 
-Director awaits Wave 2 completion reports from all three specialists, including confirmation of the
-two required LlamaParse demonstrations, before evaluating Gate 2.
+None pending from the specialists — all three are idle, standing by. **No Wave 3 opens without new
+PI authorization.** The repository is in a stable, audit-ready state for whenever the PI wants to
+proceed to Wave 3 synthesis or Wave 4 independent audit.

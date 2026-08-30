@@ -81,6 +81,17 @@ review must be able to answer, each pre-assigned to an owning specialist role.
 - MCP connectivity gaps recorded in `00_RUN-MANIFEST.md` (`research_hub`, `llamaparse`,
   `openevidence`) that may constrain full-text acquisition in Wave 1/2 until resolved.
 
+**Status update, Gate 2, 2026-08-31 (Decision 2026-08-31-27) — kept additive, original assessment
+above left unedited:** No newer trial closing the Level 3 gap was found through Wave 2 (HIJ-PROPER
+remains the anchor; REPRIEVE/REAL-CAD are pitavastatin monotherapy hard-outcome trials, kept
+explicitly outside the FDC-specific framework — see the Wave 2 Challenge Round,
+`30_METHODS/shared/wave2-challenge-round.md`, for why this remains the project's top overclaim
+risk). Taiwan STS 2026's citation is verified but its content (the specific "ezetimibe as first
+add-on" claim) remains unverified against primary text — `BLOCKED_FOR_SOURCE`, PI-confirmed not to
+be assumed resolvable. `research_hub`/`llamaparse` MCP connectivity was repaired before Wave 2;
+`openevidence` remains down. See `04_OPEN-QUESTIONS.md` for the current, itemized state of all
+three.
+
 ## Role division (see CLAUDE.md §2–§3 for full detail; not duplicated here)
 
 Research Director; guideline-risk-intelligence; trials-efficacy-intelligence;
