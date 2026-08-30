@@ -99,6 +99,34 @@ abstract/label/摘要層級，無下載全文）；`scihub`/`download_scihub`（
 本輪（Wave 1）自始未曾呼叫 `download_paper`，亦未取得任何來源全文，無回溯處理需求。詳見
 `fulltext-manifest.md`。
 
+## Wave 2（2026-08-31，PI 授權 Decision 2026-08-31-12）
+
+執行者：本角色本人直接操作（非透過 subagent），使用工具：`mcp__paper-search__get_crossref_paper_by_doi`、
+`search_crossref`、`search_europepmc`、`search_unpaywall`、`mcp__research_hub__search_papers`
+（僅 metadata，未使用 `download_paper`）、`WebFetch`（DailyMed 官方 label 直接查證）、Bash `curl`
+（下載開放取用 PMC PDF）、`mcp__llamaparse__parse_pdf_to_markdown`。
+
+任務與結果：
+1. T-003（Singh 2024）/T-012（Katzmann 2022）全文取得：Katzmann **成功**（PMC8873069, CC BY 4.0,
+   已下載+解析）；Singh **BLOCKED_FOR_SOURCE**（Europe PMC 確認非開放取用）。
+2. LlamaParse 示範：完成兩次成功解析（Katzmann 2022、Tramontano 2025），確認 `llamaparse` 於本
+   session 正常運作。
+3. DDI matrix（T-010）直接對照官方 DailyMed 來源重新驗證：cyclosporine/erythromycin/rifampin/
+   gemfibrozil 數字**逐字吻合**先前報告；clarithromycin 確認 CONFIRMED_ABSENT_FROM_LABEL；新增
+   查得 fibrates 類別/niacin/colchicine 之風險提示；fenofibrate 數字之精確 section 定位（12.3
+   Table 3，非 Section 7）已確認。
+4. T-013（Corsini A 2011）書目層級 VERIFIED_MATCH（Crossref）。
+5. 意外新發現（副產物，非原定任務但直接回應既有缺口）：
+   - Li H, Li J 2026（*Br J Hosp Med*）elderly pitavastatin vs atorvastatin 血糖比較研究（透過
+     `research_hub search_papers` 意外搜得，非刻意搜尋）— 部分填補 elderly 血糖缺口。
+   - **Pitavastatin CKD 劑量調整**（Tramontano 2025 review table + FDA label 交叉驗證）——
+     大部分解決 Wave 1 標記之 CKD BLOCKED_FOR_SOURCE 缺口。
+   - Schmith 2026、Stäuble 2026 兩篇 OATP1B1 機轉佐證文獻——部分收斂 BCRP/OATP1B1 缺口（BCRP
+     定量數字本身仍未找到）。
+
+`research_hub`（僅 `search_papers`，未用 `download_paper`）、`llamaparse`、`paper-search`
+（Crossref/Unpaywall/Europe PMC 子工具）於本 session 皆確認可正常連線並產出有效結果。
+
 ## Worktree isolation note
 
 本 session 為 background job，寫入 shared checkout 時被 harness 攔下，要求先 EnterWorktree。本檔
