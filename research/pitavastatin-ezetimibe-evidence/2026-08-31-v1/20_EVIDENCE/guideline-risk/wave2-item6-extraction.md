@@ -22,7 +22,7 @@ two did not.
 | Katzmann JL, Laufs U. "Choosing the Right Non-Statin Therapy..." Curr Atheroscler Rep 2026 (secondary review citing the 2025 ESC/EAS Focused Update) | **Yes — PMC12945982** (found via a targeted search for reviews of the ESC 2025 update, not originally on the Director's list — see below) | **Obtained, parsed, extracted (below)** |
 | Taiwan Lp(a) 2026 consensus/review (T-006, PMID 41881723) | No (`elink` returned no `pubmed_pmc` entry) | Still `BLOCKED_FOR_SOURCE` |
 | 2019 ESC/EAS base guideline (#34, PMID 31504418) | No (`elink` returned no `pubmed_pmc` entry) | Still `BLOCKED_FOR_SOURCE` |
-| 2022 Taiwan primary-prevention guideline (#35) | Not checked this Wave (no PMID resolved via a quick PubMed re-query; ran out of remaining Wave-2 effort budget before pursuing further) | Not attempted |
+| 2022 Taiwan primary-prevention guideline (#35) | No PMC copy (`elink` confirmed empty, PMID 35715290) — **but found on the Taiwan Society's own direct-hosted mirror** (`tas.org.tw`, no Cloudflare wall) | **Obtained, parsed, extracted (below, section D)** |
 
 ## A. 2023 TSC CCS guideline — exact recommendation text (PRIMARY SOURCE, DIRECT extraction)
 
@@ -185,12 +185,77 @@ large-registry **OBSERVATIONAL EVIDENCE** source on ezetimibe timing post-MI, di
 trials-efficacy's Search Protocol items 5/8/9, not independently verified beyond what's printed in
 this review's reference list.
 
+## D. 2022 Taiwan primary-prevention guideline (#35) — exact recommendation text (PRIMARY SOURCE)
+
+Source: `20_EVIDENCE/guideline-risk/fulltext/Huang_2022_Taiwan-primary-prevention-guideline.pdf`
+(gitignored). Full citation confirmed against the parsed text: Huang PH, Lu YW, Tsai YL, Wu YW, Li HY,
+Chang HY, Wu CH, Yang CY, Tarng DC, Huang CC, Ho LT, Lin CF, Chien SC, Wu YJ, Yeh HI, Pan WH, Li YH,
+"on behalf of the expert committee for the Taiwan Lipid Guidelines for Primary Prevention." *J Formos
+Med Assoc* (in press at time of this PDF — see note below). DOI `10.1016/j.jfma.2022.05.010`, PMID
+35715290. No PMC deposit (`elink` confirmed empty). **Obtained instead from the Taiwan Society of
+Lipids and Atherosclerosis's own direct-hosted mirror**,
+`https://www.tas.org.tw/upload/files/1-s2_0-S0929664622002157-main%20(1).pdf` — a different host from
+`sciencedirect.com`/`ahajournals.org`/`academic.oup.com`, not behind the same Cloudflare bot-wall
+(`HTTP 200`, `content-type: application/pdf`, no challenge headers). Retrieved 2026-08-30T21:19:35Z
+(UTC). SHA-256 (PDF): `e18cf414bf3ea20e3d8a4467baf38300fde31fd3bedc3c095f5947b392567efc`. Parsed
+cleanly; parsed markdown SHA-256: `b7de41285d71dc0b7618d3059c389b87bdfaa89b1ebc8f142488b0a1d44cd583`.
+
+**Provenance note:** the PDF's own header reads "ARTICLE IN PRESS" — this is an uncorrected-proof
+version (28 pages in proof layout, not yet paginated to the final 121(12):2393-2407 print range),
+which is consistent with, and explains, why `Tonvasca_2026.md` cites this paper by its `pii` (an
+in-press identifier) rather than by final print pagination (see `citation-verification-table.md`
+§B). Title, full author list, and journal match the target citation exactly — this is confirmed to
+be the same paper, an earlier-stage version of it.
+
+**Evidence Hierarchy tag: GUIDELINE / CONSENSUS.** Verbatim excerpts, guideline's own COR/LOE tags
+preserved exactly:
+
+> "For subjects with DM, non-dialysis CKD, or LDL-C ≥190 mg/dL, this guideline suggests the LDL-C
+> level for initiation of therapy and treatment target is 100 mg/dL... Since the baseline LDL-C level
+> is high, moderate-to high-intensity statins combined with ezetimibe is recommended for subjects
+> with LDL-C ≥190 mg/dL."
+>
+> "In subjects with DM, non-dialysis CKD, LDL-C ≥190 mg/dL, immediate lipid lowering therapy should
+> be started and the LDL-C target is <100 mg/dL. **(COR I, LOE B)**"
+>
+> "In subjects with LDL-C ≥190 mg/dL, moderate-to high-intensity statins combined with ezetimibe is
+> recommended. **(COR I, LOE B)**"
+>
+> "In subjects with ≥2 risk factors and LDL-C ≥115 mg/dL, non-pharmacological therapy should be
+> initiated and the LDL-C target is <115 mg/dL. **(COR IIa, LOE C)**"
+>
+> "In subjects with 1 risk factor and LDL-C ≥130 mg/dL, non-pharmacological therapy should be
+> initiated and the LDL-C target is <130 mg/dL. **(COR IIa, LOE C)**"
+>
+> "In subjects without any risk factor, this guideline suggests that the LDL-C level for initiation
+> of therapy and treatment target is 160 mg/dL based on the experts' consensus."
+
+**Four distinct, risk-stratified LDL-C targets for primary prevention in this Taiwan guideline: <100
+mg/dL (DM/CKD/LDL-C≥190), <115 mg/dL (≥2 risk factors), <130 mg/dL (1 risk factor), <160 mg/dL (0 risk
+factors).** These are all **primary-prevention** targets — do not conflate with the secondary-
+prevention/high-risk numbers from #29, the TSC CCS guideline (<70/<50 mg/dL), the ADA 2025 figures
+(<70/<55 mg/dL), or the ACC/AHA <55 mg/dL figure — four different guidelines, four different risk
+tiers, several overlapping numbers that are easy to cite in the wrong context if not kept straight in
+`40_SYNTHESIS/`.
+
+**Also notable — direct international comparison in the guideline's own text:** "This recommended
+LDL-C level is close to the 2019 ESC lipid guidelines suggesting the LDL-C target <116 mg/dL in the
+low risk individuals... lower than that in the Japanese and Korean lipid guidelines where the LDL-C
+target is <140 mg/dL for moderate risk in Japan and <130 mg/dL for those with 2 or more major risk
+factors in Korea." Useful international-context color for `40_SYNTHESIS/`, sourced to the primary
+document.
+
 ## Summary for the Director
 
-- Item 6 (numeric-threshold confirmation): **2 of 5 targets fully completed with primary-source
-  verbatim text** (2023 TSC CCS, ADA 2025 Ch.10); **2 of 5 remain blocked** (T-006 Taiwan Lp(a) 2026,
-  #34 the 2019 ESC/EAS base guideline — neither has a PMC copy); **1 of 5 not attempted this Wave**
-  (#35, ran out of remaining effort budget).
+- Item 6 (numeric-threshold confirmation): **3 of 5 targets fully completed with primary-source
+  verbatim text** (2023 TSC CCS, ADA 2025 Ch.10, #35 the 2022 Taiwan primary-prevention guideline —
+  the last found via the Taiwan Society's own direct-hosted PDF mirror, `tas.org.tw`, which sits
+  outside the Cloudflare wall that blocks `sciencedirect.com` directly); **2 of 5 remain blocked**
+  (T-006 Taiwan Lp(a) 2026, #34 the 2019 ESC/EAS base guideline — neither has a PMC copy; for T-006
+  specifically, both a WebSearch of `tas.org.tw`'s indexed uploads and a direct pii-pattern-matched
+  URL guess on the same mirror that worked for #35 and #29 were tried and came back empty/404 — the
+  document does not appear to be mirrored there, at least not yet or not under that filename pattern;
+  no equivalent mirror exists for #34, an ESC/EAS rather than Taiwan-society document).
 - Item 4 (ezetimibe combination-timing wording): **substantively advanced**, though not from the
   three originally-named documents. The 2023 TSC CCS guideline supplies primary-source, COR/LOE-
   graded combination-timing text; the Katzmann & Laufs 2026 review supplies secondary corroboration
