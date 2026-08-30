@@ -123,6 +123,18 @@ dummy-PDF smoke test）後執行：
    10.1161/CIRCULATIONAHA.117.032615）確認期刊/卷期頁碼。數字與 TE-002 全文中的二手引用完全
    吻合（VERIFIED）。詳見 `evidence-map.md`（TE-012）。
 
+## Chou 2022 Europe PMC 重試與意外新發現（2026-08-31，Director 建議）
+
+`mcp__paper-search__search_europepmc`「Chou pitavastatin ezetimibe fixed-dose combination
+hypercholesterolemia Clinical Therapeutics 2022」——確認 Europe PMC 有此文獻 metadata（PMID
+36030106）但 `pmcid` 為空、`is_open_access: False`，與 T-012 的情況不同，PMCID 查詢法不適用，
+BLOCKED_FOR_SOURCE 維持。同時以 `mcp__paper-search__search_pmc`「1PC111 pitavastatin ezetimibe
+fixed-dose combination phase III」廣泛檢索，意外找到兩筆先前未登記的相關新文獻：TE-013（Lu YW
+et al. Acta Cardiol Sin 2026，Taiwan post-PCI 真實世界世代）、TE-014（Abbas MS et al. Future
+Cardiol 2026，pitavastatin+ezetimibe 專屬統合分析）。以 `search_europepmc` 個別確認取得完整
+structured abstract；TE-014 另以 `get_crossref_paper_by_doi` 確認期刊卷期頁碼。詳見
+`10_DATA/trials-efficacy/extraction-table.csv`（TE-013、TE-014）與 `evidence-map.md`。
+
 ## 未執行 / 刻意跳過的檢索
 
 - 未使用 `scihub` MCP 工具或 `paper-search` 的 `download_scihub`（CLAUDE.md §10 明文禁止，無例外）。

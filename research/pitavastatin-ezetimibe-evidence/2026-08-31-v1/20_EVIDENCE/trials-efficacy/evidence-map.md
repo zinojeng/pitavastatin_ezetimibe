@@ -221,6 +221,39 @@ Role: trials-efficacy-intelligence · Wave: 1
 
 ---
 
+## 補充：Wave 2 尾聲新發現的兩筆來源（2026-08-31，重試 Chou 2022 全文時意外找到）
+
+### TE-014 — Abbas MS et al. Future Cardiol 2026;22(6):607-619（**可能是本專案最直接相關的既有統合分析**）
+
+- 這是本專案目前找到的**第一篇專門針對 pitavastatin+ezetimibe FDC**（而非泛統計所有
+  statin+ezetimibe 組合）的系統性回顧/統合分析，PROSPERO 已註冊（CRD420251233057），納入條件
+  明確為「pitavastatin 2mg 或 4mg + ezetimibe 10mg vs pitavastatin 2mg 單方的 RCT」——這個納入
+  條件與 TE-001（Chou 2022）、TE-002（Tsujita 2023）高度吻合，**極可能就是以這兩篇（或其中一篇）
+  為核心納入研究**，但本角色**尚未取得全文確認實際納入清單**。
+  Evidence Hierarchy：**INSUFFICIENT EVIDENCE**（abstract 層級無法取得任何量化 pooled 數字——
+  Results 段落異常簡短，僅列出結果變項名稱，未附 MD/RR/CI/p-value，可能是索引摘要本身的截斷，
+  非本角色遺漏摘錄）。
+- **強烈建議列為 Wave 3 全文取得最高優先序**——若能取得全文，可能直接補上/驗證
+  `pitavastatin topic.md` §6 Level 1 證據的「正式統合分析」層級佐證，這是目前專案缺乏的一塊。
+
+### TE-013 — Lu YW et al. Acta Cardiol Sin 2026（Taiwan 真實世界 post-PCI 世代）
+
+- Evidence Hierarchy：**OBSERVATIONAL EVIDENCE**（回溯性真實世界世代，單臂、無對照組、N=120，
+  台灣兩家醫學中心，2008–2021 收案）。
+- Pitavastatin 4mg + ezetimibe 10mg（P4/E10，**較高劑量**的 FDC 組合）於 post-PCI（次級預防、
+  高風險）病人中使用 >1 年：12 個月 LDL-C 降幅 32.54%；糖尿病次族群 HbA1c 變化 −0.40%、
+  TyG index 變化 −0.23。
+- **⚠ Numeric Integrity 提醒**：本研究聲稱「研究期間無任何 AE 記錄」——在長達 13 年收案窗口
+  （2008–2021）、N 僅 120 的回溯性病歷回顧研究中，這是一個異常強烈的安全性宣稱，較可能反映
+  回溯性資料蒐集對 AE 的系統性低估（非結構化追蹤，非如 RCT 般主動系統性詢問），而非真正零 AE。
+  `40_SYNTHESIS/` 若引用此研究的安全性結論，**不應**與 TE-002（Tsujita 2023 RCT，有系統性 AE
+  追蹤與分組統計檢定）的安全性證據等量齊觀，應明確標註證據層級差異。
+- 對 `pitavastatin topic.md` 而言，這是難得的**台灣本地、高劑量 FDC、post-PCI 高風險族群**真實
+  世界資料，可作為 Level 1/2 證據的台灣本土佐證，補足 TE-001（Chou 2022，一般 hypercholesterolemia
+  族群）與 TE-002/003（日本族群）之外的台灣次級預防真實世界視角。
+
+---
+
 ## 補充：FDC 劑型本身（非 pitavastatin 專屬）的 adherence/efficacy 佐證
 
 ### TE-010 — Katzmann JL et al. Clin Res Cardiol 2022（德國真實世界 EMR 分析，T-012，Director 指派於 2026-08-31）

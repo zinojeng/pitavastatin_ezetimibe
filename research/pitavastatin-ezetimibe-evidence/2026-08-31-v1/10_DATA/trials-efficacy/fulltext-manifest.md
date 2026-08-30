@@ -58,6 +58,27 @@ metasearch 含 Sci-Hub 且無 opt-out 參數，牴觸 CLAUDE.md §10 的 Sci-Hub
 fallback 行為，特此如實記錄，供 Director／PI 判斷是否需要進一步追查。**Wave 2 起本角色不會再呼叫
 此工具**，全文取得將改用 `mcp__paper-search__search_unpaywall` 或直接請 PI 透過機構訂閱管道取得。
 
+## Wave 2 尾聲：Chou 2022 retry 與新發現來源（2026-08-31）
+
+依 Director 建議，以 Europe PMC/PMC PMCID 查詢法（safety-pharmacology 用此法成功取得 T-012 全文
+的同一方法）重試 TE-001（Chou 2022）：`search_europepmc` 確認 Europe PMC**有**索引此文獻的
+metadata（PMID 36030106），但 `is_open_access: False` 且 `pmcid` 欄位為**空值**——與 T-012（有
+確切 PMCID PMC8873069）不同，Chou 2022 **未被 PMC 收錄全文**，故此方法對本文獻不適用。
+**BLOCKED_FOR_SOURCE 維持不變**。（附帶收穫：取得比 Crossref 更完整的 structured abstract，已
+更新至 `extraction-table.csv` TE-001 notes 欄。）
+
+同一批檢索中意外發現兩筆先前未登記的相關新文獻（TE-013、TE-014，詳見
+`20_EVIDENCE/trials-efficacy/evidence-map.md`）：
+
+| citation_id | 全文取得狀態 | PMC 收錄狀態 | 備註 |
+|---|---|---|---|
+| TE-013（Lu YW 2026, Acta Cardiol Sin） | 未嘗試（本次尾聲檢索僅取得 abstract） | PMCID PMC13202365（Europe PMC 回報 `is_open_access: False`，狀態待確認） | Wave 3 中優先序 |
+| TE-014（Abbas MS 2026, Future Cardiol） | 未嘗試 | PMCID PMC13288897（同上，`is_open_access: False`） | **Wave 3 最高優先序**——此為專案目前找到唯一專門針對 pitavastatin+ezetimibe FDC 的統合分析，abstract 層級無可用數字，全文價值極高 |
+
+兩者的 Europe PMC 回報皆為 `is_open_access: False`，意味著即使有 PMCID，未必代表可直接下載——
+需 Wave 3 實際嘗試（如 PMC 直接連結或期刊官網）才能確認，本次尾聲檢索未進一步嘗試下載（時間
+範圍限制，已完整記錄留待下次）。
+
 ## Wave 2 全文取得建議優先序（供 Research Director / 本角色自行後續處理參考）
 
 1. TE-007（Sydhom, open access, 高優先 — 需釐清 pooled study 清單以解決 SOURCE_CONFLICT 疑慮）
