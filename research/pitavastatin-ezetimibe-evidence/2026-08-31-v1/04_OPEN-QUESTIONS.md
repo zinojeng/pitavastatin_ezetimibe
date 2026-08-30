@@ -103,6 +103,17 @@ resolved items, move them to a "Resolved" section at the bottom with a pointer t
 - [RESOLVED] All 16 of safety-pharmacology's assigned legacy citations (#3–16, 23, 26-joint)
   verified with zero mismatches (2026-08-31).
 
+- [RESOLVED] T-011 routing fragments fully resolved: 6 of the 8 fragments were duplicates of
+  already-catalogued citations (2 more than safety-pharmacology's own check initially found — the
+  Director caught that "Mach F... Eur Heart J 2020" = row #34 exactly, and "Huang PH... in-press
+  PII" is likely the same paper as row #35 in a different citation format); 2 were genuinely new
+  (T-012 Katzmann JL → trials-efficacy, T-013 Corsini A → safety-pharmacology's own queue). See
+  `02_SOURCE-INVENTORY.md` T-011/T-012/T-013 rows.
+
+- [RESOLVED] T-003 (Singh H et al. 2024) and T-010 (LIVALO/DailyMed DDI label) full citations and
+  exact figures received from safety-pharmacology, 2026-08-31 — entered into
+  `02_SOURCE-INVENTORY.md`.
+
 - [RESOLVED] trials-efficacy-intelligence's worktree (`worktree-trials-efficacy-wave1`) now has a
   local commit (`62db3f3`, on top of a pre-existing environment checkpoint commit `dc6ee2f`
   authored "Dr Tseng") — durably saved on disk even though not yet merged to `main`. Same
@@ -129,12 +140,37 @@ resolved items, move them to a "Resolved" section at the bottom with a pointer t
   formats at different points in the deck. Relevant only if/when the PI revises the original slide
   source.
 
-- [NEEDS_SOURCE] Citation routing fragments (T-011) from `Tonvasca_2026.md`'s closing summary slide:
-  author-surname fragments "Mach F," "Huang PH," "Chen PS," "ADA," "Masana L" (likely duplicates of
-  already-catalogued #25/#29/#32/#34/#35 — needs guideline-risk confirmation, not new rows without
-  it) and "Katzmann JL," "Corsini A" (no prior match, likely genuinely new — routed to
-  trials-efficacy for identification). Full citations not yet in the Director's hands; the detail
-  safety-pharmacology recorded lives in its own unmerged worktree, unreachable by the Director.
+- [NEEDS_PI] safety-pharmacology-intelligence declined the Director's recommendation to make a local
+  `git commit` in its own worktree (no push), citing an explicit instruction in its own task
+  assignment ("do not run git commit/push") that it does not consider a peer recommendation
+  sufficient basis to override — correctly reasoning that relaxing that instruction is a PI-level
+  call, not a Director-level one. Director agrees this is the right boundary for the peer to hold.
+  **If the PI wants safety-pharmacology's Wave 1 output committed for durability, that instruction
+  needs to come from the PI directly to that session.** Its files remain safe in
+  `.claude/worktrees/safety-pharm-wave1/` regardless (a worktree persists whether or not it has been
+  committed to).
+
+- [NEEDS_ANALYST] Row #35 (Huang PH et al., 2022 Taiwan primary-prevention guideline, final
+  citation `J Formos Med Assoc. 2022;121(12):2393-2407`) may be the same underlying paper as a
+  citation appearing elsewhere in `Tonvasca_2026.md` in pre-print PII form
+  (`J Formos Med Assoc. 2022;S0929-6646(22)00215-7`) — flagged by cross-referencing
+  safety-pharmacology's T-011 report against the existing #35 row. If confirmed, this is another
+  instance of the legacy source citing the same paper in two different formats (same class of issue
+  already flagged for citation #33/Chou MT 2022) — not a new source, just another internal
+  consistency flag in the read-only legacy file.
+
+- [NEEDS_SOURCE] T-013 (Corsini A, et al. Curr Med Res Opin. 2011;27(8):1551-1562) — used in
+  `Tonvasca_2026.md` to support the CYP3A4-independence framing for statin DDI risk.
+  safety-pharmacology self-identified this as within its own domain but outside its originally
+  assigned 16 citations; added to its own verification queue. No Director action needed.
+
+- [NEEDS_SOURCE] T-012 (Katzmann JL, et al. Clin Res Cardiol. 2022;111(3):243-252 — FDC vs.
+  separate-pill adherence/efficacy) — genuinely new source found by safety-pharmacology while
+  routing T-011, assigned to trials-efficacy-intelligence for independent verification.
+
+- [NEEDS_SOURCE] Clarithromycin-specific DDI data for pitavastatin could not be found in the LIVALO
+  label's Section 7 as fetched (T-010) — a gap in that source's coverage, not evidence of "no
+  interaction." Still an open Wave 2 acquisition target if this specific interaction is needed.
 
 - [NEEDS_SOURCE] Citation #33's (Chou MT 2022, Phase III FDC trial) own AE/CK/liver-enzyme detail
   tables remain unverified — paywalled, per safety-pharmacology. Do not cite specific AE/CK/liver
