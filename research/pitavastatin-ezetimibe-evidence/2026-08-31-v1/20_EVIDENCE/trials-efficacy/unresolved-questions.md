@@ -52,6 +52,28 @@ Wave 1「先驗證既有引用」的範圍）：
 用語是否修正）、或其他分類，並記錄於 `03_DECISION-LOG.md`（本角色無寫入權限，僅在此提出並於
 cross-session summary 中一併回報）。
 
+## Q6 [NEEDS_SOURCE] TE-002（Tsujita 2023）標題「vs. Pitavastatin」與 abstract 描述之 4-arm 設計，表面用詞落差待全文確認
+
+Director 於 2026-08-31 review 時指出：TE-002 的期刊標題為「Efficacy and Safety of
+Pitavastatin/Ezetimibe Fixed-Dose Combination **vs. Pitavastatin**: Phase III, Double-Blind,
+Randomized Controlled Trial」，字面讀起來像是單純的 2-arm 比較（FDC vs pitavastatin），但本角色
+從 PubMed abstract 摘錄的設計是明確的 **4-arm**（pitavastatin 2mg／4mg／2mg+eze10mg（K-924
+LD）／4mg+eze10mg（K-924 HD）並列隨機分派，N=293）。
+
+本角色覆核 abstract 原文（"A total of 293 patients were randomly assigned into four groups
+receiving 2 mg pitavastatin, 4 mg pitavastatin, 2 mg pitavastatin/10 mg ezetimibe (K-924 LD), and
+4 mg pitavastatin/10 mg ezetimibe (K-924 HD) once daily for 12 weeks."）— **4-arm 設計本身在
+abstract 層級是明確、無歧義的**；標題的「vs. Pitavastatin」讀法上應理解為「FDC（不分劑量）vs.
+pitavastatin monotherapy（不分劑量）」這種期刊標題慣用的簡化措辭，而非與 abstract 內容矛盾。
+但由於 **統計分析方式**（例如主要 endpoint 的組間比較是否真的是簡單 pooled FDC-vs-monotherapy
+兩組檢定，還是四組各自兩兩比較）僅憑 abstract 無法完全確認，這會影響 Wave 2/40_SYNTHESIS 引用
+「2mg+eze10 vs 4mg 單方」「2/10 vs 4/10」這類 head-to-head 劑量比較數字時的統計顯著性判讀。
+
+**需要**：Wave 2 取全文（見 `fulltext-manifest.md` 建議優先序，J Atheroscler Thromb 可能為 open
+access）以確認：(a) 四組之間的統計比較設計與顯著性檢定安排；(b) 標題中「vs. Pitavastatin」的
+實際統計口徑。在全文覆核前，`40_SYNTHESIS/` 引用本研究的劑量比較數字（−51.4% vs −45.2% 等）時，
+應註明「數字差異之統計顯著性尚待全文確認」，不應預設已達顯著。
+
 ## Q5 [NEEDS_SOURCE] CEPHEUS（citation #20）、DYSIS-II（citation #21）、Masana 2020（citation #25）三篇未能定位逐字相符原文
 
 `02_SOURCE-INVENTORY.md` 中列出的三筆既有引用，本角色多輪嘗試（PubMed 與 Crossref 交叉查詢）

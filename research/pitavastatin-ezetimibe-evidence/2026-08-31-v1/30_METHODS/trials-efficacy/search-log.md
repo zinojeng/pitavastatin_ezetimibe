@@ -63,6 +63,17 @@ Scope 依 CLAUDE.md §5（Prioritized Search Protocol）第 5、6、7、8、9 �
 | 13 | Chou 2022 全文取得嘗試 | `mcp__research_hub__download_paper`（DOI）| 下載失敗（13 個資料庫均未收錄可下載全文；Elsevier 全文付費牆）；未嘗試 Sci-Hub | — |
 | 14 | `Tonvasca_2026.md` 未讀完剩餘段落（04_OPEN-QUESTIONS 待辦） | `Read` 工具直接讀取 line 1680–2811（本 Wave 0 未讀完的剩餘 36%） | 補齊 Phase III FDC trial 之 AE 表格（見 extraction-table）與 DDI/ADR 段落（歸 safety-pharmacology）；未發現額外未登記之 trials-efficacy 引用 | — |
 
+## Coverage 統計摘要（Director bookkeeping 要求，2026-08-31 追加）
+
+- 本角色被指派的 `Tonvasca_2026.md` 既有 legacy citation 共 7 筆（#19, #20, #21, #22, #25, #26,
+  #33）：**4 筆已定位並驗證**（→ TE-008, TE-009, TE-007, TE-001）、**3 筆未能定位**
+  （#20 CEPHEUS, #21 DYSIS-II, #25 Masana 2020 — 未指派 TE-id，見 `unresolved-questions.md` Q5）。
+- 另有 5 個 TE-id 為 `pitavastatin topic.md` 直接點名的主要試驗與 Wave 1 新找到的來源，**不屬於**
+  上述 7 筆 legacy citation：TE-004（HIJ-PROPER）、TE-005（RACING 主文）、TE-006（RACING DM
+  次族群）、TE-002（Tsujita 2023，新發現）、TE-003（Ako 2024，新發現）。
+- 兩組計數為互不重疊：4（已驗證 legacy）+ 3（未定位 legacy）= 7（全部 legacy 指派）；
+  4（已驗證 legacy）+ 5（topic-notes 主要試驗 + 新發現）= 9（extraction-table.csv 中的 TE-id 總數）。
+
 ## 新發現來源之完整格式化引用（Director 要求，2026-08-31 追加）
 
 - Tsujita K, Yokote K, Ako J, Tanigawa R, Tajima S, Suganami H. Efficacy and Safety of
