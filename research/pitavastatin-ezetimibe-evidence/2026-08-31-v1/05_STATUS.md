@@ -7,6 +7,18 @@ Last updated: 2026-08-31 (Gate 2 declared, Research Director)
 > Wave 1/2 processing. Condensed here into a single current narrative; no information dropped — see
 > git history for the previous, more granular version if a specific timestamp/sequence is needed.
 
+> **CONSOLIDATION-STATUS CAVEAT (restated 2026-08-31, after a legitimate check by
+> safety-pharmacology-intelligence caught this file's own prior "run complete" framing overstating
+> what the shared checkout actually reflects):** everything below (Wave 3 synthesis, both Challenge
+> Rounds, Gate 3, the full Wave 4 audit cycle, Final Gate) is real, fully committed, and pushed —
+> but **only to branch `worktree-wave0-init` (same name on `origin`), not to `main`**. Local and
+> `origin` `main` both currently sit at commit `a8507d2` (the Wave 3 *dispatch* commit) — everything
+> after that point is absent from the shared checkout until someone merges
+> **[PR #1](https://github.com/zinojeng/pitavastatin_ezetimibe/pull/1)** (`worktree-wave0-init` →
+> `main`, opened by the Director as a draft; not merged/pushed by the Director itself, per standing
+> instruction). Any role or reader relying on the shared `main` checkout will not see this content
+> until that PR is merged — verify via `origin/worktree-wave0-init` directly if you need it sooner.
+
 ## Current Gate
 
 **Gate 1: PASSED** (PI authorization, 2026-08-31, Decision 2026-08-31-12).
