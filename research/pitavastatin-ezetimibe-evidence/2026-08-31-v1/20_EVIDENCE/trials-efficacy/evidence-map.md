@@ -9,6 +9,38 @@ Role: trials-efficacy-intelligence · Wave: 1
 
 ---
 
+## Wave 3 明確框架總表（Director 2026-08-31 指派 §3：明確建構 Level 1/2/3 區分，禁止混淆）
+
+**核心規則（不可違反）**：以下每一列的比較對象、用藥組成、收案族群三者若有任一項不同，即**不可**
+互相替代、加強、或暗示彼此的結論可以類推。Director 於任務指派中指出這是 Wave 2 Challenge Round
+標記的最高風險過度延伸點（其引用路徑 `30_METHODS/shared/wave2-challenge-round.md`——**註**：
+本角色所在的獨立 worktree 中該檔案尚未出現（僅見 `.gitkeep` 佔位），可能是 Director 所在 worktree
+尚未合併回來，本角色未能直接讀取核對其內容，此處的框架整理是依 Director 訊息中的敘述重建，
+而非直接引用該檔案原文）。
+
+| Citation | 藥物比較 | 收案族群 | 對本專案 FDC 問題的定位 | Evidence Hierarchy |
+|---|---|---|---|---|
+| **Level 1** — TE-001（Chou 2022, Taiwan）、TE-002（Tsujita 2023, Japan）、TE-015（Jeong 2022, Korea）、TE-003（Ako 2024, Japan 延伸） | pitavastatin 2/4mg **+ ezetimibe 10mg** vs pitavastatin 2/4mg 單方（或 vs ezetimibe 單方） | 一般 hypercholesterolemia／mixed dyslipidemia 門診族群（台/日/韓，非 ACS、非二級預防為主） | **FDC 問題本身**——LDL-C 降幅的直接證據 | DIRECT EVIDENCE（僅 LDL-lowering efficacy，非 CV outcome） |
+| TE-013（Lu 2026, Taiwan real-world） | pitavastatin 4mg **+ ezetimibe 10mg** vs 病人自身 baseline（無對照組） | Taiwan post-PCI（**次級預防**，高風險） | FDC 問題的台灣真實世界佐證 | OBSERVATIONAL EVIDENCE（單臂回溯性世代） |
+| **Level 2** — TE-005/006（RACING, Kim BK 2022 / Lee YJ 2023） | **rosuvastatin** 10mg + ezetimibe 10mg vs **rosuvastatin** 20mg 單方 | 南韓 ASCVD 族群（含 DM 次族群） | Combination-strategy CV outcome 的**間接**證據——藥物是 rosuvastatin，**不是 pitavastatin** | INDIRECT EVIDENCE（對 pitavastatin/ezetimibe 專屬論斷而言） |
+| TE-007（Sydhom 2024 meta-analysis） | 泛統計「低/中強度 statin + ezetimibe」vs「高強度 statin 單方」（statin 種類不限） | 混合（RCT + observational 分開 pool） | Combination-strategy 的統合層級佐證，**statin-agnostic**，非 pitavastatin 專屬 | OBSERVATIONAL EVIDENCE（RCT-pooled 分析本身未達顯著，見下方 SOURCE_CONFLICT 章節） |
+| **Level 3** — TE-004（HIJ-PROPER, Hagiwara 2017） | **pitavastatin** 標準劑量 **+ ezetimibe** vs **pitavastatin** 單方 | 日本 ACS 族群（**唯一**藥物組成與收案族群都精準對應本專案核心問題的 hard-outcome RCT） | **唯一**真正回答「pitavastatin+ezetimibe FDC 是否有 hard-outcome 證據」的直接試驗——但整體 primary endpoint 未達顯著 | DIRECT EVIDENCE（整體）／INSUFFICIENT EVIDENCE（sitosterol 次族群，僅 hypothesis-generating） |
+| **框架外參考點（不屬於 Level 1/2/3，禁止類推套用）** — TE-011（REPRIEVE, Grinspoon 2023） | **pitavastatin 單方 4mg** vs **安慰劑**（無 ezetimibe） | HIV 感染、初級預防、低至中度風險（**非**一般三高族群，**非**次級預防） | 只回答「pitavastatin 單方本身是否有 hard-outcome 證據」——與 FDC 問題**無關** | DIRECT EVIDENCE（但範圍狹窄，見下方專節） |
+| TE-012（REAL-CAD, Taguchi 2018） | **pitavastatin 單方**劑量強度（4mg vs 1mg，**無 ezetimibe**） | 日本穩定型 CAD，**次級預防** | 只回答「pitavastatin 劑量強度本身是否有 hard-outcome 證據」——與 FDC 問題**無關** | DIRECT EVIDENCE（但範圍狹窄，見下方專節） |
+
+**明確禁止的三種混淆（依 Director 指示重申）**：
+1. 不可將 RACING（rosuvastatin）的 CV outcome 結果，寫成或暗示為「pitavastatin/ezetimibe 的 CV
+   outcome 證據」——RACING 只能支持「combination strategy 這個概念」，藥物本身必須明確標註為
+   rosuvastatin。
+2. 不可將 REPRIEVE 或 REAL-CAD（兩者皆為 pitavastatin **單方**、**無 ezetimibe**）的正向 hard-outcome
+   結果，寫成或暗示為對 Level 3（HIJ-PROPER 缺口）的補強——兩者完全不涉及 ezetimibe 併用問題。
+3. 不可將 HIJ-PROPER 的 sitosterol 次族群訊號（HR 0.71）升級為「已證實」的 phenotype-selection
+   策略證據——母試驗整體 primary endpoint 未達顯著，次族群訊號僅為 hypothesis-generating。
+
+以下各節維持 Wave 1/2 已建立的詳細分析，本節僅作為 Wave 3 要求的**明確總覽**，不取代下方細節。
+
+---
+
 ## Level 1：LDL-lowering efficacy（pitavastatin/ezetimibe 產品層級，強證據）
 
 ### TE-001 — Chou MT et al. Clin Ther 2022（多中心 Phase III RCT）
@@ -76,6 +108,22 @@ Role: trials-efficacy-intelligence · Wave: 1
   但若 `40_SYNTHESIS/` 僅引用 abstract 的措辭而不揭露 59.6% 這個整體 AE 發生率，可能給讀者
   「幾乎零 AE」的錯誤印象 — 建議未來引用時同時呈現「AE 發生率 59.6%」與「僅 1 件判定為 ADR」
   兩個數字，避免斷章取義。詳見 `10_DATA/trials-efficacy/wave2-fulltext-extraction.md`。
+
+### TE-015 — Jeong HS et al. Clin Ther 2022;44(10):1310-1325（韓國，**第三個**獨立國家的 Phase III FDC RCT，Wave 3 新發現）
+
+- 於 Wave 3 全文取得 TE-013（Lu 2026）時，於其參考文獻列表中發現此篇，獨立以 PubMed/Crossref
+  驗證（非二手轉引）。與 TE-001（台灣）、TE-002（日本）同為 pitavastatin 2mg/4mg + ezetimibe
+  10mg 的 4-arm 設計 Phase III RCT，且與 TE-001 發表於**同一期**期刊（Clin Ther 2022;44(10)）。
+- Pooled pitavastatin/ezetimibe vs pooled pitavastatin：LDL-C %change −52.8%(SD 11.2%) vs
+  −37.1%(SD 14.1%)；組間差異 −15.8 mg/dL（95% CI −18.7 to −12.9, P<0.001，**注意此為 mg/dL
+  單位而非百分點差異，依原文如實保留**）。LDL-C 達標率：94.2% vs 69.1%（P<0.001）。整體 AE/ADR
+  發生率無顯著組間差異，嚴重 AE 亦相當。
+- **三國（台/日/韓）獨立重複驗證**：TE-001、TE-002、TE-015 三篇獨立、不同國家、相同藥物組成設計
+  的 Phase III RCT，一致顯示 pitavastatin 2mg/4mg + ezetimibe 10mg 可使 LDL-C 降幅達 50% 以上，
+  安全性與單方相當——這是 Level 1 證據**跨國一致性**的有力佐證，大幅強化「Level 1 為強證據」
+  這個既有判斷的可信度，非僅單一試驗的孤證。
+- 全文取得受阻（延世大學機構典藏連結遇 JavaScript 反機器人 challenge，未嘗試破解），
+  BLOCKED_FOR_SOURCE，僅能使用 abstract 層級數字。
 
 ---
 
@@ -243,14 +291,25 @@ Role: trials-efficacy-intelligence · Wave: 1
 - Pitavastatin 4mg + ezetimibe 10mg（P4/E10，**較高劑量**的 FDC 組合）於 post-PCI（次級預防、
   高風險）病人中使用 >1 年：12 個月 LDL-C 降幅 32.54%；糖尿病次族群 HbA1c 變化 −0.40%、
   TyG index 變化 −0.23。
-- **⚠ Numeric Integrity 提醒**：本研究聲稱「研究期間無任何 AE 記錄」——在長達 13 年收案窗口
-  （2008–2021）、N 僅 120 的回溯性病歷回顧研究中，這是一個異常強烈的安全性宣稱，較可能反映
-  回溯性資料蒐集對 AE 的系統性低估（非結構化追蹤，非如 RCT 般主動系統性詢問），而非真正零 AE。
-  `40_SYNTHESIS/` 若引用此研究的安全性結論，**不應**與 TE-002（Tsujita 2023 RCT，有系統性 AE
-  追蹤與分組統計檢定）的安全性證據等量齊觀，應明確標註證據層級差異。
+- **⚠ Numeric Integrity 提醒（Wave 3 全文已證實此提醒站得住腳）**：本研究聲稱「研究期間無任何
+  AE 記錄」——在長達 13 年收案窗口（2008–2021）、N 僅 120 的回溯性病歷回顧研究中，這是一個異常
+  強烈的安全性宣稱，較可能反映回溯性資料蒐集對 AE 的系統性低估（非結構化追蹤，非如 RCT 般主動
+  系統性詢問），而非真正零 AE。**Wave 3 取得全文後證實**：作者本人在 Discussion／Limitations
+  中明確承認此限制（「adverse events were assessed based on information recorded in the
+  patients' medical charts... minor or transient adverse effects that were not documented in
+  the notes may have been missed」）——本角色 Wave 2 憑 abstract 層級數字所做的謹慎判斷，經全文
+  獨立證實為作者自己也認可的限制，非本角色過度懷疑。`40_SYNTHESIS/` 若引用此研究的安全性結論，
+  **不應**與 TE-002（Tsujita 2023 RCT，有系統性 AE 追蹤與分組統計檢定）的安全性證據等量齊觀，
+  應明確標註證據層級差異。
 - 對 `pitavastatin topic.md` 而言，這是難得的**台灣本地、高劑量 FDC、post-PCI 高風險族群**真實
   世界資料，可作為 Level 1/2 證據的台灣本土佐證，補足 TE-001（Chou 2022，一般 hypercholesterolemia
   族群）與 TE-002/003（日本族群）之外的台灣次級預防真實世界視角。
+- **Wave 3 全文新增細節**（完整數字見 `extraction-table.csv` TE-013 notes 欄）：依前次降脂治療
+  暴露分層後，statin-naïve 病人的 LDL-C 降幅（−38.47%）明顯大於曾用 statin+ezetimibe（−16.03%）
+  或曾用 statin 單方（−13.17%）者——這個「治療反應隨前次暴露遞減」的型態，對詮釋真實世界 FDC
+  效果時應納入考量，不應直接與 treatment-naïve RCT 族群（如 TE-001/002/015）的效果量直接比較。
+  另外，全文引用本專案已驗證的 HIJ-PROPER（TE-004）作為效果量的參照基準點，顯示這篇真實世界
+  研究的作者本身也將其結果放入既有的 pitavastatin+ezetimibe 證據脈絡中討論。
 
 ---
 

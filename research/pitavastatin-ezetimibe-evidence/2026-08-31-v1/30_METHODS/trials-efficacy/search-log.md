@@ -135,6 +135,31 @@ Cardiol 2026，pitavastatin+ezetimibe 專屬統合分析）。以 `search_europe
 structured abstract；TE-014 另以 `get_crossref_paper_by_doi` 確認期刊卷期頁碼。詳見
 `10_DATA/trials-efficacy/extraction-table.csv`（TE-013、TE-014）與 `evidence-map.md`。
 
+## Wave 3（2026-08-31，PI 授權 Synthesis wave 開啟）
+
+**模型確認**：本 session 運行於 `claude-sonnet-5`（Sonnet 5），符合 PI 對 Wave 3 工作的模型要求。
+
+1. **T-024（Abbas 2026 meta-analysis）全文取得**：`mcp__paper-search__search_unpaywall`（查無 OA）
+   → 直接 `curl` Taylor & Francis figshare 補充項目連結（回傳 AWS WAF bot-challenge，未破解）→
+   `mcp__tavily__tavily_extract` 嘗試 ResearchGate 鏡像頁（未取得可用內容）。**BLOCKED_FOR_SOURCE
+   維持**。
+2. **T-023（Lu 2026, Taiwan post-PCI）全文取得**：**成功**——透過台灣國家圖書館「臺灣期刊論文
+   索引系統」公開下載服務（`tpl.ncl.edu.tw`，經 `mcp__tavily__tavily_search` 找到連結，非
+   publisher 官網、非繞過付費牆的合法公共圖書館服務）直接 `curl` 取得 11 頁真實 PDF，SHA-256 見
+   `fulltext-manifest.md`。以 LlamaParse 解析成功，完整萃取見 `extraction-table.csv` TE-013
+   notes 欄。
+3. **Level 1/2/3 明確框架建構**：依 Director 指派，於 `evidence-map.md` 新增「Wave 3 明確框架
+   總表」章節，以表格形式明確區分 Level 1（TE-001/002/003/013/015）、Level 2（TE-005/006/007，
+   rosuvastatin，INDIRECT）、Level 3（TE-004, HIJ-PROPER）、與框架外參考點（TE-011 REPRIEVE、
+   TE-012 REAL-CAD，皆為 pitavastatin 單方、無 ezetimibe），並明確列出三種禁止的混淆方式。
+4. **OpenEvidence bounded discovery pass（citation #33, Chou 2022）**：`ToolSearch` 確認
+   `openevidence` MCP 於本 session **仍為 CONNECTION_CLOSED**，無可用工具，**未能執行**此授權的
+   discovery pass——如實回報為連線失敗，非略過不做。
+5. **意外新發現 TE-015（Jeong 2022, Korea 第三篇獨立 FDC RCT）**：於 TE-013（Lu 2026）全文的
+   References 中發現，以 `search_crossref` + `get_crossref_paper_by_doi` + `search_europepmc`
+   獨立驗證（非二手轉引），詳見 `evidence-map.md`／`extraction-table.csv`。其全文取得嘗試（Yonsei
+   大學機構典藏連結）遇 JavaScript 反機器人 challenge，未破解，BLOCKED_FOR_SOURCE。
+
 ## 未執行 / 刻意跳過的檢索
 
 - 未使用 `scihub` MCP 工具或 `paper-search` 的 `download_scihub`（CLAUDE.md §10 明文禁止，無例外）。

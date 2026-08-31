@@ -79,6 +79,23 @@ metadata（PMID 36030106），但 `is_open_access: False` 且 `pmcid` 欄位為*
 需 Wave 3 實際嘗試（如 PMC 直接連結或期刊官網）才能確認，本次尾聲檢索未進一步嘗試下載（時間
 範圍限制，已完整記錄留待下次）。
 
+## Wave 3 全文取得結果（2026-08-31，PI 授權開啟 Wave 3）
+
+| citation_id | 全文取得狀態 | 來源 URL | 取得時間 (UTC) | SHA-256 | 授權/license | LlamaParse 狀態 |
+|---|---|---|---|---|---|---|
+| TE-013（Lu 2026, Taiwan post-PCI） | **成功** | `https://tpl.ncl.edu.tw/NclService/pdfdownload?...`（台灣國家圖書館「臺灣期刊論文索引系統」公開服務，非 publisher 官網、非繞過付費牆——國圖為公共圖書館法定服務，合法公開取用管道） | 2026-08-31T02:34:55Z | `98925f95b62b9687ba20f4d9af087836229da1fbcf2d3744aee77e89990e5ffd` | Acta Cardiologica Sinica（台灣心臟學會發行）；國圖服務條款下載，**未查證**確切 CC 授權字樣（未見於解析出的全文內），依現有資訊視為合法公開取用但授權條款細節待補 | **成功**（11 頁 PDF 完整解析，含 Table 1–3、Figure 1–4、全部 34 篇 References，人工檢視首尾與段落完整性，無截斷跡象） |
+| TE-014（Abbas 2026, meta-analysis） | **失敗（BLOCKED_FOR_SOURCE）** | Taylor & Francis (Future Cardiology)；`tandf.figshare.com` 補充項目連結；ResearchGate 鏡像頁 | 2026-08-31（嘗試時間） | 不適用 | `search_unpaywall` 查無 OA 版本；`tandf.figshare.com` 直接 fetch 回傳 AWS WAF bot-challenge（`x-amzn-waf-action: challenge`, HTTP 202, 無內容）——**未嘗試破解**；`tavily_extract` 於 ResearchGate 鏡像頁未取得可用內容 | 不適用（無檔案可解析） |
+| TE-015（Jeong 2022, Korea 第三篇獨立 FDC RCT，Wave 3 新發現） | **失敗（BLOCKED_FOR_SOURCE）** | Europe PMC 提供之延世大學機構典藏連結 `ir.ymlib.yonsei.ac.kr/bitstream/...` | 2026-08-31（嘗試時間） | 不適用 | 直接 fetch 回傳 JavaScript 反機器人 challenge 頁（`data-name="js-challenge"`，非真實 PDF）——**未嘗試破解**，與 Wave 2 PMC POW challenge 同一政策處理 | 不適用（無檔案可解析） |
+
+**方法論記錄**：Wave 3 對兩個新來源（T-024／TE-014、TE-015）各嘗試至少 2–3 條合法路徑
+（Unpaywall、期刊/供應商 CDN 直連、第三方學術典藏鏡像），確認皆遭遇**反機器人防護機制**
+（AWS WAF challenge 或 JavaScript proof-of-work challenge）而非傳統「付費牆頁面」——依本角色
+一貫政策，**遇到反機器人 challenge 一律不嘗試破解**，即使該挑戰機制本身可能與 Sci-Hub 無關；
+理由：破解反機器人機制屬於 detection-evasion 範疇，超出本專案「合法取用」授權範圍，即使目的是
+取得學術文獻全文。兩者維持 `BLOCKED_FOR_SOURCE`。TE-013（Lu 2026）則透過台灣國家圖書館的
+公開查詢/下載服務（非破解、非繞過）成功取得，示範了「反機器人 challenge 擋下直連 publisher／
+典藏站」與「改走合法第三方公開服務」兩者的區別——後者是本角色認可的正當替代路徑，前者不是。
+
 ## Wave 2 全文取得建議優先序（供 Research Director / 本角色自行後續處理參考）
 
 1. TE-007（Sydhom, open access, 高優先 — 需釐清 pooled study 清單以解決 SOURCE_CONFLICT 疑慮）
