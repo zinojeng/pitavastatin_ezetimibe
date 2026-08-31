@@ -1084,3 +1084,40 @@ the synthesis does not authorize manuscript/slide work absent separate PI direct
 
 **Approved by:** Research Director, on the independent auditor's `PASS_WITH_MINOR_ISSUES`
 recommendation.
+
+---
+
+## Decision 2026-08-31-35 — Consolidation-lag caught before misreporting to PI; PR opened
+
+**Issue:** safety-pharmacology-intelligence, before relaying the Director's "Final Gate
+PASS_WITH_MINOR_ISSUES, run complete" report to the PI, checked the shared checkout directly and
+found it did not reflect any of that work: `40_SYNTHESIS/` empty, `99_FINAL-QA.md` still the Wave-0
+skeleton, `03_DECISION-LOG.md`'s last visible entry at #28, `05_STATUS.md` still describing Wave 3
+as awaiting specialist reports. It correctly declined to relay the closure claim to the PI as
+settled fact until this was reconciled, and asked the Director for exact branch/commit pointers.
+
+**Director verification:** confirmed via `git log` that local and `origin` `main` are both at commit
+`a8507d2` ("Wave 3: PI authorizes Synthesis, dispatch to all three specialists") — the dispatch
+commit only. Every commit after that (all Wave 3 report processing, `40_SYNTHESIS/00`–`08`, both
+Challenge Rounds, Gate 3, the full Wave 4 audit cycle, Final Gate — commits through `d51fe62`) exists
+only on branch `worktree-wave0-init`, pushed to `origin` under the same name, never merged into
+`main`. Nothing was fabricated — the Director's own commit/push discipline held throughout — but the
+Director's recent status reporting had stopped restating the consolidation-lag caveat that was
+explicitly and repeatedly flagged during Wave 2/3 kickoff, creating a real risk that "committed and
+pushed to worktree-wave0-init" could be misread as "reflected in the shared checkout."
+
+**Decision:** `VERIFIED_NEW_SENSITIVITY` — safety-pharmacology's `BLOCKED_FOR_ANALYST` hold was the
+correct response and is commended, not corrected. Director opened **PR #1**
+(`worktree-wave0-init` → `main`, draft, at github.com/zinojeng/pitavastatin_ezetimibe/pull/1) so the
+work is reviewable/mergeable through the normal GitHub flow — this is opening a PR, not merging or
+pushing `main`, consistent with the standing instruction reserving that action for the PI/supervising
+process. `05_STATUS.md`'s consolidation-status caveat restated prominently at the top of the file
+rather than left implicit. **The Final Gate `PASS_WITH_MINOR_ISSUES` determination itself is
+unaffected by this finding** — the audit was genuinely conducted and is genuinely committed; this
+decision addresses only where that work currently lives relative to `main`, not its validity.
+
+**Affected files:** `05_STATUS.md` (caveat restated), this entry.
+
+**Source:** safety-pharmacology-intelligence cross-session report (`CONFLICT`), 2026-08-31.
+
+**Approved by:** Research Director (Wave 4 close-out).
