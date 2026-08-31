@@ -1259,3 +1259,40 @@ updated` label corrected).
 
 **Approved by:** PI; recorded by Research Director (final durable-wording correction, this branch
 only — `main` and PR #1 both left untouched by this session).
+
+---
+
+## Decision 2026-08-31-40 — PR #1 closed as superseded, verified by exact path-content parity
+
+**Issue:** PR #1 (`worktree-wave0-init` → `main`, opened Decision 2026-08-31-35) remained `OPEN`
+through Decisions 2026-08-31-35 through -39, redundant with `main`'s content once the supervising
+Codex process's cherry-pick-and-push path reached zero divergence between local and `origin` `main`
+(Decision 2026-08-31-38). Whether to close the now-redundant PR was left to the PI/PR owner, per
+those decisions' own explicit deferral.
+
+**Decision:** The supervising Codex process compared every one of the 26 paths changed by PR #1
+against `origin/main` and found **zero object-content mismatches** — i.e., `main` already contains
+byte-identical content for every file the PR would have changed, reached via the cherry-pick path
+rather than a PR merge. The repo owner then closed PR #1 as superseded, with a public GitHub comment
+recording that verification and confirming no unique PR content is being discarded (comment
+`IC_kwDOUJFRUM8AAAABRkKDdg`, posted 2026-08-31T04:29:30Z: *"Superseded by the independently reviewed
+cherry-pick consolidation now present on main. Verified all 26 paths changed by this PR have
+identical object content on origin/main; no unique PR content is being discarded."*). GitHub now
+reports PR #1 `state: CLOSED`. **Director independently confirmed this via `gh pr view 1` before
+recording it** (not accepted on the PI's report alone) — state and comment both verified live.
+
+**No scientific, research, or synthesis content was touched by this decision.** This is a pure
+repository-housekeeping closure: the redundant proposal-to-merge is closed; the content it proposed
+already lives on `main` via the independently-verified cherry-pick path. `40_SYNTHESIS/00`–`08`
+remains `FINAL`; Final Gate remains `PASS_WITH_MINOR_ISSUES`, unchanged.
+
+**Affected files:** `05_STATUS.md`, `04_OPEN-QUESTIONS.md` (both updated to state PR #1 is `CLOSED`,
+no open PI decision remains on this point; Decisions 2026-08-31-35 through -39 left unedited as
+historical context per the PI's explicit instruction).
+
+**Source:** PI directive, 2026-08-31, reporting the repo owner's PR closure and its verification
+rationale; independently confirmed by the Director via `gh pr view 1` (state `CLOSED`, comment text
+matches) before this entry was recorded.
+
+**Approved by:** PI (repo owner performed the closure); recorded by Research Director. No PR, `main`,
+or scientific-content mutation performed by this Director session — this branch's own commit only.
