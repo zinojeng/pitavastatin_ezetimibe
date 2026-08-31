@@ -1190,3 +1190,36 @@ was created.
 
 **Approved by:** PI; recorded by Research Director (narrow close-out, this branch only — `main` not
 touched).
+
+---
+
+## Decision 2026-08-31-38 — GitHub `main` synchronization complete; PR #1 superseded
+
+**Issue:** Decision 2026-08-31-37 recorded that local `main` had been updated by the supervising
+Codex process but `origin/main` (GitHub) remained stale at `a8507d2`, with PR #1 open as the pending
+path to close that gap. The PI reports the supervising Codex process has since completed final QA on
+local `main` and pushed it to `origin` successfully.
+
+**Decision:** Recorded as fact, **independently verified by the Director before recording, not
+taken on the PI's word alone**: `git fetch origin` followed by `git rev-list --left-right --count
+main...origin/main` returned `0 0` — local `main` and `origin/main` both resolve to commit `275ab90`,
+confirming zero divergence in either direction. GitHub `main` synchronization is complete. **PR #1
+was independently checked via `gh pr view 1` and confirmed still `OPEN`** — the Director did not
+close, comment on, or otherwise mutate it, per explicit instruction. Since `main` was updated via the
+Codex process's direct cherry-pick-and-push path rather than by merging PR #1, the PR's diff is now
+redundant/superseded content, not a pending merge target — whether to close it is a decision for the
+PI or PR owner, not made here.
+
+**No change to scientific conclusions.** Final Gate remains `PASS_WITH_MINOR_ISSUES`;
+`40_SYNTHESIS/00`–`08` remains `FINAL`. **Decisions 2026-08-31-35 through -37 are preserved as
+historical context and are not rewritten** — each was an accurate statement of the state at the time
+it was recorded; this entry records only what has changed since.
+
+**Affected files:** `05_STATUS.md` (consolidation-status section updated to current state, prior
+history preserved as a labeled historical section).
+
+**Source:** PI directive, 2026-08-31, independently verified by the Director via `git fetch`/
+`git rev-list`/`gh pr view` against the shared repository and GitHub before recording.
+
+**Approved by:** PI; recorded by Research Director (final governance sync only, this branch only —
+`main` and PR #1 both left untouched by this session).
