@@ -30,11 +30,22 @@ that resolved them.
   monotherapy CKD dosing is resolved (T-018). Highest-stakes safety gap identified in the Challenge
   Round — any future clinical-facing output must not imply FDC-CKD-dosing equivalence to monotherapy
   without saying so explicitly as an extrapolation.
-- [NEEDS_ANALYST] Singh 2024 (T-003) pools RCT and observational studies for its pitavastatin NODM
-  risk ratios — the same methodological pattern that produced the Sydhom 2024 RCT-vs-observational
-  framing issue the PI already had to resolve (Decision 2026-08-31-06). Not yet known whether
-  Singh's pooled RR holds consistently across study types; unresolved parallel risk, not yet a
-  confirmed problem.
+- [NEEDS_SOURCE — confirmed still blocked, Wave 3, Decision 2026-08-31-29] Singh 2024 (T-003) pools
+  RCT and observational studies for its pitavastatin NODM risk ratios — the same methodological
+  pattern that produced the Sydhom 2024 RCT-vs-observational framing issue the PI already had to
+  resolve (Decision 2026-08-31-06). safety-pharmacology re-attempted lawful acquisition in Wave 3
+  (Europe PMC PMCID lookup) — still `is_open_access:false`, no PMCID. **Genuinely unresolved due to
+  source access, not a declined judgment call** — cannot determine whether Singh's pooled RR holds
+  consistently across study types without full text. Carry into any future full-text acquisition
+  attempt; do not treat as abandoned.
+- [NEEDS_ANALYST] T-025's (Samnaliev 2025) newly-obtained full text shows its dose-specific R10/E10
+  subgroup MACE signal (HR 0.58, 95% CI 0.35–0.96, p=0.030) is **not replicated** in the paper's own
+  overall/pooled cohort analysis (no significant persistence/adherence-MACE association there). Do
+  not cite the subgroup HR without this caveat.
+- [NEEDS_SOURCE, best-available proxy now on record] FDC-specific CKD dosing and true isolated-BCRP-
+  inhibitor fold-change both remain `BLOCKED_FOR_SOURCE`/unfound as direct empirical answers.
+  T-026/T-027 (PBPK simulations) offer the closest available mechanistic proxies — explicitly not
+  equivalent to real clinical DDI/dosing data, tagged `MECHANISTIC SUPPORT` only.
 - [NEEDS_ANALYST] The FDC-adherence-improves-outcomes narrative (T-012/Katzmann, T-025/Samnaliev,
   T-022/Wei) rests entirely on retrospective/observational designs subject to healthy-adherer bias —
   no randomized FDC-vs-separate-pills comparison exists in this project's inventory. Any future
