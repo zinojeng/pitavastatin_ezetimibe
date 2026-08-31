@@ -35,6 +35,11 @@ Fixed-dose combination（FDC）相較分開服用（separate/free-equivalent com
 殘餘風險都能單靠 statin 類藥物解決。Lipoprotein(a)［Lp(a)］是目前最受關注的殘餘風險標記之一：
 
 - 2026 ACC/AHA（#28）建議成人至少終身檢測一次 Lp(a)，≥50 mg/dL 或 ≥125 nmol/L 列為 risk enhancer。
+  **精確溯源（Wave 4 稽核發現並修正）**：mg/dL 數字（≥50 mg/dL）追溯至 `Tonvasca_2026.md`（L-002）
+  第1361行的 risk enhancer 表格，明確引用 #28；nmol/L 換算數字（≥125 nmol/L）僅見於
+  `pitavastatin topic.md`（L-001，PI 論點筆記）第149行，未見於 L-002 或任何已取得的文獻全文。
+  **兩者皆未經獨立對照 #28 原文全文覆核**（#28 全文仍 `BLOCKED_FOR_SOURCE`）——與下方 ESC 2025 數字
+  屬同一驗證層級（見 `02_SOURCE-INVENTORY.md` #28 列與 Decision 2026-08-31-33）。
 - ESC 2025（同樣以 Lp(a) 為 risk modifier）閾值約 >50 mg/dL，惟 nmol/L 閾值使用 >105 nmol/L
   （與 ACC/AHA 的 125 nmol/L 不同，屬指引間差異，不可混用）。**此 ESC 2025 數字與 STS 2026 的情況
   相同——T-007 全文 `BLOCKED_FOR_SOURCE`，目前唯一依據是 `pitavastatin topic.md` 的轉述，並非獨立

@@ -15,7 +15,7 @@ CAC、Lp(a)、ApoB 等 risk enhancer 精算個人化風險，直接訂出絕對 
 
 | 指引 | 風險族群 | LDL-C 目標 | Citation | 全文狀態 |
 |---|---|---|---|---|
-| 2026 ACC/AHA | Very-high-risk 次級預防 | <55 mg/dL，≥50% 降幅 | #28 | `BLOCKED_FOR_SOURCE`（引用已驗證） |
+| 2026 ACC/AHA | Very-high-risk 次級預防 | <55 mg/dL，≥50% 降幅 | #28 | `BLOCKED_FOR_SOURCE`（引用已驗證，數字未獨立驗證，見下方註記） |
 | 2026 ACC/AHA | Not very-high-risk 次級預防 | <70 mg/dL，≥50% 降幅 | #28 | 同上 |
 | 2023 TSC CCS | Extreme-risk | <50 mg/dL | #30 | 全文已取得 |
 | 2023 TSC CCS | General CCS | <70 mg/dL | #30 | 全文已取得 |
@@ -30,6 +30,14 @@ CAC、Lp(a)、ApoB 等 risk enhancer 精算個人化風險，直接訂出絕對 
 **關鍵提醒**：#28（<55, very-high-risk）與 #30（<50, extreme-risk）是兩份不同指引對「風險最高族群」
 使用的兩個不同數字，其風險分層定義本身也不完全相同——任何綜整文字若寫成「指引建議 <55 mg/dL」而未
 指名是哪一份指引、哪一個風險分層，即構成本輪 Challenge Round 標記的過度概括風險。
+
+**Wave 4 稽核發現並修正（2026-08-31）**：#28 的 <55 與 <70 兩個數字，**皆僅追溯至 `Tonvasca_2026.md`
+（L-002）自身轉載的指引表格（第1424–1481行），並非獨立對照 #28 原文全文覆核所得**——#28 全文迄今
+仍 `BLOCKED_FOR_SOURCE`（Wave 2、Wave 3 兩輪確認）。此二數字與 T-005（台灣 STS 2026）、T-007（ESC
+2025）等本文件其他段落已標註「原文未驗證」的數字，屬於**完全相同的驗證層級**，理應一致標註，但先前
+版本僅對 <55 有隱含提及、對 <70 完全遺漏，且兩者皆未於 `08_traceability-table.md` 建立追溯列——此為
+Wave 4 獨立稽核發現的 Finding 1，已於 `02_SOURCE-INVENTORY.md` #28 列補上明確出處註記，並於本文件
+與 `08_traceability-table.md` 一併修正（見 Decision 2026-08-31-33）。
 
 ## Taiwan STS（Suboptimally Tolerable Statins）2026：本專案最重要但未驗證的框架概念
 

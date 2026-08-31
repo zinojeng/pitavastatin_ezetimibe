@@ -276,8 +276,26 @@ overclaim language anywhere in the synthesis.
 
 **Gate 3: PASSED**, 2026-08-31.
 
+## Wave 4 — first audit pass complete: HOLD_FOR_CORRECTION, corrected, re-audit requested
+
+`pit-eze-independent-auditor` (sonnet, read-only except `99_FINAL-QA.md`) completed its first pass.
+**Final Gate recommendation: `HOLD_FOR_CORRECTION`.** All eight named project traps checked out
+clean (RACING, HIJ-PROPER subgroup, REPRIEVE/REAL-CAD-vs-FDC conflation — the project's own top
+self-flagged risk — Taiwan STS mis-tiering, the dose-comparison overclaim, the Sydhom framing, the
+#29/#35 and #28/#30 threshold conflations, the Katzmann cohort-n mix-up), no forbidden language, no
+secrets, residual-risk content within charter bounds. **One material finding**: citation #28's LDL-C
+and Lp(a) thresholds in `40_SYNTHESIS/02` and `06` lacked the "unverified against primary text"
+caveat already correctly applied to structurally identical T-005/T-007 claims, and had no
+`08_traceability-table.md` entry — a genuine Numeric Integrity Rule gap, though Director verification
+confirmed the numbers themselves are not fabricated (they trace to `Tonvasca_2026.md` lines
+1424–1481/1361 and `pitavastatin topic.md` line 149, just never properly anchored). **Corrected**
+(Decision 2026-08-31-33): `02_SOURCE-INVENTORY.md` #28 row now cites exact legacy-source line
+ranges; `40_SYNTHESIS/01/02/06/08` all updated with the caveat and new traceability rows.
+Re-audit requested.
+
 ## Next action
 
-Per PI directive, proceeding automatically to Wave 4: spawning a sonnet independent-auditor session
-(read-only except `99_FINAL-QA.md`) to run the Final QA Checklist against the full repository
-including `40_SYNTHESIS/`. `50_MANUSCRIPT/` remains explicitly out of scope.
+Awaiting the independent auditor's re-audit of the corrected sections. If it returns `PASS` or
+`PASS_WITH_MINOR_ISSUES`, this run reaches a defensible completion checkpoint (Wave 3 Synthesis +
+Wave 4 Audit both closed) pending any further PI direction. `50_MANUSCRIPT/` remains explicitly
+out of scope regardless of audit outcome.
