@@ -47,7 +47,6 @@ Owner: Research Director · Wave 3 Synthesis · 2026-08-31
 | <50 mg/dL（extreme-risk） | 02 | #30 (2023 TSC CCS) | row 58 |
 | <70 mg/dL（general CCS） | 02 | #30 | 同上 |
 | <100/<115/<130/<160 mg/dL（初級預防四分層） | 02 | #35（台灣2022初級預防） | row 63 |
-| Lp(a) ≥50 mg/dL 或 ≥125 nmol/L | 06 | #28 | row 56 |
 | Lp(a) >50 mg/dL 或 >105 nmol/L | 06 | T-007（引用已驗證，全文blocked） | row 86 |
 | 63.0% / 28.2% / 40.0%（台灣65+高血壓/高血糖/高血脂盛行率） | — | T-008 | row 87 |
 

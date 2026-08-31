@@ -1051,3 +1051,36 @@ for the caveat consistency (the "unverified against primary text" caveat now app
 
 **Approved by:** Research Director (Wave 4 correction cycle), routed back per the audit's own
 recommendation that corrections go through the owning role (Director owns `40_SYNTHESIS/`).
+
+---
+
+## Decision 2026-08-31-34 — Wave 4 re-audit: PASS_WITH_MINOR_ISSUES, Final Gate reached
+
+**Issue:** `pit-eze-independent-auditor` re-audited `02_SOURCE-INVENTORY.md` #28,
+`40_SYNTHESIS/01/02/06/08` after Decision 2026-08-31-33's correction — independently re-read the
+underlying legacy sources itself (`Tonvasca_2026.md` lines ~1330–1362/~1420–1481,
+`pitavastatin topic.md` lines 145–153) rather than trusting the Director's fix on its face, and
+confirmed the correction accurate: the <70 mg/dL figure is genuine (not fabricated), the caveat is
+now applied consistently, and the mg/dL-vs-nmol/L provenance split is exactly right. One new,
+explicitly non-blocking observation: `08_traceability-table.md` had a stale, less-detailed duplicate
+Lp(a) row left over below the corrected one (same values, no numeric-integrity issue — tidiness
+debt only).
+
+**Decision:** Finding 1 `RESOLVED`. Stale duplicate row removed from `08_traceability-table.md`
+(no separate Decision entry needed for this trivial cleanup, noted here). **Final Gate:
+`PASS_WITH_MINOR_ISSUES`** — per Runbook §36, this is one of the two statuses that may be marked
+`FINAL`. All eight originally-named project traps remain correctly guarded on re-audit (no
+regression from the correction); no forbidden language, secrets, Sci-Hub provenance, or unresolved
+placeholders found in either audit pass.
+
+**Wave 3 Synthesis (`40_SYNTHESIS/00`–`08`, as committed through this decision) is marked `FINAL`.**
+`50_MANUSCRIPT/` remains explicitly out of scope (Decision 2026-08-31-28) — reaching Final Gate on
+the synthesis does not authorize manuscript/slide work absent separate PI direction.
+
+**Affected files:** `40_SYNTHESIS/08_traceability-table.md` (duplicate row removed), `99_FINAL-QA.md`
+(auditor's own re-audit addendum), `05_STATUS.md` (Final Gate recorded).
+
+**Source:** `pit-eze-independent-auditor` re-audit report, `99_FINAL-QA.md`, 2026-08-31.
+
+**Approved by:** Research Director, on the independent auditor's `PASS_WITH_MINOR_ISSUES`
+recommendation.
