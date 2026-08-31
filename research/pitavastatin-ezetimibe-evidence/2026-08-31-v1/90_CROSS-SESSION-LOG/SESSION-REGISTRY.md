@@ -59,3 +59,77 @@ has not yet been pushed to `origin` as of this registry (`origin/main` still sho
 commit) — noted for transparency, not treated as a discrepancy to resolve by this Director (per the
 PI's explicit "do not merge branches yourself" instruction, pushing `main` is likewise left to the
 PI/Codex process, not this session).
+
+---
+
+## Update — Post-Gate-2 documentation-only check, 2026-08-31 (later same date)
+
+Compiled from a fresh, live `ListAgents` call plus direct git inspection. **Additive — nothing above
+this line is edited or deleted; this section supersedes only the "Director active (this session)" /
+"main not pushed" facts that had gone stale, per the rows below.**
+
+### Task/project state (per `05_STATUS.md`, `03_DECISION-LOG.md` — content facts, not liveness claims)
+
+- **Gate 2: `READY_WITH_PENDING_ITEMS`** (Decision 2026-08-31-27). Both PI-required LlamaParse
+  demonstrations remain confirmed satisfied.
+- **Wave 3: not opened.** No new research/acquisition authorized since Gate 2.
+- **Six sources remain explicitly `BLOCKED_FOR_SOURCE`/`NEEDS_PI`, unchanged**: Taiwan STS 2026
+  (T-005), Taiwan Lp(a) 2026 (T-006), base 2019 ESC/EAS (#34), 2026 ACC/AHA (#28), ESC 2025 Focused
+  Update (T-007), citation #33 (Chou MT 2022)'s safety tables. Per standing PI instruction, no
+  assumption is made that these can be supplied, and no further acquisition is authorized.
+- **All three specialists have no pending assigned Wave-2 work and are recorded as idle/standing by**
+  per `05_STATUS.md`'s "Next action" section: *"None pending from the specialists — all three are
+  idle, standing by."* Two additional narrow post-Gate-2 Director checkpoints (commits `2c4b16a`/
+  `45f93ce` on this branch, `ca44059`/`b03590c` on `main`) verified a stale #35 cross-reference and
+  independently re-confirmed a trials-efficacy fulltext-repair commit — neither reopened Wave 2 work
+  for any specialist nor changed the above.
+
+### Live reachability, as actually observed via `ListAgents` just now — reported as observed, not assumed
+
+- **This session's own registered name is `wave0-init-75` [945f8a]** — not `pit-eze-research-director`
+  as Wave 2's registry entry recorded. This is a session-identity change (likely from a context
+  compaction/resume), not a project-state change; noted for transparency, not corrected/resolved by
+  this session.
+- **A separate peer named `pit-eze-research-director` [a2c0d8] is currently live**, `background`,
+  `idle`, started ~4 minutes before this check. Two sessions now answer to/near the Director identity
+  — flagged for the PI's awareness. This session did not contact it, to avoid duplicate-Director
+  activity (Runbook Golden Rule 1) — reconciling this is a PI-level call, not something to
+  self-resolve.
+- **`pit-eze-safety-pharmacology` [5c9140]** — confirmed live, `background`, `idle` (started ~5h before
+  this check, i.e. the same long-running session from Wave 2).
+- **`pit-eze-trials-efficacy` [1a2045]** — confirmed live, `background`, `idle`. **Ref changed from
+  `ce9a36` (recorded above at Wave 2 dispatch) to `1a2045`, and per `ListAgents`' own "started ~4m
+  ago" timing this appears to be a recently (re)started session, not the original continuously-running
+  one** — noted, not further investigated (out of scope for a documentation-only pass).
+- **`pit-eze-guideline-risk` did NOT appear in this `ListAgents` call at all.** Its current live
+  reachability is **unverified** — this section makes no claim about whether it is running. Its last
+  known task-state (per `05_STATUS.md`, above) was idle/standing by with no pending Wave 2 work; that
+  remains the project's task-state record regardless of current process liveness, which this session
+  could not confirm either way.
+
+### Git state, independently verified
+
+- **Local `main` and `origin/main` are both at `b03590c`** (`git fetch origin` + `git log --oneline`
+  on both refs, run this check) — **confirmed synchronized**, consolidating through both post-Gate-2
+  checkpoint commits. This supersedes the "main not yet pushed to origin" note recorded above at Wave
+  2 dispatch time, which is now stale.
+- This session's own branch (`worktree-wave0-init`) is currently **behind** local `main` by ~1,130
+  lines across 18 role-owned files (`10_DATA/`, `20_EVIDENCE/`, `30_METHODS/` extraction/evidence/
+  search-log files for all three specialists) — expected staleness from the established pattern
+  (Director branch carries Director-authored commits plus periodic catch-up merges; specialist detail
+  accumulates on `main` via the Codex consolidation process between merges), not a content
+  contradiction. Not remerged this pass — out of scope for a documentation-only check; flagged for
+  whenever the Director next needs direct access to that specialist-owned detail.
+- `git ls-files` / `git status --porcelain --ignored`: no `.pdf`/`.parsed.md`/`fulltext/` path tracked;
+  both shared and per-role `fulltext/` directories confirmed still gitignored.
+- `git grep` for API-key/secret-key/password/bearer-token/AWS-key patterns across all tracked files:
+  no matches (only benign self-references — `.gitignore`'s own pattern lines, and prior checkpoint
+  logs' text *describing* that a scan was run).
+- **One genuine content inconsistency found and fixed** (outside this file, per the task's allowance
+  for a control-plane correction when one is found): `04_OPEN-QUESTIONS.md` still listed citation #30
+  (2023 TSC CCS), #32 (ADA 2025), and #35 (2022 Taiwan primary-prevention companion) as
+  "numeric-threshold confirmation still pending," even though all three were separately confirmed
+  obtained/content-verified earlier (Decision 2026-08-31-23; the prior #35 checkpoint). Corrected to
+  list only the two still-genuinely-blocked documents (T-006, #34) plus #29 (citation-verified only,
+  never separately pursued for full-text thresholds) as pending.
+

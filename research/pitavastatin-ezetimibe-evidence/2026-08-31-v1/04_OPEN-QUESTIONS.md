@@ -71,10 +71,14 @@ that resolved them.
   meta-analysis — flagged highest priority)** — both found by trials-efficacy, citation identity
   confirmed, full text not yet obtained (`is_open_access:False` per Europe PMC for both). Held for
   Wave 3 per Decision 2026-08-31-25, not pursued further in Wave 2.
-- [NEEDS_SOURCE, dispatched to guideline-risk, active priority] Numeric-threshold/wording
-  confirmation still pending for every other guideline document identified in Wave 1 (Taiwan Lp(a)
-  2026/T-006, 2023 TSC CCS, base 2019 ESC/EAS/#34, both 2022 Taiwan lipid-guideline companions/
-  #29/#35, ADA 2025/#32) — Wave 1 confirmed document *identity* only.
+- [NEEDS_SOURCE — corrected 2026-08-31, was stale] Numeric-threshold/wording confirmation still
+  pending only for the two guideline documents that remain `BLOCKED_FOR_SOURCE`: Taiwan Lp(a)
+  2026/T-006 and base 2019 ESC/EAS/#34. **2023 TSC CCS (#30), ADA 2025 (#32), and the 2022 Taiwan
+  primary-prevention companion (#35) were all subsequently obtained and content-verified** (Decision
+  2026-08-31-23 for #30/#32; post-Gate-2 checkpoint for #35) — this bullet previously listed all
+  five as still-pending, which was no longer accurate once those three were resolved. #29 (the
+  2022 Taiwan secondary-prevention/high-risk companion) was citation-verified in Wave 1 but its
+  full-text numeric thresholds were never separately pursued in Wave 2 — remains genuinely open.
 - [NEEDS_SOURCE, dispatched to guideline-risk] **111 年健康促進統計年報** (Taiwan Health Promotion
   Administration statistical annual report, ROC 111 = 2022, T-008) — not indexed in PubMed/
   Crossref/paper-search; requires a direct fetch from the 國民健康署 website. Not part of the PI's
