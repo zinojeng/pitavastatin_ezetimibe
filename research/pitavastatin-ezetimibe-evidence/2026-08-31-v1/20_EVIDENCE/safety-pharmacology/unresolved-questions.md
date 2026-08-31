@@ -60,6 +60,30 @@ PROJECT_ID: `pitavastatin-ezetimibe-evidence` · RUN_ID: `2026-08-31-v1`
     涵蓋，依其自身 ≤10–15% 權重定位延後處理，已於 90_CROSS-SESSION-LOG 向 Director 確認並取得
     「暫緩、不需提前處理」之回覆（2026-08-31）。列此僅作追蹤，非待辦阻塞項。
 
+## Wave 3 更新（2026-08-31，PI 授權 Synthesis wave，Director 指派）
+
+**仍為 BLOCKED_FOR_SOURCE（重試後結果不變）**：
+21. Singh 2024（T-003）RCT-only vs observational-only 子分析拆解——Director/Wave 2 Challenge
+    Round 提出的問題（是否如 Sydhom 一樣出現 pooled 與子分析分歧）。本輪以 Europe PMC PMCID
+    查詢重試，結果不變：非開放取用、無 PMCID。**無法在不取得全文之情況下回答**，如實回報
+    BLOCKED_FOR_SOURCE，不猜測答案（依 Director 指示：若能取得全文且發現分歧，才是 NEEDS_PI；
+    本輪連取得資料本身都做不到，屬更基礎的來源缺口）。
+22. FDC 專屬（pitavastatin+ezetimibe 併方本身）之 CKD 劑量調整建議——本輪指名搜尋（PBPK、
+    label、real-world 研究）**仍未找到任何來源專門處理 FDC 併方於 CKD 病人的劑量調整**。
+    合理推測（EXPERT INTERPRETATION，非查證所得）：FDC 產品之仿單一般僅依其單方 statin
+    成分的既定 CKD 劑量指引處理，不會另外執行專屬 CKD 試驗——但此為本角色之推論，未經來源證實，
+    **正式登記為 BLOCKED_FOR_SOURCE**，不作為結論使用。
+23. OpenEvidence relay：本 session 查證 `openevidence` MCP **持續 CONNECTION_CLOSED**，
+    Director 授權之「至多一次 bounded discovery pass」**因工具本身不可用而無法執行**，非因
+    本角色選擇不用。
+
+**部分收斂（新資訊，非完全解決）**：
+24. BCRP 定量數字：找到 pitavastatin 專屬的 PBPK 模擬預測值（Hong 2025，AUC ratio 2.24 with
+    ETI）——**惟為模擬預測、非臨床實測，且為多重機轉（OATP+BCRP+CYP3A4+CYP2C9）之複合藥物**，
+    不能視為「BCRP 專一」的乾淨數字。CKD 機轉解釋：找到 Wu 2025 PBPK 模型顯示 ESRD 病人
+    OATP1B1/3 表現量降低 75%，為 pitavastatin CKD 劑量下修提供機轉合理性，但未給出
+    pitavastatin 專屬暴露量變化的具體百分比。兩題**維持 OPEN，降低優先度但不關閉**。
+
 ## Wave 2 更新（2026-08-31）
 
 **新解決**：

@@ -117,6 +117,29 @@ but no specific BCRP-inhibitor fold-change number for pitavastatin was located �
 Full details, exact quotes, and file-level provenance (SHA-256, retrieval timestamps, license) in
 this role's owned `20_EVIDENCE/safety-pharmacology/` and `30_METHODS/safety-pharmacology/` files.
 
+## 2026-08-31 — Wave 3 (PI-authorized Synthesis wave, Director dispatch)
+
+Director confirmed session model (Sonnet 5, per system identity — meets the stated PI requirement)
+and dispatched 5 tasks. Results: (1) Singh 2024 RCT-vs-observational disaggregation — re-attempted
+via Europe PMC PMCID lookup per Director's suggestion; still is_open_access:false, no PMCID;
+BLOCKED_FOR_SOURCE unchanged, question cannot be answered without full text, reported as such rather
+than guessed. (2) T-025 (Samnaliev 2025) deepened — discovered it's actually open access (PMID
+40454236, PMCID PMC12123881, CC BY) via a fresh Europe PMC lookup; downloaded and LlamaParse-parsed
+lawfully; extracted the R10/E10 dose-subgroup's full persistence/adherence/LDL-C/MACE data,
+including a subgroup MACE HR 0.58 (95% CI 0.35-0.96) not visible at abstract level — flagged as an
+overall-cohort-vs-subgroup inconsistency worth noting if cited. (3a) FDC-specific CKD dosing —
+targeted search found nothing; recorded as BLOCKED_FOR_SOURCE with an explicitly-labeled EXPERT
+INTERPRETATION (not a finding) about why this likely doesn't exist. (3b) BCRP quantitative number —
+found the closest thing to date: Hong E et al. 2025 (PMC11945117, PBPK-modeled, not clinical) gives
+a pitavastatin AUC ratio of 2.24 with a multi-mechanism CFTR-modulator combination — clearly flagged
+as simulation-based, not equivalent to the label's measured DDI numbers. Also found Wu Y et al. 2025
+(PMC12389332) — PBPK model showing ~75% reduction in hepatic OATP1B1/3 abundance in ESRD, providing
+mechanistic rationale for the label's CKD dose cap (not a new empirical number). (5) OpenEvidence —
+confirmed still CONNECTION_CLOSED in this session; the authorized one-pass discovery could not be
+executed because the tool itself is unavailable, not by choice.
+
+Full detail, exact quotes, and provenance in this role's owned files (updated in place).
+
 ### Worktree isolation note
 
 This background session's file writes to the shared checkout were rejected by the harness pending

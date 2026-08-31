@@ -64,6 +64,36 @@ rifampin 作為強效 CYP450/transporter 誘導劑，在**長期慢性給藥**�
 - 仍未找到 pitavastatin 與具體 BCRP inhibitor 之定量 fold-change 交互作用數字 — **OPEN GAP 部分
   收斂但未完全解決**，維持於 `unresolved-questions.md`。
 
+## Wave 3 補充：pitavastatin 專屬 BCRP 相關數字（首次找到，惟非傳統臨床 DDI 研究）
+
+**Hong E, Chung PS, Rao AP, Beringer PM.** "Evaluation of Complex Drug Interactions Between
+Elexacaftor-Tezacaftor-Ivacaftor and Statins Using Physiologically Based Pharmacokinetic
+Modeling." *Pharmaceutics.* 2025;17(3):318. PMID 40142982, PMCID PMC11945117（open access）。
+
+以 **PBPK（生理藥動學）模擬**（非臨床試驗實測）預測 elexacaftor-tezacaftor-ivacaftor（ETI，一種
+同時抑制 OATPs/BCRP/CYP3A4/CYP2C9 的 CFTR modulator）併用時各 statin 的 AUC ratio：
+atorvastatin 3.27、pravastatin 2.27、**pitavastatin 2.24**、rosuvastatin 1.83（作者結論：
+rosuvastatin 為 weak interaction，其餘為 moderate interaction，可能需劑量調整）。
+
+**重要限制**：這是**電腦模擬預測值**，並非如 cyclosporine/erythromycin/rifampin/gemfibrozil
+FDA label 數字那樣的**實際臨床藥動學測量值**；作者自陳需要臨床研究驗證。且 ETI 是特定的三合一
+CF 藥物組合，並非「泛用型 BCRP inhibitor」，機轉上同時涉及 OATP/BCRP/CYP3A4/CYP2C9 多重抑制，
+無法單獨歸因於 BCRP 這一項機轉。**Evidence Hierarchy: MECHANISTIC SUPPORT**（modeled/predicted），
+`CONFIDENCE: MODERATE`。**這是目前找到最接近「pitavastatin + BCRP inhibitor 定量數字」的來源，
+但不應與 label 層級的實測 DDI 數字並列呈現，需明確標註其為模擬預測值。**
+
+**Wu Y, Kong W, Li J, Xiang X, Liang H, Liu D.** "Development of PBPK Population Model for
+End-Stage Renal Disease Patients to Inform OATP1B-, BCRP-, P-gp-, and CYP3A4-Mediated Drug
+Disposition." *Pharmaceutics.* 2025;17(8):1078. PMID 40871097, PMCID PMC12389332（open access）。
+以 pitavastatin 為 5 個 probe substrate 之一，於 ESRD 病人族群 PBPK 模型化：**ESRD 病人肝臟
+OATP1B1/3 表現量降低約 75%**、腸道 P-gp 降低約 34%、迴腸 BCRP 表現量增加約 100%，肝臟 CYP3A4
+變化極小；ML 分析未找到 pitavastatin 清除率的顯著影響因子（相較之下 rosuvastatin 找到
+AST/bilirubin/腸道菌相關因子）。**這為 pitavastatin 於 CKD/ESRD 需要劑量下修（見上方 FDA label
+1mg/2mg 上限）提供了機轉層次的解釋**——pitavastatin 高度依賴 OATP1B1 進行肝臟攝取，ESRD 病人
+OATP1B1 表現量大幅下降，理論上會降低肝臟清除、提高全身暴露量，與 label 之經驗性劑量上限方向一致
+（但非同一份數據，不可直接等同）。**Evidence Hierarchy: MECHANISTIC SUPPORT**,
+`CONFIDENCE: MODERATE`（摘要未給出 pitavastatin 專屬之暴露量變化百分比數字）。
+
 ## Wave 2 重大新發現：Pitavastatin CKD 劑量調整（原列為 BLOCKED_FOR_SOURCE 之缺口，本輪解決）
 
 **Tramontano D et al.** "Renal Safety Assessment of Lipid-Lowering Drugs: Between Old Certainties

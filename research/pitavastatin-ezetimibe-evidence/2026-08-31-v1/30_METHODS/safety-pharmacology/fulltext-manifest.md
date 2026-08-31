@@ -51,6 +51,17 @@ license: "CC BY 4.0", redistribution_ok: true` 應可成立 — 惟此為 T-012�
 - Li H, Li J 2026（PMID 42528438, DOI 10.31083/bjhm56151, *Br J Hosp Med*）— 同樣
   `is_open_access: false`，無 PMCID。**BLOCKED_FOR_SOURCE**。
 
+## Wave 3 — 合法取得之全文（新增）
+
+| 檔案 | 來源 | URL | 授權 | 下載時間 (UTC) | SHA-256 | 解析狀態 |
+|---|---|---|---|---|---|---|
+| `fulltext/Samnaliev2025_PMC12123881.pdf` | Europe PMC open access（Samnaliev M et al., Front Cardiovasc Med. 2025;12:1461416, DOI 10.3389/fcvm.2025.1461416, PMID 40454236, PMCID PMC12123881） | https://europepmc.org/articles/PMC12123881?pdf=render | CC BY（Frontiers 標準授權，逐字確認："This is an open-access article..."） | 2026-08-31T02:34:35Z | `36dad9110a98c9e1289f22451021eb943a5ca52d59ef1a61c5f48660adaf1245` | 已用 LlamaParse 成功解析（9 頁 PDF），輸出 `fulltext/Samnaliev2025_PMC12123881.md`；取得
+R10/E10 劑量次族群之完整 persistence/adherence/LDL-C/MACE 數字，含先前摘要層級未見的
+subgroup MACE HR 0.58 (95% CI 0.35-0.96, p=0.030) |
+
+**Wave 3 再次確認 BLOCKED_FOR_SOURCE（重試，狀態不變）**：Singh H et al. 2024（PMID 39587804）
+再次以 Europe PMC PMCID 查詢，仍為非開放取用、無 PMCID——見 `evidence-map.md` §1.1 Wave 3 更新。
+
 ## 已知曾嘗試但被 paywall/403 阻擋、未取得全文之來源
 
 | 來源 | 嘗試方式 | 結果 | 後續建議 |

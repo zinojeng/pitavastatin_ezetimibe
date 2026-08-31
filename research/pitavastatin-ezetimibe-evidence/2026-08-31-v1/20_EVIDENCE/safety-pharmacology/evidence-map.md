@@ -38,6 +38,14 @@ pitavastatin as compared to atorvastatin and rosuvastatin: a systematic review a
   已確認為 BLOCKED_FOR_SOURCE**（非未嘗試，而是查證後確認無開放取用管道），已取得之完整結構化
   摘要（Background/Methods/Results/Conclusion 皆完整，含 PROSPERO 註冊碼）已足供本專案目前需求，
   數字與先前一致，`CONFIDENCE` 維持 MODERATE（摘要層級，非全文逐字）。
+- **Wave 3 更新（Challenge Round 後續，Director 指派）**：Director/Wave 2 Challenge Round 提出
+  的問題——「Singh 2024 混合 pooled RCT+observational 之 pooled RR（0.86/0.77）是否在 RCT-only
+  vs observational-only 子分析中一致，或如 Sydhom 一樣出現分歧」——**本輪再次以 Europe PMC PMCID
+  查證重試，結果不變：`is_open_access: false`，仍無 PMCID，維持 BLOCKED_FOR_SOURCE**。此問題
+  **無法在不取得全文的情況下回答**（摘要僅提供 pooled 結果，未拆分 RCT-only/observational-only
+  子分析數字）。**本角色不猜測、不推論答案**，如實回報：此為 BLOCKED_FOR_SOURCE 型態的
+  unresolved question，而非可由本角色判斷的 framing 問題——若未來 `research_hub`/機構管道打開
+  全文，應優先回頭處理此題。
 - **與 `pitavastatin topic.md` 的對應**：此篇與 topic notes 所述「2024 systematic review/
   meta-analysis 納入 RCT 與 observational studies，顯示 pitavastatin 相較 atorvastatin/
   rosuvastatin 的 new-onset diabetes risk 較低」完全吻合，建議 Director 將本篇登錄為 T-003 的
