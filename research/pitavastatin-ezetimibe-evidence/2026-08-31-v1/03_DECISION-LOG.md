@@ -875,3 +875,39 @@ added), `90_CROSS-SESSION-LOG/` (dispatch log).
 **Source:** PI directive, 2026-08-31.
 
 **Approved by:** PI; implemented by Research Director.
+
+---
+
+## Decision 2026-08-31-29
+
+**Issue:** safety-pharmacology's Wave 3 report on its four dispatched tasks: (1) Singh 2024 (T-003)
+RCT-vs-observational disaggregation — re-attempted via Europe PMC PMCID lookup, still
+`is_open_access:false`/no PMCID, genuinely cannot be resolved without full text (a source-access
+limitation, not a declined judgment call). (2) T-025 (Samnaliev 2025) — turned out to be open access
+after all (PMID 40454236, PMCID PMC12123881, CC BY); full text obtained and parsed, surfacing a new
+overall-vs-subgroup inconsistency: the paper's own pooled cohort found no significant persistence/
+adherence-MACE association, but its R10/E10 dose-specific subgroup shows a positive MACE signal
+(HR 0.58, 95% CI 0.35–0.96, p=0.030) not replicated in the overall analysis. (3) FDC-specific CKD
+dosing — nothing found; offered a plausible inference (FDC likely inherits its statin component's
+monotherapy CKD guidance) explicitly labeled `EXPERT INTERPRETATION`, not a finding — gap stays
+`BLOCKED_FOR_SOURCE`. (4) BCRP quantitative data — found two PBPK/simulation papers (T-026, Hong
+2025, pitavastatin AUC ratio 2.24 with a multi-mechanism perpetrator, not an isolated BCRP
+inhibitor; T-027, Wu 2025, ESRD reduces hepatic OATP1B1/3 ~75% in a PBPK model, mechanistic
+rationale for the CKD dose cap but no new empirical pitavastatin number) — both correctly tagged
+`MECHANISTIC SUPPORT`/simulation-based, not clinical DDI data. (5) The authorized bounded OpenEvidence
+discovery pass could not be executed — `openevidence` remains `CONNECTION_CLOSED` in
+safety-pharmacology's session too (a tool blocker, not a discretionary skip).
+
+**Decision:** `VERIFIED_AND_REPLACE` for T-025 (abstract-only → full text obtained, with the
+subgroup caveat now mandatory whenever the R10/E10 MACE HR is cited). New sources T-026, T-027
+logged, both `MECHANISTIC SUPPORT`. Singh 2024's RCT-vs-observational question (Wave 2 Challenge
+Round finding #4) **remains genuinely unresolved** — not a framing failure, a hard source-access
+limit; carried forward as `BLOCKED_FOR_SOURCE`, not treated as abandoned. FDC-specific CKD dosing and
+true isolated-BCRP-inhibitor fold-change both remain open gaps, now with the closest available
+proxy evidence on record (T-026/T-027) explicitly marked as not equivalent to a real answer.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-025 updated; new T-026, T-027 rows).
+
+**Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31 (Wave 3).
+
+**Approved by:** Research Director (Wave 3).
