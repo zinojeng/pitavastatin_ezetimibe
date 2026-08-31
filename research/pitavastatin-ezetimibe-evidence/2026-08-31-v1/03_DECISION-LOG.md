@@ -843,3 +843,35 @@ Wave 3 (not opened — out of scope for this checkpoint).
 **Source:** PI-directed narrow post-Gate-2 checkpoint, 2026-08-31.
 
 **Approved by:** Research Director.
+
+---
+
+## Decision 2026-08-31-28 — PI authorizes Wave 3 (Synthesis)
+
+**Issue:** Gate 2 was declared `READY_WITH_PENDING_ITEMS` (Decision 2026-08-31-27) with Wave 3
+explicitly not opened. The PI has now reviewed that state and authorized Wave 3.
+
+**Decision:** Wave 3 (Synthesis) is opened. **Scope, explicit PI decision**: synthesis work in
+`40_SYNTHESIS/` is authorized; **manuscript/slide drafting in `50_MANUSCRIPT/` is NOT authorized
+this wave** — the Decision 2026-08-31-04/2026-08-31-12 question of whether a dedicated manuscript
+role is ever created remains separately unresolved and is not implicitly answered by opening Wave 3.
+All Claude Code work this wave, including every resumed/dispatched peer session, must run on model
+**sonnet**. The Director's own branch was brought up to current local `main` via the established
+safe merge-catch-up pattern (merge `main` into the Director's working branch; no merge/push of
+`main` itself — unchanged policy from Decision 2026-08-31-12 item 4). A cross-session health check
+via `ListAgents` confirmed this session is the sole live `pit-eze-research-director` and all three
+specialist identities remain reachable by name — used directly, no replacement identities created
+(Golden Rule 1). `openevidence` MCP remains disconnected in this session; recorded as a tool blocker,
+not treated as a project blocker — lawful PubMed/PMC/Crossref/Unpaywall/paper-search/`research_hub`
+metadata-search paths remain the primary Wave 3 acquisition routes. Where a dispatched specialist's
+own session does have a working OpenEvidence relay, **at most one bounded discovery pass** on the
+six still-blocked sources (T-005, T-006, #34, #28, T-007, #33) is authorized — discovery/
+corroboration only, never a primary-source substitute, and must not weaken any `BLOCKED_FOR_SOURCE`
+status unless an independently lawful primary source is actually obtained.
+
+**Affected files:** `05_STATUS.md` (Wave 3 opened), `04_OPEN-QUESTIONS.md` (Wave 3 dispatch targets
+added), `90_CROSS-SESSION-LOG/` (dispatch log).
+
+**Source:** PI directive, 2026-08-31.
+
+**Approved by:** PI; implemented by Research Director.

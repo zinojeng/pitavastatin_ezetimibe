@@ -132,3 +132,27 @@ this line is edited or deleted; this section supersedes only the "Director activ
   obtained/content-verified earlier (Decision 2026-08-31-23; the prior #35 checkpoint). Corrected to
   list only the two still-genuinely-blocked documents (T-006, #34) plus #29 (citation-verified only,
   never separately pursued for full-text thresholds) as pending.
+
+---
+
+## Update — Wave 3 dispatch, 2026-08-31 (fresh `ListAgents`, resolves the prior duplicate-Director note)
+
+The previous section flagged a possible second live `pit-eze-research-director` session as a
+documentation-only observation. Re-checked via a fresh `ListAgents` call at Wave 3 start: **this
+session is confirmed the sole live session named `pit-eze-research-director`, now at ref `a2c0d8`**
+(was `33d078` at Wave 2 dispatch, `945f8a`/`wave0-init-75` per the prior stale intermediate note —
+ref/name churn across resumes, not distinct concurrent Directors; no duplicate exists as of this
+check).
+
+Current live refs, all reachable by name:
+
+| Role (name) | Ref at this check | Notes |
+|---|---|---|
+| `pit-eze-research-director` | `a2c0d8` | This session. |
+| `pit-eze-guideline-risk` | `89b096` | Very recently (re)started (~1m old at check) — given a resume-prompt reminder in its Wave 3 dispatch. |
+| `pit-eze-trials-efficacy` | `1a2045` | Started ~31m before check (a prior resume, not this turn's). |
+| `pit-eze-safety-pharmacology` | `5c9140` | Same long-running session since Wave 2 (~6h old at check) — ref stable across the whole project so far. |
+
+**Takeaway for future Directors reading this registry**: refs are session-scoped and change across
+restarts/resumes — **address peers by name**, per the Identifier note at the top of this file, and
+re-run `ListAgents` at the start of every wave rather than trusting a previously-recorded ref.

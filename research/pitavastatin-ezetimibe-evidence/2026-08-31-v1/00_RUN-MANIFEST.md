@@ -130,3 +130,11 @@ governs consolidating *other* branches into `main`, which this session has not d
 do). `origin/main` was observed to still show only the Wave 0 commit as of this entry — the local
 consolidation has evidently not yet been pushed to `origin` by the Codex process; not this session's
 concern to resolve.
+
+## Wave 3 update (2026-08-31, PI-authorized)
+
+Gate 2 → Wave 3 transition authorized by the PI (Decision 2026-08-31-28). Synthesis in
+`40_SYNTHESIS/` authorized; `50_MANUSCRIPT/` explicitly not authorized this wave. All work this wave
+(Director + every dispatched peer) runs on model sonnet. `05_STATUS.md` remains the authoritative
+current-gate/wave pointer — this manifest is not edited in place for gate transitions, per the
+additive-versioning principle already established above.

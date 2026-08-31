@@ -66,11 +66,11 @@ that resolved them.
   safety-pharmacology.
 - [NEEDS_ANALYST] T-025 (Samnaliev M et al. 2025) — found by safety-pharmacology, citation identity
   confirmed but abstract-level only, not independently cross-checked further.
-- [NEEDS_SOURCE, Wave 3 candidate] T-023 (Lu YW et al. 2026, Taiwan real-world post-PCI cohort) and
-  **T-024 (Abbas MS et al. 2026, possibly the first pitavastatin+ezetimibe-FDC-specific
-  meta-analysis — flagged highest priority)** — both found by trials-efficacy, citation identity
-  confirmed, full text not yet obtained (`is_open_access:False` per Europe PMC for both). Held for
-  Wave 3 per Decision 2026-08-31-25, not pursued further in Wave 2.
+- [NEEDS_SOURCE, dispatched — Wave 3 now open, Decision 2026-08-31-28] T-024 (Abbas MS et al. 2026,
+  possibly the first pitavastatin+ezetimibe-FDC-specific meta-analysis — highest priority) and
+  T-023 (Lu YW et al. 2026, Taiwan real-world post-PCI cohort) — both found by trials-efficacy,
+  citation identity confirmed, full text not yet obtained (`is_open_access:False` per Europe PMC for
+  both). Dispatched to trials-efficacy as Wave 3's top priority (T-024 first, then T-023).
 - [NEEDS_SOURCE — corrected 2026-08-31, was stale] Numeric-threshold/wording confirmation still
   pending only for the two guideline documents that remain `BLOCKED_FOR_SOURCE`: Taiwan Lp(a)
   2026/T-006 and base 2019 ESC/EAS/#34. **2023 TSC CCS (#30), ADA 2025 (#32), and the 2022 Taiwan

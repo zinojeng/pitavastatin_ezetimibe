@@ -27,7 +27,9 @@ and other not-yet-obtained new-source full texts stay held.
 
 ## Wave
 
-2 — Focused lawful full-text acquisition (**complete**; Gate 2 declared above)
+3 — Synthesis (`40_SYNTHESIS/` only; `50_MANUSCRIPT/` explicitly NOT authorized this wave) —
+**just opened**, dispatch in progress. Wave 2 (full-text acquisition) is complete; Gate 2 declared
+`READY_WITH_PENDING_ITEMS` above.
 
 ## Wave 0 — complete
 
@@ -200,8 +202,58 @@ Singh 2024's RCT-vs-observational pooling as an unresolved parallel to the Sydho
 detail: `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md` (27 decisions logged), `04_OPEN-QUESTIONS.md`,
 `90_CROSS-SESSION-LOG/`.
 
+## Wave 3 OPENED, 2026-08-31 (PI authorization)
+
+**Gate 2 → Wave 3 transition authorized by the PI.** Scope, per explicit PI decision: **synthesis in
+`40_SYNTHESIS/` is authorized this wave; manuscript/slide drafting in `50_MANUSCRIPT/` is NOT
+authorized this wave.** No merge/push of `main` by this session (unchanged policy). All Claude Code
+work this wave, including every resumed/dispatched peer, must run on model **sonnet**.
+
+**Cross-session health check (2026-08-31, this session)**: `ListAgents` confirms this session is
+`pit-eze-research-director [a2c0d8]` (the sole live session under that name — an earlier
+documentation-only note about a possible duplicate Director identity was a transient artifact of a
+session resume, not an actual duplicate; resolved). All three specialists reachable by name:
+`pit-eze-guideline-risk` [89b096] (recently restarted), `pit-eze-trials-efficacy` [1a2045]
+(recently restarted), `pit-eze-safety-pharmacology` [5c9140] (same long-running session since Wave
+2). Director branch caught up to local `main` via the established safe merge-catch-up pattern
+(merge `main` into `worktree-wave0-init`, no push/merge of `main` itself) — brought in the
+specialists' actual Wave 2 output files (extraction tables, evidence maps, DDI matrix, etc.) for
+direct visibility.
+
+**OpenEvidence tool check**: `openevidence` MCP remains disconnected in this session
+(`CONNECTION_CLOSED`; `ToolSearch` found no `oe_health`/`oe_auth`-class tools). Recorded as a tool
+blocker, not retried further this turn — proceeding on lawful PubMed/PMC/Crossref/Unpaywall/
+paper-search/`research_hub` metadata-search paths only, per the PI's fallback instruction. If any
+dispatched specialist's own session has a working OpenEvidence relay, it is authorized **at most one
+bounded discovery pass** on the six blocked sources (T-005, T-006, #34, #28, T-007, #33) — discovery/
+corroboration only, never a substitute for primary-source verification, and must not weaken their
+`BLOCKED_FOR_SOURCE` status unless an independently lawful primary source is actually obtained.
+
+**Wave 3 dispatch** (full task detail in `90_CROSS-SESSION-LOG/2026-08-31_wave3-dispatch.md`):
+trials-efficacy → T-024 (Abbas 2026) then T-023 (Lu 2026) full text/extraction, build the Level
+1/2/3 hard-outcome distinction without conflating RACING/HIJ-PROPER/REPRIEVE/REAL-CAD.
+safety-pharmacology → Singh 2024 RCT-vs-observational disaggregation, verify T-009/T-025, search for
+FDC-specific CKD dosing and pitavastatin BCRP quantitative data, preserve calibrated NODM/DDI
+language. guideline-risk → #29 full-text thresholds, T-008 (Taiwan health-promotion annual report),
+exact guideline wording via lawful paths only, preserve the six blockers if primary text stays
+unavailable. Each role writes only to its own owned paths; every lawful full text gets provenance/
+license/hash/LlamaParse-manifest logging; reports use the standard schema.
+
+**40_SYNTHESIS/ deliverables required this wave** (Director-integrated, after specialist reports):
+executive clinical synthesis; claim-evidence matrix (citation IDs + Evidence Hierarchy tags);
+guideline/risk-positioning section; LDL efficacy/dose-escalation section; CV-outcomes hierarchy;
+glycemic/safety/DDI/CKD section; adherence/residual-risk section; limitations/open gaps; number/
+claim/citation traceability table. Traditional Chinese prose where practical, English drug/technical
+names retained, per `CLAUDE.md`'s existing zh-TW convention. RCT/observational/meta-analysis/
+guideline-consensus/mechanistic evidence kept distinct; causal language only where the evidence
+supports it (the Wave 2 Challenge Round's four findings are the primary discipline check here).
+
+**Sequence**: specialist reports → Director integration into `40_SYNTHESIS/` → Director-run Wave 3
+Challenge Round → Gate 3 internal-consistency check → if passed, Wave 4 independent audit
+(sonnet, read-only except `99_FINAL-QA.md`) → issues routed back to owning role, audit rerun.
+Manuscript/slide work stays out of scope regardless of Gate 3/4 outcome, absent new PI authorization.
+
 ## Next action
 
-None pending from the specialists — all three are idle, standing by. **No Wave 3 opens without new
-PI authorization.** The repository is in a stable, audit-ready state for whenever the PI wants to
-proceed to Wave 3 synthesis or Wave 4 independent audit.
+Awaiting all three specialists' Wave 3 completion reports. Repository state before dispatch remains
+fully audit-ready (Gate 2 `READY_WITH_PENDING_ITEMS`, unchanged) in case Wave 3 needs to pause.
