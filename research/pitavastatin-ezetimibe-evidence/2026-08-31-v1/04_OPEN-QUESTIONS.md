@@ -133,9 +133,12 @@ that resolved them.
   rewrite).
 - [RESOLVED] **Main consolidation lag** (the caveat restated in Decision 2026-08-31-35) — the
   supervising Codex process cherry-picked the three Wave 3 specialist commits and all Director Wave
-  3/4 commits into local `main` (through Decision 2026-08-31-35). `origin/main` (GitHub) has not yet
-  been updated and PR #1 remains open — that residual gap is unchanged and not resolved by this
-  entry, only the local-`main` portion of the caveat is.
+  3/4 commits into local `main` (through Decision 2026-08-31-35), then subsequently completed final
+  QA and pushed `main` to `origin` (Decision 2026-08-31-38) — local and `origin` `main` now both
+  verified at commit `275ab90`, zero divergence. **Fully resolved, including the GitHub-sync portion
+  previously left open.** PR #1 remains `OPEN` on GitHub but is now redundant/superseded content
+  (Decision 2026-08-31-38) — not mutated by this Director session; closing it is left to the PI/PR
+  owner.
 
 ### Wave 2 full-text acquisition results (2026-08-31)
 
