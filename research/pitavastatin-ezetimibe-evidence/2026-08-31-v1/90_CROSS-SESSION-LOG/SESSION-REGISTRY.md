@@ -132,4 +132,3 @@ this line is edited or deleted; this section supersedes only the "Director activ
   obtained/content-verified earlier (Decision 2026-08-31-23; the prior #35 checkpoint). Corrected to
   list only the two still-genuinely-blocked documents (T-006, #34) plus #29 (citation-verified only,
   never separately pursued for full-text thresholds) as pending.
-
