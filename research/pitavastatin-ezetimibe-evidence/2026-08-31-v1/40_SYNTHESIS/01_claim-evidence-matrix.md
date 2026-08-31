@@ -28,5 +28,5 @@ Evidence Hierarchy 標籤定義見 `CLAUDE.md` §7：`DIRECT EVIDENCE` | `INDIRE
 | C16 | FDC 相較分開服用可降低心血管事件風險 | T-025 次族群 | `INSUFFICIENT EVIDENCE`（次族群訊號，未經整體分析複製） | R10/E10 次族群 MACE HR 0.58（p=0.030）**未在該研究整體世代分析中重現**——不得單獨引用此次族群數字 |
 | C17 | 台灣 STS 2026 共識將 ezetimibe 定位為 high/very-high-risk 病人第一線 add-on，extremely-high-risk 病人及早合併治療 | T-005 | `GUIDELINE/CONSENSUS`（框架層級）——**具體措辭尚未經原文驗證** | T-005 全文 `BLOCKED_FOR_SOURCE`；此論斷目前僅追溯至 `pitavastatin topic.md` 之轉述，非獨立驗證之原文——Challenge Round 最高優先未驗證論述 |
 | C18 | FDC 複方於 CKD 病人之劑量調整 | *(無)* | *(無可用證據)* | **開放缺口**——本專案未發現任何文獻直接處理 pitavastatin+ezetimibe FDC 於 CKD 病人的劑量問題；僅 EXPERT INTERPRETATION 層級的合理推論（FDC 可能沿用其 statin 成分的單方 CKD 劑量指引），非文獻結論 |
-| C19 | 2026 ACC/AHA 與台灣 2023 TSC CCS 對極高風險族群的 LDL-C 目標 | #28（<55 mg/dL）, #30（<50 mg/dL） | `GUIDELINE/CONSENSUS` | **兩個指引、兩個不同數字、不同風險分層定義，不可互換或混合引用** |
+| C19 | 2026 ACC/AHA 與台灣 2023 TSC CCS 對極高風險族群的 LDL-C 目標 | #28（<55 mg/dL）, #30（<50 mg/dL） | `GUIDELINE/CONSENSUS` — **#28 之兩數字（<55、<70）皆僅追溯至 `Tonvasca_2026.md` 轉載表格，未經獨立對照原文（Wave 4 稽核 Finding 1，已修正）** | **兩個指引、兩個不同數字、不同風險分層定義，不可互換或混合引用** |
 | C20 | ESC 2025 Focused Update 建議 ACS 病人於住院期間即完成降脂強化 | T-007（全文 blocked）; T-021（二手轉述，帶「舊版 2018 指引」警示） | `GUIDELINE/CONSENSUS`——**原文措辭未驗證** | T-021 為 review 轉述，非指引原文；其「美國指引未建議 upfront combination」之比較段落引用的是**舊版 2018 AHA/ACC**，非 2026 新版——不可誤植為對 2026 版本的陳述 |

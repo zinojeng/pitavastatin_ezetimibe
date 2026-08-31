@@ -41,7 +41,9 @@ Owner: Research Director · Wave 3 Synthesis · 2026-08-31
 | 31.5% vs 21.0%（LDL<70達標率） | 06 | T-012 | 同上 |
 | Persistence HR 0.54 (95% CI 0.51–0.58)；Adherence OR 3.00 (95% CI 2.70–3.30) | 06 | T-025 (Samnaliev 2025) | row 99 |
 | R10/E10次族群 MACE HR 0.58 (95% CI 0.35–0.96, p=0.030)（**未經整體世代複製**） | 06 | T-025 | 同上 |
-| <55 mg/dL（very-high-risk次級預防） | 02 | #28 (2026 ACC/AHA) | row 56 |
+| <55 mg/dL（very-high-risk次級預防） | 02 | #28 (2026 ACC/AHA) | row 56 — **僅追溯至 `Tonvasca_2026.md` (L-002) 第1424–1481行轉載表格，未經獨立對照 #28 原文（Wave 4稽核Finding 1，已修正）** |
+| <70 mg/dL（not very-high-risk次級預防） | 02 | #28 (2026 ACC/AHA) | row 56 — 同上，L-002 第1424–1481行 |
+| Lp(a) ≥50 mg/dL（mg/dL單位）/ ≥125 nmol/L（nmol/L換算） | 06 | #28 (2026 ACC/AHA) | row 56 — mg/dL數字見L-002第1361行；nmol/L換算僅見於`pitavastatin topic.md` (L-001) 第149行，未見於L-002或任何已取得全文 |
 | <50 mg/dL（extreme-risk） | 02 | #30 (2023 TSC CCS) | row 58 |
 | <70 mg/dL（general CCS） | 02 | #30 | 同上 |
 | <100/<115/<130/<160 mg/dL（初級預防四分層） | 02 | #35（台灣2022初級預防） | row 63 |

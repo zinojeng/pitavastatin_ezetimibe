@@ -1014,3 +1014,40 @@ read-only except `99_FINAL-QA.md`). `50_MANUSCRIPT/` remains out of scope.
 **Source:** Director's own Wave 3 Challenge Round, 2026-08-31.
 
 **Approved by:** Research Director (Wave 3), per PI's standing Wave 3 authorization.
+
+---
+
+## Decision 2026-08-31-33 — Wave 4 audit Finding 1 corrected
+
+**Issue:** The Wave 4 independent auditor (sonnet, read-only except `99_FINAL-QA.md`) found that
+`40_SYNTHESIS/02_guideline-risk-positioning.md`'s risk-threshold table presented citation #28's
+(2026 ACC/AHA) LDL-C goals (<55 mg/dL very-high-risk, <70 mg/dL not-very-high-risk) and, in
+`06_adherence-residual-risk.md`, its Lp(a) thresholds (≥50 mg/dL / ≥125 nmol/L), without the
+"unverified against primary text" caveat already correctly applied to structurally identical claims
+(T-005, T-007) elsewhere in the same document set — and that neither number had a corresponding row
+in `08_traceability-table.md`. The auditor flagged this as a genuine Numeric Integrity Rule
+violation (an untraceable-within-the-evidence-base number) and recommended `HOLD_FOR_CORRECTION`.
+
+**Director verification before correcting**: read `Tonvasca_2026.md` (L-002) directly. The <55/<70
+LDL-C figures are reproduced verbatim in L-002 lines 1424–1481, explicitly cited there to citation
+#28's DOI — **not fabricated**, but genuinely never independently extracted from #28's own primary
+text (which remains `BLOCKED_FOR_SOURCE`) nor properly anchored in `02_SOURCE-INVENTORY.md` or
+`08_traceability-table.md`. The Lp(a) mg/dL threshold (≥50 mg/dL) also traces to L-002 (line 1361,
+cited to #28); the nmol/L conversion (≥125 nmol/L) traces only to `pitavastatin topic.md` (L-001,
+the PI's own topic notes, line 149) — a more precise provenance breakdown than the auditor's
+finding initially stated, surfaced while correcting.
+
+**Decision:** `VERIFIED_AND_REPLACE` for the citation anchoring (both figures now explicitly sourced
+to their exact L-002/L-001 line ranges in `02_SOURCE-INVENTORY.md` row 56); `VERIFIED_NEW_SENSITIVITY`
+for the caveat consistency (the "unverified against primary text" caveat now applied uniformly to
+#28's numbers in `02` and `06`, matching how T-005/T-007 are already treated). New rows added to
+`08_traceability-table.md` for the previously-missing <70 mg/dL and Lp(a) figures.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (#28 row), `40_SYNTHESIS/02_guideline-risk-positioning.md`,
+`40_SYNTHESIS/06_adherence-residual-risk.md`, `40_SYNTHESIS/01_claim-evidence-matrix.md` (C19),
+`40_SYNTHESIS/08_traceability-table.md`.
+
+**Source:** `pit-eze-independent-auditor` Wave 4 audit report, `99_FINAL-QA.md` Finding 1, 2026-08-31.
+
+**Approved by:** Research Director (Wave 4 correction cycle), routed back per the audit's own
+recommendation that corrections go through the owning role (Director owns `40_SYNTHESIS/`).
