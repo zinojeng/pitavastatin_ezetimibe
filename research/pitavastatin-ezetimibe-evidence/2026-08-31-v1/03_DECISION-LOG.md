@@ -1121,3 +1121,33 @@ decision addresses only where that work currently lives relative to `main`, not 
 **Source:** safety-pharmacology-intelligence cross-session report (`CONFLICT`), 2026-08-31.
 
 **Approved by:** Research Director (Wave 4 close-out).
+
+---
+
+## Decision 2026-08-31-36
+
+**Issue:** safety-pharmacology-intelligence ran a clean QA pass on six of its own Wave 3 files
+(content, `git diff --check`, secret-pattern scan, `fulltext/` gitignore status all verified) but
+was blocked from `git add`-ing them by its own session's permission classifier before anything was
+staged — a harness-level denial, distinct from the earlier Wave 1/2 self-imposed "no commit" task
+instruction. It correctly did not attempt any workaround and reported the block as
+`BLOCKED_FOR_ANALYST` rather than silently dropping it or attempting to route around its own
+session's permission boundary.
+
+**Decision:** No action taken by the Director to commit on its behalf — doing so would be exactly
+the cross-session permission-laundering this project's own operating norms (and this session's
+harness-level guidance) prohibit: a peer being blocked by its own permission settings is not a
+request the Director can fulfill by acting in its place. Confirmed instead that the underlying
+research content is not at risk — everything safety-pharmacology reported in its Wave 3 message
+(Samnaliev 2025 deepening, Singh 2024 reconfirmed blocked, T-026/T-027 mechanistic finds) was
+already captured in `02_SOURCE-INVENTORY.md` via the message itself (Decision 2026-08-31-29) — only
+the redundant backing of its own raw extraction files remains uncommitted. `04_OPEN-QUESTIONS.md`'s
+standing item on this role's commit access updated to reflect the changed root cause. Routed to the
+PI as a `NEEDS_PI` item: grant that session git-write directly, or have the Codex process pick up
+its branch again as it did for Wave 1/2.
+
+**Affected files:** `04_OPEN-QUESTIONS.md`.
+
+**Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31 (Wave 3).
+
+**Approved by:** Research Director (Wave 4 close-out), routed to PI.
