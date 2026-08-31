@@ -11,8 +11,12 @@ Last updated: 2026-08-31 (Gate 2 declared, Research Director)
 
 **Gate 1: PASSED** (PI authorization, 2026-08-31, Decision 2026-08-31-12).
 
+**FINAL GATE: `PASS_WITH_MINOR_ISSUES`, 2026-08-31** (Decision 2026-08-31-34 — Wave 4 independent
+audit, two passes, one Finding corrected and independently re-verified). **`40_SYNTHESIS/00`–`08`
+is `FINAL`.**
+
 **Gate 3: PASSED, 2026-08-31** (Director-run Wave 3 Challenge Round + internal-consistency check —
-see `30_METHODS/shared/wave3-challenge-round-and-gate3.md`). Wave 4 independent audit next.
+see `30_METHODS/shared/wave3-challenge-round-and-gate3.md`).
 
 **Gate 2: DECLARED `READY_WITH_PENDING_ITEMS`, 2026-08-31 (Decision 2026-08-31-27, PI-directed).**
 Both PI-required LlamaParse demonstrations succeeded (trials-efficacy on the actual assigned
@@ -293,9 +297,26 @@ confirmed the numbers themselves are not fabricated (they trace to `Tonvasca_202
 ranges; `40_SYNTHESIS/01/02/06/08` all updated with the caveat and new traceability rows.
 Re-audit requested.
 
+## Wave 4 — re-audit complete: FINAL GATE `PASS_WITH_MINOR_ISSUES`
+
+`pit-eze-independent-auditor` independently re-verified the Finding 1 correction against the
+underlying legacy sources itself (not just trusting the Director's fix), confirmed it accurate, and
+found one trivial non-blocking tidiness item (a stale duplicate traceability-table row) — removed.
+Decision 2026-08-31-34: **Final Gate `PASS_WITH_MINOR_ISSUES`**, one of the two statuses Runbook §36
+permits marking `FINAL`. **`40_SYNTHESIS/00`–`08`, as committed, is marked `FINAL`.**
+`50_MANUSCRIPT/` stays out of scope regardless.
+
+## Current status: RUN COMPLETE through Wave 4
+
+Wave 0 (orientation) → Wave 1 (source verification) → Wave 2 (full-text acquisition, Gate 2
+`READY_WITH_PENDING_ITEMS`) → Wave 3 (synthesis, Gate 3 `PASSED`) → Wave 4 (independent audit, Final
+Gate `PASS_WITH_MINOR_ISSUES`) are all complete for RUN_ID `2026-08-31-v1`. 28 new sources found and
+verified/flagged beyond the ~35 original legacy citations; 34 decisions logged; every specialist's
+work traceable through `90_CROSS-SESSION-LOG/`. Six sources remain deliberately `BLOCKED_FOR_SOURCE`/
+`NEEDS_PI`, per standing PI instruction not to assume resolvable.
+
 ## Next action
 
-Awaiting the independent auditor's re-audit of the corrected sections. If it returns `PASS` or
-`PASS_WITH_MINOR_ISSUES`, this run reaches a defensible completion checkpoint (Wave 3 Synthesis +
-Wave 4 Audit both closed) pending any further PI direction. `50_MANUSCRIPT/` remains explicitly
-out of scope regardless of audit outcome.
+None pending — all three specialists and the independent auditor are idle/complete. This run is at a
+natural stopping point. Any further work (Wave 3 candidate T-024 if a future run reopens it, a
+possible Wave 3 continuation, or `50_MANUSCRIPT/` drafting) requires new PI authorization.

@@ -2,12 +2,20 @@
 
 PROJECT_ID: `pitavastatin-ezetimibe-evidence` · RUN_ID: `2026-08-31-v1`
 
-**Owner: independent-auditor.** Wave 4 audit, conducted 2026-08-31, read-only against the full
-repository, against `40_SYNTHESIS/00`–`08` as primary artifact, cross-checked against
+**Owner: independent-auditor.** Wave 4 audit, first pass conducted 2026-08-31, read-only against the
+full repository, against `40_SYNTHESIS/00`–`08` as primary artifact, cross-checked against
 `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md`, `04_OPEN-QUESTIONS.md`,
 `30_METHODS/shared/wave2-challenge-round.md` and `wave3-challenge-round-and-gate3.md`, `CLAUDE.md`,
 and `docs/CROSS-SESSION-RESEARCH-RUNBOOK.md` §35–36. `50_MANUSCRIPT/` confirmed out of scope
 (contains only `.gitkeep`).
+
+**Re-audit, 2026-08-31 (same day, second pass):** the Director corrected Finding 1 (commit
+`06d5c38`, Decision 2026-08-31-33) and requested re-audit of `02_SOURCE-INVENTORY.md`'s #28 row,
+`40_SYNTHESIS/01` (C19), `02`, `06`, and `08`. This pass verifies that correction independently —
+including reading the underlying legacy sources (`Tonvasca_2026.md`, `pitavastatin topic.md`)
+directly, not merely trusting the Director's cited line numbers — and updates the checklist/finding/
+gate below accordingly. See "Re-audit findings" and the revised Final Gate recommendation at the
+bottom of this file.
 
 ## Final QA Checklist
 
@@ -25,8 +33,10 @@ and `docs/CROSS-SESSION-RESEARCH-RUNBOOK.md` §35–36. `50_MANUSCRIPT/` confirm
 - [x] T-012/Katzmann's cohort n correctly uses 1,639/796 (not 6,429/533) everywhere it is cited in
       `06_adherence-residual-risk.md` and `08_traceability-table.md` — matches Decision 2026-08-31-11's
       final resolution.
-- [ ] **One numeric claim in `40_SYNTHESIS/02_guideline-risk-positioning.md` is NOT traceable to any
-      source in this repository — see Finding 1 below.**
+- [x] **Finding 1 (RESOLVED, re-audit 2026-08-31)** — the #28 LDL-C figures in
+      `40_SYNTHESIS/02_guideline-risk-positioning.md` are now anchored to exact line ranges in
+      `Tonvasca_2026.md`; independently re-verified against the legacy file directly (see "Re-audit
+      findings" below). No longer untraceable.
 - [x] No numeric token appears silently altered from its printed source; DOI correction (citation
       #27), the Katzmann cohort-n resolution, and all other corrections are handled via logged
       Decision entries, never silently.
@@ -59,8 +69,9 @@ and `docs/CROSS-SESSION-RESEARCH-RUNBOOK.md` §35–36. `50_MANUSCRIPT/` confirm
 - [x] Citation #28 vs #30 LDL-C thresholds (<55 very-high-risk vs <50 extreme-risk) not conflated —
       `02` explicitly flags them as two different numbers from two different guidelines/risk strata;
       `01` (C19) repeats the same caution.
-- [ ] **Evidence-hierarchy/verification-rigor inconsistency found for citation #28's own numeric
-      content — see Finding 1.**
+- [x] **Finding 1 (RESOLVED, re-audit 2026-08-31)** — #28's caveat now applied uniformly to both
+      the <55 and <70 mg/dL figures and to its Lp(a) thresholds, matching how T-005/T-007 are
+      already treated.
 - [x] T-012's cohort n (1,639/796 for the LDL-C results, not 6,429/533) used correctly — verified
       above.
 
@@ -83,8 +94,10 @@ and `docs/CROSS-SESSION-RESEARCH-RUNBOOK.md` §35–36. `50_MANUSCRIPT/` confirm
 - [x] Residual-risk/Lp(a) content (`06`) is ~254 words against ~2,650 words of narrative content
       across `00`+`02`–`07` (excluding the reference tables `01`/`08`) — approximately 9.6% of
       narrative output, within the Research Charter's ≤10–15% bound.
-- [ ] **One internal inconsistency in caveat application found within `06_adherence-residual-risk.md`
-      relative to `02` — see Finding 1 (same root cause).**
+- [x] **Finding 1 (RESOLVED, re-audit 2026-08-31)** — `06_adherence-residual-risk.md`'s #28 Lp(a)
+      paragraph now carries the same caveat as `02`, plus a more precise mg/dL-vs-nmol/L provenance
+      split (mg/dL traces to `Tonvasca_2026.md` line 1361; nmol/L traces only to
+      `pitavastatin topic.md` line 149) that the Director surfaced while fixing.
 
 ### Provenance
 
@@ -94,15 +107,51 @@ and `docs/CROSS-SESSION-RESEARCH-RUNBOOK.md` §35–36. `50_MANUSCRIPT/` confirm
       the six `BLOCKED_FOR_SOURCE` items are recorded as blocked, not routed around.
 - [x] No secrets found in the repository (grepped for API-key/token/password/bearer patterns; only
       matches are the project's own prior secret-scan *process* documentation, not actual secrets).
-- [ ] **Finding 1 (below) is itself a provenance failure: a number in `40_SYNTHESIS/` with no entry in
-      `08_traceability-table.md` and no corresponding content in `02_SOURCE-INVENTORY.md` — exactly
-      the failure mode `08`'s own stated purpose says should be "returned to the Director" if found.**
+- [x] **Finding 1 (RESOLVED, re-audit 2026-08-31)** — `02_SOURCE-INVENTORY.md` row 56 now carries
+      exact line-range citations to both legacy sources for the LDL-C and Lp(a) figures;
+      `08_traceability-table.md` now has entries for the previously-missing <70 mg/dL and Lp(a)
+      numbers. Independently re-verified against `Tonvasca_2026.md`/`pitavastatin topic.md` directly
+      — see "Re-audit findings" below.
 
 ---
 
-## Findings
+## Re-audit findings (second pass, 2026-08-31)
 
-### Finding 1 (material — numeric traceability / evidence-hierarchy consistency)
+**Finding 1: RESOLVED.** Independently re-verified, not just accepted on the Director's word:
+
+- Read `Tonvasca_2026.md` lines ~1330–1362 and ~1420–1481 directly. Confirmed: the "Not very high
+  risk: ≥50% reduction & <70 mg/dL" / "very high risk: ≥50% reduction & <55 mg/dL" table is
+  reproduced verbatim, attributed in-file to "Blumenthal RS, et al. J Am Coll Cardiol. Published
+  online March 13, 2026. doi:10.1016/j.jacc.2025.11.016" — citation #28's exact DOI. The <70 mg/dL
+  figure the first audit pass could not find anywhere in the repository **does exist** in the
+  legacy source; it was real project content that had simply never been anchored in
+  `02_SOURCE-INVENTORY.md` or `08_traceability-table.md` — not a fabricated number, confirming the
+  Director's own verification.
+- Read `pitavastatin topic.md` lines 145–153 directly. Confirmed: "≥50 mg/dL / ≥125 nmol/L 為 risk
+  enhancer" appears there, sourcing the nmol/L conversion specifically to the PI's topic notes (L-001)
+  — matching the Director's claim that this figure does **not** trace to `Tonvasca_2026.md`.
+- Read `Tonvasca_2026.md` lines 1330–1362 (the "Risk enhancers" table under the PREVENT-ASCVD
+  discussion). Confirmed "Lp(a) ≥50 mg/dL" appears there as a table cell, under a section citing
+  reference "2" (the ACC/AHA guideline in this section's local numbering) — consistent with the
+  Director's claim that the mg/dL figure traces to L-002 line 1361.
+- Checked all four affected files: `02_SOURCE-INVENTORY.md` #28 row now carries exact line-range
+  anchors for both sources; `40_SYNTHESIS/02` and `06` now apply the same "unverified against
+  primary text" caveat to #28's numbers that T-005/T-007 already carried, worded consistently;
+  `01`'s C19 entry now flags the same caveat; `08_traceability-table.md` has new rows for the <70
+  mg/dL and Lp(a) figures with the same line-range provenance.
+- Decision 2026-08-31-33 is complete, accurate, and correctly attributes the correction path.
+
+**New minor observation (not a blocker):** `08_traceability-table.md` now has a stale, less-detailed
+duplicate row — "`Lp(a) ≥50 mg/dL 或 ≥125 nmol/L | 06 | #28 | row 56`" (near line 50) — left over
+from before the fix, sitting a few rows below the new, more precise entry that supersedes it
+("`Lp(a) ≥50 mg/dL（mg/dL單位）/ ≥125 nmol/L（nmol/L換算）...`", line 46). The two rows do not
+disagree on any value, so this is not a traceability or numeric-integrity problem — just an
+un-deduplicated leftover that should be removed the next time `08` is touched, for tidiness.
+
+## Findings from the first audit pass
+
+### Finding 1 (material — numeric traceability / evidence-hierarchy consistency) — RESOLVED, see
+### "Re-audit findings" above. Original write-up preserved below for the record, not current status.
 
 **Location:** `40_SYNTHESIS/02_guideline-risk-positioning.md`, lines 16–28 (risk-stratification table)
 and, secondarily, `40_SYNTHESIS/06_adherence-residual-risk.md`, lines 36–38 (Lp(a) thresholds); also
@@ -183,27 +232,40 @@ can be marked `FINAL`.
 - `50_MANUSCRIPT/` correctly contains no content beyond `.gitkeep`, consistent with the PI's
   not-authorized-this-wave decision (Decision 2026-08-31-28).
 
-## Final Gate recommendation
+## Final Gate recommendation (superseded by re-audit below — kept for the record)
 
-## `HOLD_FOR_CORRECTION`
+~~`HOLD_FOR_CORRECTION`~~ — see revised recommendation below.
 
-**Reasoning:** The overwhelming majority of this project's evidence base and synthesis is
-exceptionally well-disciplined — all eight known project-specific traps named in the audit brief
-(RACING/pitavastatin conflation, HIJ-PROPER subgroup overstatement, REPRIEVE/REAL-CAD/FDC conflation,
-Taiwan STS mis-tiering, the dose-comparison significance overclaim, the Sydhom framing, the
-#29/#35 and #28/#30 threshold conflations, and the Katzmann cohort-n mix-up) are correctly and
-consistently guarded throughout `40_SYNTHESIS/00`–`08`, and the project's own two internal Challenge
-Rounds already caught and fixed several adjacent issues before this audit began — a strong sign of
-good process. No forbidden overclaim language, no secrets, no Sci-Hub provenance, no unresolved
-placeholders, and residual-risk content stays within its charter bound.
+---
 
-However, Finding 1 is a genuine, specific, correctable violation of the project's own
-non-negotiable Numeric Integrity Rule — one guideline-table row (`<70 mg/dL, ≥50% 降幅`) with no
-traceable source anywhere in this repository, plus an inconsistently-applied verification caveat on
-adjacent #28 figures that the project has already demonstrated (twice, for T-005/T-007) it knows how
-to apply correctly. Per Runbook §36, only `PASS`/`PASS_WITH_MINOR_ISSUES` may be marked `FINAL`, and
-an untraceable number in the corpus is exactly the class of defect this checklist exists to catch
-before that happens. The fix is narrow and does not require re-opening Wave 2/3 work or any new
-literature acquisition — it is a same-Wave correction to `40_SYNTHESIS/02` and `06` (and `08` once
-resolved), owned by the Research Director. Recommend: Director corrects Finding 1, then this audit
-(or a follow-up pass focused solely on the corrected sections) is re-run before Final Gate is set.
+## Final Gate recommendation (re-audit, 2026-08-31 — current)
+
+## `PASS_WITH_MINOR_ISSUES`
+
+**Reasoning:** The first audit pass found this project's evidence base and synthesis
+exceptionally well-disciplined overall, with one material Numeric Integrity Rule violation
+(Finding 1). The Director's correction cycle (commit `06d5c38`, Decision 2026-08-31-33) has been
+independently re-verified in this pass — including reading the underlying legacy sources
+(`Tonvasca_2026.md`, `pitavastatin topic.md`) directly rather than trusting the Director's cited
+line numbers — and Finding 1 is confirmed resolved: the previously-untraceable <70 mg/dL figure is
+genuine legacy-source content (not fabricated) that is now correctly anchored with exact line
+ranges, the "unverified against primary text" caveat is now applied uniformly to citation #28's
+numbers wherever they appear, and `08_traceability-table.md` now has entries for the
+previously-missing figures.
+
+All eight project-specific known traps named in the original audit brief (RACING/pitavastatin
+conflation, HIJ-PROPER subgroup overstatement, REPRIEVE/REAL-CAD/FDC conflation, Taiwan STS
+mis-tiering, the dose-comparison significance overclaim, the Sydhom framing, the #29/#35 and
+#28/#30 threshold conflations, and the Katzmann cohort-n mix-up) remain correctly and consistently
+guarded throughout `40_SYNTHESIS/00`–`08`. No forbidden overclaim language, no secrets, no Sci-Hub
+provenance, no unresolved placeholders, and residual-risk content stays within its charter bound.
+The six `BLOCKED_FOR_SOURCE` items remain honestly recorded as such per the PI's own Gate 2 exit
+criteria, not treated as resolved.
+
+The only remaining item is the minor, non-blocking cosmetic duplicate row now present in
+`08_traceability-table.md` (documented above under "Re-audit findings") — the two Lp(a) rows do
+not disagree on any value, so this does not constitute a traceability or numeric-integrity failure,
+only tidiness debt. Per Runbook §36, `PASS_WITH_MINOR_ISSUES` may be marked `FINAL`. Recommend: the
+Director may deduplicate the `08` row at its own convenience (no urgency, no re-audit required for
+that alone) and this project may proceed to Final Gate `FINAL` on the Wave 3 synthesis as currently
+committed.
