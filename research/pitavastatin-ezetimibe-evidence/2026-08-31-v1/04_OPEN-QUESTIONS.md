@@ -110,21 +110,9 @@ that resolved them.
   only — the file is read-only, not this project's error to fix): a superscript/reference mismatch
   at line 2796, and citation #33 (Chou MT 2022) printed in two different citation-string formats at
   different points in the deck. Relevant only if/when the PI revises the original slide source.
-- [NEEDS_PI, ROOT CAUSE UPDATED Wave 3, 2026-08-31] safety-pharmacology-intelligence still cannot
-  commit its own owned files (`.claude/worktrees/safety-pharm-wave1/`, branch
-  `worktree-safety-pharm-wave1`). Originally (Wave 1/2) this was self-imposed — its own task
-  instructions said "do not run git commit/push." **In Wave 3 the nature of the block changed**: it
-  attempted `git add` on six QA-verified files and was blocked by **its own session's permission
-  classifier** before anything was staged — a harness-level denial, not a task-instruction choice.
-  It correctly did not attempt to route around this. **The underlying research content is not at
-  risk** — the Wave 3 findings this commit would have durably backed (Samnaliev 2025 full-text
-  deepening, Singh 2024 reconfirmed `BLOCKED_FOR_SOURCE`, the Hong 2025/Wu 2025 BCRP/CKD mechanistic
-  finds) were already relayed via cross-session message and are captured in
-  `02_SOURCE-INVENTORY.md`/`03_DECISION-LOG.md` on the Director's own branch (PR #1). What's at risk
-  is only the redundant/durable backing of safety-pharmacology's own raw extraction files. **Needs a
-  PI decision**: either grant that session Bash git-write permission directly, or have the
-  supervising Codex process pick up this branch's new commits the way it did for its Wave 1/2 work
-  (commits `86d1eb1`, `d9e6112` on that same branch, per its own report).
+- [RESOLVED, 2026-08-31 — see Resolved section below] safety-pharmacology's git-write blocker
+  (originally listed here as `NEEDS_PI`) — resolved by the supervising Codex process. Moved to
+  Resolved.
 - [NEEDS_ANALYST] T-006's author list (Taiwan Lp(a) 2026 consensus/review), as reported by
   guideline-risk, contains a duplicated "Wang CY" entry. Preserved as-received per the Numeric
   Integrity Rule (not silently deduplicated) — flag if this citation is used verbatim in any
@@ -134,6 +122,20 @@ that resolved them.
   `llamaparse` repair only) — treat as still down until a session reports otherwise.
 
 ## Resolved
+
+### Wave 3/4 close-out, supervising-process consolidation (2026-08-31)
+
+- [RESOLVED] **safety-pharmacology's git-write blocker** (Decision 2026-08-31-36) — the supervising
+  Codex process independently QA-checked, committed, and pushed safety-pharmacology's six Wave 3
+  files as commit `1d48927` on `worktree-safety-pharm-wave1`, resolving the blocker without needing
+  a grant of Bash git-write permission to that session directly. See Decision 2026-08-31-37 (Decision
+  2026-08-31-36's original rationale left unedited; this is an additive resolution note, not a
+  rewrite).
+- [RESOLVED] **Main consolidation lag** (the caveat restated in Decision 2026-08-31-35) — the
+  supervising Codex process cherry-picked the three Wave 3 specialist commits and all Director Wave
+  3/4 commits into local `main` (through Decision 2026-08-31-35). `origin/main` (GitHub) has not yet
+  been updated and PR #1 remains open — that residual gap is unchanged and not resolved by this
+  entry, only the local-`main` portion of the caveat is.
 
 ### Wave 2 full-text acquisition results (2026-08-31)
 
