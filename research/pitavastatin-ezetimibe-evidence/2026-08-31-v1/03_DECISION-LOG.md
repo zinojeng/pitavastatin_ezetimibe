@@ -982,3 +982,35 @@ provenance discipline this project requires** — commended explicitly, not mere
 **Source:** guideline-risk-intelligence cross-session report, 2026-08-31 (Wave 3).
 
 **Approved by:** Research Director (Wave 3).
+
+---
+
+## Decision 2026-08-31-32 — Wave 3 Synthesis complete, Gate 3 PASSED
+
+**Issue:** All three specialists reported their Wave 3 assignments. Director integrated their
+findings into the nine required `40_SYNTHESIS/` deliverables (`00_executive-synthesis.md` through
+`08_traceability-table.md`), then ran a Director-level Wave 3 Challenge Round against the freshly
+drafted synthesis itself (distinct from the Wave 2 Challenge Round, which audited the source base).
+
+**Decision:** Three issues were self-caught and corrected in place: (1) `00_executive-synthesis.md`
+had misattributed the four-tier primary-prevention LDL-C targets to both citation #29 and #35 —
+only #35 carries that structure; corrected. (2) `06_adherence-residual-risk.md` stated ESC 2025's
+Lp(a) threshold without the same "unverified against primary text" caveat already correctly applied
+to the structurally identical Taiwan STS 2026 claim — both T-007 and T-005 are `BLOCKED_FOR_SOURCE`
+and trace only to `pitavastatin topic.md`'s paraphrase; corrected. (3) `02_guideline-risk-positioning.md`
+listed citation #27's specific LDL-C thresholds without noting they trace to `Tonvasca_2026.md`'s own
+reproduced flowchart, not an independent re-check of #27's primary text — a weaker verification
+layer than #27's own bibliographic verification; corrected to distinguish the two. All other checks
+(trials-angle conflation guards, safety-language grep, cross-file numeric consistency, citation-ID
+typo check) passed without correction. Full detail:
+`30_METHODS/shared/wave3-challenge-round-and-gate3.md`.
+
+**Gate 3: PASSED.** Per PI directive, proceeding automatically to Wave 4 (independent audit, sonnet,
+read-only except `99_FINAL-QA.md`). `50_MANUSCRIPT/` remains out of scope.
+
+**Affected files:** `40_SYNTHESIS/00`, `40_SYNTHESIS/02`, `40_SYNTHESIS/06` (corrections);
+`30_METHODS/shared/wave3-challenge-round-and-gate3.md` (new); `05_STATUS.md` (Gate 3 recorded).
+
+**Source:** Director's own Wave 3 Challenge Round, 2026-08-31.
+
+**Approved by:** Research Director (Wave 3), per PI's standing Wave 3 authorization.

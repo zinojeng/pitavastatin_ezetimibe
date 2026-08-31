@@ -11,6 +11,9 @@ Last updated: 2026-08-31 (Gate 2 declared, Research Director)
 
 **Gate 1: PASSED** (PI authorization, 2026-08-31, Decision 2026-08-31-12).
 
+**Gate 3: PASSED, 2026-08-31** (Director-run Wave 3 Challenge Round + internal-consistency check —
+see `30_METHODS/shared/wave3-challenge-round-and-gate3.md`). Wave 4 independent audit next.
+
 **Gate 2: DECLARED `READY_WITH_PENDING_ITEMS`, 2026-08-31 (Decision 2026-08-31-27, PI-directed).**
 Both PI-required LlamaParse demonstrations succeeded (trials-efficacy on the actual assigned
 target, Tsujita 2023/T-004a; guideline-risk on a substitute, T-014, after its three assigned targets
@@ -28,8 +31,7 @@ and other not-yet-obtained new-source full texts stay held.
 ## Wave
 
 3 — Synthesis (`40_SYNTHESIS/` only; `50_MANUSCRIPT/` explicitly NOT authorized this wave) —
-**just opened**, dispatch in progress. Wave 2 (full-text acquisition) is complete; Gate 2 declared
-`READY_WITH_PENDING_ITEMS` above.
+**complete, Gate 3 passed**. Wave 4 (independent audit) next.
 
 ## Wave 0 — complete
 
@@ -253,7 +255,29 @@ Challenge Round → Gate 3 internal-consistency check → if passed, Wave 4 inde
 (sonnet, read-only except `99_FINAL-QA.md`) → issues routed back to owning role, audit rerun.
 Manuscript/slide work stays out of scope regardless of Gate 3/4 outcome, absent new PI authorization.
 
+## Wave 3 — specialist reports processed, Synthesis complete, Gate 3 PASSED
+
+All three specialists reported (Decisions 2026-08-31-29/30/31): Singh 2024 confirmed still
+genuinely `BLOCKED_FOR_SOURCE` (not abandoned); T-025 upgraded to full text with a mandatory
+subgroup-vs-overall caveat; T-026/T-027 (BCRP/CKD mechanistic proxies) added; T-023 upgraded to full
+text with rich subgroup/GEE data; T-024 confirmed `BLOCKED_FOR_SOURCE` after 3 lawful attempts;
+T-028 (Jeong 2022, Korea) found — Level 1 now has 3-country cross-national replication; citation
+#29 and T-008 (Taiwan Health Promotion annual report) both content-verified, T-008 exact-matching
+`Tonvasca_2026.md`'s own closing-slide figures.
+
+**Director integration into `40_SYNTHESIS/` complete** — all nine required deliverables written
+(`00_executive-synthesis.md` through `08_traceability-table.md`), Traditional Chinese prose with
+English drug/technical names retained. **Wave 3 Challenge Round run** against the freshly-drafted
+synthesis (`30_METHODS/shared/wave3-challenge-round-and-gate3.md`) — three self-caught issues
+corrected in place (a #29/#35 target misattribution, an inconsistently-applied verification caveat
+on ESC 2025's Lp(a) threshold, and a citation-vs-content verification-layer conflation on citation
+#27's thresholds); all other checks passed, including a grep-verified absence of any forbidden
+overclaim language anywhere in the synthesis.
+
+**Gate 3: PASSED**, 2026-08-31.
+
 ## Next action
 
-Awaiting all three specialists' Wave 3 completion reports. Repository state before dispatch remains
-fully audit-ready (Gate 2 `READY_WITH_PENDING_ITEMS`, unchanged) in case Wave 3 needs to pause.
+Per PI directive, proceeding automatically to Wave 4: spawning a sonnet independent-auditor session
+(read-only except `99_FINAL-QA.md`) to run the Final QA Checklist against the full repository
+including `40_SYNTHESIS/`. `50_MANUSCRIPT/` remains explicitly out of scope.
