@@ -1223,3 +1223,39 @@ history preserved as a labeled historical section).
 
 **Approved by:** PI; recorded by Research Director (final governance sync only, this branch only —
 `main` and PR #1 both left untouched by this session).
+
+---
+
+## Decision 2026-08-31-39 — Durable-wording correction: stop freezing `main` HEAD hashes in `05_STATUS.md`
+
+**Issue:** Decision 2026-08-31-38 recorded local/`origin` `main` both at `275ab90`, zero divergence.
+The supervising Codex process then integrated the Decision 38 documentation commit into `main` itself
+(as expected for every Director governance commit), which necessarily advanced `main`'s HEAD again —
+to `8356e62` — making Decision 38's specific-hash "current state" sentence in `05_STATUS.md` stale
+again, even though Decision 38's own text remained an accurate snapshot of what was true when it was
+written. This is a recurring pattern (Decision 35 → 36 → 37 → 38 each superseded the previous
+hash-specific claim) rather than a one-off error.
+
+**Decision:** Re-verified before recording: `git fetch origin` + `git rev-list --left-right --count
+main...origin/main` → `0 0`, both at `8356e62`, confirming the sync process worked correctly again.
+`05_STATUS.md`'s consolidation-status section restructured: Decision 38's `275ab90` snapshot is now
+explicitly labeled historical (not edited, just re-framed as a snapshot rather than "current"), and
+the file's durable current-state sentence is rewritten to be **hash-independent** — it states that
+GitHub sync is an ongoing, repeatedly-reconfirmed process and directs the reader to verify live via
+`git rev-list` rather than trusting any specific hash recorded in the file. This is intended to stop
+this same staleness cycle from recurring on the next documentation-only integration pass. `Last
+updated` label corrected from a stale "Gate 2 declared" to "Final Gate."
+
+**No change to scientific conclusions.** Final Gate remains `PASS_WITH_MINOR_ISSUES`;
+`40_SYNTHESIS/00`–`08` remains `FINAL`. **Decisions 2026-08-31-35 through -38 are preserved
+unedited as historical context** — each was accurate at the time it was written; this entry changes
+only how `05_STATUS.md` presents that history going forward, not the historical record itself.
+
+**Affected files:** `05_STATUS.md` (consolidation-status section reworded hash-independently; `Last
+updated` label corrected).
+
+**Source:** PI directive, 2026-08-31, independently re-verified by the Director via `git fetch`/
+`git rev-list` before recording.
+
+**Approved by:** PI; recorded by Research Director (final durable-wording correction, this branch
+only — `main` and PR #1 both left untouched by this session).
