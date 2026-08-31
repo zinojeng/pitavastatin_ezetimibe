@@ -953,3 +953,32 @@ handling.
 **Source:** trials-efficacy-intelligence cross-session report, 2026-08-31 (Wave 3).
 
 **Approved by:** Research Director (Wave 3).
+
+---
+
+## Decision 2026-08-31-31
+
+**Issue:** guideline-risk's Wave 3 report on its three dispatched tasks. (1) Citation #29 obtained
+via the tas.org.tw mirror (same pattern as #30/#32/#35) — exact COR/LOE-graded recommendations
+extracted, with a printed "LOR IIa" (vs. every other instance's "COR IIa") preserved exactly as a
+likely typo, not silently corrected. (2) T-008 (Taiwan Health Promotion annual report) obtained via
+`hpa.gov.tw`'s `GetFile.ashx` endpoint (outside the WAF blocking its CMS pages) — its figures exactly
+match `Tonvasca_2026.md`'s closing-slide prevalence numbers (63.0%/28.2%/40.0%), closing a citation
+that had been open since Wave 0. **Verification-discipline highlight**: en route, a Wayback Machine
+"closest available" lookup returned a different, wrong document (a 721-page cancer registry report)
+under a mismatched `sid` — guideline-risk fetched it, checked the title page, recognized it was
+wrong, and discarded it before it touched the repo, rather than assuming the lookup was correct. (3)
+OpenEvidence bounded pass: `oe_health` shows the relay daemon up but the browser extension not
+connected/polling, so `oe_ask` is unusable — genuinely blocked, not skipped; the six blocked sources
+(including this role's T-005/T-006/#34) stay untouched.
+
+**Decision:** `VERIFIED_AND_REPLACE` for citation #29 (citation-verified → content-verified) and
+T-008 (not-located → obtained, verified, and cross-confirmed against the legacy slide's own
+figures). The Wayback near-miss is recorded as a **positive example of the numeric-integrity/
+provenance discipline this project requires** — commended explicitly, not merely noted.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (#29, T-008 rows).
+
+**Source:** guideline-risk-intelligence cross-session report, 2026-08-31 (Wave 3).
+
+**Approved by:** Research Director (Wave 3).
