@@ -7,17 +7,18 @@ Last updated: 2026-08-31 (Gate 2 declared, Research Director)
 > Wave 1/2 processing. Condensed here into a single current narrative; no information dropped — see
 > git history for the previous, more granular version if a specific timestamp/sequence is needed.
 
-> **CONSOLIDATION-STATUS CAVEAT (restated 2026-08-31, after a legitimate check by
-> safety-pharmacology-intelligence caught this file's own prior "run complete" framing overstating
-> what the shared checkout actually reflects):** everything below (Wave 3 synthesis, both Challenge
-> Rounds, Gate 3, the full Wave 4 audit cycle, Final Gate) is real, fully committed, and pushed —
-> but **only to branch `worktree-wave0-init` (same name on `origin`), not to `main`**. Local and
-> `origin` `main` both currently sit at commit `a8507d2` (the Wave 3 *dispatch* commit) — everything
-> after that point is absent from the shared checkout until someone merges
-> **[PR #1](https://github.com/zinojeng/pitavastatin_ezetimibe/pull/1)** (`worktree-wave0-init` →
-> `main`, opened by the Director as a draft; not merged/pushed by the Director itself, per standing
-> instruction). Any role or reader relying on the shared `main` checkout will not see this content
-> until that PR is merged — verify via `origin/worktree-wave0-init` directly if you need it sooner.
+> **CONSOLIDATION-STATUS UPDATE (2026-08-31, supervising Codex process):** the prior caveat here
+> (that `main` sat stale at commit `a8507d2` pending PR #1) is now **resolved for local `main`**. The
+> supervising Codex process independently reviewed and cherry-picked the three Wave 3 specialist
+> commits and all Director Wave 3/4 commits into local `main`, which now carries this content through
+> Decision 2026-08-31-35 (local `main` HEAD `b8f5df7` as of this update — a cherry-pick, so commit
+> hashes differ from their `worktree-wave0-init` originals even though content matches). The Codex
+> process separately, independently QA-checked, committed, and pushed safety-pharmacology's six
+> Wave 3 files as commit `1d48927` on `worktree-safety-pharm-wave1`. **`origin/main` (GitHub) has not
+> yet been updated** — it still shows only through `a8507d2` — and **[PR #1](https://github.com/zinojeng/pitavastatin_ezetimibe/pull/1)
+> remains open/unmerged**; this Director branch was not used to update `main` and this session did
+> not merge or edit `main`. Final Gate remains unchanged: **`PASS_WITH_MINOR_ISSUES`**;
+> `40_SYNTHESIS/00`–`08` remains `FINAL`. See Decision 2026-08-31-37.
 
 ## Current Gate
 

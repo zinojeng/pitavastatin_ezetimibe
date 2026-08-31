@@ -1151,3 +1151,42 @@ its branch again as it did for Wave 1/2.
 **Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31 (Wave 3).
 
 **Approved by:** Research Director (Wave 4 close-out), routed to PI.
+
+---
+
+## Decision 2026-08-31-37 — Supervising-process consolidation; Decision 36 resolved
+
+**Issue:** Decision 2026-08-31-35 (main consolidation lag) and Decision 2026-08-31-36
+(safety-pharmacology's git-write blocker) were both open, PI-facing items as of the Director's last
+close-out. The PI reports the supervising Codex process has since acted on both, independently of
+this Director session.
+
+**Decision:** Recorded as fact, per the PI's direct report, **additively — Decision 2026-08-31-36's
+original text is not edited or rewritten**:
+
+1. The supervising Codex process independently reviewed and cherry-picked the three Wave 3
+   specialist commits and all Director Wave 3/4 commits into local `main`. Director verified via
+   `git log main`: local `main` now carries this content through Decision 2026-08-31-35 (local
+   `main` HEAD `b8f5df7`, a cherry-pick — hashes differ from the `worktree-wave0-init` originals,
+   content matches). `origin/main` (GitHub) is unchanged (`a8507d2`), and **PR #1 remains open** —
+   the Director did not merge or edit `main`, and does not do so here either.
+2. The supervising Codex process separately, independently QA-checked, committed, and pushed
+   safety-pharmacology's six Wave 3 files as commit `1d48927` on `worktree-safety-pharm-wave1`.
+   Director verified this commit exists via `git log worktree-safety-pharm-wave1` and
+   `git cat-file -t 1d48927`. **Decision 2026-08-31-36 is hereby marked RESOLVED** — the blocker it
+   described no longer applies; no correction to that entry's historical rationale is made, since
+   the rationale was accurate at the time it was written.
+
+**No change to scientific conclusions.** Final Gate remains `PASS_WITH_MINOR_ISSUES`;
+`40_SYNTHESIS/00`–`08` remains `FINAL`. This decision is a governance/provenance record only — no
+new research was performed, no `40_SYNTHESIS/` content was altered, and no `50_MANUSCRIPT/` content
+was created.
+
+**Affected files:** `05_STATUS.md` (consolidation-status caveat updated), `04_OPEN-QUESTIONS.md`
+(Decision 2026-08-31-36's item moved to Resolved), `90_CROSS-SESSION-LOG/` (close-out entry).
+
+**Source:** PI directive, 2026-08-31, independently verified by the Director via `git log`/
+`git cat-file` against the shared repository before recording.
+
+**Approved by:** PI; recorded by Research Director (narrow close-out, this branch only — `main` not
+touched).
