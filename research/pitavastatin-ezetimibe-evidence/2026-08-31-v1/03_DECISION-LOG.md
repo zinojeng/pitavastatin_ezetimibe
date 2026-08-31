@@ -911,3 +911,45 @@ proxy evidence on record (T-026/T-027) explicitly marked as not equivalent to a 
 **Source:** safety-pharmacology-intelligence cross-session report, 2026-08-31 (Wave 3).
 
 **Approved by:** Research Director (Wave 3).
+
+---
+
+## Decision 2026-08-31-30
+
+**Issue:** trials-efficacy's Wave 3 report on its four dispatched tasks. (1) T-024 (Abbas 2026):
+three lawful acquisition attempts (Unpaywall, Taylor & Francis figshare supplementary link — hit an
+AWS WAF bot-challenge, not solved — and a ResearchGate mirror via `tavily_extract`) all failed;
+`BLOCKED_FOR_SOURCE` stands, no findings guessed at. (2) T-023 (Lu 2026): obtained via Taiwan's
+National Central Library public periodical-access service (a lawful national-library service, not a
+publisher bypass) — rich new data extracted, and the primary source's own Limitations section
+independently confirms the "zero AEs = under-ascertainment" caution trials-efficacy had already
+flagged from the abstract alone in Wave 2. (3) Built an explicit Level 1/2/3 framework table in its
+own `20_EVIDENCE/trials-efficacy/evidence-map.md` — **transparently noted it could not read
+`30_METHODS/shared/wave2-challenge-round.md` directly (not present in its isolated worktree, only a
+`.gitkeep`) and built the framework from the Director's dispatch-message description instead,
+disclosing this rather than silently working from an assumption.** (4) OpenEvidence bounded pass:
+confirmed `CONNECTION_CLOSED` in this session too, reported honestly as not-attempted rather than
+silently skipped. **Bonus find**: a third national Phase III pitavastatin+ezetimibe FDC RCT — Jeong
+HS et al. 2022 (Korea, Clin Ther, same journal/issue as citation #33's Taiwan trial) — found in
+T-023's reference list and independently verified: LDL-C −52.8% (combo) vs. −37.1% (pitavastatin
+alone), diff −15.8 mg/dL (95% CI −18.7 to −12.9, P<0.001); goal attainment 94.2% vs. 69.1%
+(P<0.001). Full text blocked (Yonsei repository, JS anti-bot challenge, not solved).
+
+**Decision:** `VERIFIED_AND_REPLACE` for T-023 (abstract-only → full text obtained). T-024 stays
+`BLOCKED_FOR_SOURCE` with the three exhausted lawful routes now documented. New source **T-028**
+logged for Jeong 2022 — citation-verified, full text blocked. **Cross-national replication note**:
+Level 1 evidence (LDL-lowering efficacy) now has independent RCT replication across three countries
+(Taiwan/#33, Japan/T-004a, Korea/T-028), all showing >50% LDL-C reduction with broadly comparable
+safety — this meaningfully strengthens (without changing) the Level 1/2/3 framework's existing
+finding that Level 1 is the strongest-supported tier. **Worktree-visibility gap noted, not treated
+as an error**: trials-efficacy's isolated worktree lacks files the Director has authored on `main`/
+its own branch since a point before the last consolidation reached that worktree (e.g.
+`30_METHODS/shared/wave2-challenge-round.md`) — expected given the project's known multi-worktree
+consolidation lag, not a compliance issue; the peer's own disclosure of the gap is the correct
+handling.
+
+**Affected files:** `02_SOURCE-INVENTORY.md` (T-023, T-024 rows updated; new T-028 row).
+
+**Source:** trials-efficacy-intelligence cross-session report, 2026-08-31 (Wave 3).
+
+**Approved by:** Research Director (Wave 3).
