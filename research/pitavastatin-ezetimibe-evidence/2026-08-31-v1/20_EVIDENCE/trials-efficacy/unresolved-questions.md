@@ -15,14 +15,11 @@ Research Director 併入專案層級 `04_OPEN-QUESTIONS.md`（該檔案僅 Direc
 **需要**：Wave 2 取得全文（Methods/收案中心清單）或透過 ClinicalTrials.gov 登錄資訊核實。在此之前，
 `40_SYNTHESIS/` 若要重複「多國」的描述，應標註為「PI-supplied，未經本角色獨立確認」。
 
-## Q2 [NEEDS_SOURCE] TE-002（Tsujita 2023 K-924 4-arm 劑量比較）各劑量組的分項安全性數字
+## Q2 [RESOLVED — 2026-08-31 Wave 2] TE-002（Tsujita 2023 K-924 4-arm 劑量比較）各劑量組的分項安全性數字
 
-Abstract 層級僅有「AE/ADR 發生率在 FDC 與單方組間無顯著差異」的敘述性結論，沒有逐組
-（2mg / 4mg / 2/10 / 4/10）的 CK、肝功能、肌肉相關 AE 分項數字。這正是
-`pitavastatin topic.md` Search Protocol item 5 明確要求的比較維度（「muscle AE / liver enzyme /
-CK / CKD / elderly / incremental benefit per dose increase」）。
-**需要**：Wave 2 取得全文（J Atheroscler Thromb 可能為 open access，見 fulltext-manifest.md 建議
-優先序）以完整回答 item 5。
+**已解決**：Wave 2 取得 J-STAGE 官方全文並以 LlamaParse 解析成功，逐組 AE/ADR/CK/AST/ALT 數字
+已完整萃取，見 `10_DATA/trials-efficacy/wave2-fulltext-extraction.md` TE-002 章節與
+`extraction-table.csv` TE-002 notes 欄位更新。Search Protocol item 5 的安全性比較維度已可回答。
 
 ## Q3 [NEEDS_METHODS] HIJ-PROPER 四篇 substudy 是否需要納入 Wave 2 萃取範圍
 
@@ -52,6 +49,26 @@ Wave 1「先驗證既有引用」的範圍）：
 用語是否修正）、或其他分類，並記錄於 `03_DECISION-LOG.md`（本角色無寫入權限，僅在此提出並於
 cross-session summary 中一併回報）。
 
+## Q8 [RESOLVED — 2026-08-31 同日] REAL-CAD 試驗（pitavastatin 4mg vs 1mg hard-outcome RCT）— 新識別候選來源
+
+於 Wave 2 全文覆核 TE-002（Tsujita 2023）時，於其 Introduction／Discussion 段落發現該文獻引用
+REAL-CAD 試驗：「compared with 1 mg/day, 4 mg/day of pitavastatin led to a 19% relative risk
+reduction in cardiovascular events (hazard ratio, 0.81; 95% confidence interval (CI), 0.69–0.95)
+in the REAL-CAD trial conducted in Japanese patients with CAD」。本角色**未獨立搜尋/驗證**此試驗
+的原始發表（僅為 Tsujita 2023 一篇文獻中的二手引用），亦未確認其正式引用格式（期刊/年份/DOI）。
+
+**相關性**：這是**pitavastatin 劑量本身（非 FDC）的 hard-outcome RCT 證據**，若獨立驗證後可能是
+`pitavastatin topic.md` §6 三層證據框架之外、值得補充的「pitavastatin 劑量與心血管結果」背景證據
+（與 Level 1-3 框架討論的「FDC vs monotherapy」問題不同維度，屬於「pitavastatin 4mg vs 1mg 是否
+本身已有 hard-outcome 證據」這一相鄰但不同的問題）。
+
+**已解決（Director Decision 2026-08-31-19 授權本角色自行驗證）**：獨立找到並驗證原始發表——
+Taguchi I, Iimuro S, Iwata H, et al. "High-Dose Versus Low-Dose Pitavastatin in Japanese Patients
+With Stable Coronary Artery Disease (REAL-CAD): A Randomized Superiority Trial." Circulation.
+2018;137(19):1997-2009. DOI: 10.1161/CIRCULATIONAHA.117.032615. PMID: 29735587。數字（HR 0.81,
+95% CI 0.69–0.95, P=0.01；N=13,054）與 Tsujita 2023 全文中的二手引用完全吻合。已納入
+`extraction-table.csv`（TE-012）與 `evidence-map.md`。
+
 ## Q7 [NEEDS_ANALYST] Katzmann et al. 2022（T-012, TE-010）— Tonvasca_2026.md 同一張投影片內兩組不同的樣本數自相矛盾
 
 Director 於 2026-08-31 轉來 safety-pharmacology 找到的 Katzmann JL et al. Clin Res Cardiol
@@ -68,12 +85,15 @@ n=796)」— 兩組樣本數彼此不一致，且大小關係甚至相反（6,42
 
 **依 Numeric Integrity Rule（CLAUDE.md §9），本角色未做任何猜測性選擇或修正**，兩組數字皆已
 如實保留於 `extraction-table.csv`（TE-010 notes 欄），標記 `FLAG = POSSIBLE_ERROR`，
-`ACTION = NEEDS_ANALYST`。**需要**：Wave 2 取得論文全文（Springer 期刊，Crossref 回傳
-pdf_url 顯示可能為 open access）以核對原始表格的正確樣本數，並確認 `Tonvasca_2026.md` 這張投影片
-本身是否需要更正（若確認後者為誤植，依 CLAUDE.md §1 legacy file 不可編輯的規定，仍不可直接修改
-`Tonvasca_2026.md`，僅能在 `40_SYNTHESIS/`／未來簡報中使用經全文核實的正確數字並註明來源差異）。
+`ACTION = NEEDS_ANALYST`。**Wave 2 更新（2026-08-31）**：已重新嘗試取得全文——Unpaywall 查無 OA 版本；直接以 HTTP HEAD
+檢測 Crossref 提供的 Springer pdf_url，回傳 `content-type: text/html`（3038 bytes），非真實 PDF，
+判定為付費牆頁面。**正式記錄為 `BLOCKED_FOR_SOURCE`**（見 `fulltext-manifest.md`）。依 CLAUDE.md
+§10，未嘗試登入/繞過，亦未使用 `mcp__research_hub__download_paper`（已永久禁用）或 Sci-Hub。
+在 PI／機構透過訂閱管道取得全文之前，本題維持懸而未決：兩組樣本數皆不可作為 `40_SYNTHESIS/`
+的可引用數字，且 `Tonvasca_2026.md` 本身是否有誤植也無法確認（依 CLAUDE.md §1，legacy file 本身
+不可編輯，即使誤植亦僅能於未來輸出中註記差異，不得修改原檔）。
 
-## Q6 [NEEDS_SOURCE] TE-002（Tsujita 2023）標題「vs. Pitavastatin」與 abstract 描述之 4-arm 設計，表面用詞落差待全文確認
+## Q6 [RESOLVED — 2026-08-31 Wave 2] TE-002 標題「vs. Pitavastatin」與 4-arm 設計的統計比較結構
 
 Director 於 2026-08-31 review 時指出：TE-002 的期刊標題為「Efficacy and Safety of
 Pitavastatin/Ezetimibe Fixed-Dose Combination **vs. Pitavastatin**: Phase III, Double-Blind,
@@ -90,10 +110,15 @@ pitavastatin monotherapy（不分劑量）」這種期刊標題慣用的簡化�
 兩組檢定，還是四組各自兩兩比較）僅憑 abstract 無法完全確認，這會影響 Wave 2/40_SYNTHESIS 引用
 「2mg+eze10 vs 4mg 單方」「2/10 vs 4/10」這類 head-to-head 劑量比較數字時的統計顯著性判讀。
 
-**需要**：Wave 2 取全文（見 `fulltext-manifest.md` 建議優先序，J Atheroscler Thromb 可能為 open
-access）以確認：(a) 四組之間的統計比較設計與顯著性檢定安排；(b) 標題中「vs. Pitavastatin」的
-實際統計口徑。在全文覆核前，`40_SYNTHESIS/` 引用本研究的劑量比較數字（−51.4% vs −45.2% 等）時，
-應註明「數字差異之統計顯著性尚待全文確認」，不應預設已達顯著。
+**已解決（Wave 2, 2026-08-31）**：取得 J-STAGE 官方全文並以 LlamaParse 解析成功。確認統計比較為
+**pairwise MMRM**（同劑量 pitavastatin vs 對應 K-924，以及 K-924 LD vs K-924 HD 的探索性比較），
+並非簡單 pooled FDC-vs-monotherapy 兩組檢定：K-924 LD vs PS 2mg 差異 −11.9%（95% CI −15.2% to
+−8.7%, p=0.000）；K-924 HD vs PS 4mg 差異 −12.7%（95% CI −15.9% to −9.4%, p=0.000）；K-924 HD vs
+K-924 LD 差異 −6.4%（95% CI −9.6% to −3.2%, p≤0.001）。**重要限定**：「K-924 LD (2/10) vs PS 4mg」
+這個跨劑量比較（`pitavastatin topic.md`「Add ezetimibe or double the statin?」框架所需）**本研究
+並未做正式統計檢定**——這是描述性點估計相減（−51.4% vs −45.2%），非有 CI/p-value 支持的比較，
+`40_SYNTHESIS/` 引用時應註明此點為描述性觀察。詳見 `10_DATA/trials-efficacy/
+wave2-fulltext-extraction.md`。
 
 ## Q5 [NEEDS_SOURCE] CEPHEUS（citation #20）、DYSIS-II（citation #21）、Masana 2020（citation #25）三篇未能定位逐字相符原文
 

@@ -151,3 +151,41 @@ Append-only. Newest entry at bottom (chronological), per CLAUDE.md §6.
                   confirmed discrepancy in the legacy source, not an uncertainty in my verification
 [STATUS]          READY_FOR_NEXT_WAVE
 ```
+
+---
+
+```text
+[PROJECT]        pitavastatin-ezetimibe-evidence
+[RUN]             2026-08-31-v1
+[FROM]            trials-efficacy-intelligence
+[TO]              Research Director
+[TYPE]            STATUS_REPORT
+[FINDING]         Narrow post-Gate-2 persistence repair (Director-assigned; Wave 3 NOT opened).
+                  TE-002 (Tsujita 2023) and TE-003 (Ako 2024) PDFs/LlamaParse outputs, previously
+                  stored under a temporary $CLAUDE_JOB_DIR path (see Wave 2 entries above), were
+                  confirmed missing. Re-downloaded both from the exact J-STAGE URLs already
+                  recorded in fulltext-manifest.md (HTTP 200 both) into a new persistent,
+                  role-owned, gitignored path: 20_EVIDENCE/trials-efficacy/fulltext/ (covered by
+                  existing .gitignore rule **/20_EVIDENCE/**/fulltext/, verified file-by-file with
+                  `git check-ignore -v`). SHA-256 of both re-downloaded PDFs is IDENTICAL to the
+                  hashes originally recorded in Wave 2 (afe6befc...4022c26 for TE-002,
+                  1e103ff0...1ac960 for TE-003) -- confirms byte-identical source content, no
+                  publisher revision. Both re-parsed successfully via
+                  mcp__llamaparse__parse_pdf_to_markdown (save_output=true), markdown saved beside
+                  each PDF in the same directory. Manually inspected head/tail and ran a
+                  truncation/error grep on both .md outputs -- no truncation or parse-failure
+                  markers found (only legitimate statistical-terminology hits for "error"). Output
+                  character counts differ slightly from the original Wave 2 log (114,243 vs
+                  114,893 bytes for TE-002; 106,855 vs 107,117 for TE-003) despite identical source
+                  PDF bytes -- attributed to normal LlamaParse layout-inference variance between
+                  calls, not data loss; content completeness verified by inspection.
+[IMPACT]          TE-002/TE-003 full text and parsed markdown are now durably available at a
+                  role-owned path for Wave 3 (or later) extraction use. No change to any previously
+                  committed Wave 1/Wave 2 conclusion; wave2-fulltext-extraction.md content
+                  unchanged.
+[ACTION]          None pending on this role's side. Wave 3 remains NOT opened per task scope.
+[OUTPUT_PATHS]    10_DATA/trials-efficacy/fulltext-manifest.md (new section: "Post-Gate-2 持久化修復")
+[CONFIDENCE]      HIGH (SHA-256 hash match confirms source-content identity; manual inspection
+                  confirms parse completeness)
+[STATUS]          READY_FOR_NEXT_WAVE
+```

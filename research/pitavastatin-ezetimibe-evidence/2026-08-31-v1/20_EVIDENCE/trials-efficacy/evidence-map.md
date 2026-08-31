@@ -47,12 +47,17 @@ Role: trials-efficacy-intelligence · Wave: 1
   抑制 absorption」的機轉敘述直接吻合，且提供了**量化證據**支持這個敘述，可用於強化「Add
   ezetimibe or double the statin?」這張 clinical decision slide。
 - 這組數字可以直接建構 `pitavastatin topic.md` 建議的實用比較：
-  - **2mg+eze10 vs 4mg 單方**：−51.4% vs −45.2%（加 ezetimibe 優於加倍劑量至 4mg）。
-  - **2/10 vs 4/10**：−51.4% vs −57.8%（4mg 起始仍能再多降約 6.4 個百分點，但需權衡劑量遞增的
-    邊際效益 vs pitavastatin 高劑量本身的 AE/CK/肝功能負擔，本研究 abstract 未細分各劑量組的
-    AE 發生率差異 — 見 unresolved-questions Q2，需全文的分組安全性表格）。
-- 安全性：AE/ADR 發生率在 FDC 與單方組間無顯著差異；肝功能與肌病變相關檢驗值雖上升但仍在
-  參考範圍內。
+  - **2mg+eze10 vs 4mg 單方**：−51.4% vs −45.2%（加 ezetimibe 優於加倍劑量至 4mg）。**⚠ Wave 2
+    全文覆核確認：本研究並未對這項跨劑量比較做正式統計檢定**（差異僅為點估計相減，非有
+    CI/p-value 支持的比較）— 引用時須註明為描述性觀察，不得暗示已達統計顯著。
+  - **2/10 vs 4/10**：−51.4% vs −57.8%（4mg 起始仍能再多降約 6.4 個百分點）。**Wave 2 全文覆核
+    確認：此項有正式 MMRM 統計檢定**，差異 −6.4%（95% CI −9.6% to −3.2%, p≤0.001），達統計顯著
+    — 可直接引用為「達顯著」的劑量遞增效益。
+- 安全性（**Q2 已於 Wave 2 全文覆核解決**，見 `10_DATA/trials-efficacy/wave2-fulltext-extraction.md`）：
+  逐組 AE 發生率 PS2mg 12(16.7%)／PS4mg 19(26.4%)／K-924 LD 18(25.0%)／K-924 HD 14(19.4%)；
+  K-924 LD vs PS2mg（p=0.305）、K-924 HD vs PS4mg（p=0.428）之 AE 發生率皆無統計顯著差異；ADR
+  發生率同樣無顯著差異（p=0.681／1.000）。無病人 AST/ALT/CK 達預設 cutoff；肝功能與肌病變相關
+  檢驗值雖上升但仍在參考範圍內，**唯一例外為 PS 2mg 組的 CK**（原文如此敘述，未附確切數值）。
 
 ### TE-003 — Ako J, Yokote K, Tsujita K, et al. J Atheroscler Thromb 2024（K-924 52 週延伸試驗）
 
@@ -63,6 +68,14 @@ Role: trials-efficacy-intelligence · Wave: 1
   （p<0.001）；一級預防族群 91.8% 達標、二級預防族群僅 37.5% 達標 — 這個「二級預防達標率明顯偏低」
   的數字，對強化「即使加上 ezetimibe，極高風險/二級預防病人仍可能無法單靠 pitavastatin/ezetimibe
   FDC 達到 <55 mg/dL 的 2026 ACC/AHA 目標」這條 guideline-risk 相關論述，是有用的交叉引用素材。
+- **⚠ Wave 2 全文覆核發現，abstract 層級敘述可能低估 AE 量級**：本文獻 abstract 僅稱「a single
+  adverse drug reaction occurred」，讀起來像安全性極佳；但全文 Table 4 顯示**整體 AE 發生率高達
+  59.6%（65/109 名病人，129 件事件）**，另有 12 名病人（11.0%）發生共 15 件嚴重 AE。**唯一
+  被判定為藥物相關（ADR）的僅 1 件**（K-924 HD 組 CK 上升，0.9%），15 件嚴重 AE 全數被判定與
+  研究藥物無關。換言之，「well-tolerated」的結論本身仍站得住腳（因為絕大多數 AE 非藥物相關），
+  但若 `40_SYNTHESIS/` 僅引用 abstract 的措辭而不揭露 59.6% 這個整體 AE 發生率，可能給讀者
+  「幾乎零 AE」的錯誤印象 — 建議未來引用時同時呈現「AE 發生率 59.6%」與「僅 1 件判定為 ADR」
+  兩個數字，避免斷章取義。詳見 `10_DATA/trials-efficacy/wave2-fulltext-extraction.md`。
 
 ---
 
@@ -148,6 +161,96 @@ Role: trials-efficacy-intelligence · Wave: 1
 | Level 1 — LDL-lowering efficacy | TE-001（Taiwan Phase III FDC trial）、TE-002（Japan 4-arm 劑量比較，**新發現**）、TE-003（52 週延伸試驗，**新發現**） | 三篇均 VERIFIED（DOI/期刊/數字比對一致）；TE-001 之數字為 legacy 轉錄，全文覆核仍待 Wave 2 |
 | Level 2 — Combination-strategy CV outcome evidence（非 pitavastatin 專屬） | TE-005（RACING 主文）、TE-006（RACING DM 次族群）、TE-007（Sydhom meta-analysis，**發現與投影片框架的潛在落差**） | RACING 兩篇 VERIFIED，數字與 topic notes 完全吻合；Sydhom 之 RCT vs observational 限定詞落差已標記 SOURCE_CONFLICT 候選 |
 | Level 3 — Pitavastatin/ezetimibe 專屬 hard-outcome evidence | TE-004（HIJ-PROPER 主文） | VERIFIED，數字與 topic notes 完全吻合；**仍是本專案證據鏈中最弱的一環，如 `pitavastatin topic.md` 原先所預期，Wave 1 未發現任何更新的試驗已補上這個缺口** |
+
+---
+
+## 補充：Pitavastatin 單方本身（非 FDC）的 hard-outcome RCT — REPRIEVE trial
+
+### TE-011 — Grinspoon SK et al. NEJM 2023;389(8):687-699（T-015，Director 於 2026-08-31 指派，guideline-risk 域外發現）
+
+- Evidence Hierarchy：**DIRECT EVIDENCE**，但適用範圍狹窄——這是 pitavastatin **單方**（非 FDC、
+  非與 ezetimibe 併用）對照**安慰劑**（非另一 statin）的心血管結果 RCT，收案族群為**HIV 感染、
+  低至中度心血管風險、正接受抗病毒治療**的一般初級預防族群（非 ACS，非台灣/日本一般血脂異常
+  族群）。依 CLAUDE.md §7 與 Director 指示，**不可與 HIJ-PROPER（pitavastatin+ezetimibe vs
+  pitavastatin，ACS 族群）或 RACING（rosuvastatin+ezetimibe vs rosuvastatin）混為一談**——三者
+  雖然都是「pitavastatin 相關」的 hard-outcome RCT，但比較對象、藥物組成、收案族群三者皆不同，
+  屬於 `pitavastatin topic.md` §6 Level 1/2/3（FDC 專屬）框架**之外**的第四個獨立參考點：
+  「pitavastatin 單方本身是否已有 hard-outcome RCT 證據」。
+- N=7769 隨機分派，中位年齡 50 歲，中位追蹤 5.1 年（**因效益顯著而提前終止試驗**）。
+  Pitavastatin calcium 4mg/day vs placebo。
+- Primary outcome（MACE 複合終點）：4.81 vs 7.32 per 1000 person-years；**HR 0.65, 95% CI
+  0.48–0.90, P=0.002** — 達統計顯著，且效果量頗大（35% 相對風險下降）。
+- 安全性：肌肉相關症狀 91(2.3%) vs 53(1.4%)（pitavastatin 較高）；**糖尿病** 206(5.3%) vs
+  155(4.0%)（pitavastatin 較高）。
+- **交叉領域提醒（轉知 safety-pharmacology，非本角色越權解讀）**：此處的糖尿病訊號是
+  **pitavastatin vs 安慰劑**的絕對風險比較，並非 `pitavastatin topic.md` 既有框架中「pitavastatin
+  vs atorvastatin/rosuvastatin 之相對 NODM 風險較低」的那種頭對頭比較（TE-003/Singh 2024
+  meta-analysis 的比較對象是其他 statin，非安慰劑）。**兩者問題不同，不互相矛盾**，但若
+  safety-pharmacology 或未來簡報要呈現「pitavastatin 幾乎不影響血糖」的印象，REPRIEVE 這筆
+  絕對風險數字（5.3% vs 4.0%, 安慰劑對照）提供了一個重要的平衡視角——pitavastatin 相對於**完全
+  不使用 statin**仍會增加 NODM 絕對風險，只是**相對於其他強效 statin**風險較低。建議
+  safety-pharmacology 在其 owned evidence 中自行評估是否納入此交叉引用。
+- **對本專案主軸的定位建議**：REPRIEVE 是一篇高品質、大型、正向的 pitavastatin 心血管結果 RCT，
+  可作為「pitavastatin 這個分子本身具備 hard-outcome 證據基礎」的有力背景佐證，但因族群
+  （HIV、初級預防）與 `pitavastatin topic.md` 主要臨床情境（Taiwan 一般三高族群、次級預防為主）
+  有明顯落差，**不建議直接等同於「pitavastatin/ezetimibe FDC 對台灣一般族群的 hard-outcome
+  證據」**——引用時應清楚註明族群限制，作為第四個獨立參考點而非 Level 3 證據的替代或加強。
+
+### TE-012 — Taguchi I et al. Circulation 2018;137(19):1997-2009（REAL-CAD trial，T-016，本角色於 2026-08-31 主動驗證，Director Decision 2026-08-31-19 授權）
+
+- Evidence Hierarchy：**DIRECT EVIDENCE**，同樣是 pitavastatin **單方**（非 FDC）的 hard-outcome
+  RCT，但問題與 TE-011（REPRIEVE）不同——這是**pitavastatin 劑量強度**（4mg vs 1mg）本身的
+  比較，收案為**日本穩定型 CAD 二級預防**族群（非 HIV 初級預防）。
+- N=13,054 隨機分派 1:1（高劑量 4mg n=6526／低劑量 1mg n=6528），中位追蹤 3.9 年。收案前先經
+  pitavastatin 1mg run-in period 確認 LDL-C<120 mg/dL。
+- Baseline LDL-C（run-in 後）：高劑量組 87.7 mg/dL vs 低劑量組 88.1 mg/dL；追蹤期間高劑量組
+  LDL-C 平均低 14.7 mg/dL（p<0.001）。
+- **Primary endpoint**（CV 死亡、非致死性 MI、非致死性缺血性中風、需急診住院的不穩定心絞痛）：
+  266(4.3%) vs 334(5.4%)；**HR 0.81, 95% CI 0.69–0.95, P=0.01** — 達統計顯著。
+- Secondary composite endpoint（primary + 臨床指示之冠脈血運重建）：489(7.9%) vs 600(9.7%)；
+  HR 0.83, 95% CI 0.73–0.93, P=0.002。
+- **此為 Q8 的完整解決**：TE-002（Tsujita 2023）全文中曾二手引用此試驗數字（HR 0.81, 95% CI
+  0.69–0.95）作為其「選擇 2mg/4mg 為 FDC 劑量」的立論依據之一，本角色現已獨立驗證原始發表，
+  數字**完全吻合**，TE-002 的這項立論依據站得住腳。
+- **與 TE-011（REPRIEVE）合併觀察**：兩篇獨立、大型、正向的 pitavastatin 單方 hard-outcome
+  RCT（REAL-CAD 二級預防 CAD 族群、REPRIEVE 初級預防 HIV 族群）共同構成「pitavastatin 這個分子
+  本身具備 hard-outcome RCT 證據基礎」的有力背景，可作為 `40_SYNTHESIS/` 中與
+  `pitavastatin topic.md` §6 Level 1/2/3（FDC 專屬）框架**並列但不混淆**的第四類參考點。
+  兩者皆非 FDC/ezetimibe 併用證據，**不可**用來替代或加強 Level 3（HIJ-PROPER）的 FDC-hard-outcome
+  證據缺口，僅能佐證「pitavastatin 本身劑量與強度具有心血管結果證據」這個相鄰但獨立的論點。
+
+---
+
+## 補充：Wave 2 尾聲新發現的兩筆來源（2026-08-31，重試 Chou 2022 全文時意外找到）
+
+### TE-014 — Abbas MS et al. Future Cardiol 2026;22(6):607-619（**可能是本專案最直接相關的既有統合分析**）
+
+- 這是本專案目前找到的**第一篇專門針對 pitavastatin+ezetimibe FDC**（而非泛統計所有
+  statin+ezetimibe 組合）的系統性回顧/統合分析，PROSPERO 已註冊（CRD420251233057），納入條件
+  明確為「pitavastatin 2mg 或 4mg + ezetimibe 10mg vs pitavastatin 2mg 單方的 RCT」——這個納入
+  條件與 TE-001（Chou 2022）、TE-002（Tsujita 2023）高度吻合，**極可能就是以這兩篇（或其中一篇）
+  為核心納入研究**，但本角色**尚未取得全文確認實際納入清單**。
+  Evidence Hierarchy：**INSUFFICIENT EVIDENCE**（abstract 層級無法取得任何量化 pooled 數字——
+  Results 段落異常簡短，僅列出結果變項名稱，未附 MD/RR/CI/p-value，可能是索引摘要本身的截斷，
+  非本角色遺漏摘錄）。
+- **強烈建議列為 Wave 3 全文取得最高優先序**——若能取得全文，可能直接補上/驗證
+  `pitavastatin topic.md` §6 Level 1 證據的「正式統合分析」層級佐證，這是目前專案缺乏的一塊。
+
+### TE-013 — Lu YW et al. Acta Cardiol Sin 2026（Taiwan 真實世界 post-PCI 世代）
+
+- Evidence Hierarchy：**OBSERVATIONAL EVIDENCE**（回溯性真實世界世代，單臂、無對照組、N=120，
+  台灣兩家醫學中心，2008–2021 收案）。
+- Pitavastatin 4mg + ezetimibe 10mg（P4/E10，**較高劑量**的 FDC 組合）於 post-PCI（次級預防、
+  高風險）病人中使用 >1 年：12 個月 LDL-C 降幅 32.54%；糖尿病次族群 HbA1c 變化 −0.40%、
+  TyG index 變化 −0.23。
+- **⚠ Numeric Integrity 提醒**：本研究聲稱「研究期間無任何 AE 記錄」——在長達 13 年收案窗口
+  （2008–2021）、N 僅 120 的回溯性病歷回顧研究中，這是一個異常強烈的安全性宣稱，較可能反映
+  回溯性資料蒐集對 AE 的系統性低估（非結構化追蹤，非如 RCT 般主動系統性詢問），而非真正零 AE。
+  `40_SYNTHESIS/` 若引用此研究的安全性結論，**不應**與 TE-002（Tsujita 2023 RCT，有系統性 AE
+  追蹤與分組統計檢定）的安全性證據等量齊觀，應明確標註證據層級差異。
+- 對 `pitavastatin topic.md` 而言，這是難得的**台灣本地、高劑量 FDC、post-PCI 高風險族群**真實
+  世界資料，可作為 Level 1/2 證據的台灣本土佐證，補足 TE-001（Chou 2022，一般 hypercholesterolemia
+  族群）與 TE-002/003（日本族群）之外的台灣次級預防真實世界視角。
 
 ---
 

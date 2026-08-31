@@ -26,6 +26,42 @@ see status per source below. No file was written to `20_EVIDENCE/guideline-risk/
 | 2022 Taiwan lipid guidelines (both companions, Chen PS / Huang PH, JFMA) | **Not yet checked**; Taiwan Society-affiliated PDFs were seen hosted directly on `tas.org.tw` in WebSearch results (e.g., `https://www.tas.org.tw/upload/files/...main.pdf`), which if genuinely society-hosted would likely be a lawful, freely accessible copy — URL noted for Wave 2 verification, not fetched this Wave. | Wave 2 task. |
 | ADA Standards of Care 2025, Ch. 10 | **Not yet checked** — ADA Standards of Care chapters are typically open access (Diabetes Care makes the Standards of Care freely available); plausible but not confirmed this Wave. | Wave 2 task. |
 
+## Wave 2 update (2026-08-31, PI-authorized, Decision 2026-08-31-12)
+
+Full detail in `20_EVIDENCE/guideline-risk/wave2-fulltext-extraction.md` — summarized here for the
+manifest's own record:
+
+| Source | Attempt | Result |
+|---|---|---|
+| 2026 ACC/AHA guideline PDF (`ahajournals.org/doi/pdf/10.1161/CIR.0000000000001423`, URL supplied by Director/PI) | `curl` (spoofed UA) | **HTTP 403, Cloudflare bot-challenge.** BLOCKED_FOR_SOURCE (automated means). |
+| Taiwan STS 2026 (`sciencedirect.com/.../S0929664626004493`) | `curl` + `WebFetch` | **HTTP 403, Cloudflare bot-challenge** (both tools). Europe PMC's own metadata also shows `is_open_access: False` for PMID 42055832, contradicting the landing page's OA/CC badge text captured in Wave 1 — unresolved discrepancy, not settled empirically because the download itself is blocked. BLOCKED_FOR_SOURCE. |
+| ESC 2025 Focused Update (`academic.oup.com/eurheartj/article-pdf/.../ehaf190.pdf`, best-guess path) | `curl` | **HTTP 403, Cloudflare bot-challenge.** `WebFetch` on the landing page returned a response that self-reported "paywalled" but then produced suspiciously specific quoted text and page locators — treated as likely small-model confabulation, **discarded, not used as evidence anywhere in this repo.** BLOCKED_FOR_SOURCE. |
+| Razavi AC, Blumenthal RS. "LDL-cholesterol lowering: timing is everything." Am J Prev Cardiol 2026;28:101668. DOI 10.1016/j.ajpc.2026.101668, PMCID PMC13326120. | `curl` against `europepmc.org/articles/PMC13326120?pdf=render` | **SUCCESS — HTTP 200, application/pdf.** License confirmed in-text: CC BY-NC-ND. Parsed successfully with `mcp__llamaparse__parse_pdf_to_markdown`. `verified: false` in `02_SOURCE-INVENTORY.md` terms still pending Director review (this is a secondary editorial, not a primary guideline, and does not address ezetimibe combination timing — see the Wave 2 evidence file for full scoping). File: `20_EVIDENCE/guideline-risk/fulltext/Razavi_Blumenthal_2026_AJPC_LDL-timing.pdf`, SHA-256 `b5a2c3941bcf2f14faf3c2757d35044cd01d520901854df0a277e792e06b806f`, retrieved 2026-08-30T21:02:04Z. Gitignored, not committed. |
+
+No PDF was obtained for any of the three PI-prioritized documents (2026 ACC/AHA, ESC 2025 Focused
+Update, Taiwan STS 2026) this Wave. The LlamaParse-tool demonstration requirement was satisfied via a
+genuinely open-access, directly-adjacent secondary source instead. See
+`20_EVIDENCE/guideline-risk/wave2-fulltext-extraction.md` for the full account, including a new
+trials-efficacy-relevant finding (the REPRIEVE pitavastatin RCT, cited in that source's reference
+list) flagged for the Director to route.
+
+## Wave 2 item 6 update (2026-08-31) — Huang PH et al., "2022 Taiwan lipid guidelines for primary
+prevention" (#35)
+
+| Field | Value |
+|---|---|
+| Citation | Huang PH, Lu YW, Tsai YL, Wu YW, Li HY, Chang HY, Wu CH, Yang CY, Tarng DC, Huang CC, Ho LT, Lin CF, Chien SC, Wu YJ, Yeh HI, Pan WH, Li YH, on behalf of the expert committee for the Taiwan Lipid Guidelines for Primary Prevention. "2022 Taiwan lipid guidelines for primary prevention." *J Formos Med Assoc* 2022 (in-press/uncorrected-proof version at time of this PDF; final print pagination 121(12):2393-2407 not reflected in this copy). |
+| DOI | `10.1016/j.jfma.2022.05.010` — independently re-confirmed this session via Europe PMC REST API (`search?query=DOI:10.1016/j.jfma.2022.05.010`), which returned PMID 35715290, matching title, journal (*J Formos Med Assoc*), pub year 2022. |
+| PMID | `35715290` (no PMC deposit; `elink` confirmed empty in Wave 2). |
+| Source URL (lawful, society-hosted) | `https://www.tas.org.tw/upload/files/1-s2_0-S0929664622002157-main%20(1).pdf` — Taiwan Society of Lipids and Atherosclerosis's own direct-hosted mirror, a different host from `sciencedirect.com` and not behind the Cloudflare bot-wall that blocks the publisher's own site directly. `HTTP 200`, `content-type: application/pdf`, no challenge headers observed. |
+| Retrieved | `2026-08-30T21:19:35Z` (UTC). |
+| License (verified against parsed full text, not assumed) | **CC BY 4.0.** Exact statement, appearing twice in the parsed text (byline footer and abstract footer): *"0929-6646/Copyright © 2022, Formosan Medical Association. Published by Elsevier Taiwan LLC. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/)."* |
+| Local files (gitignored, untracked — confirmed via `git check-ignore -v` and `git ls-files`, matched against `.gitignore:16` `**/20_EVIDENCE/**/fulltext/`) | `20_EVIDENCE/guideline-risk/fulltext/Huang_2022_Taiwan-primary-prevention-guideline.pdf` (800,604 bytes) and `...Huang_2022_Taiwan-primary-prevention-guideline.parsed.md` (89,459 bytes). |
+| SHA-256 (PDF) | `e18cf414bf3ea20e3d8a4467baf38300fde31fd3bedc3c095f5947b392567efc` — recomputed this session via `shasum -a 256` and matches the value recorded at extraction time (`20_EVIDENCE/guideline-risk/wave2-item6-extraction.md` §D). |
+| SHA-256 (parsed markdown) | `b7de41285d71dc0b7618d3059c389b87bdfaa89b1ebc8f142488b0a1d44cd583` — recomputed this session and matches. |
+| Parsing status | **Successful.** `mcp__llamaparse__parse_pdf_to_markdown` produced a clean, well-formed 740-line markdown file — correct headers, author/affiliation list, table of contents, and running section structure preserved; no visible OCR corruption or truncation; the CC BY license line is intact and legible in two places. |
+| `redistribution_ok` implication | CC BY 4.0 permits redistribution with attribution, but per `CLAUDE.md` §11 committing the PDF/parsed markdown to this repo still requires the Director to record `verified: true` / `license: CC BY 4.0` / `redistribution_ok: true` in `02_SOURCE-INVENTORY.md` (Director-owned file) before any such commit — not done by this role. Full text remains local-only, gitignored, and untracked in this repo as of this check. |
+
 ## Recommendation for Wave 2 (this role)
 
 1. Do **not** use `mcp__research_hub__download_paper` again until the Sci-Hub-inclusion concern

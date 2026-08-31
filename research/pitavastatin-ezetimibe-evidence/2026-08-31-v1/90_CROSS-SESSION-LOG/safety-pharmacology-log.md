@@ -84,6 +84,39 @@ Sci-Hub with no opt-out (discovered by guideline-risk-intelligence). This role n
 tool during Wave 1 — see `fulltext-manifest.md` for full detail — and will not call it going
 forward; `research_hub`'s metadata-only tools remain in use.
 
+## 2026-08-31 — Wave 2 (PI-authorized, Decision 2026-08-31-12)
+
+Director dispatched Wave 2 tasks: lawful full text for T-003 (Singh 2024) and T-012 (Katzmann 2022),
+optional LlamaParse demonstration, direct re-verification of the DDI matrix (T-010) against the
+primary DailyMed source, and continued queue items (T-013 Corsini, CKD/elderly/BCRP gaps). Complied
+with the standing `mcp__research_hub__download_paper` prohibition throughout (never called it).
+
+Results: Katzmann 2022 full text obtained lawfully (PMC8873069, CC BY 4.0) and parsed via
+LlamaParse; Singh 2024 confirmed BLOCKED_FOR_SOURCE (Europe PMC: not open access, no PMCID) — full
+structured abstract already sufficient for current needs. T-013 (Corsini A 2011) bibliographically
+VERIFIED_MATCH via Crossref. DDI matrix independently re-verified directly against DailyMed (not
+secondary transcription) — all previously-reported cyclosporine/erythromycin/rifampin/gemfibrozil
+figures confirmed exact; clarithromycin's absence from the label upgraded from "not found this pass"
+to CONFIRMED_ABSENT_FROM_LABEL; fenofibrate's exact section locator corrected (12.3 Table 3, not
+Section 7); new fibrates-class/niacin/colchicine caution language captured.
+
+Two unplanned but directly relevant finds surfaced during Wave 2 discovery: (1) Li H, Li J 2026 (Br
+J Hosp Med, PMID 42528438) — elderly-specific pitavastatin vs atorvastatin glycemic/NODM comparison,
+partially filling the Wave-1-flagged elderly-subgroup gap (BLOCKED_FOR_SOURCE for full text,
+abstract obtained); (2) Tramontano D et al. 2025 (Drugs, PMID 40106181, PMC12098426, CC BY-NC 4.0)
+— downloaded, LlamaParse-parsed, and its CKD dosing table cross-verified against the FDA label
+directly, resolving most of the Wave-1-flagged pitavastatin-CKD dosing gap (1mg starting/2mg max in
+eGFR 15-59 or hemodialysis; no adjustment for mild impairment). The FDC-specific (pitavastatin+
+ezetimibe combined) CKD dosing sub-question remains open — no source found addresses that
+combination specifically.
+
+BCRP gap partially converged: two open-access mechanistic/pharmacovigilance sources found (Schmith
+2026, PMC12868915; Stäuble 2026, PMC12929307) supporting the OATP1B1-predominant mechanism framing,
+but no specific BCRP-inhibitor fold-change number for pitavastatin was located — gap remains open.
+
+Full details, exact quotes, and file-level provenance (SHA-256, retrieval timestamps, license) in
+this role's owned `20_EVIDENCE/safety-pharmacology/` and `30_METHODS/safety-pharmacology/` files.
+
 ### Worktree isolation note
 
 This background session's file writes to the shared checkout were rejected by the harness pending
