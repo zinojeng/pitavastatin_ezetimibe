@@ -1,7 +1,7 @@
 # 05_STATUS — pitavastatin-ezetimibe-evidence / 2026-08-31-v1
 
 PROJECT_ID: `pitavastatin-ezetimibe-evidence` · RUN_ID: `2026-08-31-v1`
-Last updated: 2026-08-31 (Final Gate, Research Director)
+Last updated: 2026-08-31 (PR #1 closure housekeeping, Decision 2026-08-31-40, Research Director)
 
 > **Housekeeping note:** this file had accumulated many superseded "Update —" sections from rapid
 > Wave 1/2 processing. Condensed here into a single current narrative; no information dropped — see
@@ -32,13 +32,14 @@ Last updated: 2026-08-31 (Final Gate, Research Director)
 > **Do not treat any specific commit hash recorded in this file as the current `main` HEAD** — verify
 > live via `git fetch origin && git rev-list --left-right --count main...origin/main` (expect `0 0`)
 > if an exact reference is needed. **[PR #1](https://github.com/zinojeng/pitavastatin_ezetimibe/pull/1)
-> remains `OPEN`** as of the last check (Director verified via `gh pr view`, has not closed or
-> otherwise mutated it) — its content is redundant with what `main` already has via the cherry-pick
-> path, not merged through the PR itself; whether to close it as superseded is left to the PI or
-> whoever owns that PR. This Director branch has not been used to update `main`, and this session has
-> not merged, pushed, or edited `main`, nor mutated the PR. **Final Gate remains unchanged:
+> is now `CLOSED` (superseded)** — closed by the repo owner after the supervising Codex process
+> compared all 26 changed paths against `origin/main` and found zero object-content mismatches; the
+> closing comment documents that no unique PR content was discarded. No open PI decision remains on
+> this point (Decision 2026-08-31-40). This Director branch has not been used to update `main`, and
+> this session has not merged, pushed, or edited `main`, nor mutated the PR itself (its closure was
+> performed by the repo owner, not this session). **Final Gate remains unchanged:
 > `PASS_WITH_MINOR_ISSUES`; `40_SYNTHESIS/00`–`08` remains `FINAL`.** See Decisions 2026-08-31-35
-> through -38 for the full history (each preserved as an accurate record of its own point in time).
+> through -40 for the full history (each preserved as an accurate record of its own point in time).
 
 ## Current Gate
 

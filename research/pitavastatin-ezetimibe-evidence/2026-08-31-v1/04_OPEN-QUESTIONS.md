@@ -136,9 +136,9 @@ that resolved them.
   3/4 commits into local `main` (through Decision 2026-08-31-35), then subsequently completed final
   QA and pushed `main` to `origin` (Decision 2026-08-31-38) — local and `origin` `main` now both
   verified at commit `275ab90`, zero divergence. **Fully resolved, including the GitHub-sync portion
-  previously left open.** PR #1 remains `OPEN` on GitHub but is now redundant/superseded content
-  (Decision 2026-08-31-38) — not mutated by this Director session; closing it is left to the PI/PR
-  owner.
+  previously left open.** PR #1 is now `CLOSED` (superseded) — closed by the repo owner after a
+  26-path zero-object-mismatch verification against `origin/main` (Decision 2026-08-31-40); no open
+  PI decision remains on this point.
 
 ### Wave 2 full-text acquisition results (2026-08-31)
 
