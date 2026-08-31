@@ -1,7 +1,7 @@
 # 05_STATUS — pitavastatin-ezetimibe-evidence / 2026-08-31-v1
 
 PROJECT_ID: `pitavastatin-ezetimibe-evidence` · RUN_ID: `2026-08-31-v1`
-Last updated: 2026-08-31 (Gate 2 declared, Research Director)
+Last updated: 2026-08-31 (Final Gate, Research Director)
 
 > **Housekeeping note:** this file had accumulated many superseded "Update —" sections from rapid
 > Wave 1/2 processing. Condensed here into a single current narrative; no information dropped — see
@@ -13,19 +13,32 @@ Last updated: 2026-08-31 (Gate 2 declared, Research Director)
 > 35) while `origin/main` remained unpushed and PR #1 stayed open — both true statements at the time
 > they were recorded.
 >
-> **CURRENT STATE (2026-08-31, supervising Codex process — GitHub sync complete):** the supervising
-> Codex process has since completed final QA on local `main` and **pushed `main` to `origin`
-> successfully**. Director-verified via `git fetch origin` + `git rev-list --left-right --count
-> main...origin/main`: both local `main` and `origin/main` now resolve to the same commit, `275ab90`,
-> with **zero divergence in either direction (`0 0`)** — GitHub `main` is fully synchronized with
-> local `main`, superseding the prior "not yet updated"/"still `a8507d2`" statements above.
-> **[PR #1](https://github.com/zinojeng/pitavastatin_ezetimibe/pull/1) remains `OPEN`** (Director
-> verified via `gh pr view`, did not close or otherwise mutate it) — its content is now redundant
-> with what `main` already has via the cherry-pick path, not merged through the PR itself; whether to
-> close it as superseded is left to the PI or whoever owns that PR, not decided here. This Director
-> branch was not used to update `main`, and this session did not merge, push, or edit `main`, nor
-> mutate the PR. Final Gate remains unchanged: **`PASS_WITH_MINOR_ISSUES`**; `40_SYNTHESIS/00`–`08`
-> remains `FINAL`. See Decision 2026-08-31-38.
+> **DECISION 38 SNAPSHOT (2026-08-31, supervising Codex process — GitHub sync completed once; now
+> itself historical):** the supervising Codex process completed final QA on local `main` and pushed
+> `main` to `origin` successfully; Director-verified at that time via `git fetch origin` +
+> `git rev-list --left-right --count main...origin/main` that both local `main` and `origin/main`
+> resolved to the same commit, `275ab90`, zero divergence (`0 0`). **This was itself a point-in-time
+> snapshot, not a durable fact**: the Decision 38 documentation commit recording that snapshot was
+> then itself integrated by the supervising process into `main` (as is expected for every
+> documentation-only Director commit), which necessarily advances `main`'s HEAD again — Director
+> re-verified after that integration that local and `origin` `main` again showed zero divergence,
+> confirming the sync process is working repeatedly and correctly, not just as a one-off.
+>
+> **DURABLE CURRENT-STATE STATEMENT (hash-independent, so this sentence does not go stale on the
+> next documentation-only integration pass)**: GitHub `main` synchronization is an ongoing,
+> periodically-reconfirmed process, not a single event — each time the supervising Codex process
+> integrates a new Director governance commit into `main`, it (and independently, this Director
+> session when asked) has re-confirmed zero divergence between local and `origin` `main` afterward.
+> **Do not treat any specific commit hash recorded in this file as the current `main` HEAD** — verify
+> live via `git fetch origin && git rev-list --left-right --count main...origin/main` (expect `0 0`)
+> if an exact reference is needed. **[PR #1](https://github.com/zinojeng/pitavastatin_ezetimibe/pull/1)
+> remains `OPEN`** as of the last check (Director verified via `gh pr view`, has not closed or
+> otherwise mutated it) — its content is redundant with what `main` already has via the cherry-pick
+> path, not merged through the PR itself; whether to close it as superseded is left to the PI or
+> whoever owns that PR. This Director branch has not been used to update `main`, and this session has
+> not merged, pushed, or edited `main`, nor mutated the PR. **Final Gate remains unchanged:
+> `PASS_WITH_MINOR_ISSUES`; `40_SYNTHESIS/00`–`08` remains `FINAL`.** See Decisions 2026-08-31-35
+> through -38 for the full history (each preserved as an accurate record of its own point in time).
 
 ## Current Gate
 
