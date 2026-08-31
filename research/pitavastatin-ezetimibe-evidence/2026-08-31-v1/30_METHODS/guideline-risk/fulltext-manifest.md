@@ -78,3 +78,23 @@ prevention" (#35)
    do not edit it directly) once redistribution terms are actually confirmed (e.g., the STS 2026
    consensus's CC license terms should be read in full before assuming CC = redistribution-OK for
    this repo's purposes).
+
+## Wave 3 update (2026-08-31, PI-authorized)
+
+Full detail in `20_EVIDENCE/guideline-risk/wave3-extraction.md`. Two new sources obtained:
+
+| Source | Retrieved | SHA-256 (PDF) | Notes |
+|---|---|---|---|
+| Chen PS et al. 2022, Taiwan high-risk focused update (citation #29) | 2026-08-31T02:35:08Z, `tas.org.tw` mirror | `92646e438f5ddab7c9aceec4c91774e3b72bf1493f94d0f9cdc0517a8df0d00b` | CC BY-NC-ND (in-text). COR/LOE-graded recommendations extracted. |
+| HPA 2022, Statistics of Health Promotion (T-008, 111年健康促進統計年報) | 2026-08-31T02:39:24Z, direct from `hpa.gov.tw`'s `GetFile.ashx` endpoint (not behind the same WAF as its `Pages/*.aspx` CMS pages) | `7fafac32ca74295dd69349ad4d730a53a533ddc85aeef24c54b00cb96615423a` | Government statistical report, not a journal article — no CC license statement; INSTITUTIONAL PRACTICE tag, not GUIDELINE/CONSENSUS. Exact elderly 三高 prevalence table (63.0%/28.2%/40.0%) extracted, matching `Tonvasca_2026.md`'s closing-slide figures exactly. |
+
+**Near-miss caught and discarded, not in the repo:** a Wayback Machine "closest available snapshot"
+lookup for T-008's exact file URL returned a different `sid` parameter than requested; fetching it
+produced a genuine but *wrong* 721-page cancer-registry PDF (verified via its own title page, then
+rejected). Never copied into `fulltext/`, not referenced anywhere as T-008. Recorded here so no
+future session mistakes a similar Wayback fuzzy-match for a verified source without checking content
+identity first.
+
+T-005, T-006, and #34 remain untouched this Wave, exactly as recorded — an authorized
+OpenEvidence-relay discovery pass was considered but not performed (`oe_health` reported the relay
+daemon up but its browser extension not connected; no `oe_ask` call was attempted).
