@@ -146,13 +146,38 @@ therapy prior to initiating a PCSK9 mAb」——這是移除既有排序限制�
 
 ---
 
-## 4. Ezetimibe 加藥定位——guideline 並未偏好 ezetimibe（Focus Area 1 + 攻防要點）
+## 4. Ezetimibe 加藥定位——非極高風險三者同等，極高風險僅 ezetimibe/PCSK9 mAb 無偏好（POST-FINAL-GATE
+   修正，2026-09-01，Focus Area 1 + 攻防要點）
 
-T-101 於極高風險與非極高風險兩層級，皆將 ezetimibe、PCSK9 mAb、bempedoic acid 三者並列為**同等
-COR/LOE 地位**之選項（"selection depending on degree of LDL-C lowering needed and patient
-preference"），**並未**將 ezetimibe 定位為預設或優先選項。這是本專案任何「guideline 支持 ezetimibe
-作為自然首選加藥」論述必須誠實揭露的限制——該論述是本專案自身合理的臨床論點，**不是** T-101 本身
-主張的立場（guideline-risk 攻防論點 2，詳見第 7 節）。
+**修正說明**：本節先前版本誤將 T-101 於極高風險（VHR）與非極高風險兩層級之加藥建議，籠統敘述為
+「ezetimibe、PCSK9 mAb、bempedoic acid 三者同等 COR/LOE 地位」——經 PI 直接核對 T-101 權威條列段落
+「Recommendations for Secondary ASCVD Prevention」（頁 e1208）後發現此為過度簡化，Director 已
+獨立以 PyMuPDF 重新對照原始 PDF 確認 PI 之更正正確。**正確結構因風險分層而異，須分開陳述**：
+
+- **非極高風險（建議 #2、#3）**：ezetimibe、PCSK9 mAb、bempedoic acid **三者確實同等**——皆為
+  **COR 2a, LOE B-R**，"it is reasonable to add ezetimibe, a PCSK9 mAb, or bempedoic acid (selection
+  depending on degree of LDL-C lowering needed and patient preference)"。此層級「三者無偏好」之
+  陳述**成立**。
+- **極高風險（建議 #5、#6、#7）——三者並非同等**：
+  - 建議 #5（**COR 1, LOE A**）："ezetimibe and/or a PCSK9 mAb **should be added** (selected based
+    on the degree of LDL-C lowering needed and patient preference)..."——ezetimibe 與 PCSK9 mAb
+    並列於同一條建議、同一 COR/LOE，**兩者之間無偏好**，但用語為「should be added」（較強）。
+  - 建議 #6（**COR 2a, LOE B-R**，較弱、獨立成一條）："it is reasonable to add bempedoic acid, with
+    or without ezetimibe and/or PCSK9 mAb, to reach an LDL-C goal..."——bempedoic acid 在極高風險
+    層級是**獨立、較低 COR 等級**的建議，並非與 ezetimibe/PCSK9 mAb 同列同等。
+  - 建議 #7（**COR 2a, LOE B-R**，另有明確使用限制）：inclisiran"...in those **unable to tolerate
+    or obtain** evolocumab or alirocumab **or have a strong preference for less frequent dosing**..."
+    ——inclisiran 於極高風險層級亦為較低 COR，且明確**限定**於「無法耐受/取得 PCSK9 mAb，或明確偏好
+    低頻給藥」之病人，非一般性同等選項。
+
+**誠實、精確的結論**：極高風險層級，guideline **對 ezetimibe 相對 PCSK9 mAb 確實無偏好**（兩者
+COR 1, LOE A 同列）——這仍是本專案任何「guideline 建議優先使用 ezetimibe（而非 PCSK9 mAb）」論述
+必須揭露的限制，不可迴避。但**guideline 對 ezetimibe/PCSK9 mAb 相對 bempedoic acid/inclisiran
+確有形式上的偏好**（COR 1 vs COR 2a）——先前「三者完全同等」之敘述在極高風險層級並不成立，過度
+低估了 ezetimibe 於此層級之 guideline 地位。正確敘述應為：「無 ezetimibe 優於 PCSK9 mAb 之偏好，
+但 guideline 於極高風險層級形式上偏好 ezetimibe/PCSK9 mAb（COR 1, LOE A）甚於 bempedoic
+acid/inclisiran（COR 2a, LOE B-R，inclisiran 另有明確使用限制）」——非極高風險層級則三者確實同等
+（COR 2a, LOE B-R）。詳見第 7 節攻防章節之對應修正。
 
 ---
 

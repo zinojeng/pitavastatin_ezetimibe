@@ -42,15 +42,24 @@ Claim-Safe Taxonomy 標籤，供講者於 Q&A 時直接引用溯源；正式簡�
 - *講者註：本專案至今找不到 pitavastatin/ezetimibe FDC 專屬的已證實 hard-outcome 優越性證據——
   這是誠實簡報的核心限制，不應迴避，應直接在此頁面說明。*
 
-## Slide 5 — Guideline 支持：範圍與限制皆需說明
+## Slide 5 — Guideline 支持：範圍與限制皆需說明（POST-FINAL-GATE 修正）
 
-- 2026 ACC/AHA：ezetimibe/PCSK9 mAb/bempedoic acid 於極高風險族群加藥建議已升級至 **COR 1, LOE A**
+- 2026 ACC/AHA 極高風險（VHR）族群：**ezetimibe 與 PCSK9 mAb 並列升級至 COR 1, LOE A**（"should be
+  added"，兩者之間無偏好）；bempedoic acid、inclisiran 則各自為**獨立、較低之 COR 2a, LOE B-R**
+  （inclisiran 另限定於無法耐受/取得 PCSK9 mAb 或明確偏好低頻給藥之病人）——**並非**三者/四者同列
+  同等
+- 非極高風險族群：ezetimibe、PCSK9 mAb、bempedoic acid **三者確實同等**，COR 2a, LOE B-R
 - 移除舊制排序限制：ezetimibe 不再須早於 PCSK9 mAb（成本/安全性資料累積後之修訂）
 - **誠實限制（不可省略）**：
   - Guideline 是**逐步式**（statin 優先），非「早期／upfront combination」
-  - Guideline 將 ezetimibe/PCSK9/bempedoic 三者列為**同等選項**，非 ezetimibe 優先
+  - 極高風險層級：guideline **對 ezetimibe 相對 PCSK9 mAb 無偏好**（兩者同為 COR 1, LOE A）——這仍是
+    「ezetimibe 優先於 PCSK9 mAb」論述必須誠實揭露的限制；但 guideline 確實**形式上偏好
+    ezetimibe/PCSK9 mAb 甚於 bempedoic acid/inclisiran**（COR 1 vs COR 2a），並非四者完全無差別
   - Guideline 內容**statin-agnostic**，不指名 pitavastatin，不可轉引為 FDC 專屬證據
-- *講者註：GUIDELINE/CONSENSUS。這三點誠實限制若被省略，是本專案認定的過度延伸風險，務必保留。*
+- *講者註：GUIDELINE/CONSENSUS。COR/LOE 分級來自 T-101 頁 e1208「Recommendations for Secondary
+  ASCVD Prevention」建議 #5（ezetimibe/PCSK9 mAb, COR 1 A）、#6（bempedoic acid, COR 2a B-R）、
+  #7（inclisiran, COR 2a B-R）；獨立以 PyMuPDF 對照原始 PDF 確認。這幾點誠實限制若被省略，是本專案
+  認定的過度延伸風險，務必保留——尤其「無 ezetimibe 優於 PCSK9 mAb 之偏好」一點。*
 
 ## Slide 6 — 台灣/亞洲族群定位
 

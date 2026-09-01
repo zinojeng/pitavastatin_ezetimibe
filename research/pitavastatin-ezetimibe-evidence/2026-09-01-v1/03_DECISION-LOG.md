@@ -605,3 +605,45 @@ own initial claim (in an earlier message) that the file was already fixed.
 `worktree-pit-eze-run-2026-09-01` remains local-only, not pushed to `origin`.
 
 ---
+
+### Decision 2026-09-01-17 — POST-FINAL-GATE CORRECTION: ezetimibe/PCSK9/bempedoic acid/inclisiran are NOT equally graded in the VHR population
+
+**Context:** `00_executive-synthesis.md` §4 and `50_MANUSCRIPT/` Slide 5 stated that T-101 places
+ezetimibe, PCSK9 mAb, and bempedoic acid on "equal COR/LOE footing" as add-on options, at both the
+very-high-risk (VHR) and non-VHR tiers alike. The PI reported this is an over-generalization for the
+VHR tier specifically and asked for a correction.
+
+**Director's independent verification (before acting):** extracted T-101 pages e1207–e1208 directly
+via PyMuPDF (full text, both pages, not excerpted) — the authoritative "Recommendations for Secondary
+ASCVD Prevention" numbered section. Confirmed exactly:
+
+- **Non-VHR** (recommendations #2, #3): `COR 2a, LOE B-R` — "it is reasonable to add ezetimibe, a
+  PCSK9 mAb, or bempedoic acid (selection depending on degree of LDL-C lowering needed and patient
+  preference)." **All three genuinely equal here** — this part of the prior framing was correct.
+- **VHR** (recommendations #5, #6, #7) — **three separate recommendations, not one shared statement**:
+  - #5, `COR 1, LOE A`: "ezetimibe and/or a PCSK9 mAb **should be added** (selected based on the
+    degree of LDL-C lowering needed and patient preference)..." — ezetimibe and PCSK9 mAb only, no
+    preference between the two.
+  - #6, `COR 2a, LOE B-R` (separate, lower grade): "it is reasonable to add bempedoic acid, with or
+    without ezetimibe and/or PCSK9 mAb..."
+  - #7, `COR 2a, LOE B-R` (separate, lower grade, with an explicit access/preference constraint):
+    "it is reasonable to add inclisiran... **in those unable to tolerate or obtain** evolocumab or
+    alirocumab **or have a strong preference for less frequent dosing**..."
+
+**Decision:** Corrected `00_executive-synthesis.md` §4 and `50_MANUSCRIPT/` Slide 5. The accurate,
+claim-safe framing: **non-VHR** — ezetimibe/PCSK9 mAb/bempedoic acid genuinely equal (COR 2a, LOE
+B-R). **VHR** — no preference of ezetimibe over PCSK9 mAb specifically (both COR 1, LOE A, combinable
+via "and/or"), but the guideline does formally prefer ezetimibe/PCSK9 mAb over bempedoic acid/
+inclisiran at this tier (COR 1 vs COR 2a), with inclisiran further explicitly constrained to patients
+who cannot tolerate/access PCSK9 mAb or have a dosing-frequency preference. The honest limit for this
+project's positioning argument is narrower and more precise than previously stated: "no guideline
+preference for ezetimibe over PCSK9 mAb," not "no guideline preference among all nonstatin options."
+
+**Related, not-yet-corrected item:** guideline-risk's own `focus-area-5-attack-defense.md` Attack 2
+states this same over-generalization ("very-high-risk and not-very-high-risk tiers alike" use
+identical three-way framing) — routed to guideline-risk for its own file, consistent with file
+ownership; not a Director edit.
+
+**Evidence Hierarchy tag:** `GUIDELINE/CONSENSUS`. **Decision Taxonomy:** `VERIFIED_AND_REPLACE`.
+
+---
