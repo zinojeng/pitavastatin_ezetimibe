@@ -71,28 +71,44 @@ guideline-risk 之 Wave 1 初次萃取因 `pdftotext -layout` 之欄位錯位假
 1. **COR 分級錯誤**：VHR（very-high-risk）ezetimibe/PCSK9 加藥建議，初次萃取誤植為 COR 2a，經
    intake bundle 交叉比對（`00_quick_reference_card.md` 顯示正確為 COR 1）與更寬萃取視窗重新核對，
    確認正確為 **COR 1, LOE A**——比原先回報更強的建議等級（Decision 2026-09-01-07）。
-2. **Severe hypercholesterolemia 目標值結構錯誤**（此為本 run 最重要的一次自我修正）：Director 之
-   QA 發現「non-HDL-C <100 mg/dL (2.4 mmol/L)」與同一份 guideline 其他位置之「<100 mg/dL
-   (2.6 mmol/L)」不一致（100 mg/dL 之標準換算為 2.6 mmol/L，非 2.4）。**深入追查後發現：此
-   `2.4 mmol/L` 數值並非來源印刷之 typo，而是本專案自身 `pdftotext -layout` 工具將兩個真實存在、
-   相鄰的建議層級（Tier）錯誤合併成一個不存在的混合列所產生的假影**——以 `pdftotext -raw`
-   （保留原始內容流順序，不重建欄位）對照 guideline 自身權威之「Recommendations for Severe
-   Hypercholesterolemia」條列段落後確認：severe hypercholesterolemia（LDL-C≥190）實為**三層**結構
-   （見下表），`2.4 mmol/L` 這個數字**在原文中完全不存在**，不應以「已標註異常值」的形式保留，
-   應直接以正確三層結構取代（Decision 2026-09-01-10，取代並更正 Decision 2026-09-01-08 之初步
-   「來源內部 typo」假設）。**此更正明確超越並修正了 PI 原先「保留 2.4 mmol/L 標註」之指示**——因
-   該指示所依據之事實前提（2.4 mmol/L 確實印刷於來源）經深入查證後不成立，故透明呈報而非默默遵從
-   或默默推翻。
+2. **Severe hypercholesterolemia non-HDL-C 目標值——來源自身之印刷不一致**（此為本 run 最重要、也
+   歷經兩次修正才定案的發現）：Director 之 QA 發現「non-HDL-C <100 mg/dL (2.4 mmol/L)」與同一份
+   guideline 其他位置之「<100 mg/dL (2.6 mmol/L)」不一致（100 mg/dL 之標準換算為 2.6 mmol/L，非
+   2.4）。guideline-risk 以 `pdftotext -raw` 對照權威條列段落後，初步（錯誤地）認為 `2.4 mmol/L`
+   完全不存在、是本專案自身萃取工具之欄位錯位假影——**此結論後經 PI 直接對 PDF 原始檔執行
+   `pdftotext -layout`/`-raw` 獨立複查後推翻**：PDF 第 e1159 頁「Table 1. 2018 vs 2026」摘要比較表
+   （section 4.2.4.3, Revised 欄）確實完整、連貫地印著「...achieve a goal of LDL-C <70 mg/dL
+   (1.8 mmol/L) and non–HDL-C <100 mg/dL **(2.4 mmol/L)** is recommended...」；第 e1199 頁權威條列
+   段落「Recommendations for Severe Hypercholesterolemia」編號建議 #4（COR 1, LOE B-R）則印著
+   「...(2.6 mmol/L) is recommended...」——**兩處皆為完整、無斷裂、無拼接痕跡之正常句子，非欄位
+   錯位假影**。Director 於採信 PI 回報前，先以第三套、與本專案先前使用之 `pdftotext` 及 intake
+   `.md` 轉檔管線皆不同的獨立工具（PyMuPDF/`fitz`）直接重新解析原始 PDF，取得完全相同之結論並附
+   精確頁碼與完整上下文，方才採納此更正（見 Decision 2026-09-01-14 完整記錄）。
 
-| Severe Hypercholesterolemia（LDL-C≥190 mg/dL）三層結構（已修正，`pdftotext -raw` 驗證） | LDL-C 目標 | non-HDL-C 目標 | COR/LOE |
+   **結論**：這是 guideline 出版品**自身內部**的換算不一致（most plausibly 摘要比較表本身之 typo——
+   100 mg/dL 之標準換算為 2.6 mmol/L，與權威條列段落及文件其他所有「<100 mg/dL」出現處一致），
+   **並非**任何萃取工具之假影。LDL-C 目標值（<100 mg/dL）本身明確、不受影響、自始至終未變動；
+   兩個 mmol/L 換算數字之間，**以 2.6 mmol/L（權威條列段落之數值，與文件其餘處一致）為準**，
+   `2.4 mmol/L`（摘要比較表之數值）保留為明確標註之來源異常值，不予捨棄，亦不作為可替代之有效值
+   使用。
+
+| Severe Hypercholesterolemia（LDL-C≥190 mg/dL）三層結構（已修正，PDF 原始檔三套獨立工具交叉驗證） | LDL-C 目標 | non-HDL-C 目標 | COR/LOE |
 |---|---|---|---|
 | Tier 1：無 ASCVD/HeFH/subclinical atherosclerosis/其他風險因子 | <100 mg/dL (2.6 mmol/L) | <130 mg/dL (3.4 mmol/L) | 1, B-NR |
-| Tier 2：合併 HeFH/subclinical atherosclerosis/其他風險因子，無 clinical ASCVD | <70 mg/dL (1.8 mmol/L) | <100 mg/dL (2.6 mmol/L) | 1, B-R |
+| Tier 2：合併 HeFH/subclinical atherosclerosis/其他風險因子，無 clinical ASCVD（**注**：guideline
+自身之「Table 1. 2018 vs 2026」摘要比較表〔頁 e1159〕將此列 non-HDL-C 目標印為 **2.4 mmol/L**，與
+本表所採用、來自權威條列段落〔頁 e1199〕之 **2.6 mmol/L** 不一致——來源內部換算不一致，LDL-C 目標
+<70 mg/dL 本身兩處相符，不受影響） | <70 mg/dL (1.8 mmol/L) | <100 mg/dL (**2.6 mmol/L**；來源摘要表另印 2.4 mmol/L，見上注) | 1, B-R |
 | Tier 3：合併 clinical ASCVD | <55 mg/dL (1.4 mmol/L) | <85 mg/dL (2.2 mmol/L) | 1, B-R |
 
-**方法論教訓，已採納為本 run 後續原則**：guideline 之權威「Recommendations for [topic]」條列段落
-優先於「Table 1. 2018 vs 2026」摘要比較表——後者在多欄位排版下對 `pdftotext -layout` 易產生欄位
-錯位，任何摘要表數字若顯示內部不一致，應以 `-raw` 模式對照權威條列段落重新核實。
+**方法論教訓，已採納為本 run 後續原則（Decision 2026-09-01-14 完整記錄）**：guideline 之權威
+「Recommendations for [topic]」條列段落優先於「Table 1. 2018 vs 2026」摘要比較表作為**目標數值的
+主要依據**——但**當某一角色以「該數值不存在」作結論來解決兩處不一致時，這個「不存在」的結論本身
+需要與原始的「不一致」發現同等嚴謹的獨立複查**（理想上以與先前不同的獨立工具，直接對照原始 PDF，
+而非僅對照同樣可能有假影的 `.md` 轉檔或單一工具之單次萃取結果）——「數值不存在」是比「兩處印製不同」
+更強、也更容易被證偽的主張，本 run 的教訓是：這類「不存在」結論在 Gate 3 與 Wave 4 稽核中都未被
+以獨立工具重新對照原始 PDF 驗證，僅信賴同一調查角色的 `-raw` 模式結論與 `.md` 衍生檔案之 grep，
+直到 Final Gate 之後才由 PI 親自對原始 PDF 執行獨立複查而發現。
 
 ---
 

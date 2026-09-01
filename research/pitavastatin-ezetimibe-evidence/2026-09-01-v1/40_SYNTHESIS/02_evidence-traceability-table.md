@@ -32,11 +32,19 @@ each specialist's `30_METHODS/<role>/search-log.md`.
   head-to-head, add-ezetimibe beats dose-doubling" claim. Confirmed never a prespecified/tested
   contrast (Decision 2026-09-01-06/-09). Use the matched-dose LS-difference figures (−11.9%/−12.7%)
   instead.
-- **"non-HDL-C <100 mg/dL (2.4 mmol/L)"** for the severe-hypercholesterolemia/no-ASCVD tier.
-  Confirmed to not exist anywhere in T-101's actual text — an extraction artifact, not a source
-  value (Decision 2026-09-01-10). The correct figure is `<100 mg/dL (2.6 mmol/L)` (Tier 2) or
-  `<130 mg/dL (3.4 mmol/L)` (Tier 1) depending on which tier is meant — see
-  `00_executive-synthesis.md` §2.2 for the full corrected 3-tier table.
+- **"non-HDL-C <100 mg/dL (2.4 mmol/L)" as the CONTROLLING value for the severe-hypercholesterolemia
+  Tier 2 (HeFH/additional risk factors, no clinical ASCVD) recommendation** — do not use `2.4 mmol/L`
+  as the value to cite. **CORRECTION (Decision 2026-09-01-14, post-Final-Gate):** this figure is
+  genuinely printed in T-101 itself (page e1159, "Table 1. 2018 vs 2026" summary table) — it is
+  **not** an extraction artifact, contrary to what an earlier version of this run's record (Decision
+  2026-09-01-10) claimed. It coexists with a second, genuinely printed value at page e1199 (the
+  authoritative numbered recommendation): `2.6 mmol/L`. This is a genuine source-internal printing
+  inconsistency (most plausibly a typo in the summary table). **`2.6 mmol/L` controls** (matches the
+  authoritative section and the document's convention everywhere else `<100 mg/dL` appears); `2.4
+  mmol/L` is retained as an annotated source anomaly, not silently dropped. The LDL-C target itself
+  (`<70 mg/dL` for Tier 2) is unambiguous and unaffected. See `00_executive-synthesis.md` §2.2 and
+  `03_DECISION-LOG.md` Decision 2026-09-01-14 for the full corrected account, exact page numbers, and
+  quotes.
 - **"Consistent with Taiwan STS 2026"** as a guideline-attribution for any mechanistic/expert-
   inference argument. Taiwan STS's specific content claim remains `BLOCKED_FOR_SOURCE` — any such
   argument must be tagged `EXPERT INFERENCE`, not `GUIDELINE/CONSENSUS`.

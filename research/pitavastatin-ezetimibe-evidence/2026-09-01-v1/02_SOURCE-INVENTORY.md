@@ -84,6 +84,41 @@ explicit "ezetimibe-before-PCSK9i sequencing requirement removed" statement dire
 synopsis text. Corrected transparently in `focus-area-1-guideline-wording.md` with a visible
 correction note (not silently changed) — see Decision 2026-09-01-07.
 
-Still to populate (T-106 onward): Phase III/FDC trial RWE search results, new 2 mg-vs-4 mg data, any
+**T-106 — POST-FINAL-GATE CORRECTION (2026-09-01): the "2.4 mmol/L" figure IS genuinely printed in
+T-101, twice-differently.** See Decision 2026-09-01-14 (full detail, exact quotes, page numbers). This
+corrects and reverses T-105's earlier "does not appear anywhere in the actual text" claim, which was
+factually wrong. **Confirmed facts, independently re-verified by the Director using a third extraction
+pipeline (PyMuPDF), not merely accepted from the PI's report:**
+
+- T-101 page **e1159** ("Table 1. 2018 vs 2026" summary comparison table, section 4.2.4.3, "Revised"
+  row) genuinely prints, in a complete and coherent sentence: "...achieve a goal of LDL-C <70 mg/dL
+  (1.8 mmol/L) and non–HDL-C <100 mg/dL **(2.4 mmol/L)** is recommended..." for the "severe
+  hypercholesterolemia, without clinical ASCVD, with HeFH/additional risk factors/coronary
+  calcification" recommendation.
+- T-101 page **e1199** ("Recommendations for Severe Hypercholesterolemia," numbered recommendation #4,
+  COR 1/LOE B-R) genuinely prints, for the textually near-identical recommendation: "...achieve a goal
+  of LDL-C <70 mg/dL (1.8 mmol/L) and non–HDL-C <100 mg/dL **(2.6 mmol/L)** is recommended..."
+- Exactly one occurrence of "2.4 mmol" exists in the entire 123-page PDF (confirmed by full-document
+  search) — this is that occurrence, not a different/unrelated one.
+
+**Corrected status:** this is a genuine **source-internal conversion inconsistency** between T-101's
+own published summary table and its own authoritative numbered-recommendation text — most plausibly a
+typo in the summary table (100 mg/dL conventionally converts to 2.6 mmol/L, which is what the
+authoritative section, and every other `<100 mg/dL` instance in the document, states). **Not an
+extraction-tool artifact of any kind** — confirmed coherent, non-garbled prose in both locations,
+independently verified via a third, different extraction pipeline than either the project's
+`pdftotext` usage or the intake's `.md`-derivative conversion. The mg/dL target (`<100 mg/dL`) is
+unaffected and unambiguous. Between the two mmol/L conversions, **`2.6 mmol/L` controls** (matches the
+authoritative recommendation section and the document's convention everywhere else this target
+appears); `2.4 mmol/L` is retained as an explicitly annotated source anomaly in
+`focus-area-1-guideline-wording.md`, not silently dropped and not treated as a live alternative value.
+
+**Process note:** T-105's original claim was itself the product of guideline-risk's `-raw`-mode
+re-extraction, this Director's Gate 3 grep-based challenge round, and the Wave 4 independent auditor's
+`.md`-derivative-based spot-check — three separate checks, none of which independently re-extracted
+the actual PDF with a different tool before concluding the value "does not exist." See Decision
+2026-09-01-14 for the full methods lesson.
+
+Still to populate (T-107 onward): Phase III/FDC trial RWE search results, new 2 mg-vs-4 mg data, any
 newer HIJ-PROPER follow-up/re-analysis, PCSK9-targeting/bempedoic acid/inclisiran positioning trials
 for the attack/defense section.
