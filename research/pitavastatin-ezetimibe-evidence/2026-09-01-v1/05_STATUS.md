@@ -2,11 +2,31 @@
 
 **Authoritative current-gate/wave pointer for this run.**
 
-## RUN COMPLETE — Final Gate: `PASS_WITH_MINOR_ISSUES` (Decision 2026-09-01-13)
+## QA REOPENED — Final Gate under revision (post-Decision 2026-09-01-13)
 
-All Waves and Gates passed. `40_SYNTHESIS/` and `50_MANUSCRIPT/` are **FINAL**. Branch
+The Final Gate declared in Decision 2026-09-01-13 (`PASS_WITH_MINOR_ISSUES`) has been **reopened**
+per Decision 2026-09-01-14: a factual error was found in how this run handled the "2.4 mmol/L" figure
+(it IS genuinely printed in T-101 at page e1159, alongside a genuinely different "2.6 mmol/L" at page
+e1199 — a real source-internal inconsistency, not an extraction artifact as Decision 2026-09-01-10
+had wrongly concluded). PI caught this via independent `pdftotext` on the actual PDF; Director
+independently re-verified via a third tool (PyMuPDF) before acting.
+
+**Status of the correction:**
+- [x] `03_DECISION-LOG.md` — Decision 2026-09-01-14 records the full correction, exact quotes/pages,
+      and a process-failure account.
+- [x] `02_SOURCE-INVENTORY.md` — T-106 entry added.
+- [x] `40_SYNTHESIS/00_executive-synthesis.md` §2.2 — corrected.
+- [x] `40_SYNTHESIS/02_evidence-traceability-table.md` — corrected.
+- [ ] `20_EVIDENCE/guideline-risk/focus-area-1-guideline-wording.md` — correction routed to
+      guideline-risk-intelligence, awaiting confirmation.
+- [ ] `99_FINAL-QA.md` — correction requested from the independent auditor (its own owned file;
+      Director does not edit it directly), awaiting a revised Final Gate recommendation.
+- [ ] `50_MANUSCRIPT/` — checked, does not contain the granular severe-hypercholesterolemia tier
+      table, no correction needed there.
+
+**Final Gate will be re-declared once the auditor's revised recommendation is received.** Branch
 `worktree-pit-eze-run-2026-09-01` remains local-only, not pushed to `origin`, per the PI's explicit
-instruction for this continuation.
+instruction.
 
 ---
 
