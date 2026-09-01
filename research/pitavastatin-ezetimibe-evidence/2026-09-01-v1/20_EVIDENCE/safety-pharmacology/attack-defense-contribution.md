@@ -63,10 +63,17 @@ evidence-map.md §4.3——CK 顯著升高、rechallenge 後症狀復發），�
 **仍含有 statin 成分**，理論上仍可能誘發相同機轉之肌肉副作用——即使 pitavastatin 之肌肉安全性
 側寫相對較佳，也不能保證對已確立 statin intolerance 之病人安全。此時 **ezetimibe 單方 +
 bempedoic acid（非 statin 機轉）或 PCSK9-targeting therapy** 在藥理機轉上是更誠實、更保守的
-選擇——這與 Taiwan STS 2026 共識對 extremely-high-risk 病人「及早合併治療（ezetimibe +
-bempedoic acid）」之演算法一致（見 guideline-risk 領域，此處僅從安全性角度呼應）。
-**Evidence Hierarchy: MECHANISTIC SUPPORT**（機轉推論）。**Claim-Safe Taxonomy: `EXPERT
-INFERENCE`**。
+選擇。
+
+> **更正（2026-09-01，Director QA catch）**：先前版本將此論點描述為「與 Taiwan STS 2026 共識…
+> 之演算法一致」——**此為錯誤歸因**：Taiwan STS 2026 共識雖經上輪確認書目資訊存在，但其
+> 「ezetimibe/bempedoic acid 早期合併治療」之**具體內容主張，本專案自上輪起持續標記為
+> `BLOCKED_FOR_SOURCE`**（本輪 `04_OPEN-QUESTIONS.md` carried forward、PI 確認不可假設已解決）
+> ——本段落不應暗示該內容已被獨立驗證。已移除此段引用，僅保留純機轉/專家推論之論點本身。
+
+**Evidence Hierarchy: MECHANISTIC SUPPORT**（機轉推論，與 statin 成分之藥理作用機轉相關）。
+**Claim-Safe Taxonomy: `EXPERT INFERENCE`**（**非** `GUIDELINE/CONSENSUS`——本段論點純為本角色
+基於藥理機轉之獨立推論，不得引用任何仍屬 BLOCKED_FOR_SOURCE 之來源作為佐證）。
 
 ### 2.1b 更新（本輪新增）：T-101 guideline 文字部分佐證 PCSK9/inclisiran/bempedoic acid 之耐受性定位
 

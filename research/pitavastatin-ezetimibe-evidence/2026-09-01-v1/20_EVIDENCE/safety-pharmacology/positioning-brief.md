@@ -29,11 +29,30 @@ Chou MT et al. 2022（1PC111，台灣/澳洲/紐西蘭）：pitavastatin 2mg/eze
 **Evidence Hierarchy: DIRECT EVIDENCE**（pitavastatin/ezetimibe FDC 專屬試驗）。
 **Claim-Safe Taxonomy: `LDL-C SURROGATE EFFICACY`**（非硬指標優越性，是替代指標之統計顯著差異）。
 
-K-924（Tsujita 2023，日本，**DOI 本輪新確認：10.5551/jat.64006**）：pitavastatin 2mg+eze10mg
-（K-924 LD）LDL-C −51.4% vs pitavastatin **4mg 單方** −45.2%——**這是「加 ezetimibe 優於劑量加倍」
-最直接的頭對頭數字**，惟為不同產品/族群（日本 Kowa 產品，非 Taiwan/Australia/NZ 之 1PC111）。
-**Evidence Hierarchy: DIRECT EVIDENCE**（對 K-924 本身）/ **INDIRECT EVIDENCE**（對
-pitavastatin/ezetimibe FDC 一般化定位而言）。**Claim-Safe Taxonomy: `LDL-C SURROGATE EFFICACY`**。
+K-924（Tsujita 2023，日本，**DOI 本輪新確認：10.5551/jat.64006**）：四組原始百分比分別為
+pitavastatin 2mg −39.5%、4mg −45.2%、K-924 LD（2mg+eze10mg）−51.4%、K-924 HD（4mg+eze10mg）
+−57.8%。
+
+> **更正（2026-09-01，Director QA catch，Numeric Integrity Rule）**：先前版本將 K-924 LD
+> （−51.4%）與 pitavastatin 4mg 單方（−45.2%）直接並列稱為「加 ezetimibe 優於劑量加倍」之
+> 「最直接頭對頭數字」——**此為未經證實之 cross-arm 比較**：本角色僅取得四組之各自敘述性百分比，
+> 從未取得該試驗是否將「K-924 LD vs pitavastatin 4mg」設定為 prespecified、經統計檢定之對比
+> （本輪重新查證摘要層級資料，仍無法確認），若非，兩者並列僅是描述性數字巧合，不構成可宣稱的
+> 統計比較——已依 Numeric Integrity Rule 撤回原文字。
+>
+> Director 提供之替代數字（**本角色本輪未能獨立取得原文全文核對，來源為 Director 回報，非本角色
+> 親自查證**——比照本專案一貫作法標示 provenance，待下一輪或 trials-efficacy 取得全文後確認）：
+> matched-dose least-squares mean 差異——combo 2/10 vs pitava 2mg：−11.9%（95% CI −15.2 to
+> −8.7）；combo 4/10 vs pitava 4mg：−12.7%（95% CI −15.9 to −9.4）。**若此數字經證實**，才是該
+> 試驗真正 prespecified 之「加 ezetimibe 之額外效果」統計檢定結果，優於本角色原先的 cross-arm
+> 描述性並列。**在完成獨立查證前，兩組數字（原始四組百分比 vs. 此 matched-dose LS 差異）皆應
+> 標示為需進一步確認，不得在 manuscript 中以「已證實優於劑量加倍」的語氣呈現。**
+
+惟為不同產品/族群（日本 Kowa 產品，非 Taiwan/Australia/NZ 之 1PC111）。
+**Evidence Hierarchy: DIRECT EVIDENCE**（對 K-924 本身之敘述性百分比）/ **INSUFFICIENT
+EVIDENCE**（對「加 ezetimibe 優於劑量加倍」此一具體統計宣稱而言，因 prespecified 對比與
+matched-dose LS 差異數字均尚未獨立查證）。**Claim-Safe Taxonomy: `OBSERVATIONAL SIGNAL`**
+（原始四組百分比僅為敘述性數字，非經證實之統計優越性宣稱；下修自先前版本之定調）。
 
 ### 1.2 安全性/耐受性定位（本角色主責）
 
@@ -62,8 +81,9 @@ pitavastatin/ezetimibe FDC 一般化定位而言）。**Claim-Safe Taxonomy: `LD
 ### 1.3 定位論述（本角色綜合，非單一來源）
 
 > Pitavastatin/ezetimibe FDC 相較 pitavastatin 單方之核心論點，不在於「取代」單方治療，而在於：
-> 對於 pitavastatin 2mg（甚至考慮加量至 4mg）仍未達 LDL-C 目標的病人，加 ezetimibe 10mg 之額外
-> LDL-C 降幅（K-924 頭對頭數字：加 eze 優於劑量加倍），配合 pitavastatin 本身已知的
+> 對於 pitavastatin 2mg（甚至考慮加量至 4mg）仍未達 LDL-C 目標的病人，加 ezetimibe 10mg 是否能提供
+> 優於單純劑量加倍的額外 LDL-C 降幅，K-924 資料顯示描述性數字上有此傾向，**惟具體統計對比尚待
+> 獨立查證（見上方 §1.1 更正說明）**，配合 pitavastatin 本身已知的
 > low-CYP3A4-dependent interaction liability 與相對有利的血糖側寫（見第 3 節），構成一個在
 > **efficacy、tolerability、與 polypharmacy 風險之間**取得平衡的加藥選項，而非單純「藥效更強」
 > 的行銷主張。**Claim-Safe Taxonomy: `EXPERT INFERENCE`**（本段為本角色之綜合定位論述，非單一

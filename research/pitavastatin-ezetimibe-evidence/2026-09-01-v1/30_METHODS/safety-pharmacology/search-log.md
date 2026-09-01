@@ -54,6 +54,32 @@ exhaustive search** given the ~1-day gap since the prior run's Wave 4 audit and 
 availability this session — it should not be read as an exhaustive confirmation that nothing new
 exists, only that nothing new was found in this specific pass.
 
+## QA note (2026-09-01, added per Director request): T-101 mg/dL→mmol/L conversion anomaly
+
+While independently re-verifying T-101's East-Asian pharmacogenetic quote and PCSK9/inclisiran
+tolerability language (see `positioning-brief.md` §4.3, `attack-defense-contribution.md` §2.1b),
+this role also grepped the primary `.md` derivative directly for its LDL-C/non-HDL-C mg/dL↔mmol/L
+conversions to check guideline-risk's summary table (`focus-area-1-guideline-wording.md` §5).
+**Finding**: guideline-risk's table entry "non-HDL-C <100 mg/dL (2.4 mmol/L)" for the "Severe
+hypercholesterolemia, no clinical ASCVD" row is a **faithful, accurate transcription** of what the
+source `.md` literally prints at that location (confirmed verbatim at line 369 of the raw file:
+"...non–HDL-C <100 mg/dL (2.4 mmol/L) is recommended..."). **This is NOT a guideline-risk
+transcription error.** However, the *same* 100 mg/dL non-HDL-C value converts to **2.6 mmol/L** in
+at least 7 other locations in the identical document (lines 322, 326, 340, 390, 447, 452, 458, 471 —
+all grepped directly), which is the mathematically consistent conversion (100/38.67 ≈ 2.586 ≈ 2.6).
+**This single "2.4 mmol/L" instance is a genuine internal inconsistency in the source `.md`
+extraction, most plausibly a PDF-extraction column-merge artifact** — the surrounding context is
+literally a two-column "Table 1. Continued" (2018 vs 2026 recommendation columns) that appears to
+have been extracted into a single interleaved text stream, a known artifact pattern already recorded
+for this same source (see `00_RUN-MANIFEST.md`'s Wave 0 note re: the reversed sidebar heading).
+**Not confirmed** whether this reflects an actual *Circulation*-published typo or is purely an
+extraction artifact — that would require the original PDF page image, not just the `.md` derivative,
+to resolve. **Recommendation, not an instruction (this is guideline-risk's owned file)**: guideline-
+risk may want to spot-check this specific value against the PDF directly before any manuscript
+content relies on the "2.4 mmol/L" figure specifically; every other non-HDL-C <100 mg/dL instance in
+the document uses 2.6 mmol/L and is internally consistent. Routing this note to the Director/
+guideline-risk rather than editing their file myself, per file ownership (`CLAUDE.md` §3).
+
 ## Not used
 
 `mcp__research_hub__download_paper` (permanently prohibited); `scihub`/`download_scihub` (prohibited,
