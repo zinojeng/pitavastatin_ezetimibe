@@ -169,9 +169,11 @@ primary-verified either, see the prior run's own caveat) vs. ACC/AHA-stepwise di
 > levels by a mean of 18% (25% incremental reduction when added to statin therapy) and has a low
 > incidence of side effects."
 
-> **Severe hypercholesterolemia (LDL-C ≥190) without clinical ASCVD (COR 1, new 2026):** "...the
-> addition of ezetimibe, a PCSK9 mAb and/or bempedoic acid to achieve a goal of LDL-C <70 mg/dL
-> (1.8 mmol/L) and non–HDL-C <100 mg/dL (2.4 mmol/L) is recommended..."
+> **Severe hypercholesterolemia (LDL-C ≥190) without clinical ASCVD** — see §1 above (Tier 1 and
+> Tier 2 quotes) for the exact, corrected wording; not repeated here to avoid a second copy of this
+> figure drifting out of sync again. (This entry originally duplicated a stale pre-correction
+> version of the Tier 2 quote with an incorrect `2.4 mmol/L` figure — removed 2026-09-01 per the
+> Director's QA catch; the correct figure is `<100 mg/dL (2.6 mmol/L)`, already fixed in §1/§5.)
 
 ## 4. Statin intolerance / SAMS positioning (this guideline's analogue to Taiwan STS — NOT a substitute for it)
 
