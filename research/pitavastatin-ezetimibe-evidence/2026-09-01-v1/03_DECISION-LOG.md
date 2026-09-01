@@ -398,3 +398,27 @@ substantively complete via the attack/defense contributions) → Gate 2 → Wave
 **Evidence Hierarchy tag:** n/a (process decision). **Decision Taxonomy:** n/a.
 
 ---
+
+### Decision 2026-09-01-12 — Gate 2 declared PASSED; Wave 3 synthesis complete; Gate 3 declared PASSED
+
+**Gate 2 (Conflicts resolved via Decision Taxonomy; Open Questions current):** All Wave 1/2 conflicts
+(K-924 numbers, 2.4 mmol/L figure, Taiwan STS attribution, COR grading) resolved via the Decision
+Taxonomy and recorded (Decisions -06 through -11). `04_OPEN-QUESTIONS.md` is current as of this Wave.
+Declared **PASSED**.
+
+**Wave 3 (Synthesis) complete:** `40_SYNTHESIS/00_executive-synthesis.md` (zh-TW integrated evidence
+brief), `40_SYNTHESIS/01_attack-defense.md` (consolidated 3-role attack/defense across the PI's 6
+sub-areas), `40_SYNTHESIS/02_evidence-traceability-table.md` (new/updated citations + explicit
+retracted-do-not-cite list), `50_MANUSCRIPT/pitavastatin-ezetimibe-positioning-slides.md` (12-slide
+presentation outline, PI-authorized this run) all written and committed.
+
+**Gate 3 (Director internal-consistency check) declared PASSED** — full record in
+`30_METHODS/shared/gate3-challenge-round.md`. Four-angle review (guideline/trials/safety/methods) plus
+one deliberate cross-check on whether the PI's superseded "preserve 2.4 mmol/L" instruction was
+handled transparently. Verified with actual `grep` passes (not memory alone) that every retracted
+number and prohibited phrase appears only in "do not cite"/correction-narrative context, never as a
+live claim, across all Wave 3 output.
+
+**Next:** Wave 4 — spawn independent auditor (read-only, writes only `99_FINAL-QA.md`).
+
+---
