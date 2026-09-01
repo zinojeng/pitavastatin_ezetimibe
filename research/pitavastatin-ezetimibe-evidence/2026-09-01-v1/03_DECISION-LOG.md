@@ -178,3 +178,25 @@ traceable.
 to safety-pharmacology-intelligence) for both issues.
 
 ---
+
+### Decision 2026-09-01-07 — guideline-risk self-corrected a COR-grading extraction error (transparent, not silent)
+
+**Context:** During the T-102 intake-dedup cross-reference pass, guideline-risk-intelligence found
+the intake's `quick_reference_card.md` disagreeing with its own already-written
+`focus-area-1-guideline-wording.md`: the very-high-risk ezetimibe/PCSK9-add-on recommendation had
+been graded COR 2a in its Wave 1 extraction, vs. the intake's claimed COR 1, LOE A with an
+ezetimibe-before-PCSK9i sequencing requirement removed.
+
+**Decision:** Re-extracted T-101 directly with a wider context window (root cause: the original
+extraction used `pdftotext -layout`, and a too-narrow window caused a column-alignment misread). The
+intake was correct: the true grading is **COR 1, LOE A**, and the sequencing-requirement-removed
+statement is present verbatim in T-101's own synopsis text. Corrected transparently in
+`focus-area-1-guideline-wording.md` with a visible correction note — not silently overwritten, per
+the Numeric Integrity Rule (`CLAUDE.md` §9: never silently correct, always leave a trace). This is
+recorded as a positive example of the intake's cross-reference value continuing even after T-101 was
+independently verified as primary — dedup work was not wasted effort once verification succeeded.
+
+**Evidence Hierarchy tag:** `GUIDELINE/CONSENSUS` (T-101, corrected). **Decision Taxonomy:**
+`VERIFIED_AND_REPLACE` (replaces the erroneous COR 2a with the correct COR 1, LOE A).
+
+---

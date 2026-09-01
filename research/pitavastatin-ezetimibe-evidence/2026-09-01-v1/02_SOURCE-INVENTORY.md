@@ -62,6 +62,28 @@ error to paper over. Also explicit: T-101's SAMS/statin-intolerance content is a
 only — it does **not** resolve the still-open Taiwan STS "ezetimibe as first add-on" `BLOCKED_FOR_SOURCE`
 gap (carried forward from the prior run), which remains a distinct, unobtained document.
 
+**T-102 status update:** `UNVERIFIED` → dedup **complete** (2026-09-01, guideline-risk-intelligence).
+34 files deduped to 15 (10 latest-timestamp slot versions + 5 unique `draft_NN_NN.md` files); the
+byte-identical `adjudication_log_v2.md` pair confirmed to need no separate handling. 2 of the 4
+claimed corrections in `adjudication_log_v2.md` (CAC 300-999 two-tier target, HFrEF three-way COR
+split) independently re-verified directly against T-101 and confirmed exactly accurate; the other 2
+(dialysis initiation-vs-continuation, older-adults COR 2a→2b) not re-verified per Director's
+"don't over-invest once T-101 is primary" instruction — flagged unverified-but-plausible if either
+becomes load-bearing later. No `SOURCE_CONFLICT` found in the intake itself. Content T-101 lacks that
+the intake has: native zh-TW framing with a change-type legend, an explicit gaps-acknowledgment
+section, per-topic deep-dive files (e.g. FH-specific reforms) — potentially useful for the zh-TW
+brief, tagged `EXPERT INTERPRETATION` (not `GUIDELINE/CONSENSUS`) if used. Full detail:
+`20_EVIDENCE/guideline-risk/T-102-intake-dedup-verification.md`.
+
+**T-105 self-correction (2026-09-01):** guideline-risk-intelligence's own initial focus-area-1
+extraction mis-graded the very-high-risk ezetimibe/PCSK9-add-on recommendation as COR 2a (a
+`pdftotext -layout` column-misalignment artifact from too-narrow an extraction window). Caught during
+the T-102 cross-reference pass — the intake's `quick_reference_card.md` disagreed, prompting a
+re-extraction with wider context, which confirmed the correct grading is **COR 1, LOE A**, with an
+explicit "ezetimibe-before-PCSK9i sequencing requirement removed" statement directly in T-101's own
+synopsis text. Corrected transparently in `focus-area-1-guideline-wording.md` with a visible
+correction note (not silently changed) — see Decision 2026-09-01-07.
+
 Still to populate (T-106 onward): Phase III/FDC trial RWE search results, new 2 mg-vs-4 mg data, any
-newer HIJ-PROPER follow-up/re-analysis, intake bundle (T-102) dedup/verification, PCSK9-targeting/
-bempedoic acid/inclisiran positioning trials for the attack/defense section.
+newer HIJ-PROPER follow-up/re-analysis, PCSK9-targeting/bempedoic acid/inclisiran positioning trials
+for the attack/defense section.
