@@ -40,19 +40,22 @@ pitavastatin 2mg −39.5%、4mg −45.2%、K-924 LD（2mg+eze10mg）−51.4%、K
 > （本輪重新查證摘要層級資料，仍無法確認），若非，兩者並列僅是描述性數字巧合，不構成可宣稱的
 > 統計比較——已依 Numeric Integrity Rule 撤回原文字。
 >
-> Director 提供之替代數字（**本角色本輪未能獨立取得原文全文核對，來源為 Director 回報，非本角色
-> 親自查證**——比照本專案一貫作法標示 provenance，待下一輪或 trials-efficacy 取得全文後確認）：
-> matched-dose least-squares mean 差異——combo 2/10 vs pitava 2mg：−11.9%（95% CI −15.2 to
-> −8.7）；combo 4/10 vs pitava 4mg：−12.7%（95% CI −15.9 to −9.4）。**若此數字經證實**，才是該
-> 試驗真正 prespecified 之「加 ezetimibe 之額外效果」統計檢定結果，優於本角色原先的 cross-arm
-> 描述性並列。**在完成獨立查證前，兩組數字（原始四組百分比 vs. 此 matched-dose LS 差異）皆應
-> 標示為需進一步確認，不得在 manuscript 中以「已證實優於劑量加倍」的語氣呈現。**
+> matched-dose least-squares mean 差異（**2026-09-01 更新：已由 trials-efficacy 獨立對照其上輪
+> LlamaParse 全文解析結果核對，SHA-256 hash 存檔，Decision 2026-09-01-09 完整記錄——由「Director
+> 回報、本角色未查證」升級為「trials-efficacy 已獨立對照原文全文查證」**）：combo 2/10 vs
+> pitava 2mg：−11.9%（95% CI −15.2 to −8.7）；combo 4/10 vs pitava 4mg：−12.7%（95% CI −15.9 to
+> −9.4）。此為該試驗真正 prespecified 之「加 ezetimibe 之額外效果」統計檢定結果，取代先前版本
+> 未經證實的 cross-arm（−51.4% vs −45.2%）描述性並列——後者已獨立確認**從未是**該試驗
+> prespecified、經統計檢定之對比。
 
 惟為不同產品/族群（日本 Kowa 產品，非 Taiwan/Australia/NZ 之 1PC111）。
-**Evidence Hierarchy: DIRECT EVIDENCE**（對 K-924 本身之敘述性百分比）/ **INSUFFICIENT
-EVIDENCE**（對「加 ezetimibe 優於劑量加倍」此一具體統計宣稱而言，因 prespecified 對比與
-matched-dose LS 差異數字均尚未獨立查證）。**Claim-Safe Taxonomy: `OBSERVATIONAL SIGNAL`**
-（原始四組百分比僅為敘述性數字，非經證實之統計優越性宣稱；下修自先前版本之定調）。
+**Evidence Hierarchy: DIRECT EVIDENCE**（對 K-924 本身——原始四組敘述性百分比，以及現已由
+trials-efficacy 獨立查證之 matched-dose LS 差異數字，皆為 DIRECT EVIDENCE；後者是該試驗真正
+prespecified 之統計檢定結果，前者僅為敘述性百分比）。**Claim-Safe Taxonomy**：matched-dose LS
+差異（−11.9%/−12.7%）= `NONINFERIORITY`-鄰近性質之 **prespecified superiority-type 統計檢定
+結果**（加 ezetimibe 之額外效果經統計顯著）；原始四組百分比之 cross-arm 並列 = 仍維持
+`OBSERVATIONAL SIGNAL`（非經證實之統計比較，不可再用於「優於劑量加倍」之宣稱，應改引用已驗證
+之 matched-dose 數字）。
 
 ### 1.2 安全性/耐受性定位（本角色主責）
 
