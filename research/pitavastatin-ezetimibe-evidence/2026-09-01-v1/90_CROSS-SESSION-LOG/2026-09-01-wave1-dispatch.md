@@ -25,3 +25,18 @@ long-lived, already-oriented roles from the just-closed prior run (not fresh spa
 orientation), and (b) the `official/` candidate-source finding is time-sensitive enough that waiting
 for a formal round-trip before guideline-risk can even start reading it would cost real time for no
 governance benefit. Gate 0 will still be formally closed only once all three have responded.
+
+## Addendum — safety-pharmacology BLOCKED_FOR_SOURCE, resolved
+
+`pit-eze-safety-pharmacology` correctly reported `BLOCKED_FOR_SOURCE`: it checked `origin/main` and
+three remote branches via `git ls-tree` and found no `2026-09-01-v1/` anywhere, since the Director's
+Wave 0/1 commits (`960741f`, `a9c2a0c`, `601cbdd`) are local-only on `worktree-pit-eze-run-2026-09-01`
+and (per the PI's explicit no-push instruction for this run) not pushed to `origin`.
+
+Director confirmed via `git worktree list` that all sessions here are linked worktrees of one shared
+local repository (`git-common-dir` identical across them) — local branches are visible to every
+worktree via plain `git log <branch>`/`git show <branch>:<path>` without any push/fetch. Also
+observed: `guideline-risk-intelligence` had already independently discovered this and created its own
+new worktree off `worktree-pit-eze-run-2026-09-01` (at commit `a9c2a0c`) without reporting a blocker —
+confirming the fix works. Replied to safety-pharmacology with the exact commands to check locally;
+no PI escalation or push was needed.
