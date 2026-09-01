@@ -702,3 +702,25 @@ error but would have broken both files as usable Markdown/Marp documents.
 evidentiary claims). **Decision Taxonomy:** n/a.
 
 ---
+
+### Decision 2026-09-01-20 — English versions of the final report and slide deck added; PI authorized merge to main
+
+**Context:** PI asked for an English version of the final outputs alongside the zh-TW ones, and
+explicitly authorized merging this run's branch to `main` (a first for this project — every prior run
+left `main` consolidation to the PI or a supervising process; this is a direct, explicit instruction in
+this conversation, not a default action).
+
+**Decision:** Director translated `pitavastatin-ezetimibe-final-report.md` and
+`pitavastatin-ezetimibe-slides-deck.md` directly into English (`-en.md` suffix), preserving every
+number, citation, COR/LOE grade, and honest limitation exactly — a direct translation, not a
+re-derivation, so no new verification workflow was run (the underlying facts were already verified;
+translation accuracy was checked by the Director reading both versions side by side). `README.md`
+updated to list both language pairs.
+
+**Merge:** this run's branch (`worktree-pit-eze-run-2026-09-01`) merged into `main` via a GitHub pull
+request per the PI's explicit instruction, consolidating this run's full governance/evidence/synthesis/
+manuscript output onto `main` alongside the already-closed `2026-08-31-v1`.
+
+**Evidence Hierarchy tag:** n/a. **Decision Taxonomy:** n/a.
+
+---
