@@ -144,3 +144,37 @@ upfront contrast, each independently sourced to T-101/Crossref). **Decision Taxo
 `VERIFIED_AND_REPLACE` (Q2), `NO_CHANGE` (Q3, closed without new evidence needed).
 
 ---
+
+### Decision 2026-09-01-06 — Two QA catches routed back to safety-pharmacology for correction
+
+**Context:** External QA input (relayed to the Director, specific enough to reference real committed
+content — K-924 numbers and the Taiwan STS attribution — from `safety-pharmacology`'s already-
+committed `positioning-brief.md`/`attack-defense-contribution.md`, commit `38f40a9`) identified two
+issues before this content reaches Wave 2/3 synthesis.
+
+**Issue 1 — numeric integrity (`positioning-brief.md`):** the K-924 "2mg+eze10 (−51.4%) vs pitava 4mg
+(−45.2%)" framing is a cross-arm comparison presented as "最直接頭對頭／加 ezetimibe 優於劑量加倍" without
+confirmation that this specific contrast was prespecified/statistically tested. The trial's actual
+supported matched-dose LS differences are combo 2/10 vs pitava 2 = −11.9% (95% CI −15.2 to −8.7) and
+combo 4/10 vs pitava 4 = −12.7% (95% CI −15.9 to −9.4). Per the Numeric Integrity Rule (`CLAUDE.md`
+§9), routed back to safety-pharmacology to downgrade/rephrase unless it can confirm the direct
+contrast was actually tested. Also flagged: the guideline table's mg/dL↔mmol/L conversion should get
+an explicit QA note, not silent endorsement.
+
+**Issue 2 — guideline-attribution over a still-blocked source (`attack-defense-contribution.md` §2.1):**
+text states a recommendation is "consistent with Taiwan STS 2026," but Taiwan STS 2026 remains
+`BLOCKED_FOR_SOURCE` (carried forward from the prior run, PI-confirmed not assumed resolvable). This is
+exactly the `CLAUDE.md` §7 trap — citing a blocked source's content as if confirmed. Routed back to
+retain only the mechanistic argument, re-tagged `EXPERT INTERPRETATION`, with the guideline-attribution
+language removed.
+
+**Decision:** Both routed to safety-pharmacology-intelligence for direct correction in its own owned
+files (not a Director edit — file ownership preserved). Will confirm once safety-pharmacology reports
+back. Neither issue is a large substantive problem — both are the ordinary “write it, catch it, fix
+it” cycle this project's Challenge Round methodology exists for; recorded here so the correction is
+traceable.
+
+**Evidence Hierarchy tag:** n/a (process/QA decision). **Decision Taxonomy:** `NEEDS_ANALYST` (routed
+to safety-pharmacology-intelligence) for both issues.
+
+---
