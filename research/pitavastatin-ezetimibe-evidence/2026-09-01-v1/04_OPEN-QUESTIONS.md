@@ -85,3 +85,17 @@ run (no new source found). Record as a persistent limitation, not a search failu
   focus area 3 and the attack/defense section (focus area 5). Re-confirm no newer trial exists as
   part of Wave 1/2 search, do not assume the prior run's negative finding is still current without
   re-checking.
+
+## Q9 — Two new HIJ-PROPER-adjacent substudies need independent fetch/verification before Wave 3
+
+**Status:** OPEN. Yamaguchi 2018 (Atherosclerosis) — WebSearch-aggregated only, `NEEDS_ANALYST` before
+citing HR/CI. Sci Rep 2021 (PMC8021554) — N/cutoff HIGH confidence, HR/CI MODERATE (PMC PDF
+anti-bot-blocked, same issue as the prior run). Try again at Wave 2 if tool access improves; otherwise
+carry into synthesis with the confidence caveats already attached, not silently upgraded.
+
+## Q10 — Inclisiran lacks a published hard-outcome trial
+
+**Status:** OPEN, confirmed gap (trials-efficacy, focus area 5). Only design/protocol papers found
+(VICTORION-2 Prevent, ORION-4). Must not be grouped with CLEAR-Outcomes/FOURIER/ODYSSEY OUTCOMES as
+"hard-outcome-proven" in the attack/defense section — record as a distinct, currently
+surrogate/mechanistic-only case for inclisiran specifically.
