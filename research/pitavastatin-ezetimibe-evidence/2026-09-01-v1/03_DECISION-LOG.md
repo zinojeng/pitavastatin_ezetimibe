@@ -462,3 +462,95 @@ full manifest). Branch `worktree-pit-eze-run-2026-09-01` remains local-only, not
 per the PI's explicit instruction for this continuation.
 
 ---
+
+### Decision 2026-09-01-14 — POST-FINAL-GATE CORRECTION: Decision 2026-09-01-10 was factually wrong. "2.4 mmol/L" IS genuinely printed in the source PDF. Reopening QA.
+
+**Context:** After Final Gate `PASS_WITH_MINOR_ISSUES` was declared, the PI reported independently
+running `pdftotext -layout`/`-raw` directly on the 16.9 MB official PDF itself (not the `.md`
+derivative) and finding that lines 533–539 of that output show the published "Table 1. 2018 vs 2026"
+summary comparison table genuinely printing "non-HDL-C <100 mg/dL (2.4 mmol/L)," while the
+authoritative numbered recommendation (page ~e1199) genuinely prints "(2.6 mmol/L)" for what reads as
+the same clinical recommendation.
+
+**Director's independent re-verification (before acting on this report, not after):** `pdftotext` is
+not installed in this Director's own environment. Rather than accept the report on trust or dismiss it
+for lack of a matching tool, the Director used a **third, independent extraction pipeline**
+(`PyMuPDF`/`fitz`, via Python, distinct from both the project's `pdftotext` usage and the intake's
+`.md`-derivative conversion pipeline) to extract text directly from the same PDF and confirm this
+independently. **Confirmed, with exact page numbers and full surrounding context:**
+
+- **PDF page e1159** (PDF page index 5, "Table 1. 2018 vs 2026" summary comparison table, row
+  "4.2.4.3. Severe Hypercholesterolemia With LDL-C ≥190 mg/dL," "Revised" 2026-recommendation column):
+  > "COR 1: In adults with severe hypercholesterolemia with LDL-C ≥190 mg/dL (4.9 mmol/L) without
+  > clinical ASCVD but with clinical or genetic confirmation of HeFH, additional ASCVD risk factors,
+  > or documented coronary calcification, who are on maximally tolerated statin therapy, the addition
+  > of ezetimibe, a PCSK9 mAb and/or bempedoic acid to achieve a goal of LDL-C <70 mg/dL (1.8 mmol/L)
+  > and non–HDL-C <100 mg/dL **(2.4 mmol/L)** is recommended to lower LDL-C and reduce ASCVD risk."
+- **PDF page e1199** (PDF page index 45, "Recommendations for Severe Hypercholesterolemia With
+  LDL-C ≥190 mg/dL (4.9 mmol/L)," numbered recommendation #4, COR 1/LOE B-R):
+  > "In adults with severe hypercholesterolemia with an LDL-C ≥190 mg/dL (4.9 mmol/L) without clinical
+  > ASCVD but with clinical or genetic confirmation of HeFH, additional ASCVD risk factors, or
+  > documented coronary calcification, who are on maximally tolerated statin therapy, the addition of
+  > ezetimibe, a PCSK9 mAb, and/or bempedoic acid to achieve a goal of LDL-C <70 mg/dL (1.8 mmol/L) and
+  > non–HDL-C <100 mg/dL **(2.6 mmol/L)** is recommended to lower LDL-C and reduce ASCVD risk."
+
+**Both sentences are complete, grammatically coherent, non-garbled — this is not a column-merge or
+line-interleaving artifact of any extraction tool.** The PDF's own published summary table and its own
+authoritative numbered recommendation genuinely, independently print two different non-HDL-C mmol/L
+conversions for what is textually the same COR 1/LOE B-R recommendation. `grep`-equivalent search
+confirms exactly one occurrence of "2.4 mmol" in the entire 123-page PDF, at this single location.
+
+**Decision 2026-09-01-10 is WRONG and is hereby corrected, not merely re-worded.** Its core claim
+("there is no '2.4 mmol/L' figure anywhere in the actual severe-hypercholesterolemia recommendations
+... it does not correspond to a real recommendation at all") is factually false. **This also means the
+PI's original instruction — "preserve the explicit 2.4 mmol/L source-typo annotation... privilege the
+mg/dL target, annotate the source's 2.4 anomaly, and must not say the 2.4 vs 2.2 values 'are not
+typos'" — was correct, and Decision 2026-09-01-10's supersession of it was a mistake, not a legitimate
+correction.** The original Decision 2026-09-01-08 (a genuine source-internal conversion
+inconsistency, most plausibly a typo) was substantively closer to correct than -10, now confirmed with
+certainty rather than "likely."
+
+**Corrected finding, going forward:** the published "Table 1. 2018 vs 2026" summary comparison table
+at page e1159 and the authoritative numbered "Recommendations for Severe Hypercholesterolemia" section
+at page e1199 **both genuinely appear in T-101's actual, verified text**, and print different non-HDL-C
+mmol/L conversions (2.4 vs 2.6) for the same COR 1/LOE B-R recommendation. This is a genuine
+**source-internal conversion inconsistency, most plausibly a typo in the summary table** (100 mg/dL
+conventionally converts to 2.6 mmol/L, which is what the authoritative numbered-recommendation section
+— and every other `<100 mg/dL` instance in this document — prints). **The mg/dL target is unambiguous
+and unaffected: `<100 mg/dL`, unchanged from every prior version of this table.** Between the two
+mmol/L conversions, **`2.6 mmol/L` (the authoritative numbered-recommendation section's value)
+controls**, consistent with the document's own internal convention everywhere else it states this
+target; `2.4 mmol/L` (the summary table's value) is retained as an explicitly annotated source anomaly,
+not discarded and not treated as a live alternative value.
+
+**Process failure, recorded honestly:** three separate layers of this project's verification process
+failed to catch this before Final Gate: (1) guideline-risk's `pdftotext -raw` re-extraction concluded
+"2.4 mmol/L does not exist," apparently because it checked only the authoritative numbered-
+recommendations section and did not separately re-check the summary table with the same rigor after
+forming that conclusion; (2) this Director's own Gate 3 Challenge Round grep-verified several claims
+but did not independently re-extract the PDF itself, instead trusting guideline-risk's `-raw`-mode
+conclusion; (3) the Wave 4 independent auditor's "spot-check #4" grepped the `.md` derivative (the
+same artifact-prone pipeline already flagged) and found a garbled fragment there, which was treated as
+corroborating "2.4 mmol/L doesn't exist as a real value" — but the auditor did not independently
+extract the **PDF itself** with a different tool, which is what would have caught this. **The lesson
+for this project going forward: when a specialist's re-extraction "resolves" an inconsistency by
+concluding one of two conflicting values doesn't exist, that conclusion itself needs the same
+independent, different-tool verification as the original inconsistency — "not existing" is a stronger
+and more falsifiable claim than "printed differently in two places," and deserves at least as much
+scrutiny.** This is now recorded as a durable methods lesson, not just a one-off fix.
+
+**Action items (this Director, immediately following this decision):**
+1. Correct `02_SOURCE-INVENTORY.md` T-101/T-105 entries.
+2. Correct `40_SYNTHESIS/00_executive-synthesis.md` §2.2 and `02_evidence-traceability-table.md`.
+3. Route correction to guideline-risk-intelligence for `focus-area-1-guideline-wording.md` (Director
+   does not edit specialist-owned files directly).
+4. Request the independent auditor amend `99_FINAL-QA.md` with a correction addendum (Director does
+   not edit the auditor's own file directly, per file ownership — Golden Rule 10).
+5. Re-run Final Gate once corrections are in place.
+
+**Evidence Hierarchy tag:** `GUIDELINE/CONSENSUS` (both values, now correctly understood as a genuine
+source-internal inconsistency, not an artifact). **Decision Taxonomy:** `VERIFIED_AND_REPLACE`
+(reverses Decision 2026-09-01-10's `VERIFIED_AND_REPLACE`; reinstates the substance of Decision
+2026-09-01-08 with higher confidence).
+
+---
