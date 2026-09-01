@@ -47,3 +47,14 @@ Thumbs.db
 # llamaparse blob cache). Never durable research output — local-only, never committed.
 .metadata_cache/
 **/.metadata_cache/
+
+# --- Inbox intake material (added RUN 2026-09-01-v1, 2026-09-01) ---
+# Raw Google Drive intake and any "official" full-text drops under inbox/ are
+# local-only working material, same rule as 10_DATA/fulltext/ above — every
+# intake file is derivative/unverified secondary material (or, for full-text
+# PDFs/derivatives, subject to the same licensing rule, CLAUDE.md §11) until a
+# specialist has independently verified specific claims/redistribution rights
+# and the Director has recorded that in 02_SOURCE-INVENTORY.md. Never commit
+# raw inbox/ content directly — only the curated citations/extractions that
+# result from verifying it.
+inbox/
