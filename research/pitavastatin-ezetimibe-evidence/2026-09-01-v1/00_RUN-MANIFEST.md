@@ -138,6 +138,16 @@ only — `download_paper` remains permanently prohibited, Decision 2026-08-31-08
 `google-scholar`. Re-confirm all before Wave 1 literature dispatch; do not assume prior run's Wave 2
 "repaired" status carries over session-to-session (per the prior run's own established caution).
 
+**Wave 1 update (2026-09-01, infra):** `openevidence` daemon/registration fixed (root cause: bare
+`node` in registration instead of absolute path; relay now healthy). All three specialists notified
+to reconnect. `guideline-risk-intelligence` attempted reconnect (`oe_health` + `ToolSearch` reload)
+and confirmed its own session still can't pick up the fix — its MCP connection was established at
+startup with the old config and doesn't refresh without a fresh session start, which it can't trigger
+itself. Not treated as blocking (continuing on `research_hub`/`google-scholar`/`llamaparse`); will
+retry on a natural session restart. Per-session MCP state caution (already established in this
+manifest and the prior run) applies again here — a fix at the daemon level does not guarantee every
+already-running session picks it up.
+
 ## Persistent session topology (see CLAUDE.md §2)
 
 1. Research Director (this session, `pit-eze-research-director [5aa219]`)
