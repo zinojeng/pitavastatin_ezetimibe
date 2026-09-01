@@ -38,9 +38,10 @@ provisional answer causes real friction.
 
 ## Q5 — Real-world evidence (RWE) for pitavastatin/ezetimibe FDC (focus area 2)
 
-**Status:** OPEN — not yet searched this run. trials-efficacy-intelligence to determine at Wave 1
-whether any RWE (registry, claims-database, or post-marketing observational study) exists beyond the
-Phase III/FDC trial and the dose-comparison literature already known from the prior run.
+**Status:** ✅ **ANSWERED** (2026-09-01, trials-efficacy-intelligence). No new pitavastatin+ezetimibe
+FDC RWE found beyond the prior run's TE-013 (Lu 2026, Taiwan post-PCI cohort) — still the only one.
+An atorvastatin/ezetimibe FDC RWE abstract (ACC 2026) shows the drug class accumulating RWE elsewhere
+while pitavastatin specifically does not yet — noted as a fair limitation, not chased further.
 
 ## Q6 — No direct pitavastatin/ezetimibe-FDC-vs-high-intensity-statin-monotherapy trial
 

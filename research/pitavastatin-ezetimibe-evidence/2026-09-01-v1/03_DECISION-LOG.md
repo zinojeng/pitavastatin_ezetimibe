@@ -308,3 +308,49 @@ EVIDENCE`/hypothesis-generating (HR/CI moderate confidence); inclisiran hard-out
 gap reconfirmed), `INSUFFICIENT_EVIDENCE` (both new HIJ-PROPER substudies, inclisiran outcomes gap).
 
 ---
+
+### Decision 2026-09-01-10 — SUPERSEDES Decision 2026-09-01-08: "2.4 mmol/L" does not exist in the source at all; it was our own extraction artifact, not a source typo
+
+**Context:** Following up on the column-merge hypothesis (Decision 2026-09-01-08/safety-pharmacology's
+extension), guideline-risk-intelligence re-extracted the relevant page with `pdftotext -raw`
+(preserves actual content-stream order, no column reconstruction) against T-101's own authoritative
+numbered "Recommendations for Severe Hypercholesterolemia" section — not the error-prone summary
+comparison table.
+
+**Finding:** Severe hypercholesterolemia (LDL-C≥190) is a genuine **three-tier** structure, not the
+two-tier one originally reported: Tier 1 (no ASCVD/HeFH/subclinical atherosclerosis/other risk
+factors) → `<100 mg/dL (2.6 mmol/L)`, non-HDL `<130 (3.4 mmol/L)`, COR 1 B-NR; Tier 2 (HeFH/subclinical
+atherosclerosis/additional risk factors, no clinical ASCVD) → `<70 mg/dL (1.8 mmol/L)`, non-HDL
+`<100 (2.6 mmol/L)`, COR 1 B-R; Tier 3 (clinical ASCVD) → `<55 mg/dL (1.4 mmol/L)`, non-HDL
+`<85 (2.2 mmol/L)`, COR 1 B-R. The original extraction had conflated Tiers 1 and 2 into a single
+non-existent hybrid row (`<70 mg/dL / 2.4 mmol/L`) — a `pdftotext -layout` column-merge artifact on
+this document's multi-row "Table 1. 2018 vs 2026" summary table. **The `2.4 mmol/L` figure does not
+appear anywhere in T-101's actual text.**
+
+**This changes the correct action from Decision 2026-09-01-08.** That decision (and the PI's own
+explicit instruction to "preserve the explicit 2.4 mmol/L source-typo annotation") were both made on
+the reasonable-at-the-time understanding that `2.4 mmol/L` was genuinely printed in the source as an
+internally-inconsistent conversion. It was not: it is this project's own extraction tooling's
+artifact, not the source's. Per the Numeric Integrity Rule's own logic (never build on an unverified
+number, and correct course transparently when better evidence arrives rather than defending an
+earlier hypothesis) — **the `2.4 mmol/L` figure is dropped entirely, not carried forward as an
+annotated anomaly.** The corrected 3-tier structure replaces it in `focus-area-1-guideline-wording.md`.
+guideline-risk also re-verified the earlier COR-1-vs-2a self-correction (Decision 2026-09-01-07)
+against `-raw` mode and confirmed it holds.
+
+**Methods improvement adopted project-wide for this run:** T-101's numbered "Recommendations for
+[topic]" sections are treated as authoritative; its summary comparison tables ("Table 1. 2018 vs
+2026") are treated as secondary and error-prone, cross-checked with `-raw`-mode extraction whenever a
+summary-table figure looks internally inconsistent.
+
+**Explicitly flagged for the PI:** this supersedes the PI's own "preserve the 2.4 mmol/L source-typo
+annotation" instruction. That instruction is not disregarded lightly — it is superseded because the
+factual premise it was based on (that 2.4 mmol/L is genuinely printed in the source) turned out to be
+false on deeper investigation. Reported transparently rather than either silently complying with a
+now-outdated instruction or silently overriding it without note.
+
+**Evidence Hierarchy tag:** `GUIDELINE/CONSENSUS` (corrected 3-tier structure, `-raw`-mode verified).
+**Decision Taxonomy:** `VERIFIED_AND_REPLACE` (supersedes Decision 2026-09-01-08's `NEEDS_ANALYST`
+holding position with a final, verified correction).
+
+---
