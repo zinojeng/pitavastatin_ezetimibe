@@ -62,3 +62,17 @@ T-101 (`official/` candidate guideline) as verified/authoritative pending guidel
 flagged that `05_STATUS.md` at that commit was stale (still said "Gate 0 not yet declared" / "not yet
 contacted" despite dispatch having already happened) — correct catch, fixed in this commit. Confirmed
 `READY`, starting Wave 1 on focus area 4 + its portion of the attack/defense section.
+
+## trials-efficacy confirms READY (2026-09-01)
+
+`pit-eze-trials-efficacy` confirmed the shared-.git fix worked, read all six governance files, is
+fully briefed on the duplicate-Director incident, the `official/` finding (correctly deferring to
+guideline-risk on T-101/102/103), the six focus areas and its ownership of 2/3, and the claim-safe
+taxonomy. Confirmed MCP connectivity matches Director's Wave 0 recon. Flagged the same `05_STATUS.md`
+staleness safety-pharmacology caught (already fixed in commit `268d34e`). Confirmed `READY`, starting
+Wave 1 on focus areas 2–3, will report incrementally rather than batching.
+
+**2 of 3 specialists now confirmed READY** (safety-pharmacology, trials-efficacy). guideline-risk has
+its own fresh worktree checked out (`worktree-pit-eze-guideline-risk-run2026-09-01`, observed via
+`git worktree list`) but has not yet sent a report — presumed working on the time-sensitive `official/`
+verification task. No action needed; awaiting its report.

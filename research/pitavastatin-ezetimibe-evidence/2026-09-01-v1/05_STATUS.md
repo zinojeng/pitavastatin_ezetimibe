@@ -34,7 +34,7 @@ are not edited in place for gate transitions; this file is).
 | Specialist | Status | Notes |
 |---|---|---|
 | `pit-eze-guideline-risk` | Working (own worktree `worktree-pit-eze-guideline-risk-run2026-09-01` created) | No blocker reported; presumed underway on intake dedup + `official/` verification (priority 1) + focus area 1. Awaiting first report. |
-| `pit-eze-trials-efficacy` | Unblocked, re-reading governance files | Focus areas 2–3 + trial-side attack/defense, pending. |
+| `pit-eze-trials-efficacy` | **READY, confirmed, starting** | Focus areas 2–3 + trial-side attack/defense; confirmed not touching T-101/102/103 (guideline-risk's domain); MCP connectivity matches Director's Wave 0 recon. |
 | `pit-eze-safety-pharmacology` | **READY, confirmed, starting** | Focus area 4 + safety-side attack/defense; re-confirming/extending its own 2026-08-31-v1 outputs rather than re-deriving, per instruction. |
 
 ## Gate 0 checklist
@@ -42,8 +42,9 @@ are not edited in place for gate transitions; this file is).
 - [x] Duplicate-Director conflict resolved
 - [x] Governance files created
 - [x] Intake inventoried and major findings recorded
-- [x] Task assignments sent to all 3 specialists; 1 of 3 (`safety-pharmacology`) confirmed `READY`
-      and starting; 2 of 3 unblocking/in progress
+- [x] Task assignments sent to all 3 specialists; 2 of 3 (`safety-pharmacology`, `trials-efficacy`)
+      confirmed `READY` and starting; `guideline-risk` has its own worktree checked out (observed via
+      `git worktree list`), no report received yet
 - [ ] MCP connectivity re-confirmed for Wave 1 — confirmed independently by `trials-efficacy` and
       `safety-pharmacology`: `paper-search`/`tavily`/`openevidence` down (PATH: `uv`/`npx`/`node`
       missing), `research_hub`/`google-scholar`/`llamaparse` live. Treated as a workable-around
