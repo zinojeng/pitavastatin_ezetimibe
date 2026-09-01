@@ -66,13 +66,14 @@ run (no new source found). Record as a persistent limitation, not a search failu
    independently surfaces full text through a different route. Do not cite anything from this beyond
    its existence as an unverified candidate.
 2. PCSK9-targeting/inclisiran DDI mechanistic claims used in safety-pharmacology's attack/defense
-   contribution (the "safety/DDI-grounds" scenarios where these are more defensible than FDC) are
-   currently `EXPERT INTERPRETATION`, not independently sourced. **Director's call:** acceptable to
-   carry as `EXPERT INTERPRETATION`-tagged through Wave 2/3 (the claim-safe taxonomy is designed
-   exactly for this — an honestly-labeled inference is not a defect), but must be independently
-   sourced (or re-tagged/softened) before `50_MANUSCRIPT/` treats it as more than a caveat. Flagged as
-   a Wave 2 follow-up for safety-pharmacology or trials-efficacy, whichever has search bandwidth —
-   not urgent for Wave 1 closure.
+   contribution — **partially resolved (2026-09-01)**. safety-pharmacology independently re-verified
+   T-101 directly (grepped the raw `.md`, not a relay of guideline-risk's extraction) and confirmed,
+   at T-101 lines 2011–2022, guideline text describing PCSK9 mAb/inclisiran as "well tolerated and
+   safe" and bempedoic acid's indication for statin-attributed side effects. **The
+   tolerability/indication claim is upgraded to `GUIDELINE/CONSENSUS`.** The DDI-*mechanism* claims
+   (OATP1B1/CYP3A4-level comparisons) remain `EXPERT INTERPRETATION` — T-101 says nothing at that
+   mechanistic level, and safety-pharmacology explicitly did not let the tolerability upgrade bleed
+   into the DDI-mechanism claims. Still deferred to Wave 2, not urgent for Wave 1 closure.
 
 ## Carried forward from the prior run (still open, relevant to this run's focus areas)
 
