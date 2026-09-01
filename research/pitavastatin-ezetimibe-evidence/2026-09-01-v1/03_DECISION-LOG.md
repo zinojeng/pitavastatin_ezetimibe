@@ -231,3 +231,37 @@ conversion figure is flagged, not used as a load-bearing number anywhere. **Deci
 `NEEDS_ANALYST` (routed to guideline-risk-intelligence for the annotation fix).
 
 ---
+
+### Decision 2026-09-01-06 (outcome) — safety-pharmacology's three corrections confirmed, committed `b7bf5fa`
+
+1. **K-924 dose-doubling claim:** retracted from its overclaimed framing; downgraded to
+   `OBSERVATIONAL SIGNAL`/`INSUFFICIENT EVIDENCE`. Important honesty flag from safety-pharmacology:
+   it could not independently verify the Director-relayed matched-dose LS-difference figures
+   (−11.9%/−12.7%) either, from its own accessible sources — those numbers are labeled
+   "Director-reported, not independently verified by this role" in its output, not presented as
+   settled. **These numbers still need independent verification by a role with full-text access
+   before Wave 3 treats them as confirmed** — see new action below, routed to trials-efficacy.
+2. **mg/dL↔mmol/L anomaly:** confirmed and extended. safety-pharmacology grepped T-101 directly (not
+   guideline-risk's table) and found the same 100 mg/dL value correctly converts to 2.6 mmol/L in 7+
+   *other* locations in the identical document — strengthening Decision 2026-09-01-08's conclusion
+   that the `2.4 mmol/L` figure is a source-internal artifact, not a validated distinct value.
+   Working hypothesis on root cause: a column-merge artifact from T-101's "Table 1. Continued"
+   two-column 2018-vs-2026 comparison layout — same PDF-extraction artifact class as the reversed
+   sidebar heading noted at Wave 0. Relayed to guideline-risk with a request for a PDF-page-level
+   (not `.md`-derivative) spot-check to confirm the root cause before this figure is relied on for
+   anything beyond an annotated anomaly.
+3. **Taiwan STS attribution:** removed; retagged `EXPERT INTERPRETATION`. safety-pharmacology
+   acknowledged it should have caught this itself, given its own prior-run familiarity with the
+   still-`BLOCKED_FOR_SOURCE` status — recorded plainly, not glossed over.
+
+**New action:** trials-efficacy-intelligence asked to independently verify the K-924 matched-dose
+LS-difference figures (−11.9% [95% CI −15.2 to −8.7], −12.7% [95% CI −15.9 to −9.4]) against the
+primary trial source before Wave 3 synthesis treats them as confirmed — currently no role in this
+project has independently verified them; they entered this run via an external QA relay to the
+Director, not a specialist's own source check.
+
+**Decision Taxonomy:** `VERIFIED_AND_REPLACE` (items 1 and 3, corrected); `NEEDS_ANALYST` (item 2
+root-cause confirmation, routed to guideline-risk; K-924 LS-difference verification, routed to
+trials-efficacy).
+
+---
