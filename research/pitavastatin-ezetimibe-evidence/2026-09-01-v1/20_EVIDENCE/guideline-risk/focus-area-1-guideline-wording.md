@@ -88,11 +88,39 @@ primary-verified either, see the prior run's own caveat) vs. ACC/AHA-stepwise di
 > <55 mg/dL tier context: "...to achieve a goal LDL-C <55 mg/dL (1.4 mmol/L) and non–HDL-C
 > <85 mg/dL (2.2 mmol/L) and to reduce the risk of ASCVD events."
 
-> **At very high risk, on maximally tolerated statin (COR 2a):** "...ezetimibe and/or a PCSK9 mAb
-> **should be added** (selected based on the degree of LDL-C lowering needed and patient preference)
-> to achieve a goal of LDL-C <55 mg/dL (1.4 mmol/L) and non–HDL-C <85 mg/dL (2.2 mmol/L)..." — note
-> the stronger "should be added" phrasing (vs. "reasonable to add" for the lower-risk tier), though
-> both are COR 2a — a wording nuance worth preserving exactly, not smoothing into identical language.
+> **At very high risk, on maximally tolerated statin (COR 1, LOE A):** "In adults with clinical
+> ASCVD who are at very high risk and on maximally tolerated statin therapy, ezetimibe and/or a
+> PCSK9 mAb **should be added** (selected based on the degree of LDL-C lowering needed and patient
+> preference) to achieve a goal of LDL-C <55 mg/dL (1.4 mmol/L) and non–HDL-C <85 mg/dL
+> (2.2 mmol/L) to reduce risk of ASCVD events." (Recommendation #5 of the Secondary ASCVD Prevention
+> — Very High Risk section, page ~e1208.) **Correction note (caught during T-102 intake
+> cross-referencing, not left silently fixed):** this role's initial Wave 1 pass mis-transcribed
+> this recommendation's grade as COR 2a — a `pdftotext -layout` column-alignment artifact (the grade
+> marker for a multi-line recommendation in this guideline's two-column table sits near the middle
+> of the item's text block, and an earlier, narrower extraction window cut across two adjacent
+> items). Re-extracted with a wider context window and re-confirmed against the surrounding
+> recommendations #4 (COR 1 A) and #6 (COR 2a B-R, bempedoic add-on) as anchors — #5 is
+> unambiguously **COR 1, LOE A**. The intake's `00_quick_reference_card.md` had this correct
+> ("Ezetimibe（VHR ASCVD，statin 後）| ... | 1, A（排序要求取消）") — independent cross-referencing
+> against secondary material is exactly what caught this, which is itself a useful argument for not
+> skipping the intake-dedup task even once a primary source is verified. The non-very-high-risk
+> tier's add-on recommendation (below) remains correctly COR 2a, LOE B-R — so the "should be added"
+> vs "reasonable to add" wording contrast tracks a genuine COR 1 vs COR 2a difference after all, just
+> not the one originally stated.
+
+> **Not at very high risk, on maximally tolerated statin, restated for clarity:** COR 2a, LOE B-R
+> (as quoted above) — genuinely weaker than the very-high-risk tier's COR 1, consistent with the
+> "should be added" (VHR, COR 1) vs "reasonable to add" (non-VHR, COR 2a) wording distinction.
+
+> **Sequencing requirement removed (synopsis text, page ~e1208, directly answers a "why the change"
+> question relevant to focus area 1):** "Since the '2018 Guideline for the Management of Blood
+> Cholesterol' was published, extended safety data for PCSK9 mAb have been reported, and the cost
+> has decreased substantially. Accordingly, **the revised recommendations no longer require that
+> ezetimibe be added to statin therapy prior to initiating a PCSK9 mAb**, and consideration of
+> therapy may be based on degree of LDL-C required and patient preference." This is a distinct
+> finding from "early/upfront combination therapy" (§2 above, still not this guideline's framing) —
+> it is a **removed sequencing constraint**, not a new combination-first recommendation. Both are
+> real, but they are not the same claim; keep them separate in synthesis.
 
 > **Ezetimibe's own efficacy figure (synopsis text, page ~e1229 area):** "Ezetimibe lowers LDL-C
 > levels by a mean of 18% (25% incremental reduction when added to statin therapy) and has a low
@@ -168,3 +196,10 @@ two numbers are easy to assume are typos of each other and conflate — they are
   not a gap in this role's search.
 - The Taiwan STS "ezetimibe as first add-on" gap (carried forward from the prior run) is **not**
   resolved by this source — it is a different, still-unobtained document. Explicitly not conflated.
+- **Self-correction, made during T-102 intake cross-referencing (see §3):** the very-high-risk
+  ezetimibe/PCSK9 add-on recommendation's grade was initially mis-transcribed as COR 2a; re-extraction
+  with a wider context window confirms it is **COR 1, LOE A** — a materially stronger recommendation
+  than first reported. Also newly extracted: the guideline explicitly states the 2018→2026 revision
+  **removed the requirement that ezetimibe precede a PCSK9 mAb** — a distinct, real finding from
+  "early combination therapy" (which this guideline still does not recommend), not a walk-back of
+  §2's negative finding.
