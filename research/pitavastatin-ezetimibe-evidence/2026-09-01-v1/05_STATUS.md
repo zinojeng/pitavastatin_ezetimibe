@@ -52,10 +52,11 @@ Wave 3 synthesis complete: `40_SYNTHESIS/00_executive-synthesis.md` (zh-TW integ
 positioning-slides.md`. Gate 3 Director Challenge Round passed with actual `grep`-verified checks
 (`30_METHODS/shared/gate3-challenge-round.md`).
 
-## Current state: Wave 4 (Independent Audit) — starting
+## Current state: Wave 4 (Independent Audit) — in progress
 
-Spawning a fresh, independent auditor sub-agent (read-only except `99_FINAL-QA.md`) against this
-run's fully consolidated Director branch.
+Independent auditor sub-agent spawned (fresh context, not a fork of the Director's own session, to
+avoid inheriting synthesis-writing bias), read-only except `99_FINAL-QA.md`, against this run's fully
+consolidated Director branch (`worktree-pit-eze-run-2026-09-01`). Awaiting its report.
 | `pit-eze-safety-pharmacology` | **Focus area 4 + attack/defense complete; 2 rounds of QA corrections applied, committed** | Latest commit `b7bf5fa`. All 3 QA items from Decision 2026-09-01-06 fixed: K-924 dose-doubling claim downgraded to `OBSERVATIONAL SIGNAL`/`INSUFFICIENT EVIDENCE`; mg/dL↔mmol/L anomaly confirmed + extended (7+ correct 2.6 conversions found elsewhere, column-merge-artifact hypothesis); Taiwan STS attribution removed, retagged `EXPERT INTERPRETATION`. Flagged that no role has yet independently verified the K-924 matched-dose LS-difference figures — routed to trials-efficacy. |
 
 ## Gate 0 checklist
