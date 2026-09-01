@@ -12,22 +12,26 @@ committed) plus the guideline's own printed page number (e.g., "e1239") and sect
 visible — cite the page number in any downstream synthesis, not the pdftotext line number, which is
 tool-specific and not stable.
 
-**Methods caution, added after a second correction round (Decision 2026-09-01-08 follow-up,
-prompted by safety-pharmacology's root-cause hypothesis):** this document's "Table 1. [2018 vs 2026]
-Continued" summary comparison tables (used for §1's original severe-hypercholesterolemia quote) are
-**column-merge-prone under `pdftotext -layout`** — a multi-row, multi-column table where the COR/LOE
-marker and the "2026 Recommendation" text cell can be extracted out of vertical alignment,
-attributing one row's figures to an adjacent row. This produced two confirmed errors in this role's
-first extraction pass: (1) a COR grade misattributed to the wrong recommendation (corrected in §3
-below), and (2) a whole recommendation tier conflated with a different one, producing a
-non-existent "<70 mg/dL / 2.4 mmol/L" combination (corrected in §1 below). **Both were caught by
-cross-referencing against independent material** (the intake bundle, and a `pdftotext -raw`
-re-extraction that preserves the PDF's actual content-stream order instead of reconstructing
-columns) — not by the `-layout` extraction alone. **Going forward, this role treats the guideline's
-own dedicated numbered "Recommendations for [topic]" prose sections (e.g., "Recommendations for
-Severe Hypercholesterolemia," "Recommendations for Secondary ASCVD Prevention") as the authoritative
-source, and the "Table 1. 2018 vs 2026" summary comparison tables as a secondary, error-prone
-cross-reference only** — every quote below has been re-verified against the former.
+**Methods caution, revised after a third correction round (Decision 2026-09-01-14 — supersedes the
+"does not exist" conclusion below in §1/§5, which was itself wrong):** this document's "Table 1.
+[2018 vs 2026] Continued" summary comparison tables (used for §1's original severe-hypercholesterolemia
+quote) are **column-merge-prone under `pdftotext -layout`**, which produced a real, confirmed COR-grade
+error (§3). But the `2.4 mmol/L` figure this role twice concluded was purely an extraction artifact
+(first as a "likely typo," then as "does not exist anywhere in the actual text") **is genuinely
+printed at page e1159 of the summary table, as a complete, coherent, non-garbled sentence** — this
+role independently re-confirmed it a third time via `pdftotext -f 6 -l 6` (isolating that single
+physical page, ruling out any cross-page content bleed), after the PI and Director each independently
+confirmed it with two other tools (raw `pdftotext` on the PI's side, PyMuPDF on the Director's). **The
+correct account is: T-101 is genuinely internally inconsistent between its own summary table (e1159:
+`2.4 mmol/L`) and its authoritative numbered-recommendations section (e1199: `2.6 mmol/L`) for the
+same Tier 2 recommendation** — a source-internal discrepancy, not a tooling artifact, and not
+something to drop from the record. **Process lesson, stated plainly:** a "this value does not exist"
+conclusion needs the same independent scrutiny as the inconsistency it claims to resolve — this role's
+own `-raw`-mode check only searched the authoritative section, not the summary table itself, so it
+could not have found the very value it was concluding was absent. **Continuing to treat the numbered
+"Recommendations for [topic]" sections as controlling for which figure to build synthesis on** (per
+the guideline's own more detailed, risk-stratum-specific drafting), **but the summary table's
+divergent figure is now recorded, not discarded.**
 
 **Evidence Hierarchy tag for everything below: GUIDELINE / CONSENSUS.**
 **Claim-safe taxonomy tag: guideline recommendation** (per this run's focus-area-6 taxonomy) — these
@@ -51,25 +55,41 @@ LDL-C ≥190 mg/dL" section (page ~e1199), not the error-prone summary compariso
 
 > **Tier 2 — with HeFH, subclinical atherosclerosis, or additional ASCVD risk factors, without
 > clinical ASCVD (COR 1, LOE B-R):** "...the addition of ezetimibe, a PCSK9 mAb, and/or bempedoic
-> acid to achieve a goal of LDL-C <70 mg/dL (1.8 mmol/L) and non–HDL-C <100 mg/dL (2.6 mmol/L) is
-> recommended to lower LDL-C and reduce ASCVD risk."
+> acid to achieve a goal of LDL-C <70 mg/dL (1.8 mmol/L) and non–HDL-C <100 mg/dL (**2.6 mmol/L**) is
+> recommended to lower LDL-C and reduce ASCVD risk." (page e1199, numbered recommendation #4 of the
+> "Recommendations for Severe Hypercholesterolemia" section — treated as controlling; see the
+> flagged discrepancy immediately below.)
+>
+> **Source-internal inconsistency, confirmed genuine (Decision 2026-09-01-14) — not a tooling
+> artifact:** the same recommendation, printed in T-101's own "Table 1. 2018 vs 2026" summary
+> comparison table at page **e1159**, reads: "...the addition of ezetimibe, a PCSK9 mAb and/or
+> bempedoic acid to achieve a goal of LDL-C <70 mg/dL (1.8 mmol/L) and non–HDL-C <100 mg/dL
+> (**2.4 mmol/L**) is recommended to lower LDL-C and reduce ASCVD risk." — a complete, coherent
+> sentence, independently confirmed by this role via an isolated single-page extraction
+> (`pdftotext -f 6 -l 6`, ruling out cross-page contamination), and separately by the PI (raw
+> `pdftotext`) and the Director (PyMuPDF) before this correction was requested. **SOURCE_VALUE
+> (summary table, e1159) = `2.4 mmol/L`; SOURCE_VALUE (authoritative section, e1199) = `2.6 mmol/L`;
+> FLAG = SOURCE_INTERNAL_INCONSISTENCY; ACTION = NEEDS_PI** if this figure is ever needed at a
+> precision finer than "the mg/dL target is unambiguous" — do not silently prefer one over the
+> other without saying so, and do not drop the `2.4 mmol/L` value from the record (an earlier version
+> of this file wrongly concluded it "does not exist anywhere in the actual text" — that conclusion is
+> itself now corrected, see the Methods caution above). For this project's purposes, the `<70 mg/dL`
+> LDL-C target is unaffected and unambiguous either way; only the non-HDL-C mmol/L co-goal is
+> disputed between the source's own two internal presentations.
 
 > **Tier 3 — with clinical ASCVD (COR 1, LOE B-R):** "...the addition of ezetimibe, a PCSK9 mAb,
 > and/or bempedoic acid is recommended to achieve a goal of LDL-C <55 mg/dL (1.4 mmol/L) and
 > non–HDL-C <85 mg/dL (2.2 mmol/L) to lower LDL-C and reduce ASCVD risk."
 
-**Correction note (this role's error, caught this round — not the intake's or a source-internal
-typo):** the original extraction of this passage (pulled from the "Table 1. 2018 vs 2026 comparison"
-summary table, not this authoritative section) conflated Tiers 1 and 2 into a single, non-existent
-"<70 mg/dL LDL-C / 2.4 mmol/L non-HDL-C, no clinical ASCVD" row — a genuine `pdftotext -layout`
-column-merge artifact (see the Methods caution above), not a source-internal error as this role
-first assumed when the Director flagged the 2.4-vs-2.6 mmol/L inconsistency (Decision 2026-09-01-08).
-Re-extraction with `pdftotext -raw` against the authoritative numbered-recommendations section
-resolved it cleanly: **there is no "2.4 mmol/L" figure anywhere in the actual severe-
-hypercholesterolemia recommendations** — Tier 1's non-HDL-C goal is <130 mg/dL (3.4 mmol/L), Tier
-2's is <100 mg/dL (2.6 mmol/L), and Tier 3's is <85 mg/dL (2.2 mmol/L). None of the correct figures
-is 2.4 mmol/L; that number should not be carried into `40_SYNTHESIS/` in any form, including as an
-"annotated anomaly" — it does not correspond to a real recommendation at all.
+**Correction history for this passage (kept for transparency, not condensed away):** this role's
+*first* extraction pass (pulled from the summary comparison table only) conflated Tiers 1 and 2 into
+a single row and additionally mis-set the LDL-C figure; the Director's QA catch (Decision
+2026-09-01-08) correctly flagged the resulting `2.4 mmol/L` as internally inconsistent within that
+one row. This role's *second* pass over-corrected by concluding, after checking only the
+authoritative section, that `2.4 mmol/L` "does not exist anywhere in the actual text" — wrong, per
+the third round above; it exists, genuinely, in the summary table specifically. The three-tier
+structure itself (Tier 1/2/3 split) was correctly identified in the second pass and remains correct;
+only the characterization of the `2.4 mmol/L` figure as fully fictitious was wrong, now fixed.
 
 > **Diabetes, no established ASCVD, 40–75y (revised 2026, COR 1):** "...moderate-intensity statin
 > therapy is indicated to achieve ≥30% to 49% reduction in LDL-C and a goal of LDL-C <100 mg/dL
@@ -170,10 +190,10 @@ primary-verified either, see the prior run's own caveat) vs. ACC/AHA-stepwise di
 > incidence of side effects."
 
 > **Severe hypercholesterolemia (LDL-C ≥190) without clinical ASCVD** — see §1 above (Tier 1 and
-> Tier 2 quotes) for the exact, corrected wording; not repeated here to avoid a second copy of this
-> figure drifting out of sync again. (This entry originally duplicated a stale pre-correction
-> version of the Tier 2 quote with an incorrect `2.4 mmol/L` figure — removed 2026-09-01 per the
-> Director's QA catch; the correct figure is `<100 mg/dL (2.6 mmol/L)`, already fixed in §1/§5.)
+> Tier 2 quotes, including the confirmed-genuine e1159-vs-e1199 `2.4`-vs-`2.6` mmol/L source-internal
+> inconsistency) for the exact, current wording; not repeated here to avoid a second copy drifting
+> out of sync again, which is exactly what happened once already at this location — see that
+> section's correction history before citing either mmol/L figure from this passage elsewhere.
 
 ## 4. Statin intolerance / SAMS positioning (this guideline's analogue to Taiwan STS — NOT a substitute for it)
 
@@ -222,17 +242,18 @@ my cross-session report rather than duplicate their extraction work.
 | Clinical ASCVD, not very high risk | <70 mg/dL (1.8 mmol/L) | <100 mg/dL | 1 |
 | Clinical ASCVD, **very high risk** | **<55 mg/dL (1.4 mmol/L)** | **<85 mg/dL (2.2 mmol/L)** | 1 |
 | Severe hypercholesterolemia (LDL-C≥190), no ASCVD/HeFH/subclinical atherosclerosis/other risk factors (Tier 1) | <100 mg/dL (2.6 mmol/L) | <130 mg/dL (3.4 mmol/L) | 1, B-NR |
-| Severe hypercholesterolemia (LDL-C≥190), with HeFH/subclinical atherosclerosis/additional risk factors, no clinical ASCVD (Tier 2) | <70 mg/dL (1.8 mmol/L) | <100 mg/dL (2.6 mmol/L) | 1, B-R |
+| Severe hypercholesterolemia (LDL-C≥190), with HeFH/subclinical atherosclerosis/additional risk factors, no clinical ASCVD (Tier 2) | <70 mg/dL (1.8 mmol/L) | <100 mg/dL (**2.6 mmol/L** per e1199, controlling; source's own summary table at e1159 prints **2.4 mmol/L** for the same row — genuine source-internal inconsistency, see §1) | 1, B-R |
 | Severe hypercholesterolemia (LDL-C≥190) + clinical ASCVD (Tier 3) | <55 mg/dL (1.4 mmol/L) | <85 mg/dL (2.2 mmol/L) | 1, B-R |
 | CAC ≥1000 AU | <55 mg/dL (1.4 mmol/L) | <85 mg/dL (2.2 mmol/L) | 1 |
 
-**Table corrected this round** — see §1 above for the full correction note and the resolved
-`2.4 mmol/L` figure (it does not exist in the authoritative source; the earlier table row combining
-it with `<70 mg/dL` was a `pdftotext -layout` column-merge artifact from this role's own first
-extraction, not a source error, and has been replaced with the correct three-tier structure).
-All figures now cross-verified against both `pdftotext -layout` and `pdftotext -raw` extractions of
-the authoritative "Recommendations for Severe Hypercholesterolemia" section (page ~e1199), per the
-Numeric Integrity Rule.
+**Table correction history** — the three-tier structure (replacing an earlier, wrong two-tier
+version) is correct and stands. The Tier 2 non-HDL-C figure went through two rounds of correction:
+first flagged as internally inconsistent (Decision 2026-09-01-08), then this role wrongly concluded
+`2.4 mmol/L` "does not exist" anywhere in the source (it does — page e1159's summary table — see the
+full account and Decision 2026-09-01-14 in §1 above). The mg/dL target (`<100 mg/dL`) is unambiguous
+either way and safe to use in `40_SYNTHESIS/`; the mmol/L co-figure is a genuine, still-unreconciled
+source-internal discrepancy and should be cited as such, not resolved to a single number, unless the
+PI settles it.
 
 ## Summary
 
@@ -254,11 +275,20 @@ Numeric Integrity Rule.
 - **Second self-correction (Decision 2026-09-01-08 and its follow-up):** the Director's QA catch on
   an internally-inconsistent `2.4 mmol/L` figure led to discovering this role's original severe-
   hypercholesterolemia extraction had conflated two distinct recommendation tiers into one
-  non-existent hybrid, due to a confirmed `pdftotext -layout` column-merge artifact on this
-  document's "Table 1. 2018 vs 2026" summary comparison tables. Re-extracted with `pdftotext -raw`
-  against the guideline's authoritative numbered recommendations section: severe hypercholesterolemia
-  is genuinely a **three-tier** structure (§1), not two, and the `2.4 mmol/L` figure does not appear
-  anywhere in the real text. This role's extraction methodology has been revised accordingly (prefer
-  the numbered "Recommendations for [topic]" sections over summary tables; cross-check with
-  `-raw` mode when a summary-table-derived figure looks internally inconsistent) — credit to
-  safety-pharmacology's root-cause hypothesis for prompting the successful re-check.
+  non-existent hybrid. Re-extracted against the guideline's authoritative numbered recommendations
+  section: severe hypercholesterolemia is genuinely a **three-tier** structure (§1), not two — this
+  part of the correction was and remains right.
+- **Third correction, reopening part of the second (Decision 2026-09-01-14):** this role's second
+  pass additionally concluded the `2.4 mmol/L` figure itself "does not exist anywhere in the actual
+  text" — **wrong**. It exists, genuinely and coherently, in T-101's own summary comparison table at
+  page e1159, while the authoritative numbered-recommendations section (page e1199) prints `2.6
+  mmol/L` for the same Tier 2 recommendation. This is a real **source-internal inconsistency**, not
+  a `pdftotext` artifact of any kind — independently confirmed by three separate extraction tools
+  across three people/roles (this role's `pdftotext -f 6 -l 6`, the PI's raw `pdftotext`, the
+  Director's PyMuPDF) before this correction was made. **Process lesson recorded for this role's own
+  future practice:** concluding a disputed value "does not exist" requires checking the same location
+  the value was originally reported at, not just the location believed to be authoritative — this
+  role's `-raw`-mode recheck only searched the authoritative section (e1199), so it structurally could
+  not have found the value it went on to declare absent. Credit to safety-pharmacology's original
+  root-cause hypothesis for prompting the earlier, still-valuable three-tier-structure correction, and
+  to the PI/Director's independent re-verification for catching this role's own overcorrection.
