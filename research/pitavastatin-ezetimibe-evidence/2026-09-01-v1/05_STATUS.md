@@ -1,88 +1,79 @@
 # 05_STATUS — pitavastatin-ezetimibe-evidence / 2026-09-01-v1
 
-**Authoritative current-gate/wave pointer for this run** (per prior-run convention — manifest/charter
-are not edited in place for gate transitions; this file is).
+**Authoritative current-gate/wave pointer for this run.**
 
-## Current state: Wave 0 (Orientation) complete; Wave 1 (Source/Evidence Verification) underway
+## RUN COMPLETE — Final Gate: `PASS_WITH_MINOR_ISSUES` (Decision 2026-09-01-13)
 
-- Duplicate-Director collision detected and resolved (Decision 2026-09-01-01) before any specialist
-  contact or shared-state write. ✅
-- Repo/governance scaffold created: `00_RUN-MANIFEST.md`, `01_RESEARCH-CHARTER.md`,
-  `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md`, `04_OPEN-QUESTIONS.md`, this file, full output
-  directory tree. ✅
-- `.gitignore` extended to exclude `inbox/` wholesale (Decision 2026-09-01-02). ✅
-- New Google Drive intake inventoried (35 files, checksummed; 1 true byte-identical duplicate pair
-  found among the "adjudication_log_v2.md" copies). ✅
-- Major unplanned finding: `inbox/2026-acc-aha-drive/official/` — a candidate genuine full text of
-  the 2026 ACC/AHA dyslipidemia guideline. Director's own read-only spot-check found it plausible but
-  explicitly unverified (Decision 2026-09-01-03); assigned to guideline-risk-intelligence as Wave 1
-  priority #1. ✅ (finding recorded, not yet independently confirmed)
-- Combined resume + Wave 1 `TASK_ASSIGNMENT` sent to all three specialists (deliberate relaxation of
-  strict wait-for-READY-before-any-task sequencing — justified in `90_CROSS-SESSION-LOG/
-  2026-09-01-wave1-dispatch.md`, since all three are already-oriented long-lived roles from the
-  just-closed prior run, not fresh spawns). ✅
-- Local-worktree-branch coordination issue hit and resolved: this run's commits live on the
-  Director's local worktree branch (`worktree-pit-eze-run-2026-09-01`), deliberately not pushed to
-  origin per the PI's no-push instruction. `trials-efficacy` and `safety-pharmacology` each initially
-  reported `BLOCKED_FOR_SOURCE` (couldn't find `2026-09-01-v1/` on `main`/`origin`); both resolved by
-  reading the branch directly (`git show worktree-pit-eze-run-2026-09-01:<path>`) since all sessions
-  share one local `.git` — no push was needed. `guideline-risk` found this independently without
-  reporting a blocker. See `90_CROSS-SESSION-LOG/2026-09-01-wave1-dispatch.md` addenda for detail.
+All Waves and Gates passed. `40_SYNTHESIS/` and `50_MANUSCRIPT/` are **FINAL**. Branch
+`worktree-pit-eze-run-2026-09-01` remains local-only, not pushed to `origin`, per the PI's explicit
+instruction for this continuation.
 
-## Wave 1 — underway
+---
 
-| Specialist | Status | Notes |
-|---|---|---|
-| `pit-eze-guideline-risk` | **T-101 verified, focus area 1 complete (2 rounds of self/QA correction), T-102 dedup complete, STS/ESC/Lp(a) re-check done** | Cherry-picked onto Director branch (`0a19899`, `f6b5f92`, `8a1ab51`). Corrected the target-attainment table to a genuine 3-tier severe-hypercholesterolemia structure (Decision 2026-09-01-10, supersedes -08); confirmed Taiwan STS is now genuine Gold OA/CC BY but still Cloudflare-blocked for fetch. Attack/defense writeup in progress — last item before Wave 1 closure for this role. |
-| `pit-eze-trials-efficacy` | **Focus areas 2/3/5 complete, K-924 independently verified** | Cherry-picked onto Director branch (`29a832e`). See Decision 2026-09-01-09. Two new HIJ-PROPER substudies flagged with honest confidence caveats (Q9); inclisiran hard-outcome-trial gap confirmed (Q10). `STATUS: READY_WITH_PENDING_ITEMS`. |
+## Wave/Gate history
 
-**All three specialists' Wave 1 work (+ most of Wave 2 attack/defense) is now consolidated onto the
-Director's branch (`worktree-pit-eze-run-2026-09-01`) via clean cherry-picks — this branch is the
-current single source of truth for this run's evidence content.**
+- **Wave 0 (Orientation):** Duplicate-Director collision detected and resolved before any specialist
+  contact (Decision 2026-09-01-01) — the other Director session disclosed fully and stood down.
+  Governance scaffold created; new Google Drive intake inventoried (35 files); the unplanned
+  `inbox/2026-acc-aha-drive/official/` candidate primary source found and treated as unverified
+  pending independent check (Decision 2026-09-01-03). `.gitignore` extended to exclude `inbox/`
+  wholesale (Decision 2026-09-01-02).
+- **Wave 1 (Source/Evidence Verification):** All three specialists dispatched. T-101 (the `official/`
+  2026 ACC/AHA guideline text) independently **VERIFIED** via DOI resolution + Crossref metadata +
+  123-page internal-coherence review (Decision 2026-09-01-04) — resolves the prior run's long-blocked
+  citation #28 via a genuine dual co-publication (Decision 2026-09-01-05). K-924 matched-dose figures
+  independently verified against primary full text (Decision 2026-09-01-09). Intake dedup complete
+  (34→15 files). Two specialist self-corrections made transparently (COR grading, Decision
+  2026-09-01-07; a 3-tier severe-hypercholesterolemia structure replacing a non-existent "2.4 mmol/L"
+  figure that turned out to be an extraction artifact, not a source value — Decision 2026-09-01-10,
+  which explicitly supersedes the PI's own "preserve 2.4 mmol/L" instruction once its factual premise
+  no longer held). Three QA corrections routed and confirmed (Decision 2026-09-01-06). All three
+  specialists' work consolidated onto the Director's branch via clean cherry-picks.
+- **Gate 1: PASSED** (Decision 2026-09-01-11) — facts verified before interpretation.
+- **Wave 2 (Evidence + Methods, incl. Challenge Round):** substantively completed as part of each
+  specialist's combined Wave 1 + attack/defense dispatch (guideline-risk 5 attacks, trials-efficacy 4
+  attacks, safety-pharmacology 3 attack categories) — see `01_attack-defense.md`.
+- **Gate 2: PASSED** (Decision 2026-09-01-12) — conflicts resolved via Decision Taxonomy, open
+  questions current.
+- **Wave 3 (Synthesis):** `40_SYNTHESIS/00_executive-synthesis.md` (zh-TW integrated evidence brief),
+  `01_attack-defense.md`, `02_evidence-traceability-table.md`, and
+  `50_MANUSCRIPT/pitavastatin-ezetimibe-positioning-slides.md` (PI-authorized this run) all written.
+- **Gate 3: PASSED** (Decision 2026-09-01-12) — Director Challenge Round, four-angle review verified
+  with actual `grep` passes (`30_METHODS/shared/gate3-challenge-round.md`), not memory alone.
+- **Wave 4 (Independent Audit):** fresh, independent auditor sub-agent (not a fork of the Director's
+  session), read-only except `99_FINAL-QA.md`, audited the fully consolidated branch. Zero material
+  findings; two minor non-blocking observations, one already corrected (Decision 2026-09-01-13).
+- **Final Gate: `PASS_WITH_MINOR_ISSUES`.**
 
-## Gate 1: PASSED (Decision 2026-09-01-11)
+## Specialist summary
 
-Facts substantively verified before interpretation. Proceeding to Wave 2 wrap-up (already
-substantively complete) → Gate 2 → **Wave 3: synthesis (in progress)**.
+| Specialist | Contribution |
+|---|---|
+| `pit-eze-guideline-risk` | Verified T-101 as primary source; extracted exact 2026 ACC/AHA wording (goal-directed targets, ezetimibe add-on, statin-intolerance positioning); found the stepwise-vs-upfront-combination contrast; deduped/verified the intake bundle; caught and fixed two of its own extraction errors transparently; re-checked Taiwan STS/ESC 2025/Taiwan Lp(a) access (all still blocked, STS's OA status newly confirmed); wrote 5-point guideline-side attack/defense contribution. |
+| `pit-eze-trials-efficacy` | Independently verified K-924 matched-dose figures; confirmed no new pitavastatin+ezetimibe FDC RWE beyond TE-013; reconfirmed the HIJ-PROPER Level 3 gap remains open; found two new HIJ-PROPER-adjacent substudies with honest confidence caveats; confirmed inclisiran's hard-outcome-trial gap; wrote 4-point trial-side attack/defense contribution incl. the REAL-CAD-based maximize-statin-first case. |
+| `pit-eze-safety-pharmacology` | Built the clinical positioning case (glycemic, DDI, polypharmacy, elderly/Asian/Taiwan, CKD, adherence); caught and fixed a numeric-integrity issue in its own K-924 framing after Director QA; removed an incorrect Taiwan-STS guideline-attribution after Director QA; independently re-verified T-101 quotes rather than trusting a relay; wrote 3-category safety-side attack/defense contribution. |
 
-## Gate 2: PASSED · Gate 3: PASSED (Decision 2026-09-01-12)
+## Required durable outputs — delivered
 
-Wave 3 synthesis complete: `40_SYNTHESIS/00_executive-synthesis.md` (zh-TW integrated evidence brief),
-`01_attack-defense.md`, `02_evidence-traceability-table.md`, `50_MANUSCRIPT/pitavastatin-ezetimibe-
-positioning-slides.md`. Gate 3 Director Challenge Round passed with actual `grep`-verified checks
-(`30_METHODS/shared/gate3-challenge-round.md`).
+- `00_RUN-MANIFEST.md`, `01_RESEARCH-CHARTER.md`, `02_SOURCE-INVENTORY.md`, `03_DECISION-LOG.md`
+  (13 decisions), `04_OPEN-QUESTIONS.md` (10 items, most resolved/closed, remainder honestly open),
+  `05_STATUS.md` (this file), `90_CROSS-SESSION-LOG/` (full message-schema record).
+- Reproducible search logs and exact extraction/evidence tables with PMID/DOI/URL + Evidence
+  Hierarchy tags: `10_DATA/`, `20_EVIDENCE/`, `30_METHODS/` per specialist.
+- Integrated zh-TW evidence brief: `40_SYNTHESIS/00_executive-synthesis.md`.
+- Slide-ready clinical positioning/defense document: `50_MANUSCRIPT/
+  pitavastatin-ezetimibe-positioning-slides.md`.
+- Limitations/open gaps: `04_OPEN-QUESTIONS.md` + `40_SYNTHESIS/00_executive-synthesis.md` §9.
+- Independent QA/final-gate report: `99_FINAL-QA.md`.
 
-## Current state: Wave 4 (Independent Audit) — in progress
+## Known limitations carried into FINAL (stated honestly, not resolved — see full detail in
+`00_executive-synthesis.md`)
 
-Independent auditor sub-agent spawned (fresh context, not a fork of the Director's own session, to
-avoid inheriting synthesis-writing bias), read-only except `99_FINAL-QA.md`, against this run's fully
-consolidated Director branch (`worktree-pit-eze-run-2026-09-01`). Awaiting its report.
-| `pit-eze-safety-pharmacology` | **Focus area 4 + attack/defense complete; 2 rounds of QA corrections applied, committed** | Latest commit `b7bf5fa`. All 3 QA items from Decision 2026-09-01-06 fixed: K-924 dose-doubling claim downgraded to `OBSERVATIONAL SIGNAL`/`INSUFFICIENT EVIDENCE`; mg/dL↔mmol/L anomaly confirmed + extended (7+ correct 2.6 conversions found elsewhere, column-merge-artifact hypothesis); Taiwan STS attribution removed, retagged `EXPERT INTERPRETATION`. Flagged that no role has yet independently verified the K-924 matched-dose LS-difference figures — routed to trials-efficacy. |
-
-## Gate 0 checklist
-
-- [x] Duplicate-Director conflict resolved
-- [x] Governance files created
-- [x] Intake inventoried and major findings recorded
-- [x] Task assignments sent to all 3 specialists; 2 of 3 (`safety-pharmacology`, `trials-efficacy`)
-      confirmed `READY` and starting; `guideline-risk` has its own worktree checked out (observed via
-      `git worktree list`), no report received yet
-- [ ] MCP connectivity re-confirmed for Wave 1 — confirmed independently by `trials-efficacy` and
-      `safety-pharmacology`: `paper-search`/`tavily`/`openevidence` down (PATH: `uv`/`npx`/`node`
-      missing), `research_hub`/`google-scholar`/`llamaparse` live. Treated as a workable-around
-      environment note, not a hard blocker — to mention to the PI, not yet escalated.
-
-**Gate 0 treated as informally open (Wave 1 work underway) pending all three specialists' first
-substantive reports** — will be formally declared `READY_FOR_NEXT_WAVE` once all three have reported
-at least once with real findings or an explicit blocker.
-
-## Next actions (in order)
-
-1. Continue processing specialist replies as they arrive (trials-efficacy and guideline-risk still to
-   report in).
-2. Record specialist findings into `02_SOURCE-INVENTORY.md`/`03_DECISION-LOG.md` as they land —
-   especially the `official/` guideline verification outcome from guideline-risk (top priority).
-3. Once all three have reported, formally close Gate 0 and confirm Wave 1 → Gate 1 readiness.
-4. Gate 1 → Wave 2 → Gate 2 → Wave 3 (synthesis + zh-TW brief + `50_MANUSCRIPT/` slide-ready doc,
-   now PI-authorized) → Gate 3 (Director Challenge Round) → Wave 4 (new sonnet independent auditor)
-   → Final Gate, per `CLAUDE.md` §4.
+- Taiwan STS 2026's "ezetimibe as first add-on" content claim remains `BLOCKED_FOR_SOURCE` — this
+  project's single largest unverified-but-load-bearing framing claim.
+- No direct pitavastatin/ezetimibe-FDC-vs-high-intensity-statin-monotherapy trial exists (Q6).
+- FDC-specific CKD dosing data remains entirely absent (Q7).
+- Two new HIJ-PROPER substudies (TE-016, TE-017) need full-text independent verification if tool
+  access improves (Q9) — currently carried with explicit MODERATE-confidence caveats.
+- Inclisiran has no published hard-outcome trial (Q10).
+- Taiwan health-insurance FDC coverage/co-pay data was not investigated this run.
