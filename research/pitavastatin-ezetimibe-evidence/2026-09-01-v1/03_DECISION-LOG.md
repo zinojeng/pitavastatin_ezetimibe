@@ -647,3 +647,23 @@ ownership; not a Director edit.
 **Evidence Hierarchy tag:** `GUIDELINE/CONSENSUS`. **Decision Taxonomy:** `VERIFIED_AND_REPLACE`.
 
 ---
+
+### Decision 2026-09-01-18 — guideline-risk's Attack 2 corrected; Decision 2026-09-01-17 fully closed
+
+guideline-risk independently confirmed the correction against its own already-gathered `-raw`-mode
+text for recommendations #5/#6/#7 (no fresh independent-tool round needed — the wording is short and
+unambiguous, already extracted during the severe-hypercholesterolemia fix). Rewrote
+`focus-area-5-attack-defense.md` Attack 2 with the risk-stratified structure and kept the core attack
+point intact, sharpened rather than weakened: "no guideline preference for ezetimibe over PCSK9 mAb"
+is a more precise, harder-to-dismiss claim than the original blanket "no preference among three/four
+options." Cherry-picked onto the Director branch (`fa46e90`).
+
+**All files affected by Decision 2026-09-01-17 are now corrected and consistent:**
+`00_executive-synthesis.md` §4, `50_MANUSCRIPT/` Slide 5, `02_evidence-traceability-table.md`,
+`focus-area-5-attack-defense.md` Attack 2. Targeted consistency QA re-run and passed (grep for
+unqualified "equal COR/LOE"/"interchangeable" claims across all `40_SYNTHESIS/`/`50_MANUSCRIPT/`
+content — none found live). RUN remains COMPLETE, Final Gate `PASS_WITH_MINOR_ISSUES` unaffected by
+this correction (a refinement of an attack/defense nuance, not a numeric-integrity or evidence-
+hierarchy violation).
+
+---
