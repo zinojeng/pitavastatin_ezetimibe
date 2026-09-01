@@ -40,3 +40,16 @@ observed: `guideline-risk-intelligence` had already independently discovered thi
 new worktree off `worktree-pit-eze-run-2026-09-01` (at commit `a9c2a0c`) without reporting a blocker —
 confirming the fix works. Replied to safety-pharmacology with the exact commands to check locally;
 no PI escalation or push was needed.
+
+## Addendum — trials-efficacy BLOCKED_FOR_SOURCE, same resolution + MCP connectivity note
+
+`pit-eze-trials-efficacy` independently hit the same local-branch-not-pushed issue (checked `main` +
+`origin/main`, both current, found no `2026-09-01-v1/` — correct, since it's local-only on the
+Director's worktree branch, matching the safety-pharmacology addendum above). Same fix relayed.
+
+It also independently confirmed the MCP connectivity picture already noted in `00_RUN-MANIFEST.md`:
+`paper-search`/`tavily`/`openevidence` down (ENOENT on `uv`/`npx`/`node` respectively) this session;
+`research_hub` (search_papers, metadata-only), `google-scholar`, `llamaparse` confirmed live. Proceeding
+on the working subset, will mark BLOCKED_FOR_SOURCE per-item only if genuinely unable to answer
+something with the remaining tools — not treating the PATH gap itself as a hard blocker. Director will
+mention the `uv`/`npx`/`node` PATH gap to the PI as an environment note at the next checkpoint.
