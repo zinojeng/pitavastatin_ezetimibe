@@ -2,32 +2,32 @@
 
 **Authoritative current-gate/wave pointer for this run.**
 
-## QA REOPENED — Final Gate under revision (post-Decision 2026-09-01-13)
+## RUN COMPLETE — Final Gate: `PASS_WITH_MINOR_ISSUES` (re-confirmed, Decision 2026-09-01-16)
 
-The Final Gate declared in Decision 2026-09-01-13 (`PASS_WITH_MINOR_ISSUES`) has been **reopened**
-per Decision 2026-09-01-14: a factual error was found in how this run handled the "2.4 mmol/L" figure
-(it IS genuinely printed in T-101 at page e1159, alongside a genuinely different "2.6 mmol/L" at page
-e1199 — a real source-internal inconsistency, not an extraction artifact as Decision 2026-09-01-10
-had wrongly concluded). PI caught this via independent `pdftotext` on the actual PDF; Director
-independently re-verified via a third tool (PyMuPDF) before acting.
+All Waves and Gates passed, including a post-Final-Gate correction cycle (Decisions 2026-09-01-14/15/
+16) triggered by the PI independently verifying against the primary PDF that the "2.4 mmol/L" figure
+IS genuinely printed in T-101 (page e1159, alongside a genuinely different "2.6 mmol/L" at page e1199
+— a real source-internal inconsistency, not an extraction artifact as an earlier decision had wrongly
+concluded). The correction was independently verified at every step — by the Director (PyMuPDF, a
+third extraction tool) before acting on the PI's report, by guideline-risk (a fourth, isolated
+single-page extraction) before editing its own file, and by the independent auditor (its own
+independent PyMuPDF re-extraction, then a fresh re-check against the actual current commit after an
+initial stale-timing false alarm) before restoring the Final Gate. `40_SYNTHESIS/` and
+`50_MANUSCRIPT/` are **FINAL**. Branch `worktree-pit-eze-run-2026-09-01` remains local-only, not
+pushed to `origin`, per the PI's explicit instruction for this continuation.
 
-**Status of the correction:**
-- [x] `03_DECISION-LOG.md` — Decision 2026-09-01-14 records the full correction, exact quotes/pages,
-      and a process-failure account.
-- [x] `02_SOURCE-INVENTORY.md` — T-106 entry added.
+## Post-Final-Gate correction cycle (full record: `03_DECISION-LOG.md` Decisions 2026-09-01-14/15/16)
+
+- [x] `03_DECISION-LOG.md` — Decision 2026-09-01-14 (the correction), -15 (guideline-risk's fix
+      confirmed), -16 (Final Gate re-confirmed).
+- [x] `02_SOURCE-INVENTORY.md` — T-106 entry.
 - [x] `40_SYNTHESIS/00_executive-synthesis.md` §2.2 — corrected.
 - [x] `40_SYNTHESIS/02_evidence-traceability-table.md` — corrected.
 - [x] `20_EVIDENCE/guideline-risk/focus-area-1-guideline-wording.md` — corrected by guideline-risk,
-      confirmed with a **fourth** independent extraction method (isolated single-page `pdftotext -f 6
-      -l 6`); full three-round correction history preserved visibly (Decision 2026-09-01-15).
-- [ ] `99_FINAL-QA.md` — correction requested from the independent auditor (its own owned file;
-      Director does not edit it directly), awaiting a revised Final Gate recommendation.
-- [ ] `50_MANUSCRIPT/` — checked, does not contain the granular severe-hypercholesterolemia tier
-      table, no correction needed there.
-
-**Final Gate will be re-declared once the auditor's revised recommendation is received.** Branch
-`worktree-pit-eze-run-2026-09-01` remains local-only, not pushed to `origin`, per the PI's explicit
-instruction.
+      4th independent extraction method, full correction history preserved.
+- [x] `99_FINAL-QA.md` — two addenda from the independent auditor: the correction itself, and a
+      re-check addendum restoring `PASS_WITH_MINOR_ISSUES` after resolving a stale-timing false alarm.
+- [x] `50_MANUSCRIPT/` — confirmed (twice, independently) to not reference this granular table.
 
 ---
 
