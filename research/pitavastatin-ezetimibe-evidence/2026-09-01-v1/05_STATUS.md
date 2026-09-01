@@ -17,8 +17,9 @@ independently re-verified via a third tool (PyMuPDF) before acting.
 - [x] `02_SOURCE-INVENTORY.md` — T-106 entry added.
 - [x] `40_SYNTHESIS/00_executive-synthesis.md` §2.2 — corrected.
 - [x] `40_SYNTHESIS/02_evidence-traceability-table.md` — corrected.
-- [ ] `20_EVIDENCE/guideline-risk/focus-area-1-guideline-wording.md` — correction routed to
-      guideline-risk-intelligence, awaiting confirmation.
+- [x] `20_EVIDENCE/guideline-risk/focus-area-1-guideline-wording.md` — corrected by guideline-risk,
+      confirmed with a **fourth** independent extraction method (isolated single-page `pdftotext -f 6
+      -l 6`); full three-round correction history preserved visibly (Decision 2026-09-01-15).
 - [ ] `99_FINAL-QA.md` — correction requested from the independent auditor (its own owned file;
       Director does not edit it directly), awaiting a revised Final Gate recommendation.
 - [ ] `50_MANUSCRIPT/` — checked, does not contain the granular severe-hypercholesterolemia tier
