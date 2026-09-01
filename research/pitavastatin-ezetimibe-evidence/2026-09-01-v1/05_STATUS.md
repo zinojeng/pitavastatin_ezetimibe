@@ -33,8 +33,12 @@ are not edited in place for gate transitions; this file is).
 
 | Specialist | Status | Notes |
 |---|---|---|
-| `pit-eze-guideline-risk` | **T-101 verified, focus area 1 complete (2 rounds of self/QA correction), T-102 dedup complete, STS/ESC/Lp(a) re-check done** | Cherry-pick pending (not yet merged onto Director branch — its worktree not locked-mergeable this pass). Corrected the target-attainment table to a genuine 3-tier severe-hypercholesterolemia structure (Decision 2026-09-01-10, supersedes -08); confirmed Taiwan STS is now genuine Gold OA/CC BY but still Cloudflare-blocked for fetch. Attack/defense writeup in progress. |
+| `pit-eze-guideline-risk` | **T-101 verified, focus area 1 complete (2 rounds of self/QA correction), T-102 dedup complete, STS/ESC/Lp(a) re-check done** | Cherry-picked onto Director branch (`0a19899`, `f6b5f92`, `8a1ab51`). Corrected the target-attainment table to a genuine 3-tier severe-hypercholesterolemia structure (Decision 2026-09-01-10, supersedes -08); confirmed Taiwan STS is now genuine Gold OA/CC BY but still Cloudflare-blocked for fetch. Attack/defense writeup in progress — last item before Wave 1 closure for this role. |
 | `pit-eze-trials-efficacy` | **Focus areas 2/3/5 complete, K-924 independently verified** | Cherry-picked onto Director branch (`29a832e`). See Decision 2026-09-01-09. Two new HIJ-PROPER substudies flagged with honest confidence caveats (Q9); inclisiran hard-outcome-trial gap confirmed (Q10). `STATUS: READY_WITH_PENDING_ITEMS`. |
+
+**All three specialists' Wave 1 work is now consolidated onto the Director's branch
+(`worktree-pit-eze-run-2026-09-01`) via clean cherry-picks — this branch is the current single source
+of truth for this run's evidence content, ready for Wave 4 audit access once synthesis is done.**
 | `pit-eze-safety-pharmacology` | **Focus area 4 + attack/defense complete; 2 rounds of QA corrections applied, committed** | Latest commit `b7bf5fa`. All 3 QA items from Decision 2026-09-01-06 fixed: K-924 dose-doubling claim downgraded to `OBSERVATIONAL SIGNAL`/`INSUFFICIENT EVIDENCE`; mg/dL↔mmol/L anomaly confirmed + extended (7+ correct 2.6 conversions found elsewhere, column-merge-artifact hypothesis); Taiwan STS attribution removed, retagged `EXPERT INTERPRETATION`. Flagged that no role has yet independently verified the K-924 matched-dose LS-difference figures — routed to trials-efficacy. |
 
 ## Gate 0 checklist
