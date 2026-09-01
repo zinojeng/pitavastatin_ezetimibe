@@ -1,5 +1,172 @@
 # 99_FINAL-QA — pitavastatin-ezetimibe-evidence / 2026-09-01-v1
 
+---
+
+## RE-CHECK ADDENDUM 2 (2026-09-01): outstanding file now confirmed corrected — Final Gate restored to `PASS_WITH_MINOR_ISSUES`
+
+The Director was right that my prior HOLD_FOR_CORRECTION check was stale: `20_EVIDENCE/guideline-risk/
+focus-area-1-guideline-wording.md` had not yet been corrected at the moment I first checked it, but
+guideline-risk's fix (cherry-picked onto this branch at commit `54b8c42`, recorded in Decision
+2026-09-01-15) landed shortly after. Working directly in `worktree-pit-eze-run-2026-09-01` (the same
+branch the Director asked me to re-check, not a stale reference), I confirm `git log` shows
+`54b8c42`/`cd4e4c7`/`32dedf6` present in this worktree's history, and I re-read the current file fresh
+(not from any cached context).
+
+**Re-verified independently, not just trusted:**
+- `grep -n "does not exist" focus-area-1-guideline-wording.md` — all 8 occurrences are inside past-tense
+  correction-history narrative ("this role wrongly concluded...", "an earlier version... wrongly
+  concluded it 'does not exist'... that conclusion is itself now corrected") — none is a live,
+  present-tense assertion that the figure is absent. The Methods caution header, §1's Tier 2 quote and
+  its dedicated source-internal-inconsistency callout (with `SOURCE_VALUE`/`FLAG`/`ACTION` fields
+  correctly following the Numeric Integrity Rule's own prescribed format), §3's cross-pointer, §5's
+  table cell and note, and the Summary's three-round correction history are all now consistent with
+  `00_executive-synthesis.md` §2.2, `02_evidence-traceability-table.md`, and `02_SOURCE-INVENTORY.md`
+  T-106 — same two page numbers (e1159/e1199), same two values (2.4/2.6 mmol/L), same "2.6 controls per
+  document convention, 2.4 retained as annotated anomaly, mg/dL target unaffected" resolution, same
+  attribution of independent confirmation via four separate extraction passes (guideline-risk's
+  `pdftotext -f 6 -l 6` isolated single-page check, the PI's raw `pdftotext`, the Director's PyMuPDF,
+  and this audit's own independent PyMuPDF re-extraction in the first correction addendum below).
+- `grep -rn "2\.4 mmol"` across `40_SYNTHESIS/`, `50_MANUSCRIPT/`, `20_EVIDENCE/`,
+  `02_SOURCE-INVENTORY.md` — every occurrence is consistent with the corrected account; no stray
+  "does not exist"/"purely an artifact" framing survives anywhere in the currently-committed content.
+  `50_MANUSCRIPT/` confirmed (again) to not reference this granular table at all.
+- `03_DECISION-LOG.md` Decision 2026-09-01-15 accurately describes what guideline-risk changed and
+  matches what I independently see in the file — no discrepancy between the decision log's summary and
+  the actual diff.
+
+**No outstanding correction remains.** The one item that justified `HOLD_FOR_CORRECTION` in the first
+correction addendum (below) is resolved. All other findings/observations from both the original report
+and the first correction addendum stand unaffected (the K-924 verification, retraction greps, Taiwan
+STS/inclisiran discipline, and the commit-hash provenance nit remain as previously stated).
+
+**Revised Final Gate recommendation: `PASS_WITH_MINOR_ISSUES`.** This run's handling of the "2.4 vs 2.6
+mmol/L" episode — including surfacing and correcting a post-Final-Gate error rather than letting a
+`PASS` stand on a factual mistake — is, in this auditor's assessment, a genuine demonstration of the
+Numeric Integrity Rule and Golden Rule 8/9 working as intended across three independent people/roles
+(PI, Director, guideline-risk) plus this auditor's own participation in both the error and its
+correction. Per Runbook §36, `PASS_WITH_MINOR_ISSUES` may be marked `FINAL`.
+
+---
+
+## CORRECTION ADDENDUM (2026-09-01, post-Final-Gate reopening, Decision 2026-09-01-14)
+
+**This audit's original "spot-check #4" (below) reached the wrong conclusion, and this addendum
+corrects it honestly rather than quietly editing the original text out.** The original report is
+preserved unmodified below the line; read this addendum first, as it supersedes spot-check #4's
+finding and the Final Gate recommendation that partly relied on it.
+
+### What went wrong in the original audit
+
+Spot-check #4 grepped line 369 of the `official/` `.md` derivative, found "2.4 mmol/L" sitting inside
+what read as a garbled, two-fragment-concatenated sentence, and concluded this corroborated
+guideline-risk's `pdftotext -raw` conclusion that "2.4 mmol/L" does not exist as real source content
+— i.e., that it was purely an extraction artifact. **This was an error of method, not just conclusion:**
+the `.md` derivative is a single, already-known-artifact-prone extraction pipeline; finding a garbled
+rendering there is not evidence that the underlying PDF itself lacks a coherent, genuinely-printed
+value — it is only evidence that *that one pipeline* rendered it badly. The correct check — independently
+re-extracting the actual PDF with a tool distinct from both the `.md` derivative's pipeline and
+guideline-risk's `pdftotext`, and reading the surrounding sentence in full — was not done. Had it been
+done, it would have shown what the PI's and Director's independent checks (below) show: a complete,
+coherent, non-garbled sentence.
+
+### Independent re-verification performed for this addendum
+
+Using PyMuPDF (`fitz`) — a third extraction pipeline, distinct from both `pdftotext` (used by
+guideline-risk and, per the Director's report, the PI) and the intake's own `.md`-conversion pipeline
+(used, mistakenly, by this audit's original spot-check #4) — this audit independently re-extracted the
+actual PDF (not the `.md` derivative) and confirms, matching the Director's Decision 2026-09-01-14
+exactly:
+
+- **PDF page e1159** (PDF page index 5 by direct 0-indexed page count; "Table 1. 2018 vs 2026" summary
+  comparison table, row "4.2.4.3. Severe Hypercholesterolemia With LDL-C ≥190 mg/dL," "Revised" 2026
+  column) contains, as a complete, grammatically coherent sentence with no interleaving or fragment
+  concatenation:
+  > "COR 1: In adults with severe hypercholesterolemia with LDL-C ≥190 mg/dL (4.9 mmol/L) without
+  > clinical ASCVD but with clinical or genetic confirmation of HeFH, additional ASCVD risk factors,
+  > or documented coronary calcification, who are on maximally tolerated statin therapy, the addition
+  > of ezetimibe, a PCSK9 mAb and/or bempedoic acid to achieve a goal of LDL-C <70 mg/dL (1.8 mmol/L)
+  > and non–HDL-C <100 mg/dL (2.4 mmol/L) is recommended to lower LDL-C and reduce ASCVD risk."
+- **PDF page e1199** (PDF page index 45; authoritative numbered "Recommendations for Severe
+  Hypercholesterolemia With LDL-C ≥190 mg/dL" section, recommendation #4, COR 1/LOE B-R) contains, for
+  the textually near-identical clinical population and LDL-C target:
+  > "...the addition of ezetimibe, a PCSK9 mAb, and/or bempedoic acid to achieve a goal of LDL-C
+  > <70 mg/dL (1.8 mmol/L) and non–HDL-C <100 mg/dL (2.6 mmol/L) is recommended to lower LDL-C and
+  > reduce ASCVD risk."
+
+Both are complete, well-formed, non-garbled sentences. This audit independently confirms: **"2.4
+mmol/L" is genuinely, coherently printed in T-101 at page e1159; a genuinely different value, "2.6
+mmol/L," is printed at page e1199 for what reads as the same recommendation. This is a real
+source-internal printing inconsistency in the published guideline, not an artifact of any extraction
+tool** (this audit's original spot-check #4's tool included). The mg/dL target itself (`<100 mg/dL`)
+is unaffected and consistent at both locations.
+
+### Verification of downstream corrections
+
+- [x] `03_DECISION-LOG.md` Decision 2026-09-01-14 — read in full; accurately documents the correction,
+      the exact quotes/pages (matching this audit's independent re-extraction exactly), and an honest
+      process-failure account naming all three roles that missed this (guideline-risk, Director, and
+      this auditor) — appropriately unflinching, not self-serving toward any one role.
+- [x] `02_SOURCE-INVENTORY.md` T-106 entry — added, consistent with Decision -14.
+- [x] `40_SYNTHESIS/00_executive-synthesis.md` §2.2 — corrected. The revised 3-tier table now correctly
+      states `<100 mg/dL (2.6 mmol/L)` as the controlling value for Tier 2 with an explicit inline note
+      that the source's own summary table independently prints `2.4 mmol/L` for the same target, and
+      that this is a source-internal inconsistency rather than an artifact. This matches the correct,
+      non-silent Numeric Integrity Rule treatment (report both printed values, flag the inconsistency,
+      do not silently pick one without disclosure) — and is now, correctly, closer to the *original*
+      Decision 2026-09-01-08 framing than to the reversed Decision 2026-09-01-10 framing.
+- [x] `40_SYNTHESIS/02_evidence-traceability-table.md` — corrected, consistent with the above.
+- [ ] **`20_EVIDENCE/guideline-risk/focus-area-1-guideline-wording.md` — NOT YET CORRECTED.** This
+      audit independently re-checked this file (not merely trusted `05_STATUS.md`'s checklist) and
+      confirms it still asserts, in multiple places (lines ~64–71, ~175, ~230, ~255–260 at the time of
+      this check), the now-superseded claim that "there is no '2.4 mmol/L' figure anywhere in the
+      actual severe-hypercholesterolemia recommendations... it does not correspond to a real
+      recommendation at all." **This is a live, material contradiction between a specialist's owned
+      evidence file and the corrected synthesis it is supposed to ground** — exactly the "claim ↔
+      citation" and "no stale/superseded values" failure mode the Final QA Checklist (Runbook §35,
+      Writing section) exists to catch. This is not a new independent error — it is the same not-yet-
+      applied correction already identified and routed by the Director (Decision 2026-09-01-14 action
+      item 3, `05_STATUS.md`) — but it is still outstanding as of this audit, and this audit cannot
+      correct it directly (file ownership: `focus-area-1-guideline-wording.md` belongs to
+      guideline-risk-intelligence, not the auditor).
+- [x] `50_MANUSCRIPT/` — independently re-checked (not just trusted the Director's note): confirmed
+      `pitavastatin-ezetimibe-positioning-slides.md` does not contain the granular severe-
+      hypercholesterolemia tier table or either mmol/L figure at all — no correction needed there.
+
+### Revised assessment
+
+This is a genuine, still-open internal inconsistency in the repository as of this audit — not
+resolved by the corrections already made to `03_DECISION-LOG.md`/`02_SOURCE-INVENTORY.md`/
+`40_SYNTHESIS/`. Until `focus-area-1-guideline-wording.md` is corrected, a reader who follows the
+citation trail from `00_executive-synthesis.md` §2.2 back to its underlying evidence file will find
+the evidence file flatly contradicting the synthesis that cites it. This is narrow in scope (one file,
+a handful of lines, an easy and already-identified fix) but it is a live writing-consistency failure,
+not a hypothetical one, and per this project's own discipline (never treat a known-wrong document as
+if it were already fixed) this audit cannot recommend a clean `PASS`/`PASS_WITH_MINOR_ISSUES` while it
+remains uncorrected.
+
+**Revised Final Gate recommendation: `HOLD_FOR_CORRECTION`**, narrowly scoped to one outstanding
+action: correct `20_EVIDENCE/guideline-risk/focus-area-1-guideline-wording.md` (lines ~64–71, ~175,
+~230, ~255–260 at time of this check) to match `00_executive-synthesis.md` §2.2's corrected framing —
+i.e., replace "there is no 2.4 mmol/L figure... does not exist" with the corrected account (2.4 mmol/L
+genuinely printed at page e1159, Table 1; 2.6 mmol/L genuinely printed at page e1199, the authoritative
+recommendation; source-internal inconsistency, 2.6 mmol/L controls per document-wide convention, 2.4
+mmol/L retained as an annotated source anomaly, not discarded). Once that one file is corrected, this
+audit expects (but will independently re-verify, not merely assume) that this run returns to
+`PASS_WITH_MINOR_ISSUES` — the underlying facts are now correctly established and well-documented
+everywhere else; only this one specialist file's text has not yet caught up. No other outstanding
+issue was found in this re-audit beyond the one already noted in the original report (see below,
+now itself superseded on the "2.4 mmol/L" point specifically — the commit-hash provenance quirk noted
+in the original "Minor observations" #2 still stands independently and is unaffected by this
+correction).
+
+**Everything below this line is the original, unmodified Wave 4 report, preserved for the record.**
+Its spot-check #4 and the parts of its Final Gate reasoning that relied on spot-check #4 are
+superseded by this addendum; all of its other findings (retraction greps, K-924 verification, Taiwan
+STS/inclisiran discipline checks, T-101 verification-methodology honesty, etc.) are unaffected and
+still stand.
+
+---
+
 **Owner: independent-auditor.** Wave 4 audit, read-only, conducted 2026-09-01 against the fully
 consolidated Director branch `worktree-pit-eze-run-2026-09-01`. Reviewed `CLAUDE.md`,
 `docs/CROSS-SESSION-RESEARCH-RUNBOOK.md`, all six governance files (`00`–`05`), every file in
@@ -212,11 +379,15 @@ areas named in this audit's brief were checked and none were found violated.
 
 ### Minor observations (no correction required)
 
-1. **Decision -10's causal narrative for "2.4 mmol/L" is slightly overstated in specificity** — see
-   spot-check #4 above. The corrected numbers are right; the stated root cause ("our own tooling's
-   artifact") should more precisely say the artifact appears to be reproduced independently by at
-   least two extraction pipelines, not uniquely this project's own. No action required unless this
-   decision is revisited for another reason.
+1. **SUPERSEDED, see the correction addendum at the top of this file.** This observation originally
+   said Decision -10's causal narrative was "slightly overstated in specificity" but that "the
+   corrected numbers are right." That was wrong on the more important point: Decision -10's numbers
+   were *not* right — "2.4 mmol/L" is genuinely printed source content, not an artifact, and Decision
+   -10 has since been reversed by Decision 2026-09-01-14. This audit's own spot-check #4 (below)
+   independently reached the same mistaken conclusion Decision -10 did, for the same underlying reason
+   (relying on the artifact-prone `.md` derivative instead of independently re-extracting the PDF with
+   a different tool). Left unedited below for the record; see the addendum for the correction and its
+   process-failure account.
 2. **Commit-hash provenance quirk**: `b7bf5fa`/`38f40a9` referenced in prose in `03_DECISION-LOG.md`/
    `05_STATUS.md` are pre-cherry-pick hashes on safety-pharmacology's own branch and do not resolve
    directly via `git show` on the consolidated Director branch. Cosmetic only — the content itself is
@@ -236,7 +407,11 @@ areas named in this audit's brief were checked and none were found violated.
 
 ---
 
-## Final Gate recommendation
+## Final Gate recommendation (original — SUPERSEDED, see correction addendum at top of this file)
+
+**This section is superseded. Current recommendation is `HOLD_FOR_CORRECTION`, stated in the
+correction addendum at the top of this file — read that first.** Preserved below unmodified for the
+record.
 
 ## `PASS_WITH_MINOR_ISSUES`
 

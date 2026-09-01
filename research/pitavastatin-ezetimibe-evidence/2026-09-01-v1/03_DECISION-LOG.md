@@ -576,3 +576,32 @@ independent auditor's revised `99_FINAL-QA.md` and Final Gate recommendation bef
 Final Gate.
 
 ---
+
+### Decision 2026-09-01-16 — Final Gate re-confirmed: `PASS_WITH_MINOR_ISSUES`. RUN COMPLETE (revised).
+
+The independent auditor's re-check (Decision 2026-09-01-14's correction cycle) initially flagged
+`focus-area-1-guideline-wording.md` as not-yet-corrected (`HOLD_FOR_CORRECTION`) — a genuine, honest
+finding at the moment it was made, but one based on a stale read that predated guideline-risk's fix
+(commit `54b8c42`) landing on the Director branch. Director asked the auditor to re-check specifically
+against that commit rather than accept either party's assertion; the auditor did so independently
+(fresh `git log` + fresh file read + its own `grep` passes, not trusting the Director's claim that the
+file was fixed), confirmed all 8 "does not exist" occurrences are now inside past-tense correction-
+history narrative only, and confirmed full consistency across
+`focus-area-1-guideline-wording.md`/`00_executive-synthesis.md`/`02_evidence-traceability-table.md`/
+`02_SOURCE-INVENTORY.md` T-106. **Final Gate restored: `PASS_WITH_MINOR_ISSUES`** (`99_FINAL-QA.md`
+"RE-CHECK ADDENDUM 2").
+
+**This full episode — a post-Final-Gate error found by the PI, independently re-verified by the
+Director before acting, corrected by guideline-risk with a fourth independent confirmation, initially
+mis-assessed as unresolved by the auditor due to a timing race, and then correctly re-verified and
+resolved by the auditor once pointed at the specific commit — is itself a working demonstration of
+this project's layered verification discipline, including catching an error inside the audit process
+itself.** No single role's self-report was ever the final word; every claim in this chain was
+independently re-checked by at least one other party before being accepted, including this Director's
+own initial claim (in an earlier message) that the file was already fixed.
+
+**RUN 2026-09-01-v1 is COMPLETE.** Final Gate: `PASS_WITH_MINOR_ISSUES`. `40_SYNTHESIS/` and
+`50_MANUSCRIPT/` are FINAL, incorporating the Decision 2026-09-01-14/15 correction. Branch
+`worktree-pit-eze-run-2026-09-01` remains local-only, not pushed to `origin`.
+
+---
