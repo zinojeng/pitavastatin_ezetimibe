@@ -354,3 +354,47 @@ now-outdated instruction or silently overriding it without note.
 holding position with a final, verified correction).
 
 ---
+
+### Decision 2026-09-01-11 — guideline-risk's attack/defense contribution complete; Wave 1 closed for all three specialists; Gate 1 declared
+
+**guideline-risk's focus-area-5 contribution (5 honest attacks, not softened):**
+1. 2026 ACC/AHA doesn't endorse upfront combination — stepwise (already established, Decision -05).
+2. **T-101 treats ezetimibe/PCSK9i/bempedoic acid as interchangeable options, not ezetimibe-preferred**
+   — and its own synopsis cites falling PCSK9 mAb costs as rationale for removing a barrier to going
+   straight to PCSK9i instead of ezetimibe. A real, direct hit against "ezetimibe as the practical
+   first choice," recorded without softening.
+3. Nothing in T-101 is pitavastatin-specific or FDC-specific — citing it for the FDC's own efficacy
+   case would repeat the exact RACING/REPRIEVE conflation error this project already guards against.
+4. **The Taiwan STS "ezetimibe as first add-on" claim — this project's own central framing device
+   since the prior run — remains unverified against primary text.** guideline-risk's own assessment:
+   this is "honestly the single largest unverified-but-load-bearing claim in the whole project's
+   framing," more consequential than any individual trial gap. **Director concurs and elevates this
+   for explicit, prominent treatment in `40_SYNTHESIS/` and the manuscript** — it must not be stated
+   as if resolved anywhere in this run's final output.
+5. The "maximize statin first" counter-position is not just legacy inertia — it is literally what the
+   newly-verified 2026 ACC/AHA guideline still recommends as step one.
+Defenses noted where genuinely present; none manufactured where absent (explicitly not attempted for
+#4).
+
+**blocked-sources-recheck.md:** time-boxed re-check of Taiwan STS/ESC 2025/Taiwan Lp(a) found no new
+access route for any of the three (same DOIs, still blocked). One genuinely new, useful finding:
+Unpaywall now confirms Taiwan STS 2026 is Gold OA/CC BY (resolves the prior run's unresolved OA-badge
+discrepancy) — but the actual page remains Cloudflare-bot-walled regardless of OA status, so full-text
+access itself is unchanged, still `BLOCKED_FOR_SOURCE`.
+
+**Wave 1 status: closed for all three specialists.** All Wave 1 work (plus most of Wave 2's
+Challenge-Round-equivalent attack/defense contribution) is committed and consolidated onto the
+Director's branch (`worktree-pit-eze-run-2026-09-01`) via cherry-pick — the single source of truth
+for this run going into synthesis.
+
+**Gate 1 declared: PASSED.** Facts substantively verified before interpretation, per `CLAUDE.md` §4:
+T-101 independently verified (Decision -04), K-924 independently verified (Decision -09), intake
+dedup complete (T-102), no `SOURCE_CONFLICT` left unresolved, all Numeric Integrity Rule catches
+(Decisions -06, -07, -08→-10) resolved transparently. Remaining open items (Q1/Q4/Q6/Q7/Q9/Q10, Taiwan
+STS block) are genuine, honestly-scoped evidence gaps — not blockers to Gate 1, exactly the kind of
+"BLOCKED is a normal outcome" case the Runbook anticipates. Proceeding to Wave 2 wrap-up (already
+substantively complete via the attack/defense contributions) → Gate 2 → Wave 3 synthesis.
+
+**Evidence Hierarchy tag:** n/a (process decision). **Decision Taxonomy:** n/a.
+
+---
