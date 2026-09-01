@@ -29,16 +29,32 @@ PCSK9 add-on at very-high risk is a genuinely stronger endorsement of *eventual*
 2018 guideline gave. "Faster path to combination, still statin-first" is accurate; "recommends
 upfront combination" is not.
 
-## Attack 2 — the guideline treats ezetimibe, PCSK9 mAb, and bempedoic acid as interchangeable, not ezetimibe-preferred
+## Attack 2 — the guideline does not prefer ezetimibe over a PCSK9 mAb, though its structure is more graded than a flat three-way tie
 
-Every add-on recommendation this role extracted from T-101 (very-high-risk and not-very-high-risk
-tiers alike) uses the identical framing: "ezetimibe, a PCSK9 mAb, or bempedoic acid (selection
-depending on degree of LDL-C lowering needed and patient preference)." **The guideline does not
-establish ezetimibe as the preferred or default first non-statin add-on** — it presents three
-options on equal COR/LOE footing and explicitly defers the choice to clinician/patient preference and
-required LDL-C lowering magnitude. **This is a real gap for any argument that leans on "guidelines
-support ezetimibe as the natural next step" as if that were a guideline-level preference** — it is
-this project's own (reasonable, but separate) clinical argument, not something T-101 itself asserts.
+**Corrected (Decision 2026-09-01-17)** — the original version of this attack over-generalized;
+T-101's add-on structure is risk-stratified, not identically worded at every tier:
+
+- **Not at very high risk (recommendations #2/#3, page ~e1207):** genuinely a three-way, equally
+  graded choice — "ezetimibe, a PCSK9 mAb, or bempedoic acid (selection depending on degree of
+  LDL-C lowering needed and patient preference)," all under the same COR 2a, LOE B-R.
+- **At very high risk, the three options are NOT equally graded.** Recommendation #5 (page ~e1208,
+  COR 1, LOE A) names only two: "ezetimibe and/or a PCSK9 mAb should be added (selected based on the
+  degree of LDL-C lowering needed and patient preference)." Bempedoic acid is a **separate**
+  recommendation (#6, COR 2a, LOE B-R: "reasonable to add bempedoic acid, with or without ezetimibe
+  and/or PCSK9 mAb"), and inclisiran is a **third, separate, further-constrained** recommendation
+  (#7, COR 2a, LOE B-R, explicitly limited to patients "unable to tolerate or obtain evolocumab or
+  alirocumab or have a strong preference for less frequent dosing").
+
+**The precise, defensible version of this attack**, narrower than originally stated: **the guideline
+establishes no preference for ezetimibe over a PCSK9 mAb specifically** at very-high risk (both sit
+at COR 1, LOE A within recommendation #5's shared "and/or," with the choice between them left to
+"degree of LDL-C lowering needed and patient preference") — bempedoic acid and inclisiran are
+genuinely lower-graded (COR 2a) and, for inclisiran, access-gated behind PCSK9 mAb intolerance/
+unavailability. **This still fully supports the core point** — T-101 does not assert ezetimibe is
+the guideline-preferred first non-statin add-on, that remains this project's own separate clinical
+argument — but the honest limit of the claim is "no preference between ezetimibe and PCSK9 mAb
+specifically" (very-high-risk tier) or "no preference among all three" (not-very-high-risk tier),
+not a single blanket "all three/four options are always equal" statement.
 
 **Sharpened version of this attack, specific to cost/access:** the guideline's own synopsis notes
 that PCSK9 mAb "safety data have been reported, and the cost has decreased substantially" as the
