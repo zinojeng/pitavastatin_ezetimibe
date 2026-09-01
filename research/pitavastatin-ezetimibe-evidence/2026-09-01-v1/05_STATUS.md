@@ -33,9 +33,9 @@ are not edited in place for gate transitions; this file is).
 
 | Specialist | Status | Notes |
 |---|---|---|
-| `pit-eze-guideline-risk` | Working (own worktree `worktree-pit-eze-guideline-risk-run2026-09-01` created) | No blocker reported; presumed underway on intake dedup + `official/` verification (priority 1) + focus area 1. Awaiting first report. |
-| `pit-eze-trials-efficacy` | **READY, confirmed, starting** | Focus areas 2–3 + trial-side attack/defense; confirmed not touching T-101/102/103 (guideline-risk's domain); MCP connectivity matches Director's Wave 0 recon. |
-| `pit-eze-safety-pharmacology` | **READY, confirmed, starting** | Focus area 4 + safety-side attack/defense; re-confirming/extending its own 2026-08-31-v1 outputs rather than re-deriving, per instruction. |
+| `pit-eze-guideline-risk` | **T-101 verified; focus area 1 substantively complete; moving to intake (T-102) dedup next** | See `02_SOURCE-INVENTORY.md` T-101/T-104/T-105, `03_DECISION-LOG.md` Decisions -04/-05. Output on branch `worktree-pit-eze-guideline-risk-run2026-09-01` (own worktree, not yet merged/pushed). |
+| `pit-eze-trials-efficacy` | **READY, confirmed, starting** | Focus areas 2–3 + trial-side attack/defense; confirmed not touching T-101/102/103 (guideline-risk's domain); MCP connectivity matches Director's Wave 0 recon. Findings not yet reported. |
+| `pit-eze-safety-pharmacology` | **Focus area 4 + attack/defense contribution complete** | `positioning-brief.md` + `attack-defense-contribution.md` written on branch `worktree-safety-pharm-2026-09-01` (own worktree) — **uncommitted**, pending clarification on a standing git-write constraint (asked to confirm whether it's a harness permission block or awaiting explicit go-ahead; explicit local-commit authorization given either way in this Director's last message). Two evidence gaps honestly flagged (Q6, Q7) and two pending items resolved (Q8). |
 
 ## Gate 0 checklist
 

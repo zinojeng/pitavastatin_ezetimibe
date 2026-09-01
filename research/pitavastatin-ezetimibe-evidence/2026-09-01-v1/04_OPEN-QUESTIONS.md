@@ -42,6 +42,38 @@ provisional answer causes real friction.
 whether any RWE (registry, claims-database, or post-marketing observational study) exists beyond the
 Phase III/FDC trial and the dose-comparison literature already known from the prior run.
 
+## Q6 — No direct pitavastatin/ezetimibe-FDC-vs-high-intensity-statin-monotherapy trial
+
+**Status:** OPEN, confirmed gap (2026-09-01, safety-pharmacology-intelligence, focus area 4). Neither
+RACING (rosuvastatin, not pitavastatin) nor K-924 (internal pitavastatin dose comparison only)
+directly supports positioning claim (b) — FDC vs. high-intensity statin monotherapy — head-to-head.
+This is an honest limitation to state explicitly in `40_SYNTHESIS/` and the attack/defense section,
+not to paper over with adjacent evidence. No action requested — recorded for the Final QA/limitations
+section.
+
+## Q7 — FDC-specific CKD dosing remains unaddressed (carried forward, reconfirmed)
+
+**Status:** OPEN, unchanged from the prior run — reconfirmed by safety-pharmacology-intelligence this
+run (no new source found). Record as a persistent limitation, not a search failure.
+
+## Q8 — Two new-search candidates from safety-pharmacology needing a Director/PI call
+
+**Status:** OPEN.
+1. "Optimizing LDL-C Reduction: High-Dose Pitavastatin Vs. Combination Therapy With Ezetimibe In Type
+   II Diabetes" (AJBR 2024, DOI `10.53555/ajbr.v27i4s.7096`) — directly on-topic title, but abstract
+   returned HTTP 403; no content obtained or cited. **Director's call:** low priority to chase further
+   — title-only relevance is not worth spending scarce lawful-access budget on unless another role
+   independently surfaces full text through a different route. Do not cite anything from this beyond
+   its existence as an unverified candidate.
+2. PCSK9-targeting/inclisiran DDI mechanistic claims used in safety-pharmacology's attack/defense
+   contribution (the "safety/DDI-grounds" scenarios where these are more defensible than FDC) are
+   currently `EXPERT INTERPRETATION`, not independently sourced. **Director's call:** acceptable to
+   carry as `EXPERT INTERPRETATION`-tagged through Wave 2/3 (the claim-safe taxonomy is designed
+   exactly for this — an honestly-labeled inference is not a defect), but must be independently
+   sourced (or re-tagged/softened) before `50_MANUSCRIPT/` treats it as more than a caveat. Flagged as
+   a Wave 2 follow-up for safety-pharmacology or trials-efficacy, whichever has search bandwidth —
+   not urgent for Wave 1 closure.
+
 ## Carried forward from the prior run (still open, relevant to this run's focus areas)
 
 - Taiwan STS 2026 consensus: citation verified, but the specific "ezetimibe as first add-on" content
