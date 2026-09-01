@@ -200,3 +200,34 @@ independently verified as primary — dedup work was not wasted effort once veri
 `VERIFIED_AND_REPLACE` (replaces the erroneous COR 2a with the correct COR 1, LOE A).
 
 ---
+
+### Decision 2026-09-01-08 — non-HDL-C "2.4 mmol/L" flagged as a likely source-internal conversion typo, not a validated distinct target
+
+**Context:** `focus-area-1-guideline-wording.md`'s target-attainment table (§5) transcribes T-101's
+printed non-HDL-C goal for the "Severe hypercholesterolemia (LDL-C≥190), no clinical ASCVD" row as
+`<100 mg/dL (2.4 mmol/L)`. The transcription itself is correct (Numeric Integrity Rule followed — the
+printed value was preserved exactly). But the accompanying note went further, asserting the 2.4 vs
+2.2 mmol/L figures (for the <100 mg/dL and <85 mg/dL rows respectively) "are not [typos], per the
+source" — i.e., defending 2.4 as a deliberately correct, distinct conversion.
+
+**External QA catch:** 100 mg/dL cholesterol converts to 2.586 mmol/L, conventionally rounded to
+**2.6 mmol/L** — not 2.4. This is confirmed by the *same table*: two other `<100 mg/dL` rows
+("Diabetes, no ASCVD, standard risk" and "Diabetes, multiple ASCVD risk factors") are printed
+elsewhere in T-101 as `<100 mg/dL (2.6 mmol/L)`. The `2.4 mmol/L` figure on the severe-
+hypercholesterolemia/no-ASCVD row is therefore internally inconsistent with the guideline's own
+conversion convention used two rows above it in the identical table — a published source-internal
+conversion inconsistency (most plausibly a typo, `2.4` vs the expected `2.6`), not a genuinely
+distinct, intentional target.
+
+**Decision:** Routed back to guideline-risk-intelligence to revise the annotation — NOT to silently
+change the transcribed `2.4 mmol/L` value (still preserved exactly as printed, Numeric Integrity Rule),
+but to correct the note's claim from "these are not typos" to an explicit `POSSIBLE_ERROR`/
+`NEEDS_ANALYST` flag, consistent with `CLAUDE.md` §9. `40_SYNTHESIS/` must privilege the mg/dL target
+(`<100 mg/dL`, unambiguous and internally consistent across the table) and treat the `2.4 mmol/L`
+mmol-side figure as an annotated source anomaly, not a value to build any claim on.
+
+**Evidence Hierarchy tag:** `GUIDELINE/CONSENSUS` for the mg/dL target itself (unaffected); the mmol
+conversion figure is flagged, not used as a load-bearing number anywhere. **Decision Taxonomy:**
+`NEEDS_ANALYST` (routed to guideline-risk-intelligence for the annotation fix).
+
+---
