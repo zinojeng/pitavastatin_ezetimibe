@@ -79,8 +79,12 @@ run (no new source found). Record as a persistent limitation, not a search failu
 ## Carried forward from the prior run (still open, relevant to this run's focus areas)
 
 - Taiwan STS 2026 consensus: citation verified, but the specific "ezetimibe as first add-on" content
-  claim remains `BLOCKED_FOR_SOURCE` (PI-confirmed not assumed resolvable) — directly relevant to
-  this run's focus area 1; re-check whether T-101 (if verified) or any other new source closes this.
+  claim remains `BLOCKED_FOR_SOURCE` (PI-confirmed not assumed resolvable) — T-101 does not resolve
+  it (analogous US context only, Decision 2026-09-01-05). **Update (2026-09-01):** Unpaywall now
+  confirms the source is genuine Gold Open Access, CC BY (resolves the prior run's "unverified OA
+  badge" discrepancy — embargo apparently lifted) — but the actual ScienceDirect page remains
+  Cloudflare-blocked for automated fetch regardless of OA status, so full-text access itself is
+  still `BLOCKED_FOR_SOURCE`. Only the OA-status question is newly settled, not the content gap.
 - No trial has been found closing the Level 3 (pitavastatin/ezetimibe-specific hard-outcome) evidence
   gap beyond HIJ-PROPER's non-superior overall primary endpoint — directly relevant to this run's
   focus area 3 and the attack/defense section (focus area 5). Re-confirm no newer trial exists as
