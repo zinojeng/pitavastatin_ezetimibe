@@ -80,3 +80,67 @@ treat the file as authoritative in the meantime.
 higher tag. **Decision Taxonomy:** `NEEDS_ANALYST` (routed to guideline-risk-intelligence).
 
 ---
+
+### Decision 2026-09-01-04 — T-101 (`official/` guideline text) upgraded `UNVERIFIED` → `VERIFIED`
+
+**Context:** guideline-risk-intelligence completed the Decision 2026-09-01-03 tasking and reported
+back with three independent, externally-corroborated checks (not self-report of the file's own claims):
+(1) `doi.org` resolves DOI `10.1161/CIR.0000000000001423` with a 302 redirect to a real
+`ahajournals.org` article path — an unregistered/fake DOI 404s at the resolver, it does not redirect;
+(2) Crossref's public API independently returned title/journal/volume/publisher/author-list matching
+the PDF's internal citation, including a specific publication date (2026-04-28) matching the running
+footer on every one of 123 pages; (3) systematic (not sampled) internal-coherence review across all
+123 pages found no errors in repeated unit conversions, correctly reproduced known-literature figures,
+a genuine per-page publisher download watermark, and correct COR/LOE formatting throughout.
+
+**Decision:** T-101 is upgraded to `VERIFIED`, Evidence Hierarchy tag `GUIDELINE/CONSENSUS`, per the
+Decision Taxonomy's `VERIFIED_AND_REPLACE` category (replaces the prior `INSUFFICIENT EVIDENCE`
+holding position from Decision 2026-09-01-03). **Explicit caveat carried forward, not dropped:**
+`ahajournals.org` is Cloudflare-walled to this project's tools, so this is verification by independent
+corroboration (DOI registry + Crossref metadata + internal coherence), not a literal byte-for-byte
+publisher re-download match — recorded honestly as such in `02_SOURCE-INVENTORY.md`, not overstated
+as "identical to a fresh publisher download." This methodology (doi.org resolution + Crossref public
+API, both lawful metadata-only tools per `CLAUDE.md` §10) is itself a reusable pattern worth using
+again for any future candidate-source verification in this project.
+
+**Downstream effect:** guideline-risk-intelligence's focus-area-1 exact-wording extraction
+(`20_EVIDENCE/guideline-risk/focus-area-1-guideline-wording.md`) now proceeds from a verified source.
+
+**Evidence Hierarchy tag:** `GUIDELINE/CONSENSUS`. **Decision Taxonomy:** `VERIFIED_AND_REPLACE`.
+
+---
+
+### Decision 2026-09-01-05 — Q2 resolved: genuine dual co-publication, not a citation error; and a real US-vs-ESC stepwise-vs-upfront-combination contrast recorded
+
+**Context:** `04_OPEN-QUESTIONS.md` Q2 asked whether DOI `10.1161/CIR.0000000000001423` (T-101,
+Circulation) and the prior run's `BLOCKED_FOR_SOURCE` DOI `10.1016/j.jacc.2025.11.016` (T-028, JACC)
+were two genuine co-publication DOIs for the same guideline, or a bad/fabricated citation.
+
+**Decision:** Resolved as genuine co-publication. Crossref records for both DOIs carry an identical
+author list, same names and order (Blumenthal, Morris, Gaudino, Johnson, ...) — the same simultaneous
+dual-journal publication pattern used by the 2018 predecessor guideline (Circulation
+2019;139:e1082–e1143 / JACC 2019;73:3168–3209, both cited inside the 2026 text itself). T-028's content
+is treated as `VERIFIED`/obtained via its Circulation co-publication (T-101) going forward in this run
+— see `02_SOURCE-INVENTORY.md` T-104. The prior run's own closed record (T-028 = `BLOCKED_FOR_SOURCE`)
+is **not edited**, per additive-versioning discipline; this is new information layered on top.
+
+**Separately, a genuine finding recorded rather than smoothed over:** T-101 (US ACC/AHA 2026) is
+explicitly **stepwise** — statin first, add-on only if goal not met on maximally tolerated statin — and
+does **not** use "early/upfront combination therapy" language anywhere. This is a real, citable
+contrast with ESC's 2025 Focused Update (upfront high-intensity statin + ezetimibe, but specifically in
+the narrower in-hospital ACS-intensification context, not general goal-directed therapy — the two are
+not the same clinical scenario, so this is a contrast to state precisely, not a contradiction to
+resolve). guideline-risk-intelligence flagged this as a deliberate negative finding, not a search gap.
+Recorded here so it survives into the attack/defense section (focus area 5) rather than being lost:
+"not all major guidelines uniformly endorse early/upfront combination therapy" is a legitimate,
+sourced counter-argument.
+
+**Q3 also closed as moot** (04_OPEN-QUESTIONS.md): with T-101 independently verified, chasing the
+intake's self-cited `markdown/1-s2.0-S0735109725102544.md` (a different extraction/pagination of the
+same underlying guideline, per the Wave 0 spot-check) is no longer necessary for this run's purposes.
+
+**Evidence Hierarchy tag:** `GUIDELINE/CONSENSUS` (both the co-publication finding and the stepwise-vs-
+upfront contrast, each independently sourced to T-101/Crossref). **Decision Taxonomy:**
+`VERIFIED_AND_REPLACE` (Q2), `NO_CHANGE` (Q3, closed without new evidence needed).
+
+---
