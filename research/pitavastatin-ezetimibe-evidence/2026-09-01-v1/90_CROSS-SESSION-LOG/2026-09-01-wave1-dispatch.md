@@ -53,3 +53,12 @@ It also independently confirmed the MCP connectivity picture already noted in `0
 on the working subset, will mark BLOCKED_FOR_SOURCE per-item only if genuinely unable to answer
 something with the remaining tools — not treating the PATH gap itself as a hard blocker. Director will
 mention the `uv`/`npx`/`node` PATH gap to the PI as an environment note at the next checkpoint.
+
+## safety-pharmacology confirms READY (2026-09-01)
+
+`pit-eze-safety-pharmacology` confirmed the shared-.git fix worked, read all six governance files at
+branch tip `601cbdd`, confirmed focus area 4 matches its task assignment, confirmed it will not treat
+T-101 (`official/` candidate guideline) as verified/authoritative pending guideline-risk's check, and
+flagged that `05_STATUS.md` at that commit was stale (still said "Gate 0 not yet declared" / "not yet
+contacted" despite dispatch having already happened) — correct catch, fixed in this commit. Confirmed
+`READY`, starting Wave 1 on focus area 4 + its portion of the attack/defense section.
