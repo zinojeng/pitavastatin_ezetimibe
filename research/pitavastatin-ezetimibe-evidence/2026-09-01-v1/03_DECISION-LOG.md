@@ -554,3 +554,25 @@ source-internal inconsistency, not an artifact). **Decision Taxonomy:** `VERIFIE
 2026-09-01-08 with higher confidence).
 
 ---
+
+### Decision 2026-09-01-15 — guideline-risk's focus-area-1-guideline-wording.md corrected; fourth independent confirmation of Decision 2026-09-01-14
+
+guideline-risk-intelligence independently re-verified the finding with a **fourth** extraction
+approach (isolated single-page `pdftotext -f 6 -l 6`, ruling out cross-page bleed) before editing its
+own file — confirmed the same complete sentence at page e1159. Corrected every location its earlier
+"2.4 mmol/L does not exist" conclusion had propagated (Methods caution header, §1 Tier 2 quote and
+correction note, §3 pointer, §5 table and note, Summary section), preserving the full three-round
+correction history visibly rather than quietly overwriting it: what was right the first time (the
+3-tier structure), what was wrong the first time (the Tier 1/2 conflation), and what was wrong the
+second time (declaring `2.4 mmol/L` nonexistent). Its own stated root-cause account: "my `-raw`
+recheck only searched the authoritative section, so it structurally couldn't have found the value it
+went on to declare absent — that's on me, not a tooling limitation." Cherry-picked onto the Director
+branch (`54b8c42`).
+
+**Correction checklist status:** `03_DECISION-LOG.md`, `02_SOURCE-INVENTORY.md`,
+`40_SYNTHESIS/00_executive-synthesis.md`, `02_evidence-traceability-table.md`, and now
+`20_EVIDENCE/guideline-risk/focus-area-1-guideline-wording.md` are all corrected. Awaiting the
+independent auditor's revised `99_FINAL-QA.md` and Final Gate recommendation before re-declaring
+Final Gate.
+
+---
