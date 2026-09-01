@@ -83,9 +83,15 @@ pushed to `origin`, per the PI's explicit instruction for this continuation.
   Hierarchy tags: `10_DATA/`, `20_EVIDENCE/`, `30_METHODS/` per specialist.
 - Integrated zh-TW evidence brief: `40_SYNTHESIS/00_executive-synthesis.md`.
 - Slide-ready clinical positioning/defense document: `50_MANUSCRIPT/
-  pitavastatin-ezetimibe-positioning-slides.md`.
+  pitavastatin-ezetimibe-positioning-slides.md` (outline/process record).
 - Limitations/open gaps: `04_OPEN-QUESTIONS.md` + `40_SYNTHESIS/00_executive-synthesis.md` §9.
 - Independent QA/final-gate report: `99_FINAL-QA.md`.
+- **Final reading-ready outputs (Decision 2026-09-01-19, PI-requested via Workflow)**:
+  `50_MANUSCRIPT/pitavastatin-ezetimibe-final-report.md` (polished final zh-TW reading document, no
+  process clutter) and `50_MANUSCRIPT/pitavastatin-ezetimibe-slides-deck.md` (actual renderable Marp
+  slide deck) — both drafted and independently verified via a 4-agent Workflow, then personally
+  reviewed by the Director before commit. `50_MANUSCRIPT/README.md` orients readers to which file to
+  use.
 
 ## Known limitations carried into FINAL (stated honestly, not resolved — see full detail in
 `00_executive-synthesis.md`)

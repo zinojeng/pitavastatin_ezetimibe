@@ -667,3 +667,38 @@ this correction (a refinement of an attack/defense nuance, not a numeric-integri
 hierarchy violation).
 
 ---
+
+### Decision 2026-09-01-19 — Final reading-ready outputs produced via Workflow (PI-requested), independently verified
+
+**Context:** PI explicitly asked "use workflow" to consolidate the completed, audited research repo
+into (a) one or more final reading-ready documents and (b) a slide deck, then push. This is explicit
+opt-in to multi-agent orchestration per the Workflow tool's requirements.
+
+**Workflow structure (4 agents, 2 phases):** Draft phase — two parallel agents independently drafted
+(1) a polished final zh-TW clinical evidence review report and (2) a Marp-format slide deck, each
+reading the run's governance/synthesis/evidence files directly rather than being handed pre-written
+content. Verify phase — two parallel agents (fresh context, not the drafting agents) independently
+re-checked each draft against the same source files before accepting it, with explicit instructions to
+self-correct rather than merely flag issues.
+
+**Verification outcome:** the report draft passed clean (no issues). The slide deck draft had 4 issues
+— missing the T-101 verification-method caveat, missing the corrected 3-tier severe-hypercholesterolemia
+table entirely, an under-stated FDC-vs-high-intensity-statin gap, and a formatting wrapper artifact —
+all fixed by the verify agent before this Director accepted it. **Director independently read both
+final files in full before committing** (not merely trusted the workflow's "ok: true"/"ok: false"
+self-report) and additionally caught and fixed a JSON-extraction artifact (literal `\n` escape
+sequences instead of real newlines, and a stray structured-output XML fragment) that was not a content
+error but would have broken both files as usable Markdown/Marp documents.
+
+**New outputs, `50_MANUSCRIPT/`:**
+- `pitavastatin-ezetimibe-final-report.md` — final, publication-ready zh-TW clinical evidence review,
+  free of internal process language, preserving all required honest limitations and corrections.
+- `pitavastatin-ezetimibe-slides-deck.md` — actual renderable Marp slide deck (~16 slides), built from
+  the existing outline but as presentable slides with speaker notes, same corrections preserved.
+- `README.md` — orientation note answering "how should this be read": one document for a full read,
+  one deck for a presentation, the existing files retained as process/traceability record.
+
+**Evidence Hierarchy tag:** n/a (consolidation/presentation of already-verified content, not new
+evidentiary claims). **Decision Taxonomy:** n/a.
+
+---
