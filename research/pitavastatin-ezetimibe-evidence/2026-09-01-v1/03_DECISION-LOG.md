@@ -265,3 +265,46 @@ root-cause confirmation, routed to guideline-risk; K-924 LS-difference verificat
 trials-efficacy).
 
 ---
+
+### Decision 2026-09-01-09 — K-924 matched-dose LS differences independently verified (trials-efficacy); focus areas 2/3/5 complete
+
+**K-924 verification resolved:** trials-efficacy-intelligence confirms −11.9% (95% CI −15.2 to −8.7)
+/ −12.7% (95% CI −15.9 to −9.4) are exactly correct — sourced to its own prior-run (2026-08-31-v1
+Wave 2) LlamaParse full-text extraction of the K-924 J-STAGE PDF (hashed, SHA-256 on file in that
+run's fulltext-manifest.md), MMRM same-dose pairwise comparisons. The original "−51.4% vs −45.2%"
+cross-dose claim is confirmed NOT a formally-tested contrast, exactly as flagged. **Status: `VERIFIED`
+by trials-efficacy against primary full text** — safety-pharmacology's "Director-reported, not
+independently verified" citation is now upgradable. Director did not need to duplicate this lookup
+personally, per the PI's instruction to verify it — trials-efficacy's own prior full-text access
+satisfied it faster and more rigorously than a fresh Director search would have.
+
+**Focus area 2 (RWE):** Q5 answered — no new pitavastatin+ezetimibe FDC RWE found beyond the prior
+run's TE-013 (Lu 2026, Taiwan post-PCI cohort), still the only one. Noted: an atorvastatin/ezetimibe
+FDC RWE abstract (ACC 2026) shows the drug class accumulating RWE elsewhere while pitavastatin
+specifically does not yet — a fair, honestly-scoped observation for the limitations section.
+
+**Focus area 3 (Level 3 gap):** re-confirmed no newer trial closes the HIJ-PROPER gap. Two substudies
+not in the prior run's catalogue, both flagged with explicit confidence caveats rather than presented
+as settled: Yamaguchi 2018 (Atherosclerosis, full absorber-phenotype publication) — MODERATE
+confidence, WebSearch-aggregated only, not independently fetched (ScienceDirect 403'd, reported
+honestly rather than confabulated) — `NEEDS_ANALYST`. Sci Rep 2021 (PMC8021554, open access,
+baseline-LDL-C-stratified statin-naive subgroup: low-LDL-C N=686 HR 1.13 ns; high-LDL-C N=743 HR 0.72
+95% CI 0.56–0.91 P=0.007, interaction P=0.012) — HIGH confidence on N/cutoff (two tools agreed),
+MODERATE on HR/CI (single WebFetch source, PMC PDF blocked by anti-bot challenge, unresolved from the
+prior run too).
+
+**Focus area 5 (trial-side attack/defense):** built using REAL-CAD ("maximize statin first"
+counter-position) and a hard-outcome comparator table for bempedoic acid/PCSK9i/inclisiran.
+**Notable asymmetry flagged for synthesis:** inclisiran currently has **no published hard-outcome
+trial** found (only design/protocol papers — VICTORION-2 Prevent, ORION-4) — a real gap vs.
+CLEAR-Outcomes (bempedoic acid) and FOURIER/ODYSSEY OUTCOMES (PCSK9i). The attack/defense section must
+not frame "hard-outcome-proven alternatives" as a uniform category — inclisiran is currently a
+surrogate/mechanistic case, not (yet) an outcomes-proven one.
+
+**Evidence Hierarchy tags:** K-924 matched-dose figures `DIRECT EVIDENCE` (verified); Yamaguchi 2018
+`INSUFFICIENT EVIDENCE` pending independent fetch; Sci Rep 2021 subgroup `OBSERVATIONAL
+EVIDENCE`/hypothesis-generating (HR/CI moderate confidence); inclisiran hard-outcome status
+`INSUFFICIENT EVIDENCE`. **Decision Taxonomy:** `VERIFIED_AND_REPLACE` (K-924), `NO_CHANGE` (Q5, RWE
+gap reconfirmed), `INSUFFICIENT_EVIDENCE` (both new HIJ-PROPER substudies, inclisiran outcomes gap).
+
+---
