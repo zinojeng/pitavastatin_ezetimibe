@@ -25,6 +25,7 @@ each specialist's `30_METHODS/<role>/search-log.md`.
 | — | T-101 §4.2.1.1 Statins Synopsis — East Asian pharmacogenetic caution (lines ~2015–2018) | (T-101, see above) | Independently re-verified by safety-pharmacology directly against the raw `.md` (not a relay) | GUIDELINE/CONSENSUS | GUIDELINE/CONSENSUS | safety-pharmacology |
 | — | T-101 lines ~2011–2022 — PCSK9 mAb/inclisiran "well tolerated and safe," bempedoic acid statin-side-effect indication | (T-101, see above) | New this run; upgrades the tolerability/indication half of the PCSK9/inclisiran positioning claim from EXPERT INFERENCE to GUIDELINE/CONSENSUS (DDI-mechanism half stays EXPERT INFERENCE) | GUIDELINE/CONSENSUS (tolerability/indication only) | GUIDELINE/CONSENSUS | safety-pharmacology |
 | — | Taiwan STS 2026 consensus — OA status | (same DOI as prior run, still not independently confirmed by number) | **New this run:** Unpaywall confirms genuine Gold OA/CC BY (resolves prior run's OA-badge discrepancy); full text remains Cloudflare-blocked regardless — content claim status unchanged, still BLOCKED_FOR_SOURCE | GUIDELINE/CONSENSUS (bibliographic only) — content claim INSUFFICIENT EVIDENCE | guideline recommendation (bibliographic), content unverified | guideline-risk |
+| — | T-101 pages e1207–e1208 — "Recommendations for Secondary ASCVD Prevention," numbered recs #2/#3 (non-VHR, COR 2a B-R, ezetimibe/PCSK9 mAb/bempedoic acid genuinely equal) and #5/#6/#7 (VHR: ezetimibe and/or PCSK9 mAb COR 1 LOE A; bempedoic acid and inclisiran separately COR 2a LOE B-R, inclisiran further constrained to patients unable to tolerate/access PCSK9 mAb or preferring less-frequent dosing) | (T-101, see above) | **New this run (POST-FINAL-GATE correction, Decision 2026-09-01-17):** corrects an over-generalization that all VHR add-on options were equally graded. Director independently verified via PyMuPDF against the full text of both pages before correcting. | GUIDELINE/CONSENSUS | guideline recommendation | Director (correction routed to guideline-risk for its own evidence file) |
 
 ## Retracted this run — do not cite
 
@@ -48,3 +49,10 @@ each specialist's `30_METHODS/<role>/search-log.md`.
 - **"Consistent with Taiwan STS 2026"** as a guideline-attribution for any mechanistic/expert-
   inference argument. Taiwan STS's specific content claim remains `BLOCKED_FOR_SOURCE` — any such
   argument must be tagged `EXPERT INFERENCE`, not `GUIDELINE/CONSENSUS`.
+- **"T-101 places ezetimibe, PCSK9 mAb, and bempedoic acid on equal COR/LOE footing" as a blanket
+  claim covering both risk tiers.** **CORRECTION (Decision 2026-09-01-17, post-Final-Gate):** true
+  only for the non-VHR tier (COR 2a, LOE B-R, all three). At the VHR tier, ezetimibe and PCSK9 mAb
+  are COR 1/LOE A (no preference between those two specifically); bempedoic acid and inclisiran are
+  separately COR 2a/LOE B-R, with inclisiran further explicitly constrained. Do not cite "no
+  guideline preference among ezetimibe/PCSK9/bempedoic/inclisiran" for the VHR population — the
+  correct, narrower claim is "no guideline preference for ezetimibe over PCSK9 mAb specifically."
