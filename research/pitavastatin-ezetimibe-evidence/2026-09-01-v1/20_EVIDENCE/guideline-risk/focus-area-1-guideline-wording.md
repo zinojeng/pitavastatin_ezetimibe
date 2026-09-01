@@ -12,6 +12,23 @@ committed) plus the guideline's own printed page number (e.g., "e1239") and sect
 visible — cite the page number in any downstream synthesis, not the pdftotext line number, which is
 tool-specific and not stable.
 
+**Methods caution, added after a second correction round (Decision 2026-09-01-08 follow-up,
+prompted by safety-pharmacology's root-cause hypothesis):** this document's "Table 1. [2018 vs 2026]
+Continued" summary comparison tables (used for §1's original severe-hypercholesterolemia quote) are
+**column-merge-prone under `pdftotext -layout`** — a multi-row, multi-column table where the COR/LOE
+marker and the "2026 Recommendation" text cell can be extracted out of vertical alignment,
+attributing one row's figures to an adjacent row. This produced two confirmed errors in this role's
+first extraction pass: (1) a COR grade misattributed to the wrong recommendation (corrected in §3
+below), and (2) a whole recommendation tier conflated with a different one, producing a
+non-existent "<70 mg/dL / 2.4 mmol/L" combination (corrected in §1 below). **Both were caught by
+cross-referencing against independent material** (the intake bundle, and a `pdftotext -raw`
+re-extraction that preserves the PDF's actual content-stream order instead of reconstructing
+columns) — not by the `-layout` extraction alone. **Going forward, this role treats the guideline's
+own dedicated numbered "Recommendations for [topic]" prose sections (e.g., "Recommendations for
+Severe Hypercholesterolemia," "Recommendations for Secondary ASCVD Prevention") as the authoritative
+source, and the "Table 1. 2018 vs 2026" summary comparison tables as a secondary, error-prone
+cross-reference only** — every quote below has been re-verified against the former.
+
 **Evidence Hierarchy tag for everything below: GUIDELINE / CONSENSUS.**
 **Claim-safe taxonomy tag: guideline recommendation** (per this run's focus-area-6 taxonomy) — these
 are formal Class-of-Recommendation (COR) / Level-of-Evidence (LOE) statements from a multi-society
@@ -23,10 +40,36 @@ when a recommendation's supportive text names them.
 The guideline is explicitly structured around **absolute LDL-C and non-HDL-C goals**, stratified by
 risk category (Section 4.2.4–4.2.7, "2018 vs 2026" comparison table, page ~e1155 onward):
 
-> **Severe hypercholesterolemia, LDL-C ≥190 mg/dL, with clinical ASCVD (new in 2026, COR 1):** "...
-> who are on maximally tolerated statin therapy, the addition of ezetimibe, a PCSK9 mAb, or
-> bempedoic acid is recommended to achieve a goal of LDL-C <55 mg/dL (1.4 mmol/L) and non–HDL-C
-> <85 mg/dL (2.2 mmol/L) to lower LDL-C and reduce ASCVD risk."
+**Severe hypercholesterolemia (LDL-C ≥190 mg/dL) is actually a three-tier structure, not two** —
+corrected this round from the authoritative "Recommendations for Severe Hypercholesterolemia With
+LDL-C ≥190 mg/dL" section (page ~e1199), not the error-prone summary comparison table:
+
+> **Tier 1 — primary prevention, without HeFH/subclinical atherosclerosis/additional ASCVD risk
+> factors, without clinical ASCVD (COR 1, LOE B-NR):** "...the addition of ezetimibe, a PCSK9 mAb,
+> and/or bempedoic acid is recommended to achieve a goal of LDL-C <100 mg/dL (2.6 mmol/L) and a
+> non–HDL-C goal of <130 mg/dL (3.4 mmol/L) and to reduce ASCVD risk."
+
+> **Tier 2 — with HeFH, subclinical atherosclerosis, or additional ASCVD risk factors, without
+> clinical ASCVD (COR 1, LOE B-R):** "...the addition of ezetimibe, a PCSK9 mAb, and/or bempedoic
+> acid to achieve a goal of LDL-C <70 mg/dL (1.8 mmol/L) and non–HDL-C <100 mg/dL (2.6 mmol/L) is
+> recommended to lower LDL-C and reduce ASCVD risk."
+
+> **Tier 3 — with clinical ASCVD (COR 1, LOE B-R):** "...the addition of ezetimibe, a PCSK9 mAb,
+> and/or bempedoic acid is recommended to achieve a goal of LDL-C <55 mg/dL (1.4 mmol/L) and
+> non–HDL-C <85 mg/dL (2.2 mmol/L) to lower LDL-C and reduce ASCVD risk."
+
+**Correction note (this role's error, caught this round — not the intake's or a source-internal
+typo):** the original extraction of this passage (pulled from the "Table 1. 2018 vs 2026 comparison"
+summary table, not this authoritative section) conflated Tiers 1 and 2 into a single, non-existent
+"<70 mg/dL LDL-C / 2.4 mmol/L non-HDL-C, no clinical ASCVD" row — a genuine `pdftotext -layout`
+column-merge artifact (see the Methods caution above), not a source-internal error as this role
+first assumed when the Director flagged the 2.4-vs-2.6 mmol/L inconsistency (Decision 2026-09-01-08).
+Re-extraction with `pdftotext -raw` against the authoritative numbered-recommendations section
+resolved it cleanly: **there is no "2.4 mmol/L" figure anywhere in the actual severe-
+hypercholesterolemia recommendations** — Tier 1's non-HDL-C goal is <130 mg/dL (3.4 mmol/L), Tier
+2's is <100 mg/dL (2.6 mmol/L), and Tier 3's is <85 mg/dL (2.2 mmol/L). None of the correct figures
+is 2.4 mmol/L; that number should not be carried into `40_SYNTHESIS/` in any form, including as an
+"annotated anomaly" — it does not correspond to a real recommendation at all.
 
 > **Diabetes, no established ASCVD, 40–75y (revised 2026, COR 1):** "...moderate-intensity statin
 > therapy is indicated to achieve ≥30% to 49% reduction in LDL-C and a goal of LDL-C <100 mg/dL
@@ -176,15 +219,18 @@ my cross-session report rather than duplicate their extraction work.
 | Diabetes, multiple ASCVD risk factors | <70 mg/dL (1.8 mmol/L) | <100 mg/dL (2.6 mmol/L) | 2a |
 | Clinical ASCVD, not very high risk | <70 mg/dL (1.8 mmol/L) | <100 mg/dL | 1 |
 | Clinical ASCVD, **very high risk** | **<55 mg/dL (1.4 mmol/L)** | **<85 mg/dL (2.2 mmol/L)** | 1 |
-| Severe hypercholesterolemia (LDL-C≥190) + clinical ASCVD | <55 mg/dL (1.4 mmol/L) | <85 mg/dL (2.2 mmol/L) | 1 |
-| Severe hypercholesterolemia (LDL-C≥190), no clinical ASCVD | <70 mg/dL (1.8 mmol/L) | <100 mg/dL (2.4 mmol/L) | 1 |
+| Severe hypercholesterolemia (LDL-C≥190), no ASCVD/HeFH/subclinical atherosclerosis/other risk factors (Tier 1) | <100 mg/dL (2.6 mmol/L) | <130 mg/dL (3.4 mmol/L) | 1, B-NR |
+| Severe hypercholesterolemia (LDL-C≥190), with HeFH/subclinical atherosclerosis/additional risk factors, no clinical ASCVD (Tier 2) | <70 mg/dL (1.8 mmol/L) | <100 mg/dL (2.6 mmol/L) | 1, B-R |
+| Severe hypercholesterolemia (LDL-C≥190) + clinical ASCVD (Tier 3) | <55 mg/dL (1.4 mmol/L) | <85 mg/dL (2.2 mmol/L) | 1, B-R |
 | CAC ≥1000 AU | <55 mg/dL (1.4 mmol/L) | <85 mg/dL (2.2 mmol/L) | 1 |
 
-All figures transcribed exactly as printed (Numeric Integrity Rule) — note the 2.4 vs 2.2 mmol/L
-non-HDL-C figures for the two ≥190-mg/dL rows are **printed differently in the source itself**
-(2.4 mmol/L for the no-ASCVD row, 2.2 mmol/L for the with-ASCVD row) — not a transcription error on
-this role's part, reproduced exactly as the guideline itself states it; flagging only because the
-two numbers are easy to assume are typos of each other and conflate — they are not, per the source.
+**Table corrected this round** — see §1 above for the full correction note and the resolved
+`2.4 mmol/L` figure (it does not exist in the authoritative source; the earlier table row combining
+it with `<70 mg/dL` was a `pdftotext -layout` column-merge artifact from this role's own first
+extraction, not a source error, and has been replaced with the correct three-tier structure).
+All figures now cross-verified against both `pdftotext -layout` and `pdftotext -raw` extractions of
+the authoritative "Recommendations for Severe Hypercholesterolemia" section (page ~e1199), per the
+Numeric Integrity Rule.
 
 ## Summary
 
@@ -203,3 +249,14 @@ two numbers are easy to assume are typos of each other and conflate — they are
   **removed the requirement that ezetimibe precede a PCSK9 mAb** — a distinct, real finding from
   "early combination therapy" (which this guideline still does not recommend), not a walk-back of
   §2's negative finding.
+- **Second self-correction (Decision 2026-09-01-08 and its follow-up):** the Director's QA catch on
+  an internally-inconsistent `2.4 mmol/L` figure led to discovering this role's original severe-
+  hypercholesterolemia extraction had conflated two distinct recommendation tiers into one
+  non-existent hybrid, due to a confirmed `pdftotext -layout` column-merge artifact on this
+  document's "Table 1. 2018 vs 2026" summary comparison tables. Re-extracted with `pdftotext -raw`
+  against the guideline's authoritative numbered recommendations section: severe hypercholesterolemia
+  is genuinely a **three-tier** structure (§1), not two, and the `2.4 mmol/L` figure does not appear
+  anywhere in the real text. This role's extraction methodology has been revised accordingly (prefer
+  the numbered "Recommendations for [topic]" sections over summary tables; cross-check with
+  `-raw` mode when a summary-table-derived figure looks internally inconsistent) — credit to
+  safety-pharmacology's root-cause hypothesis for prompting the successful re-check.
