@@ -45,14 +45,17 @@ current single source of truth for this run's evidence content.**
 Facts substantively verified before interpretation. Proceeding to Wave 2 wrap-up (already
 substantively complete) → Gate 2 → **Wave 3: synthesis (in progress)**.
 
-## Current state: Wave 3 (Synthesis) — in progress
+## Gate 2: PASSED · Gate 3: PASSED (Decision 2026-09-01-12)
 
-Director building `40_SYNTHESIS/` (integrated zh-TW evidence brief + attack/defense + traceability),
-`50_MANUSCRIPT/` (slide-ready positioning/defense doc), drawing on all three specialists' consolidated
-evidence. Elevated framing note carried into synthesis: the Taiwan STS "ezetimibe as first add-on"
-claim is this project's single largest unverified-but-load-bearing framing claim (guideline-risk's
-own assessment, Decision 2026-09-01-11) — must be stated explicitly as unverified everywhere it
-appears, never as if resolved.
+Wave 3 synthesis complete: `40_SYNTHESIS/00_executive-synthesis.md` (zh-TW integrated evidence brief),
+`01_attack-defense.md`, `02_evidence-traceability-table.md`, `50_MANUSCRIPT/pitavastatin-ezetimibe-
+positioning-slides.md`. Gate 3 Director Challenge Round passed with actual `grep`-verified checks
+(`30_METHODS/shared/gate3-challenge-round.md`).
+
+## Current state: Wave 4 (Independent Audit) — starting
+
+Spawning a fresh, independent auditor sub-agent (read-only except `99_FINAL-QA.md`) against this
+run's fully consolidated Director branch.
 | `pit-eze-safety-pharmacology` | **Focus area 4 + attack/defense complete; 2 rounds of QA corrections applied, committed** | Latest commit `b7bf5fa`. All 3 QA items from Decision 2026-09-01-06 fixed: K-924 dose-doubling claim downgraded to `OBSERVATIONAL SIGNAL`/`INSUFFICIENT EVIDENCE`; mg/dL↔mmol/L anomaly confirmed + extended (7+ correct 2.6 conversions found elsewhere, column-merge-artifact hypothesis); Taiwan STS attribution removed, retagged `EXPERT INTERPRETATION`. Flagged that no role has yet independently verified the K-924 matched-dose LS-difference figures — routed to trials-efficacy. |
 
 ## Gate 0 checklist
