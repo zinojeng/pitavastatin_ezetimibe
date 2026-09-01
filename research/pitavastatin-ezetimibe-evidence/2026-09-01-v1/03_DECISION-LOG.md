@@ -330,11 +330,23 @@ appear anywhere in T-101's actual text.**
 **This changes the correct action from Decision 2026-09-01-08.** That decision (and the PI's own
 explicit instruction to "preserve the explicit 2.4 mmol/L source-typo annotation") were both made on
 the reasonable-at-the-time understanding that `2.4 mmol/L` was genuinely printed in the source as an
-internally-inconsistent conversion. It was not: it is this project's own extraction tooling's
-artifact, not the source's. Per the Numeric Integrity Rule's own logic (never build on an unverified
-number, and correct course transparently when better evidence arrives rather than defending an
-earlier hypothesis) — **the `2.4 mmol/L` figure is dropped entirely, not carried forward as an
-annotated anomaly.** The corrected 3-tier structure replaces it in `focus-area-1-guideline-wording.md`.
+internally-inconsistent conversion. It was not.
+
+**Root-cause wording corrected post-Wave-4 (2026-09-01, per the independent auditor's spot-check #4
+in `99_FINAL-QA.md`):** this entry originally attributed the artifact solely to "this project's own
+`pdftotext -layout` tooling." The auditor independently located the same garbled fragment at line 369
+of the intake's own `.md` derivative (a *separate* extraction pipeline this project does not
+control), showing the artifact is reproduced by at least two independent extraction pipelines, not
+unique to this project's own tooling. The more precise framing: this is an artifact of T-101's
+two-column PDF layout, reproduced independently by multiple extraction pipelines (this project's own
+`pdftotext -layout`, and the intake's separate `.md` conversion) — not evidence that the source
+itself prints `2.4 mmol/L` as a genuine (if inconsistent) value. This correction does not change the
+final numbers (already fixed) or reopen the decision; it only sharpens the causal narrative per the
+Numeric Integrity Rule's own standard of not overstating specificity. Per the Numeric Integrity
+Rule's own logic (never build on an unverified number, and correct course transparently when better
+evidence arrives rather than defending an earlier hypothesis) — **the `2.4 mmol/L` figure is dropped
+entirely, not carried forward as an annotated anomaly.** The corrected 3-tier structure replaces it in
+`focus-area-1-guideline-wording.md`.
 guideline-risk also re-verified the earlier COR-1-vs-2a self-correction (Decision 2026-09-01-07)
 against `-raw` mode and confirmed it holds.
 
@@ -420,5 +432,33 @@ number and prohibited phrase appears only in "do not cite"/correction-narrative 
 live claim, across all Wave 3 output.
 
 **Next:** Wave 4 — spawn independent auditor (read-only, writes only `99_FINAL-QA.md`).
+
+---
+
+### Decision 2026-09-01-13 — Wave 4 independent audit complete; Final Gate = PASS_WITH_MINOR_ISSUES; RUN COMPLETE
+
+A fresh, independent auditor sub-agent (not a fork of the Director's session, to avoid inheriting
+synthesis-writing bias) audited the fully consolidated branch and wrote `99_FINAL-QA.md`. It did not
+trust the Director's own Gate 3 grep results — it re-ran the retraction/prohibited-phrase greps
+independently, re-hashed the `official/` files independently, and directly grepped the `.md`
+derivative itself to corroborate several specialist-quoted passages (finding, on its own, an
+additional line-interleaving artifact at line 2014 that corroborates the project's "artifact-prone
+source" finding, and independently locating line 369's garbled "2.4 mmol/L" fragment — see the
+root-cause correction above).
+
+**Result: zero material findings.** All eight of this project's established traps (from the prior
+run) plus this run's five new specific risk areas (T-101 overclaiming, the K-924/2.4-mmol-L
+retractions, inclisiran hard-outcome grouping, and the PI-instruction-supersession transparency) were
+checked and none were found violated. Two minor, non-blocking observations: (1) the Decision -10
+causal-wording precision nit, corrected above; (2) a cosmetic pre-cherry-pick commit-hash reference in
+prose (`b7bf5fa`/`38f40a9`) that doesn't resolve directly on the consolidated branch — noted, not
+corrected (content is still correctly traceable by path).
+
+**Final Gate: `PASS_WITH_MINOR_ISSUES`** (Runbook §36: may be marked `FINAL`). `40_SYNTHESIS/` and
+`50_MANUSCRIPT/` are FINAL as of this decision.
+
+**RUN 2026-09-01-v1 is complete.** All required durable outputs delivered (see `05_STATUS.md` for the
+full manifest). Branch `worktree-pit-eze-run-2026-09-01` remains local-only, not pushed to `origin`,
+per the PI's explicit instruction for this continuation.
 
 ---
